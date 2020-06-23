@@ -64,6 +64,16 @@
 
     nvm arch 						// 显示node是运行在32位还是64位。
 
+	安装node
+		nvm install <version> [<arch>]命令下载需要的版本。
+		arch参数表示系统位数，默认是64位，如果是32位操作系统，需要执行命令：nvm install 6.9.0 32
+
+
+
+	使用特定Node版本
+		nvm use <version> [<arch>] 命令开始使用特定版本。比如：nvm use 6.9.0或者nvm use 6.9.0 32
+
+
 
 ## nvm -help
 	nvm arch                     : Show if node is running in 32 or 64 bit mode.
