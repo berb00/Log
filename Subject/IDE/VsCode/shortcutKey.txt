@@ -1,0 +1,14 @@
+折叠所有代码: 	ctrl + k + 0
+展开所有代码:	  ctrl + k + J
+代码格式化      shift + alt + F
+
+
+
+
+插件:
+汉化：Chinese
+代码格式化：Beautify
+
+
+setting:
+Power Mode: 鼠标效果

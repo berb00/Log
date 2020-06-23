@@ -1,0 +1,553 @@
+SQL(Structure Query Language)       结构化查询语言
+DDL(Data Defination Language)       数据定义语言            定义数据库、表、视图、索引、触发器。                   DROP CREATE ALTER
+DML(Data Manipulation Language)     数据操作语言            增删改                                            INSERT UPDATE DELETE 
+DQL(Data Query Language)            数据检索语言            用于从表中获取数据 确定数据怎样在应用程序中给出          SELECT
+DCL(Data Control Language)          数据控制语言            控制用户访问权限                                    GRANT REVOKE COMMIT ROLLBACK
+
+
+
+DDL:
+#############################################################################################
+    DATABASE
+        #、查看当前服务器下的数据库列表 
+            SHOW {DATABASES|SCHEMAS}
+        #、查看指定数据库的定义方式
+            SHOW CREATE {DATABASE|SCHEMA} db_name
+
+        #、创建数据库
+            CREATE {DATABASE|SCHEMA}[IF NOT EXISTS] db_name [[DEFAULT] CHARACTER SET [=] charset_name]
+        #、删除指定数据库
+            DROP {DATABASE|SCHEMA} [IF EXISTS] db_name;
+
+        #、修改指定数据库的编码方式
+            ALTER {DATABASE|SCHEMA} dn_name [DEFAULT] CHARACTER SET [=] charset_name
+        #、打开指定数据库
+            USE db_name
+
+    TABLE
+        #、查看数据表及表结构
+            查看数据库下的数据表:
+            SHOW TABLES
+            查看指定表的表结构:
+            1.DESC tablename;
+            2.DESCRIBE tablename;
+            3.SHOW COLUMNS FROM tablename;
+
+        #、创建数据表
+        CREATE TABLE [IF NOT EXISTS] tbl_name(
+        字段名 字段类型 [完整性约束条件] [COMMENT 注释内容],
+        字段名 字段类型 [UNDIGNED|ZEROFILL] [NOT NULL] [[PRIMARY] KEY] [UNIQUE [KEY]] [AUTO_INCREMENT] [DEFAULT 默认值] [COMMENT 注释内容]
+        )ENGINE=引擎名称 CHARSET=编码方式 AUTO_INREMENT=10;//自增长步长
+
+        完整性约束条件:
+        PRIMARY KEY        主键 
+        FOREIGN KEY        外键
+        UNIQUE KEY        唯一        使用时该条件时 该字段的记录值不能重复   NULL值不算重复
+        AUTO_INCREMENT    自增长
+        NOT NULL             非空        使用时该条件时 插入记录值时不能为空    不使用默认值为NULL
+        DEFAULT            默认值
+        
+        #、删除数据表
+            DROP TABLE [IF EXISTS] tbl_name [,tbl_name,...]
+
+        #、修改表名:
+            ALTER TABLE tbl_name RENAME [TO|AS] new_name
+            RENAME TABLE tbl_name TO new_name               //
+        #、添加字段
+            ALTER TABLE tbl_name ADD 字段名 字段类型 [完整性约束条件] [FIRST|AFTER 字段名]
+        #、删除字段
+            ALTER TABLE tbl_name DROP 字段名
+        #、修改字段
+            ALTER TABLE tbl_name MODIFY 字段名 字段类型 [完整性约束条件] [FIRST|AFTER]
+        #、修改字段名
+            ALTER TABLE tbl_name CHANGE 旧字段名 新字段名 字段类型 [完整性约束条件] [FIRST|AFTER 字段名]
+        #、添加默认值
+            ALTER TABLE tbl_name ALTER 字段名 SET DEFAULT 默认值;
+        #、删除默认值
+            ALTER TABLE tbl_name ALTER 字段名 DROP DEFAULT;
+        #、添加主键
+            ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] PRIMARY KEY [index_type] (字段名,...)
+        #、删除主键
+            ALTER TABLE tbl_name DROP PRIMARY KEY
+        #、添加唯一
+            ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] UNIQUE [INDEX|KEY] [索引名] (字段名,...)
+        #、删除唯一
+            ALTER TABLE tbl_name DROP {INDEX|KEY} index_name
+        #、修改表的存储引擎
+            ALTER TABLE tbl_name ENGINE=存储引擎名
+        #、设置自增长步长
+            ALTER TABLE tbl_name AUTO_INREMENT=值
+
+
+
+DML:
+#############################################################################################
+    #、插入数据
+        #、不指定具体字段名
+        INSERT [INTO] tbl_name VALUES|VALUE (记录值)
+        #、指定字段名
+        INSERT [INTO] tbl_name (字段名...) VALUES|VALUE (记录值...)
+        #、同时插入多条记录
+        INSERT [INTO] tbl_name [(字段名...)] VALUES (值...),(值...)...
+        #、通过SET形式插入记录
+        INSERT [INTO] tbl_name [(字段名...)] SET 字段名=值,...
+        #、将查询结果插入到列表
+        INSERT [INTO] tbl_name [(字段名...)] SELECT 字段名 FROM tbl_name [WHERE 条件]
+
+        insert into <表名> [( <字段名1>[,..<字段名n > ])] values ( 值1 )[,( 值n )];
+        insert into MyClass values(1,’Tom’,96.45),(2,’Joan’,82.99),(2,’Wang’, 96.59);               往表 MyClass中插入二条记录, 这二条记录表示：编号为1的名为Tom的成绩为96.45, 编号为2 的名为Joan 的成绩为82.99，编号为3 的名为Wang 的成绩为96.5.
+
+    #、更新数据
+        UPDATE tbl_name SET 字段名=值,... [WHERE 条件] [ORDER BY 字段名] [LIMIT 限制条数]
+        update 表名 set 字段=新值,… where 条件
+        update MyClass set name=’Mary’ where id=1;
+        update 表名 set 字段名 = 新内容;
+        update 表名 set 字段名 = replace(字段名,’旧内容’,’新内容’);
+        update article set content=concat(‘’,content);                                              文章前面加入4个空格
+
+    #、删除数据
+        DELETE FROM tbl_name [WHERE 条件] [ORDER BY 字段名] [LIMIT 限制条数]
+        清空数据表
+        TRUNCATE [TABLE] tbl_name
+        delete from <tablename> where 表达式
+        delete from <tablename> where id=1;                                                         删除表 MyClass中编号为1 的记录
+
+DQL:
+#############################################################################################
+    #、SELECT完整语句:
+        SELECT  执行第三步
+            id,sex,age,                              // 查询的字段列表 *:查询所有字段
+            GROUP_COUNT(username),              
+            COUNT(*) AS totalUser,                          // AS alias_name    为查询的字段起别名
+            MAX(age) AS max_age,                            // 字段值不加引号
+            MIN(age) AS min_age,
+            SUM(age) AS sum_age,
+            CONCAT(field1, field2, IFNULL(filed3,0)) AS newfieldname,      // 多字段拼接为一个字段  IFNULL:若字段值为null则使用0参与拼接 
+            GROUP BY sex                                    // 对第一次筛选结果进行分组
+            HAVING COUNT(*)>=2                              // 对分组结果进行二次筛选
+            ORDER BY age DESC                               // 对二次筛选结果按照某字段进行排序
+            LIMIT 0,2;                                      // 进行分页限制每页出现记录条数
+        FROM    执行第一步
+            tablename                                   // 查询的表名           
+        WHERE   执行第二步   
+            筛选条件            
+            id>1                                        // 条件-第一次筛选
+
+    #、基础查询
+        查询常量、表达式、函数
+        起别名
+        去重
+        +号的作用
+        使用concat实现连接
+    #、条件查询(执行顺序 1、2、3)
+        语法：
+            SELECT                  // 3
+                查询列表
+            FROM                    // 1
+                表名
+            WHERE                   // 2
+                筛选条件
+        分类:
+            按条件表达式筛选
+                <
+                >
+                =
+                !=
+                <>
+                <=
+                >=
+            按逻辑表达式筛选
+                and     or      not
+                &&      ||      !
+    #、模糊查询
+        LIKE    
+            通配符(\:默认转义)
+            %:          // 匹配任意个字符
+            _:          // 匹配任意单个字符
+        BETWEEN AND
+        IN              // IN 列表中的值需统一或兼容 且不支持通配
+        IS NULL         // 仅可判断NULL         =、<>不能用于判断NULL
+        IS NOT NULL
+        <=>             // 安全等于 可以判断NULL和普通值
+        
+    #、排序查询
+        排序查询示例
+        排序查询总结
+        【案例讲解】排序查询
+
+    #、函数
+        单行函数
+        字符函数
+        数学函数
+        日期函数
+        其他函数
+        流程控制函数-if函数
+        流程控制函数-case结构
+        分组函数的介绍
+        分组函数的使用特点
+        分组函数和distinct搭配使用
+        count函数的具体介绍
+        分组函数使用的其他注意事项
+        
+    #、分组查询
+        简单使用
+        添加分组前筛选
+        添加分组后筛选
+        添加筛选的总结
+        按函数分组
+        按多个字段分组
+        添加排序
+
+    #、连接查询
+        笛卡尔乘积
+        连接查询的分类
+        等值连接的介绍
+        等值连接的示例
+        非等值连接
+        自连接
+        测试题2讲解
+        复习前一天内容
+        作业讲解
+        sql99语法介绍
+        sql99语法—等值连接
+        sql99语法—非等值连接
+        sql99语法—自连接
+        sql99语法—左（右）外连接
+        全外连接
+        交叉连接
+        总结连接查询
+        【案例讲解】多表连接
+    #、子查询介绍
+        where后面的标量子查询使用
+        where后面的列子查询使用
+        where后面的行子查询使用
+        select后面的子查询使用
+        from后面的子查询使用
+        exists后面的子查询使用
+        【案例讲解】子查询
+    #、分页查询
+        测试题3讲解
+        复习前一天内容
+        子查询经典案例讲解
+        作业讲解
+    #、联合查询
+        联合查询的特点
+
+        插入语句的方式一
+        插入语句的方式二
+        两种插入方式大pk
+        修改单表的记录
+        修改多表的记录
+        删除语句的介绍
+        删除方式一
+        删除方式二
+        【案例讲解】数据的增删改
+
+
+
+    #、查询表中的数据
+        select <字段1，字段2，…> from < 表名 > where < 表达式 >
+        select * from <tablename>;                                                                  查看表中所有行数据
+        select * from <tablename> order by id limit 0,2;                                            查看表中前二行数据
+        select * from <tablename> limit 0,2;                                                        查看表中前二行数据
+
+    #、查询记录
+        SELECT select_expr [,select_sxpr,...]
+        [
+            FROM tbname
+            [WHERE 条件]
+            [GROUP BY {col_name|position} [ASC|DESC],...分组]       分组查询
+            [HAVING 条件]                                           对分组结果进行二次筛选
+            [ORDER BY {col_name|position} [ASC|DESC],...排序]       对二次筛选结果排序
+            [LIMIT 限制显示条数]
+        ]
+    #、查询表达式
+        *-所有列,
+        fields,
+        GROUP_COUNT(field),
+        COUNT(field),
+        MAX(field),
+        MIN(field),
+        SUM(field),
+        [AS]alias_name 赋予别名 // 连接查询有字段重名时 可起别名避免重名    AS关键字可省略
+
+    #、WHERE 条件
+        1.比较                
+            =、<、>、<=、>=、!<、!>、<=>   WHERE age <=> NULL                                    查询年龄为NULL的记录
+                                                WHERE age <=> 18                                        查询年龄为18的记录
+            !=、<>  // 不等于 推荐使用 <>
+        2.指定范围(范围查询)    
+            BETWEEN AND             WHERE id BETWEEN a AND b;                            查询[a,b]之间的记录
+            NOT BETWEEN AND          
+        3.指定集合(范围查询)    
+            IN                      WHERE id IN(1,3,5,7,9,11,13,110);                    查询编号为(1,3,5,7,9,11,13,110)的记录
+                                    WHERE username IN('张三''李二')                       查询用户名为('张三','李二')的记录(忽略大小写)
+            NOT IN                            
+        4.匹配字符(模糊查询)    
+            LIKE                    WHERE username LIKE '张%';                            查询用户以'张'字符开头的记录
+            NOT LIKE
+            IS NULL 
+                                    WHERE username LIKE '%张%';                            查询用户名含有'张'字符的记录(%-代表0个或多个任意字符)
+                                    WHERE username LIKE '%';                              查询所有的记录
+                                    WHERE username LIKE '___';                            查询所有用户名为三位字符的记录(_-代表1个任意字符)
+                                    WHERE username LIKE '_i%';                            查询用户名第二位为'i'的记录
+                                    WHERE username LIKE '张三';                            查询用户名为'张三'的记录
+                                                                
+        5.是否为空            
+            IS NULL
+            IS NOT NULL             WHERE id>=3 AND age IS NOT NULL                        查询编号大于等于3且年龄不为空的记录
+                                    WHERE id>=3 AND age IS NOT NULL AND tel=123            查询编号大于等于3且年龄不为空且电话为123的记录
+                                                                
+        6.多个查询条件
+            AND &&
+                                    WHERE username='king' AND pwd="123"                    查询用户名为'king'且密码为'123'的记录
+                                    WHERE id BETWEEN 5 AND 10 AND username LIKE '___'      查询编号在[5,10]之间且用户名为三位的记录
+            OR  ||                  
+                                    WHERE username LIKE '张%' OR id IN(1,5,3,9)            查询用户名以'张'开头或编号为(1,5,3,9)的记录
+            NOT !
+
+    #、GROUP BY查询结果分组
+        SELECT * FROM t1 GROUP BY proId;                    按照用户所属省份分组                                     只显示每组的第一个记录            
+        SELECT * FROM t1 GROUP BY sex;                      按照用户性别分组                                        只显示每组的第一个记录
+        SELECT * FROM t1 GROUP BY 6;                        按照字段位置分组                                        只显示每组的第一个记录        
+        SELECT * FROM t1 GROUP BY sex,proId;                按照多个字段分组 先按sex分组 再在各组按proId分组            只显示每组的第一个记录    
+        SELECT * FROM t1 WHERE id>=5 GROUP BY sex;          查询编号大于等于5的记录并按照sex分组                       只显示每组的第一个记录
+
+        GROUP_CONCAT(字段名) 得到分组详情            SELECT id,sex,GROUP_CONCAT(username)    FROM t1 GROUP BY sex                查询id,sex,用户名详情 按性别分组
+        
+        聚合函数
+            COUNT(字段名)    统计记录的总数    SELECT id,sex,GROUP_CONCAT(username) AS users,COUNT(*) AS totalUsers FROM t1 GROUP BY sex        查询id,sex,用户名详情,组中人数 按照sex分组
+                                            SELECT COUNT(*) AS totalUsers FROM t1            统计表中所有记录个数 // AS totalUsers-起别名
+                                            SELECT COUNT(id) AS totalUsers FROM t1            统计表中所有id个数 // AS totalUsers-起别名
+                                            SELECT COUNT(age) AS totalUsers FROM t1            COUNT()不统计NULL值 // AS totalUsers-起别名
+            MAX()    统计某个字段的最大值                                                                
+            MIN()    统计某个字段的最小值                                                                
+            AVG()    统计某个字段的平均值                                                                                
+            SUM()    统计某个字段的和                                                                                            
+                                                                    查询:
+                                            SELECT id,sex,            编号,性别
+                                            GROUP_CONCAT(username),    用户名详情
+                                            COUNT(*) AS totalUsers,    组中总人数
+                                            MAX() AS max_age,        组中最大年龄
+                                            MIN() AS min_age,        最小年龄
+                                            AVG() AS avg_age,        平均年龄
+                                            SUM() AS sum_age,        年龄总和
+                                            FROM t1 GROUP BY sex     按照性别分组
+                                            WITH ROLLUP;
+                                            
+                                            
+        WITH ROLLUP 在末尾添加一条记录    记录上面所有记录的总和、最大值、最小值等        
+        
+    #、HAVING 子句    
+        对分组结果进行二次筛选        只能使用到分组之后 在分组之后二次筛选才有意义
+                                            查询:
+        SELECT sex,                                 性别
+        GROUP_CONCAT(username) AS users,            用户名详情
+        COUNT(*) AS totalUsers,                     组中人数
+        MAX(age) AS max_age,                        最大年龄
+        MIN(age) AS min_age,                        最小年龄
+        SUM(age) AS sum_age,                        年龄总和
+        FROM t1 GROUP BY sex                        按性别分组
+        HAVING COUNT(*)>2 AND MAX(age)>60           查询组中人数大于2且最大年龄大于60的记录
+        ORDER BY age DESC,id ASC;                   按年龄降序,id升序排序
+
+    #、ORDER BY排序(商品排序)            对查询结果排序
+                                
+        SELECT * FROM t1 ORDER BY id ASC;                       按照id升序排序ASC    
+        SELECT * FROM t1 ORDER BY 2 ASC;                        按照第二个字段升序排序ASC    
+        SELECT * FROM t1 ORDER BY id DESC;                      按照id降序排列DESC 默认ASC        
+        SELECT * FROM t1 ORDER BY age ASC,id DESC;              按照年龄升序,id降序排列 (多个字段排序以逗号分隔)
+        SELECT * FROM t1 ORDER BY RAND();                       记录随机排序
+        
+        
+    #、LIMIT限制查询结果显示条数(实现分页)
+    #、LIMIT 显示条数
+        SELECT * FROM t1 LIMIT 3;                       查询升序表中前3条记录 
+        SELECT * FROM t1 ORDER BY id DESC LIMIT 3;      查询降序表中前3条记录 
+        SELECT * FROM t1 LIMIT 1;                       查询表中前一条记录
+        
+    #、LIMIT 偏移量,显示该页条数    (UPDATE语句使用LIMIT时不能使用偏移量模式)
+        假设:存在分页，每页5条记录。则:
+        SELECT * FROM t1 LIMIT 0,5;                     第一页5条记录    (偏移量从0开始)
+        SELECT * FROM t1 LIMIT 5,5;                     第二页5条记录
+        SELECT * FROM t1 LIMIT 10,5;                    第三页5条记录
+    #、Tips
+        SELECT DISTINCT fieldname FROM tablename;              // 对查询结果去重
+
+
+
+DCL:
+#############################################################################################
+    CREATE USER 'berb00'@'host' IDENTIFIED BY 'berb00'; 
+    GRANT privileges ON yiibaidb TO 'berb00'@'host' 
+    GRANT privileges ON *.* TO 'berb00'@'host' WITH GRANT OPTION; 
+    grant all on *.* to berb00@%;
+    GRANT ALL ON *.* TO 'berb00'@'%'; 
+
+
+
+
+连接查询:
+#############################################################################################
+    1.连接查询
+        将两个或两个以上的表按某种条件连接起来。可同时查询被连接的表
+        当表中存在相同字段时，可通过该字段连接这几个表
+        
+    2.内连接查询-显示两个表中符合连接条件的记录    ON 连接条件
+        JOIN|CROSS JOIN 
+        INNER JOIN
+        两张表:
+        用户表t1            -id,sex,username,age,email,proId        用户表中proId字段值对应省份表id 从而获取省份值
+        省份表provinces    -id,proName
+        以下使用WHERE和连接查询的三种方法效果相同
+            SELECT t1.id,username,proName FROM t1,provinces WHERE t1.proId=provinces.proName;        查询用户表id,username/省份表proName(两表中都存在id字段，故需使用ti.id确定是查询用户表中的id)
+        查询用户表中的id,username,email,sex/省份表中的proName
+            SELECT u.id,u.username,u.email,u.sex,p.proName 
+            FROM t1 AS u                    从用户表查询           为用户表取别名为u
+            INNER JOIN provinces AS p       内连接到省份表         为省份表取别名为p
+            ON u.proId=p.id;                连接条件
+            
+            SELECT u.id,u.username,u.email,u.sex,p.proName 
+            FROM provinces AS p             从省份表查询        为省份表取别名为p
+            JOIN t1 AS u                    内连接到用户表      为用户表取别名为u
+            ON u.proId=p.id;                连接条件
+            
+    3.外链接查询
+        左外连接:LEFT  [OUTER] JOIN     显示左表的全部记录及右表符合连接条件的记录
+        右外连接:RIGHT [OUTER] JOIN     显示右表的全部记录及左表符合连接条件的记录
+
+            SELECT u.id,u.username,u.email,u.sex,p.proName 
+            FROM t1 AS u                    从用户表查询         LEFT JOIN左的为主表    先查询主表中的记录 再查询副表中符合条件的记录
+            LEFT JOIN provinces AS p        左外连接到省份表     
+            ON u.proId=p.id;                连接条件
+            
+
+            SELECT u.id,u.username,u.email,u.sex,p.proName 
+            FROM t1 AS u                    从用户表查询         
+            RIGHT JOIN provinces AS p       右外连接到省份表     RIGHT JOIN右的为主表
+            ON u.proId=p.id;                连接条件
+
+    4.联合查询            把多个表的查询结果合并(各表查询的字段数目需一样)
+    UNION               合并且去掉重复记录
+    SELECT username FROM  employee UNION SELECT username FROM t1;       // 表employee与表t1联合查询 去重
+    UNION ALL           合并
+    SELECT username FROM  employee UNION ALL SELECT username FROM t1;   // 表employee与表t1联合查询 不去重
+
+
+    5.外键 外键所在的表为子表
+    外键是子表的字段 主键是父表的字段
+    先有父表再有子表
+    外键依赖于主键 
+
+    外键建立了子表与父表的关联关系 可实现一对一或一对多关系
+    父表中的记录被操作时，子表中与之对应的信息随之改变
+    父表与子表必须使用相同的存储引擎且禁止使用临时表(仅INNODB支持外键)
+    数据表的存储引擎只能为INNODB(物理外键)(逻辑外键:存储引擎不使用INNODB时 不支持外键，可使用逻辑构造外键)
+    外键列和参照列必须具有相同的数据类型 数字长度及符号位必须相同
+    外键列和参照列必须设置索引，不存在索引则自动创建
+    外键约束的参照操作:
+        CASCADE         从父表删除或更新且自动删除或更新子表中的记录
+        SET NULL        从父表删除或更新记录，并设置子表外键为NULL(使用该选项需保证子表没有指定NOT NULL)
+        RESTRICT        拒绝对父表的删除或更新操作    (默认)
+        NO ACTION       标准SQL关键字，在MySQL中与RESTRICT相同
+
+
+
+
+    子查询:一个查询语句嵌套入另一个查询语句，内层查询结果作为外层查询条件
+    1.引发子查询的情况
+        1.[NOT] IN
+            SELECT * FROM departments;
+            SELECT id,username FROM employee WHERE depId IN(1,2,3,4);
+            //以上两行语句可由子查询合并为一句:
+            SELECT id,username FROM employee WHERE depId IN(SELECT * FROM departments;);
+            
+        2.[NOT] EXISTS
+            SELECT * FROM department WHERE id=5;//查询不存在的部门
+            SELECT id,username FROM employee WHERE EXISTS(SELECT * FROM department WHERE id=5);//若内存语句查到结果(返回真)才执行外层语句
+            SELECT id,username FROM employee WHERE NOT EXISTS(SELECT * FROM department WHERE id=5);//若内存语句查不到结果(返回假)才执行外层语句
+        3.ANY|SOME|ALL
+        4.比较运算符: 
+            创建学院表student-id,username,score  
+            CREATE TABLE IF NOT EXISTS student(
+                id TINYINT KEY UNSIGNED AUTO_INCREMENT,
+                username VARCHAR(20) NOT NULL UNIQUE,
+                score TINYINT UNSIGNED
+            );
+            INSERT student (username,score) VALUE ('张三1',1),('张三2',2),('张三3',3),('张三4',4),('张三5',5),('张三6',6),;
+            创建奖学金表scholarship-id,level
+            CREATE TABLE scholarship (
+                id TINYINT UNSIGNED AUTO_INCREMENT KEY,
+                level TINYINT UNSIGNED,
+            );
+            INSERT scholarship (level) VALUE (90),(80),(70),(60),;
+            //查询获得1等奖学金的学员为
+            SELECT level FROM scholarship WHERE id=1;
+            SELECT id,username FROM student WHERE score>=90;
+            SELECT id,username FROM student WHERE score>=(SELECT level FROM scholarship WHERE id=1);//将以上两行语句合并
+
+
+
+    MySQL存储引擎:即表的类型。数据库的存储类型决定了表在计算机中的存储方式。
+    1.查看存储引擎
+        SHOW ENGINES                                查看MySQL支持的存储引擎
+        SHOW VARIABLES LIKE 'have%'                 查看支持的存储引擎信息
+        SHOW VARIABLES LIKE 'storage_engine'        查看默认的存储引擎
+
+    修改MySQL命令提示符 prompt
+    PROMPT set to 
+    \D-完整的日期
+    \d-当前数据库
+    \h-服务器名称
+    \u-当前用户名
+
+
+
+
+Other
+#############################################################################################
+    SELECT VERSION(), CURRENT_DATE;                                 显示版本号和当前日期
+    SELECT NOW();
+    SELECT USER();
+    SELECT VERSION();                                               显示当前版本
+    SELECT NOW();                                                   显示当前日期时间
+    SELECT USER();                                                  显示当前用户
+    SELECT DATABASE();                                              显示当前打开的数据库名称
+
+    SHOW WARNINGS;                                                  查看上一步操作产生的警告
+    show databases;                                                 显示数据库
+    show tables;                                                    当前数据库包含的表信息
+
+    create database name;                                           创建数据库
+    create table <tablename>;                                       创建数据表
+    drop database <databasename>;                                   删除数据库
+    drop table <tablename>;                                         删除数据表
+    use databasename;                                               选择数据库
+    drop database name;                                             直接删除数据库，不提醒
+    mysqladmin drop databasename;                                   删除数据库前，有提示
+    describe <tablename>;                                           显示具体的表结构(表的列信息)
+    show columns from <tablename>;                                  获取表结构
+    select version(),current_date;                                  显示当前mysql版本和当前日期
+    flush privileges;                                               刷新数据库
+
+    delete from <tablename>;                                        将表中记录清空：
+    select * from <tablename>;                                      显示表中的记录：
+
+    show global variables like 'port';                              查看mysql服务端口
+    show variables like 'port';                                     查看mysql服务端口
+    show variables like 'skip_networking';                          查看skip-networking参数
+    systemctl restart mysqld;                                       重启mysql
+    service mysqld restart;                                         重启mysql
+    flush privileges;                                               刷新MySQL的系统权限相关表
+
+    show global variables like 'port';                              查看mysql端口
+    mysqld --verbose --help |grep -A 1 'Default options';           查看mysql配置文件路径
+
+
+
+
+
+
+
+
+

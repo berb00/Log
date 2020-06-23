@@ -1,0 +1,21 @@
+global - 全局变量
+    非全局变量，作用域只在模块内:
+        __dirname                               //当前模块的文件夹名称。等同于 __filename 的 path.dirname() 的值。
+        __filename                              //当前模块的文件名称---解析后的绝对路径。
+        exports                                 //对于 module.exports 的更简短的引用形式
+        module                                  //对当前模块的引用,
+        require()                               //引入模块.
+
+    Buffer类                                     //用于处理二进制数据
+    console                                     //用于打印 stdout 和 stderr。
+    global                                      //全局的命名空间对象 (不是顶层作用域 该全局是指模块内的全局)
+    process                                     //进程对象
+    URL                                         //WHATWG URL 类
+    URLSearchParams                             //WHATWG URLSearchParams 类
+
+    clearImmediate(immediateObject)
+    clearInterval(intervalObject)
+    clearTimeout(timeoutObject)
+    setImmediate(callback[, ...args])
+    setInterval(callback, delay[, ...args])
+    setTimeout(callback, delay[, ...args])

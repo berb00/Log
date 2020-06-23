@@ -1,0 +1,12 @@
+#C++编译器
+    gcc:
+        gcc main.cpp -lstdc++ -o main   // gcc编译cpp文件 生成可执行文件main
+        -o filename 指定生成的可执行文件名
+    g++:将 gcc 默认语言设为 C++ 的一个特殊的版本，链接时它自动使用 C++ 标准库而不用 C 标准库。
+        通过遵循源码的命名规范并指定对应库的名字，用 gcc 来编译链接 C++ 程序是可行的
+        g++ main.cpp    // 生成a.out文件
+        g++ main.cpp -o main
+
+
+
+

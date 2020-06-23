@@ -1,0 +1,13 @@
+iframeFather:
+	emit: 	window.frames[0].postMessage(data, '*')
+			this.iwindow.postMessage(data, '*')
+	on:		window.addEventListener('message',(e) => {
+				if (e.data !== data) return
+			}, false)
+			
+iframe:
+	emit:	window.parent.postMessage(data,'*')
+	on:		window.addEventListener('message',function(e){
+				if (e.data !== data) return
+				...
+			},false)

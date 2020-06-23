@@ -1,0 +1,13 @@
+overflow-x: visible|hidden|scroll|auto|no-display|no-content; 	如果内容溢出了元素内容区域，是否对内容的左/右边缘进行裁剪。 	3
+overflow-y 	如果内容溢出了元素内容区域，是否对内容的上/下边缘进行裁剪。 	3
+visible 		不裁剪内容，可能会显示在内容框之外。
+hidden 		裁剪内容 - 不提供滚动机制。
+scroll 		裁剪内容 - 提供滚动机制。
+auto 		如果溢出框，则应该提供滚动机制。
+no-display 	如果内容不适合内容框，则删除整个框。
+no-content 	如果内容不适合内容框，则隐藏整个内容。
+
+不支持：
+overflow-style 	规定溢出元素的首选滚动方法。 	3
+rotation 	围绕由 rotation-point 属性定义的点对元素进行旋转。 	3
+rotation-point 	定义距离上左边框边缘的偏移点。 	3

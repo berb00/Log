@@ -1,0 +1,1058 @@
+Window {parent: Window, opener: null, top: Window, length: 3, frames: Window, …}
+    self
+    window
+    document
+    history
+    navigator
+    location
+    __proto__: Window
+
+    Window: ƒ Window()
+    Document: ƒ Document()
+    Navigator: ƒ Navigator()
+    History: ƒ History()
+    Location: ƒ Location()    
+    Screen: ƒ Screen()
+    
+
+#Event
+    MouseEvent
+        onclick: null
+        ondblclick: null
+        oncontextmenu: null
+        onmousedown: null
+        onmouseenter: null
+        onmouseleave: null
+        onmousemove: null
+        onmouseout: null
+        onmouseover: null
+        onmouseup: null
+        onmousewheel: null
+    KeyboardEvent
+        onkeydown: null
+        onkeypress: null
+        onkeyup: null
+    FrameEvent/ObjectEvent    
+        onload: null
+        onresize: null
+        onscroll: null
+        onerror: null
+        onhashchange: null
+        onpagehide: null
+        onpageshow: null
+        onunload: null
+        onbeforeunload: null
+    FormDataEvent
+        onblur: null
+        onfocus: null
+        onsearch: null
+        onchange: null
+        oninput: null
+        onsubmit: null
+        onreset: null
+        onselect: null
+    ClipboardEvent
+    PrintEvent
+        onafterprint: null
+        onbeforeprint: null
+    DragEvent
+        ondrag: null
+        ondragend: null
+        ondragenter: null
+        ondragleave: null
+        ondragover: null
+        ondragstart: null
+        ondrop: null
+    MediaEvent
+        onabort: null
+        onpause: null
+        onplay: null
+        onplaying: null
+        onseeked: null
+        onseeking: null
+        onstalled: null
+        onsuspend: null
+        ontimeupdate: null
+        onvolumechange: null
+        onwaiting: null        
+        onloadeddata: null
+        onloadedmetadata: null
+        onloadstart: null
+        oncanplay: null
+        oncanplaythrough: null
+        ondurationchange: null
+        onemptied: null
+        onended: null
+        onprogress: null
+        onratechange: null
+    AnimationEvent
+        onanimationend: null
+        onanimationiteration: null
+        onanimationstart: null
+    TransitionEvent
+        ontransitionend: null
+    OtherEvent
+        onmessage: null
+        onmessageerror: null
+        onoffline: null
+        ononline: null
+        ontoggle: null
+        onwheel: null
+        onstorage: null
+    onpointerdown: null
+    onpointermove: null
+    onpointerup: null
+    onpointercancel: null
+    onpointerover: null
+    onpointerout: null
+    onpointerenter: null
+    onpointerleave: null
+
+    onwebkitanimationend: null
+    onwebkitanimationiteration: null
+    onwebkitanimationstart: null
+    onwebkittransitionend: null
+
+    oncancel: null
+    onclose: null
+    oncuechange: null
+    oninvalid: null
+    onauxclick: null
+    ongotpointercapture: null
+    onlostpointercapture: null
+    onselectstart: null
+    onselectionchange: null
+    onlanguagechange: null
+    onpopstate: null
+    onrejectionhandled: null
+    onunhandledrejection: null
+
+
+
+innerWidth: 1054
+innerHeight: 743
+scrollX: 0
+scrollY: 0
+screenX: 58
+screenY: 114
+screenLeft: 58
+screenTop: 114
+outerWidth: 1666
+outerHeight: 863
+pageXOffset: 0
+pageYOffset: 0
+
+sessionStorage: Storage {length: 0}
+localStorage: Storage {length: 0}
+
+top: Window {parent: Window, opener: null, top: Window, length: 3, frames: Window, …}
+parent: Window {parent: Window, opener: null, top: Window, length: 3, frames: Window, …}
+frames: Window {parent: Window, opener: null, top: Window, length: 3, frames: Window, …}
+
+Infinity: Infinity
+NaN: NaN
+undefined: undefined
+
+JSON: JSON {Symbol(Symbol.toStringTag): "JSON", parse: ƒ, stringify: ƒ}
+Math: Math {abs: ƒ, acos: ƒ, acosh: ƒ, asin: ƒ, asinh: ƒ, …}
+console: console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
+devicePixelRatio: 1
+
+
+
+locationbar: BarProp {visible: true}
+menubar: BarProp {visible: true}
+personalbar: BarProp {visible: true}
+scrollbars: BarProp {visible: true}
+statusbar: BarProp {visible: true}
+toolbar: BarProp {visible: true}
+
+name: ""
+customElements: CustomElementRegistry {}
+status: ""
+frameElement: null
+origin: "chrome-search://local-ntp"
+external: External {}
+visualViewport: VisualViewport {offsetLeft: 0, offsetTop: 0, pageLeft: 0, pageTop: 0, width: 1054, …}
+clientInformation: Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 0, hardwareConcurrency: 8, …}
+defaultStatus: ""
+defaultstatus: ""
+styleMedia: StyleMedia {type: "screen"}
+isSecureContext: true
+performance: Performance {timeOrigin: 1576843787741.414, onresourcetimingbufferfull: null, memory: MemoryInfo, navigation: PerformanceNavigation, timing: PerformanceTiming}
+onappinstalled: null
+onbeforeinstallprompt: null
+crypto: Crypto {subtle: SubtleCrypto}
+indexedDB: IDBFactory {}
+webkitStorageInfo: DeprecatedStorageInfo {}
+onformdata: null
+onpointerrawupdate: null
+speechSynthesis: SpeechSynthesis {pending: false, speaking: false, paused: false, onvoiceschanged: null}
+applicationCache: ApplicationCache {status: 0, oncached: null, onchecking: null, ondownloading: null, onerror: null, …}
+caches: CacheStorage {}
+ondevicemotion: null
+ondeviceorientation: null
+ondeviceorientationabsolute: null
+event: undefined
+offscreenBuffering: true
+opener: null
+length: 3
+closed: false
+chrome: {embeddedSearch: {…}, loadTimes: ƒ, csi: ƒ}
+configData: {chromeColors: true, chromeColorsCustomColorPicker: true, googleBaseUrl: "https://www.google.com/", isAccessibleBrowser: false, isGooglePage: true, …}
+searchSuggestions: {suggestionsHtml: ""}
+ddl: {usable: false, v: 11}
+promo: {}
+globalThis: Window {parent: Window, opener: null, top: Window, length: 3, frames: Window, …}
+Intl: {getCanonicalLocales: ƒ, DateTimeFormat: ƒ, NumberFormat: ƒ, Collator: ƒ, v8BreakIterator: ƒ, …}
+Reflect: {defineProperty: ƒ, deleteProperty: ƒ, apply: ƒ, construct: ƒ, get: ƒ, …}
+Atomics: Atomics {load: ƒ, store: ƒ, add: ƒ, sub: ƒ, and: ƒ, …}
+WebAssembly: WebAssembly {compile: ƒ, validate: ƒ, instantiate: ƒ, compileStreaming: ƒ, instantiateStreaming: ƒ, …}
+
+
+
+#Function
+    Object: ƒ Object()
+    Function: ƒ Function()
+    Array: ƒ Array()
+    Number: ƒ Number()
+    Boolean: ƒ Boolean()
+    String: ƒ String()
+    Symbol: ƒ Symbol()
+    Date: ƒ Date()
+    Blob: ƒ Blob()
+    Audio: ƒ Audio()
+    Image: ƒ Image()
+    Promise: ƒ Promise()
+    RegExp: ƒ RegExp()
+    Error: ƒ Error()
+    eval: ƒ eval()
+    isFinite: ƒ isFinite()
+    isNaN: ƒ isNaN()
+    WebSocket: ƒ WebSocket()
+    Attr: ƒ Attr()
+    FormData: ƒ FormData()    
+    Headers: ƒ Headers()    
+    Element: ƒ Element()
+    Comment: ƒ Comment()
+    stop: ƒ stop()
+
+    open: ƒ open()
+    close: ƒ close()
+    alert: ƒ alert()
+    confirm: ƒ confirm()
+    prompt: ƒ prompt()
+    print: ƒ print()
+
+    focus: ƒ focus()
+    blur: ƒ blur()
+    
+    postMessage: ƒ postMessage()
+    parseFloat: ƒ parseFloat()
+    parseInt: ƒ parseInt()
+
+
+
+    moveTo: ƒ moveTo()
+    moveBy: ƒ moveBy()
+    resizeTo: ƒ resizeTo()
+    resizeBy: ƒ resizeBy()
+    scroll: ƒ scroll()
+    scrollTo: ƒ scrollTo()
+    scrollBy: ƒ scrollBy()
+
+    setTimeout: ƒ setTimeout()
+    clearTimeout: ƒ clearTimeout()
+    setInterval: ƒ setInterval()
+    clearInterval: ƒ clearInterval()
+
+    requestAnimationFrame: ƒ requestAnimationFrame()
+    cancelAnimationFrame: ƒ cancelAnimationFrame()
+    webkitRequestAnimationFrame: ƒ webkitRequestAnimationFrame()
+    webkitCancelAnimationFrame: ƒ webkitCancelAnimationFrame()
+
+    captureEvents: ƒ captureEvents()
+    releaseEvents: ƒ releaseEvents()
+
+    requestIdleCallback: ƒ requestIdleCallback()
+    cancelIdleCallback: ƒ cancelIdleCallback()
+
+    EvalError: ƒ EvalError()
+    RangeError: ƒ RangeError()
+    ReferenceError: ƒ ReferenceError()
+    SyntaxError: ƒ SyntaxError()
+    TypeError: ƒ TypeError()
+    URIError: ƒ URIError()
+
+    ArrayBuffer: ƒ ArrayBuffer()
+    Uint8Array: ƒ Uint8Array()
+    Int8Array: ƒ Int8Array()
+    Uint16Array: ƒ Uint16Array()
+    Int16Array: ƒ Int16Array()
+    Uint32Array: ƒ Uint32Array()
+    Int32Array: ƒ Int32Array()
+    Float32Array: ƒ Float32Array()
+    Float64Array: ƒ Float64Array()
+    Uint8ClampedArray: ƒ Uint8ClampedArray()
+    BigUint64Array: ƒ BigUint64Array()
+    BigInt64Array: ƒ BigInt64Array()
+
+    Map: ƒ Map()
+    Set: ƒ Set()
+    WeakMap: ƒ WeakMap()
+    WeakSet: ƒ WeakSet()
+
+    decodeURI: ƒ decodeURI()
+    decodeURIComponent: ƒ decodeURIComponent()
+    encodeURI: ƒ encodeURI()
+    encodeURIComponent: ƒ encodeURIComponent()
+
+    escape: ƒ escape()
+    unescape: ƒ unescape()
+
+    WebGLVertexArrayObject: ƒ WebGLVertexArrayObject()
+    WebGLUniformLocation: ƒ WebGLUniformLocation()
+    WebGLTransformFeedback: ƒ WebGLTransformFeedback()
+    WebGLTexture: ƒ WebGLTexture()
+    WebGLSync: ƒ WebGLSync()
+    WebGLShaderPrecisionFormat: ƒ WebGLShaderPrecisionFormat()
+    WebGLShader: ƒ WebGLShader()
+    WebGLSampler: ƒ WebGLSampler()
+    WebGLRenderingContext: ƒ WebGLRenderingContext()
+    WebGLRenderbuffer: ƒ WebGLRenderbuffer()
+    WebGLQuery: ƒ WebGLQuery()
+    WebGLProgram: ƒ WebGLProgram()
+    WebGLFramebuffer: ƒ WebGLFramebuffer()
+    WebGLContextEvent: ƒ WebGLContextEvent()
+    WebGLBuffer: ƒ WebGLBuffer()
+    WebGLActiveInfo: ƒ WebGLActiveInfo()
+    WebGL2RenderingContext: ƒ WebGL2RenderingContext()
+    WaveShaperNode: ƒ WaveShaperNode()
+
+    TextEncoderStream: ƒ TextEncoderStream()
+    TextEncoder: ƒ TextEncoder()
+    TextDecoderStream: ƒ TextDecoderStream()
+    TextDecoder: ƒ TextDecoder()
+
+    StorageEvent: ƒ StorageEvent()
+    Storage: ƒ Storage()
+
+    SourceBufferList: ƒ SourceBufferList()
+    SourceBuffer: ƒ SourceBuffer()
+
+    RTCTrackEvent: ƒ RTCTrackEvent()
+    RTCStatsReport: ƒ RTCStatsReport()
+    RTCSessionDescription: ƒ RTCSessionDescription()
+    RTCRtpTransceiver: ƒ RTCRtpTransceiver()
+    RTCRtpSender: ƒ RTCRtpSender()
+    RTCRtpReceiver: ƒ RTCRtpReceiver()
+    RTCPeerConnectionIceEvent: ƒ RTCPeerConnectionIceEvent()
+    RTCPeerConnectionIceErrorEvent: ƒ RTCPeerConnectionIceErrorEvent()
+    RTCPeerConnection: ƒ RTCPeerConnection()
+    RTCIceCandidate: ƒ RTCIceCandidate()
+    RTCErrorEvent: ƒ RTCErrorEvent()
+    RTCError: ƒ RTCError()
+    RTCDataChannelEvent: ƒ RTCDataChannelEvent()
+    RTCDataChannel: ƒ RTCDataChannel()
+    RTCDTMFToneChangeEvent: ƒ RTCDTMFToneChangeEvent()
+    RTCDTMFSender: ƒ RTCDTMFSender()
+    RTCCertificate: ƒ RTCCertificate()
+
+    Plugin: ƒ Plugin()
+    PluginArray: ƒ PluginArray()
+
+    OfflineAudioContext: ƒ OfflineAudioContext()
+    OfflineAudioCompletionEvent: ƒ OfflineAudioCompletionEvent()
+
+    MimeType: ƒ MimeType()
+    MimeTypeArray: ƒ MimeTypeArray()
+
+    MediaStreamTrackEvent: ƒ MediaStreamTrackEvent()
+    MediaStreamTrack: ƒ MediaStreamTrack()
+    MediaStreamEvent: ƒ MediaStreamEvent()
+    MediaStream: ƒ MediaStream()
+    MediaStreamAudioSourceNode: ƒ MediaStreamAudioSourceNode()
+    MediaStreamAudioDestinationNode: ƒ MediaStreamAudioDestinationNode()
+    MediaSettingsRange: ƒ MediaSettingsRange()
+    MediaRecorder: ƒ MediaRecorder()
+    MediaEncryptedEvent: ƒ MediaEncryptedEvent()
+    MediaElementAudioSourceNode: ƒ MediaElementAudioSourceNode()
+    MediaCapabilities: ƒ MediaCapabilities()
+
+    ImageCapture: ƒ ImageCapture()
+    ImageBitmapRenderingContext: ƒ ImageBitmapRenderingContext()
+
+    IDBVersionChangeEvent: ƒ IDBVersionChangeEvent()
+    IDBTransaction: ƒ IDBTransaction()
+    IDBRequest: ƒ IDBRequest()
+    IDBOpenDBRequest: ƒ IDBOpenDBRequest()
+    IDBObjectStore: ƒ IDBObjectStore()
+    IDBKeyRange: ƒ IDBKeyRange()
+    IDBIndex: ƒ IDBIndex()
+    IDBFactory: ƒ IDBFactory()
+    IDBDatabase: ƒ IDBDatabase()
+    IDBCursorWithValue: ƒ IDBCursorWithValue()
+    IDBCursor: ƒ IDBCursor()
+
+    GeolocationPositionError: ƒ GeolocationPositionError()
+    GeolocationPosition: ƒ GeolocationPosition()
+    GeolocationCoordinates: ƒ GeolocationCoordinates()
+    Geolocation: ƒ Geolocation()
+    GamepadHapticActuator: ƒ GamepadHapticActuator()
+    GamepadEvent: ƒ GamepadEvent()
+    Gamepad: ƒ Gamepad()
+    GamepadButton: ƒ GamepadButton()
+
+    CryptoKey: ƒ CryptoKey()
+    Crypto: ƒ Crypto()
+
+    ConvolverNode: ƒ ConvolverNode()
+    ConstantSourceNode: ƒ ConstantSourceNode()
+    CloseEvent: ƒ CloseEvent()
+
+    ChannelSplitterNode: ƒ ChannelSplitterNode()
+    ChannelMergerNode: ƒ ChannelMergerNode()
+
+    CanvasRenderingContext2D: ƒ CanvasRenderingContext2D()
+    CanvasPattern: ƒ CanvasPattern()
+    CanvasGradient: ƒ CanvasGradient()
+    CanvasCaptureMediaStreamTrack: ƒ CanvasCaptureMediaStreamTrack()
+
+    BroadcastChannel: ƒ BroadcastChannel()
+    BlobEvent: ƒ BlobEvent()
+    BiquadFilterNode: ƒ BiquadFilterNode()
+    BeforeInstallPromptEvent: ƒ BeforeInstallPromptEvent()
+    BatteryManager: ƒ BatteryManager()
+    BaseAudioContext: ƒ BaseAudioContext()
+    
+    AudioWorkletNode: ƒ AudioWorkletNode()
+    AudioScheduledSourceNode: ƒ AudioScheduledSourceNode()
+    AudioProcessingEvent: ƒ AudioProcessingEvent()
+    AudioParamMap: ƒ AudioParamMap()
+    AudioParam: ƒ AudioParam()
+    AudioNode: ƒ AudioNode()
+    AudioListener: ƒ AudioListener()
+    AudioDestinationNode: ƒ AudioDestinationNode()
+    AudioContext: ƒ AudioContext()
+    AudioBufferSourceNode: ƒ AudioBufferSourceNode()
+    AudioBuffer: ƒ AudioBuffer()
+
+    XPathResult: ƒ XPathResult()
+    XPathExpression: ƒ XPathExpression()
+    XPathEvaluator: ƒ XPathEvaluator()
+    XMLSerializer: ƒ XMLSerializer()
+    XMLHttpRequestUpload: ƒ XMLHttpRequestUpload()
+    XMLHttpRequestEventTarget: ƒ XMLHttpRequestEventTarget()
+    XMLHttpRequest: ƒ XMLHttpRequest()
+    XMLDocument: ƒ XMLDocument()
+
+    WritableStreamDefaultWriter: ƒ WritableStreamDefaultWriter()
+    WritableStream: ƒ WritableStream()
+
+    URLSearchParams: ƒ URLSearchParams()
+    URL: ƒ URL()
+
+    TouchList: ƒ TouchList()
+    TouchEvent: ƒ TouchEvent()
+    Touch: ƒ Touch()
+
+    Worker: ƒ Worker()
+    WheelEvent: ƒ WheelEvent()
+    VisualViewport: ƒ VisualViewport()
+    ValidityState: ƒ ValidityState()
+    VTTCue: ƒ VTTCue()
+    UIEvent: ƒ UIEvent()
+    TreeWalker: ƒ TreeWalker()
+
+    TransitionEvent: ƒ TransitionEvent()
+    TransformStream: ƒ TransformStream()
+    TrackEvent: ƒ TrackEvent()
+
+    TextTrackList: ƒ TextTrackList()
+    TextTrackCueList: ƒ TextTrackCueList()
+    TextTrackCue: ƒ TextTrackCue()
+    TextTrack: ƒ TextTrack()
+    TextMetrics: ƒ TextMetrics()
+    TextEvent: ƒ TextEvent()
+    Text: ƒ Text()
+
+    StyleSheetList: ƒ StyleSheetList()
+    StyleSheet: ƒ StyleSheet()
+    StylePropertyMapReadOnly: ƒ StylePropertyMapReadOnly()
+    StylePropertyMap: ƒ StylePropertyMap()
+
+    SVGViewElement: ƒ SVGViewElement()
+    SVGUseElement: ƒ SVGUseElement()
+    SVGUnitTypes: ƒ SVGUnitTypes()
+    SVGTransformList: ƒ SVGTransformList()
+    SVGTransform: ƒ SVGTransform()
+    SVGTitleElement: ƒ SVGTitleElement()
+    SVGTextPositioningElement: ƒ SVGTextPositioningElement()
+    SVGTextPathElement: ƒ SVGTextPathElement()
+    SVGTextElement: ƒ SVGTextElement()
+    SVGTextContentElement: ƒ SVGTextContentElement()
+    SVGTSpanElement: ƒ SVGTSpanElement()
+    SVGSymbolElement: ƒ SVGSymbolElement()
+    SVGSwitchElement: ƒ SVGSwitchElement()
+    SVGStyleElement: ƒ SVGStyleElement()
+    SVGStringList: ƒ SVGStringList()
+    SVGStopElement: ƒ SVGStopElement()
+    SVGSetElement: ƒ SVGSetElement()
+    SVGScriptElement: ƒ SVGScriptElement()
+    SVGSVGElement: ƒ SVGSVGElement()
+    SVGRectElement: ƒ SVGRectElement()
+    SVGRect: ƒ SVGRect()
+    SVGRadialGradientElement: ƒ SVGRadialGradientElement()
+    SVGPreserveAspectRatio: ƒ SVGPreserveAspectRatio()
+    SVGPolylineElement: ƒ SVGPolylineElement()
+    SVGPolygonElement: ƒ SVGPolygonElement()
+    SVGPointList: ƒ SVGPointList()
+    SVGPoint: ƒ SVGPoint()
+    SVGPatternElement: ƒ SVGPatternElement()
+    SVGPathElement: ƒ SVGPathElement()
+    SVGNumberList: ƒ SVGNumberList()
+    SVGNumber: ƒ SVGNumber()
+    SVGMetadataElement: ƒ SVGMetadataElement()
+    SVGMatrix: ƒ SVGMatrix()
+    SVGMaskElement: ƒ SVGMaskElement()
+    SVGMarkerElement: ƒ SVGMarkerElement()
+    SVGMPathElement: ƒ SVGMPathElement()
+    SVGLinearGradientElement: ƒ SVGLinearGradientElement()
+    SVGLineElement: ƒ SVGLineElement()
+    SVGLengthList: ƒ SVGLengthList()
+    SVGLength: ƒ SVGLength()
+    SVGImageElement: ƒ SVGImageElement()
+    SVGGraphicsElement: ƒ SVGGraphicsElement()
+    SVGGradientElement: ƒ SVGGradientElement()
+    SVGGeometryElement: ƒ SVGGeometryElement()
+    SVGGElement: ƒ SVGGElement()
+    SVGForeignObjectElement: ƒ SVGForeignObjectElement()
+    SVGFilterElement: ƒ SVGFilterElement()
+    SVGFETurbulenceElement: ƒ SVGFETurbulenceElement()
+    SVGFETileElement: ƒ SVGFETileElement()
+    SVGFESpotLightElement: ƒ SVGFESpotLightElement()
+    SVGFESpecularLightingElement: ƒ SVGFESpecularLightingElement()
+    SVGFEPointLightElement: ƒ SVGFEPointLightElement()
+    SVGFEOffsetElement: ƒ SVGFEOffsetElement()
+    SVGFEMorphologyElement: ƒ SVGFEMorphologyElement()
+    SVGFEMergeNodeElement: ƒ SVGFEMergeNodeElement()
+    SVGFEMergeElement: ƒ SVGFEMergeElement()
+    SVGFEImageElement: ƒ SVGFEImageElement()
+    SVGFEGaussianBlurElement: ƒ SVGFEGaussianBlurElement()
+    SVGFEFuncRElement: ƒ SVGFEFuncRElement()
+    SVGFEFuncGElement: ƒ SVGFEFuncGElement()
+    SVGFEFuncBElement: ƒ SVGFEFuncBElement()
+    SVGFEFuncAElement: ƒ SVGFEFuncAElement()
+    SVGFEFloodElement: ƒ SVGFEFloodElement()
+    SVGFEDropShadowElement: ƒ SVGFEDropShadowElement()
+    SVGFEDistantLightElement: ƒ SVGFEDistantLightElement()
+    SVGFEDisplacementMapElement: ƒ SVGFEDisplacementMapElement()
+    SVGFEDiffuseLightingElement: ƒ SVGFEDiffuseLightingElement()
+    SVGFEConvolveMatrixElement: ƒ SVGFEConvolveMatrixElement()
+    SVGFECompositeElement: ƒ SVGFECompositeElement()
+    SVGFEComponentTransferElement: ƒ SVGFEComponentTransferElement()
+    SVGFEColorMatrixElement: ƒ SVGFEColorMatrixElement()
+    SVGFEBlendElement: ƒ SVGFEBlendElement()
+    SVGEllipseElement: ƒ SVGEllipseElement()
+    SVGElement: ƒ SVGElement()
+    SVGDiscardElement: ƒ SVGDiscardElement()
+    SVGDescElement: ƒ SVGDescElement()
+    SVGDefsElement: ƒ SVGDefsElement()
+    SVGComponentTransferFunctionElement: ƒ SVGComponentTransferFunctionElement()
+    SVGClipPathElement: ƒ SVGClipPathElement()
+    SVGCircleElement: ƒ SVGCircleElement()
+    SVGAnimationElement: ƒ SVGAnimationElement()
+    SVGAnimatedTransformList: ƒ SVGAnimatedTransformList()
+    SVGAnimatedString: ƒ SVGAnimatedString()
+    SVGAnimatedRect: ƒ SVGAnimatedRect()
+    SVGAnimatedPreserveAspectRatio: ƒ SVGAnimatedPreserveAspectRatio()
+    SVGAnimatedNumberList: ƒ SVGAnimatedNumberList()
+    SVGAnimatedNumber: ƒ SVGAnimatedNumber()
+    SVGAnimatedLengthList: ƒ SVGAnimatedLengthList()
+    SVGAnimatedLength: ƒ SVGAnimatedLength()
+    SVGAnimatedInteger: ƒ SVGAnimatedInteger()
+    SVGAnimatedEnumeration: ƒ SVGAnimatedEnumeration()
+    SVGAnimatedBoolean: ƒ SVGAnimatedBoolean()
+    SVGAnimatedAngle: ƒ SVGAnimatedAngle()
+    SVGAnimateTransformElement: ƒ SVGAnimateTransformElement()
+    SVGAnimateMotionElement: ƒ SVGAnimateMotionElement()
+    SVGAnimateElement: ƒ SVGAnimateElement()
+    SVGAngle: ƒ SVGAngle()
+    SVGAElement: ƒ SVGAElement()
+
+    Response: ƒ Response()
+    Request: ƒ Request()
+
+    ResizeObserverEntry: ƒ ResizeObserverEntry()
+    ResizeObserver: ƒ ResizeObserver()
+
+    ReadableStreamDefaultReader: ƒ ReadableStreamDefaultReader()
+    ReadableStream: ƒ ReadableStream()
+
+    PerformanceTiming: ƒ PerformanceTiming()
+    PerformanceServerTiming: ƒ PerformanceServerTiming()
+    PerformanceResourceTiming: ƒ PerformanceResourceTiming()
+    PerformancePaintTiming: ƒ PerformancePaintTiming()
+    PerformanceObserverEntryList: ƒ PerformanceObserverEntryList()
+    PerformanceObserver: ƒ PerformanceObserver()
+    PerformanceNavigationTiming: ƒ PerformanceNavigationTiming()
+    PerformanceNavigation: ƒ PerformanceNavigation()
+    PerformanceMeasure: ƒ PerformanceMeasure()
+    PerformanceMark: ƒ PerformanceMark()
+    PerformanceLongTaskTiming: ƒ PerformanceLongTaskTiming()
+    PerformanceEventTiming: ƒ PerformanceEventTiming()
+    PerformanceEntry: ƒ PerformanceEntry()
+    PerformanceElementTiming: ƒ PerformanceElementTiming()
+    Performance: ƒ Performance()
+
+    NodeList: ƒ NodeList()
+    NodeIterator: ƒ NodeIterator()
+    NodeFilter: ƒ NodeFilter()
+    Node: ƒ Node()
+
+    MutationRecord: ƒ MutationRecord()
+    MutationObserver: ƒ MutationObserver()
+    MutationEvent: ƒ MutationEvent()
+    MouseEvent: ƒ MouseEvent()
+
+    MessagePort: ƒ MessagePort()
+    MessageEvent: ƒ MessageEvent()
+    MessageChannel: ƒ MessageChannel()
+
+    MediaQueryListEvent: ƒ MediaQueryListEvent()
+    MediaQueryList: ƒ MediaQueryList()
+    MediaList: ƒ MediaList()
+    MediaError: ƒ MediaError()
+
+    IntersectionObserverEntry: ƒ IntersectionObserverEntry()
+    IntersectionObserver: ƒ IntersectionObserver()
+
+    InputEvent: ƒ InputEvent()
+    InputDeviceCapabilities: ƒ InputDeviceCapabilities()
+
+    ImageData: ƒ ImageData()
+    ImageBitmap: ƒ ImageBitmap()
+
+    HTMLVideoElement: ƒ HTMLVideoElement()
+    HTMLUnknownElement: ƒ HTMLUnknownElement()
+    HTMLUListElement: ƒ HTMLUListElement()
+    HTMLTrackElement: ƒ HTMLTrackElement()
+    HTMLTitleElement: ƒ HTMLTitleElement()
+    HTMLTimeElement: ƒ HTMLTimeElement()
+    HTMLTextAreaElement: ƒ HTMLTextAreaElement()
+    HTMLTemplateElement: ƒ HTMLTemplateElement()
+    HTMLTableSectionElement: ƒ HTMLTableSectionElement()
+    HTMLTableRowElement: ƒ HTMLTableRowElement()
+    HTMLTableElement: ƒ HTMLTableElement()
+    HTMLTableColElement: ƒ HTMLTableColElement()
+    HTMLTableCellElement: ƒ HTMLTableCellElement()
+    HTMLTableCaptionElement: ƒ HTMLTableCaptionElement()
+    HTMLStyleElement: ƒ HTMLStyleElement()
+    HTMLSpanElement: ƒ HTMLSpanElement()
+    HTMLSourceElement: ƒ HTMLSourceElement()
+    HTMLSlotElement: ƒ HTMLSlotElement()
+    HTMLShadowElement: ƒ HTMLShadowElement()
+    HTMLSelectElement: ƒ HTMLSelectElement()
+    HTMLScriptElement: ƒ HTMLScriptElement()
+    HTMLQuoteElement: ƒ HTMLQuoteElement()
+    HTMLProgressElement: ƒ HTMLProgressElement()
+    HTMLPreElement: ƒ HTMLPreElement()
+    HTMLPictureElement: ƒ HTMLPictureElement()
+    HTMLParamElement: ƒ HTMLParamElement()
+    HTMLParagraphElement: ƒ HTMLParagraphElement()
+    HTMLOutputElement: ƒ HTMLOutputElement()
+    HTMLOptionsCollection: ƒ HTMLOptionsCollection()
+    Option: ƒ Option()
+    HTMLOptionElement: ƒ HTMLOptionElement()
+    HTMLOptGroupElement: ƒ HTMLOptGroupElement()
+    HTMLObjectElement: ƒ HTMLObjectElement()
+    HTMLOListElement: ƒ HTMLOListElement()
+    HTMLModElement: ƒ HTMLModElement()
+    HTMLMeterElement: ƒ HTMLMeterElement()
+    HTMLMetaElement: ƒ HTMLMetaElement()
+    HTMLMenuElement: ƒ HTMLMenuElement()
+    HTMLMediaElement: ƒ HTMLMediaElement()
+    HTMLMarqueeElement: ƒ HTMLMarqueeElement()
+    HTMLMapElement: ƒ HTMLMapElement()
+    HTMLLinkElement: ƒ HTMLLinkElement()
+    HTMLLegendElement: ƒ HTMLLegendElement()
+    HTMLLabelElement: ƒ HTMLLabelElement()
+    HTMLLIElement: ƒ HTMLLIElement()
+    HTMLInputElement: ƒ HTMLInputElement()
+    HTMLImageElement: ƒ HTMLImageElement()
+    HTMLIFrameElement: ƒ HTMLIFrameElement()
+    HTMLHtmlElement: ƒ HTMLHtmlElement()
+    HTMLHeadingElement: ƒ HTMLHeadingElement()
+    HTMLHeadElement: ƒ HTMLHeadElement()
+    HTMLHRElement: ƒ HTMLHRElement()
+    HTMLFrameSetElement: ƒ HTMLFrameSetElement()
+    HTMLFrameElement: ƒ HTMLFrameElement()
+    HTMLFormElement: ƒ HTMLFormElement()
+    HTMLFormControlsCollection: ƒ HTMLFormControlsCollection()
+    HTMLFontElement: ƒ HTMLFontElement()
+    HTMLFieldSetElement: ƒ HTMLFieldSetElement()
+    HTMLEmbedElement: ƒ HTMLEmbedElement()
+    HTMLElement: ƒ HTMLElement()
+    HTMLDocument: ƒ HTMLDocument()
+    HTMLDivElement: ƒ HTMLDivElement()
+    HTMLDirectoryElement: ƒ HTMLDirectoryElement()
+    HTMLDialogElement: ƒ HTMLDialogElement()
+    HTMLDetailsElement: ƒ HTMLDetailsElement()
+    HTMLDataListElement: ƒ HTMLDataListElement()
+    HTMLDataElement: ƒ HTMLDataElement()
+    HTMLDListElement: ƒ HTMLDListElement()
+    HTMLContentElement: ƒ HTMLContentElement()
+    HTMLCollection: ƒ HTMLCollection()
+    HTMLCanvasElement: ƒ HTMLCanvasElement()
+    HTMLButtonElement: ƒ HTMLButtonElement()
+    HTMLBodyElement: ƒ HTMLBodyElement()
+    HTMLBaseElement: ƒ HTMLBaseElement()
+    HTMLBRElement: ƒ HTMLBRElement()
+    HTMLAudioElement: ƒ HTMLAudioElement()
+    HTMLAreaElement: ƒ HTMLAreaElement()
+    HTMLAnchorElement: ƒ HTMLAnchorElement()
+    HTMLAllCollection: ƒ HTMLAllCollection()
+
+    FileReader: ƒ FileReader()
+    FileList: ƒ FileList()
+    File: ƒ File()
+
+    EventTarget: ƒ EventTarget()
+    Event: ƒ Event()
+    ErrorEvent: ƒ ErrorEvent()
+
+    FontFaceSetLoadEvent: ƒ FontFaceSetLoadEvent()
+    FontFace: ƒ FontFace()
+
+    DocumentType: ƒ DocumentType()
+    DocumentFragment: ƒ DocumentFragment()
+
+
+    DataTransferItemList: ƒ DataTransferItemList()
+    DataTransferItem: ƒ DataTransferItem()
+    DataTransfer: ƒ DataTransfer()
+
+    DOMTokenList: ƒ DOMTokenList()
+    DOMStringMap: ƒ DOMStringMap()
+    DOMStringList: ƒ DOMStringList()
+    DOMRectReadOnly: ƒ DOMRectReadOnly()
+    DOMRectList: ƒ DOMRectList()
+    DOMRect: ƒ DOMRect()
+    DOMQuad: ƒ DOMQuad()
+    DOMPointReadOnly: ƒ DOMPointReadOnly()
+    DOMPoint: ƒ DOMPoint()
+    DOMParser: ƒ DOMParser()
+    DOMMatrixReadOnly: ƒ DOMMatrixReadOnly()
+    DOMMatrix: ƒ DOMMatrix()
+    DOMImplementation: ƒ DOMImplementation()
+    DOMException: ƒ DOMException()
+
+    CSSVariableReferenceValue: ƒ CSSVariableReferenceValue()
+    CSSUnparsedValue: ƒ CSSUnparsedValue()
+    CSSUnitValue: ƒ CSSUnitValue()
+    CSSTranslate: ƒ CSSTranslate()
+    CSSTransformValue: ƒ CSSTransformValue()
+    CSSTransformComponent: ƒ CSSTransformComponent()
+    CSSSupportsRule: ƒ CSSSupportsRule()
+    CSSStyleValue: ƒ CSSStyleValue()
+    CSSStyleSheet: ƒ CSSStyleSheet()
+    CSSStyleRule: ƒ CSSStyleRule()
+    CSSStyleDeclaration: ƒ CSSStyleDeclaration()
+    CSSSkewY: ƒ CSSSkewY()
+    CSSSkewX: ƒ CSSSkewX()
+    CSSSkew: ƒ CSSSkew()
+    CSSScale: ƒ CSSScale()
+    CSSRuleList: ƒ CSSRuleList()
+    CSSRule: ƒ CSSRule()
+    CSSRotate: ƒ CSSRotate()
+    CSSPositionValue: ƒ CSSPositionValue()
+    CSSPerspective: ƒ CSSPerspective()
+    CSSPageRule: ƒ CSSPageRule()
+    CSSNumericValue: ƒ CSSNumericValue()
+    CSSNumericArray: ƒ CSSNumericArray()
+    CSSNamespaceRule: ƒ CSSNamespaceRule()
+    CSSMediaRule: ƒ CSSMediaRule()
+    CSSMatrixComponent: ƒ CSSMatrixComponent()
+    CSSMathValue: ƒ CSSMathValue()
+    CSSMathSum: ƒ CSSMathSum()
+    CSSMathProduct: ƒ CSSMathProduct()
+    CSSMathNegate: ƒ CSSMathNegate()
+    CSSMathMin: ƒ CSSMathMin()
+    CSSMathMax: ƒ CSSMathMax()
+    CSSMathInvert: ƒ CSSMathInvert()
+    CSSKeywordValue: ƒ CSSKeywordValue()
+    CSSKeyframesRule: ƒ CSSKeyframesRule()
+    CSSKeyframeRule: ƒ CSSKeyframeRule()
+    CSSImportRule: ƒ CSSImportRule()
+    CSSImageValue: ƒ CSSImageValue()
+    CSSGroupingRule: ƒ CSSGroupingRule()
+    CSSFontFaceRule: ƒ CSSFontFaceRule()
+    CSS: ƒ CSS()
+    CSSConditionRule: ƒ CSSConditionRule()
+
+    CustomEvent: ƒ CustomEvent()
+    CustomElementRegistry: ƒ CustomElementRegistry()
+
+    AnimationEvent: ƒ AnimationEvent()
+    AnimationEffect: ƒ AnimationEffect()
+    Animation: ƒ Animation()
+
+    AbortSignal: ƒ AbortSignal()
+    AbortController: ƒ AbortController()
+
+    BackgroundFetchManager: ƒ BackgroundFetchManager()
+    BackgroundFetchRecord: ƒ BackgroundFetchRecord()
+    BackgroundFetchRegistration: ƒ BackgroundFetchRegistration()
+
+    MediaMetadata: ƒ MediaMetadata()
+    MediaSession: ƒ MediaSession()
+    MediaSource: ƒ MediaSource()
+
+    WebKitCSSMatrix: ƒ DOMMatrix()
+    WebKitMutationObserver: ƒ MutationObserver()
+    webkitURL: ƒ URL()
+
+    PaymentInstruments: ƒ PaymentInstruments()
+    PaymentManager: ƒ PaymentManager()
+    PaymentRequestUpdateEvent: ƒ PaymentRequestUpdateEvent()
+
+    Permissions: ƒ Permissions()
+    PermissionStatus: ƒ PermissionStatus()
+
+    PushManager: ƒ PushManager()
+    PushSubscription: ƒ PushSubscription()
+    PushSubscriptionOptions: ƒ PushSubscriptionOptions()
+
+    RTCDtlsTransport: ƒ RTCDtlsTransport()
+    RTCSctpTransport: ƒ RTCSctpTransport()
+
+    webkitSpeechGrammar: ƒ SpeechGrammar()
+    webkitSpeechGrammarList: ƒ SpeechGrammarList()
+    webkitSpeechRecognition: ƒ SpeechRecognition()
+    webkitSpeechRecognitionError: ƒ SpeechRecognitionErrorEvent()
+    webkitSpeechRecognitionEvent: ƒ SpeechRecognitionEvent()
+    SpeechSynthesisErrorEvent: ƒ SpeechSynthesisErrorEvent()
+    SpeechSynthesisEvent: ƒ SpeechSynthesisEvent()
+    SpeechSynthesisUtterance: ƒ SpeechSynthesisUtterance()
+
+    ApplicationCache: ƒ ApplicationCache()
+    ApplicationCacheErrorEvent: ƒ ApplicationCacheErrorEvent()
+
+    Cache: ƒ Cache()
+    CacheStorage: ƒ CacheStorage()
+
+    Credential: ƒ Credential()
+    CredentialsContainer: ƒ CredentialsContainer()
+
+    DeviceMotionEvent: ƒ DeviceMotionEvent()
+    DeviceMotionEventAcceleration: ƒ DeviceMotionEventAcceleration()
+    DeviceMotionEventRotationRate: ƒ DeviceMotionEventRotationRate()
+    DeviceOrientationEvent: ƒ DeviceOrientationEvent()
+
+    Keyboard: ƒ Keyboard()
+    KeyboardLayoutMap: ƒ KeyboardLayoutMap()
+
+    Lock: ƒ Lock()
+    LockManager: ƒ LockManager()
+    
+    MediaDeviceInfo: ƒ MediaDeviceInfo()
+    MediaDevices: ƒ MediaDevices()
+    MediaKeyMessageEvent: ƒ MediaKeyMessageEvent()
+    MediaKeys: ƒ MediaKeys()
+    MediaKeySession: ƒ MediaKeySession()
+    MediaKeyStatusMap: ƒ MediaKeyStatusMap()
+    MediaKeySystemAccess: ƒ MediaKeySystemAccess()
+
+    MIDIAccess: ƒ MIDIAccess()
+    MIDIConnectionEvent: ƒ MIDIConnectionEvent()
+    MIDIInput: ƒ MIDIInput()
+    MIDIInputMap: ƒ MIDIInputMap()
+    MIDIMessageEvent: ƒ MIDIMessageEvent()
+    MIDIOutput: ƒ MIDIOutput()
+    MIDIOutputMap: ƒ MIDIOutputMap()
+    MIDIPort: ƒ MIDIPort()
+
+    Sensor: ƒ Sensor()
+    SensorErrorEvent: ƒ SensorErrorEvent()
+
+    ServiceWorker: ƒ ServiceWorker()
+    ServiceWorkerContainer: ƒ ServiceWorkerContainer()
+    ServiceWorkerRegistration: ƒ ServiceWorkerRegistration()
+
+    PaymentMethodChangeEvent: ƒ PaymentMethodChangeEvent()
+    PaymentAddress: ƒ PaymentAddress()
+    PaymentRequest: ƒ PaymentRequest()
+    PaymentResponse: ƒ PaymentResponse()
+
+    Presentation: ƒ Presentation()
+    PresentationAvailability: ƒ PresentationAvailability()
+    PresentationConnection: ƒ PresentationConnection()
+    PresentationConnectionAvailableEvent: ƒ PresentationConnectionAvailableEvent()
+    PresentationConnectionCloseEvent: ƒ PresentationConnectionCloseEvent()
+    PresentationConnectionList: ƒ PresentationConnectionList()
+    PresentationReceiver: ƒ PresentationReceiver()
+    PresentationRequest: ƒ PresentationRequest()
+
+    AuthenticatorAssertionResponse: ƒ AuthenticatorAssertionResponse()
+    AuthenticatorAttestationResponse: ƒ AuthenticatorAttestationResponse()
+    AuthenticatorResponse: ƒ AuthenticatorResponse()
+
+    Bluetooth: ƒ Bluetooth()
+    BluetoothCharacteristicProperties: ƒ BluetoothCharacteristicProperties()
+    BluetoothDevice: ƒ BluetoothDevice()
+    BluetoothRemoteGATTCharacteristic: ƒ BluetoothRemoteGATTCharacteristic()
+    BluetoothRemoteGATTDescriptor: ƒ BluetoothRemoteGATTDescriptor()
+    BluetoothRemoteGATTServer: ƒ BluetoothRemoteGATTServer()
+    BluetoothRemoteGATTService: ƒ BluetoothRemoteGATTService()
+
+    USB: ƒ USB()
+    USBAlternateInterface: ƒ USBAlternateInterface()
+    USBConfiguration: ƒ USBConfiguration()
+    USBConnectionEvent: ƒ USBConnectionEvent()
+    USBDevice: ƒ USBDevice()
+    USBEndpoint: ƒ USBEndpoint()
+    USBInterface: ƒ USBInterface()
+    USBInTransferResult: ƒ USBInTransferResult()
+    USBIsochronousInTransferPacket: ƒ USBIsochronousInTransferPacket()
+    USBIsochronousInTransferResult: ƒ USBIsochronousInTransferResult()
+    USBIsochronousOutTransferPacket: ƒ USBIsochronousOutTransferPacket()
+    USBIsochronousOutTransferResult: ƒ USBIsochronousOutTransferResult()
+    USBOutTransferResult: ƒ USBOutTransferResult()
+    
+    XR: ƒ XR()
+    XRBoundedReferenceSpace: ƒ XRBoundedReferenceSpace()
+    XRFrame: ƒ XRFrame()
+    XRInputSource: ƒ XRInputSource()
+    XRInputSourceArray: ƒ XRInputSourceArray()
+    XRInputSourceEvent: ƒ XRInputSourceEvent()
+    XRInputSourcesChangeEvent: ƒ XRInputSourcesChangeEvent()
+    XRPose: ƒ XRPose()
+    XRReferenceSpace: ƒ XRReferenceSpace()
+    XRReferenceSpaceEvent: ƒ XRReferenceSpaceEvent()
+    XRRenderState: ƒ XRRenderState()
+    XRRigidTransform: ƒ XRRigidTransform()
+    XRSession: ƒ XRSession()
+    XRSessionEvent: ƒ XRSessionEvent()
+    XRSpace: ƒ XRSpace()
+    XRView: ƒ XRView()
+    XRViewerPose: ƒ XRViewerPose()
+    XRViewport: ƒ XRViewport()
+    XRWebGLLayer: ƒ XRWebGLLayer()
+
+    assert: ƒ assert(condition, opt_message)
+    assertNotReached: ƒ assertNotReached(opt_message)
+    assertInstanceof: ƒ assertInstanceof(value, type, opt_message)
+
+    btoa: ƒ btoa()
+    atob: ƒ atob()
+
+    Clipboard: ƒ Clipboard()
+    ClipboardEvent: ƒ ClipboardEvent()  
+    ClipboardItem: ƒ ClipboardItem()
+
+    AbsoluteOrientationSensor: ƒ AbsoluteOrientationSensor()
+    OrientationSensor: ƒ OrientationSensor()
+
+    PopStateEvent: ƒ PopStateEvent()
+    PointerEvent: ƒ PointerEvent()
+    KeyboardEvent: ƒ KeyboardEvent()
+    HashChangeEvent: ƒ HashChangeEvent()
+    PromiseRejectionEvent: ƒ PromiseRejectionEvent()
+    ProgressEvent: ƒ ProgressEvent()
+    DragEvent: ƒ DragEvent()    
+    FocusEvent: ƒ FocusEvent()
+    FormDataEvent: ƒ FormDataEvent()
+
+    PannerNode: ƒ PannerNode()
+    GainNode: ƒ GainNode()    
+    OscillatorNode: ƒ OscillatorNode()    
+    IIRFilterNode: ƒ IIRFilterNode()
+    DelayNode: ƒ DelayNode()
+    RadioNodeList: ƒ RadioNodeList()
+    StereoPannerNode: ƒ StereoPannerNode()
+    ScriptProcessorNode: ƒ ScriptProcessorNode()
+    AnalyserNode: ƒ AnalyserNode()
+
+
+
+
+################################################
+    find: ƒ find()
+    fetch: ƒ fetch()
+    openDatabase: ƒ ()
+    BigInt: ƒ BigInt()
+    DataView: ƒ DataView()
+    Proxy: ƒ Proxy()
+    queueMicrotask: ƒ queueMicrotask()
+    getComputedStyle: ƒ getComputedStyle()
+    matchMedia: ƒ matchMedia()
+    getSelection: ƒ getSelection()
+    createImageBitmap: ƒ createImageBitmap()
+    webkitRequestFileSystem: ƒ ()
+    webkitResolveLocalFileSystemURL: ƒ ()
+    rgbComponentToHex: ƒ rgbComponentToHex(c)
+    colorArrayToHex: ƒ colorArrayToHex(color)
+    LocalNTP: ƒ LocalNTP()
+    $: ƒ $(id)
+    getChromeUILanguage: ƒ getChromeUILanguage()
+    webkitRTCPeerConnection: ƒ RTCPeerConnection()
+    webkitMediaStream: ƒ MediaStream()
+    SyncManager: ƒ SyncManager()
+    SubtleCrypto: ƒ SubtleCrypto()
+    ScreenOrientation: ƒ ScreenOrientation()
+    PhotoCapabilities: ƒ PhotoCapabilities()
+    PeriodicWave: ƒ PeriodicWave()
+    Path2D: ƒ Path2D()
+    OverconstrainedError: ƒ OverconstrainedError()
+    NetworkInformation: ƒ NetworkInformation()
+    InputDeviceInfo: ƒ InputDeviceInfo()
+    EventSource: ƒ EventSource()
+    DynamicsCompressorNode: ƒ DynamicsCompressorNode()
+    DOMError: ƒ DOMError()
+    TimeRanges: ƒ TimeRanges()
+    TaskAttributionTiming: ƒ TaskAttributionTiming()
+    StaticRange: ƒ StaticRange()
+    ShadowRoot: ƒ ShadowRoot()
+    Selection: ƒ Selection()
+    SecurityPolicyViolationEvent: ƒ SecurityPolicyViolationEvent()
+    ReportingObserver: ƒ ReportingObserver()
+    Range: ƒ Range()
+    ProcessingInstruction: ƒ ProcessingInstruction()
+    PageTransitionEvent: ƒ PageTransitionEvent()
+    NamedNodeMap: ƒ NamedNodeMap()
+    LayoutShift: ƒ LayoutShift()
+    LargestContentfulPaint: ƒ LargestContentfulPaint()
+    KeyframeEffect: ƒ KeyframeEffect()
+    IdleDeadline: ƒ IdleDeadline()
+    External: ƒ External()
+    CountQueuingStrategy: ƒ CountQueuingStrategy()
+    CompositionEvent: ƒ CompositionEvent()
+    CharacterData: ƒ CharacterData()
+    CDATASection: ƒ CDATASection()
+    ByteLengthQueuingStrategy: ƒ ByteLengthQueuingStrategy()
+    BeforeUnloadEvent: ƒ BeforeUnloadEvent()
+    BarProp: ƒ BarProp()
+    SharedArrayBuffer: ƒ SharedArrayBuffer()
+    ElementInternals: ƒ ElementInternals()
+    SharedWorker: ƒ SharedWorker()
+    OffscreenCanvas: ƒ OffscreenCanvas()
+    UserActivation: ƒ UserActivation()
+    XSLTProcessor: ƒ XSLTProcessor()
+    Notification: ƒ Notification()
+    EnterPictureInPictureEvent: ƒ EnterPictureInPictureEvent()
+    PictureInPictureWindow: ƒ PictureInPictureWindow()
+    RemotePlayback: ƒ RemotePlayback()
+    OffscreenCanvasRenderingContext2D: ƒ OffscreenCanvasRenderingContext2D()
+    BluetoothUUID: ƒ BluetoothUUID()
+    Worklet: ƒ Worklet()
+    Accelerometer: ƒ Accelerometer()
+    AudioWorklet: ƒ AudioWorklet()
+    FederatedCredential: ƒ FederatedCredential()
+    Gyroscope: ƒ Gyroscope()
+    LinearAccelerationSensor: ƒ LinearAccelerationSensor()
+    NavigationPreloadManager: ƒ NavigationPreloadManager()
+    PasswordCredential: ƒ PasswordCredential()
+    RelativeOrientationSensor: ƒ RelativeOrientationSensor()
+    RTCIceTransport: ƒ RTCIceTransport()
+    PublicKeyCredential: ƒ PublicKeyCredential()
+    StorageManager: ƒ StorageManager()

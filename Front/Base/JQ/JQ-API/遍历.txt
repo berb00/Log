@@ -1,0 +1,53 @@
+遍历
+
+筛选
+    .eq()		equal
+    .first()
+    .last()
+    .is()
+    .not()
+    .has()
+    .map()
+    .filter()
+    .slice()
+
+各种遍历
+
+    .add()
+    .andSelf()
+    .contents()
+    .each()
+    .end()
+
+树遍历
+
+    A.addBack()
+    A.closest()
+    A.find(selector)				在A元素中寻找匹配元素
+    
+    A.next()						寻找A元素之后的第一个兄弟元素
+    A.nextAll()					寻找A元素之后的所有兄弟元素		(A,tail]	
+    A.nextUntil()				寻找A元素至选择器之间的兄弟元素	(A,selector)两边皆开
+    
+    
+    A.prev()
+    A.prevAll()
+    A.prevUntil()
+    
+    A.parent()					A的双亲
+	A.parents()					A的祖先							(A,tail]	
+	A.parentsUntil()				A到选择器之间的祖先         		(A,selector)两边皆开
+    
+    A.siblings()
+    
+    A.children()					A的孩子(非后裔)
+
+
+
+
+
+
+
+
+
+

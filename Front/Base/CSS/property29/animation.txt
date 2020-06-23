@@ -1,0 +1,51 @@
+1+7
+@keyframes 					定义一个动画,@keyframes定义的动画名称用来被animation-name所使用。
+ 	
+animation 								复合属性。检索或设置对象所应用的动画特效。
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+animation-name 							检索或设置对象所应用的动画名称 ,必须与规则@keyframes配合使用，因为动画名称由@keyframes定义 	
+animation-duration: time; 				检索或设置对象动画的持续时间 	默认为0
+animation-delay: time; 					检索或设置对象动画在启动前的延迟时间 	默认为0
+animation-iteration-count:n|infinite;	检索或设置对象动画的循环次数 	
+animation-play-state: paused|running; 	检索或设置对象动画的运行或暂停状态
+animation-timing-function 				检索或设置对象动画的过渡类型 	动画将如何完成一个周期
+animation-direction 						检索或设置对象动画在循环中是否轮流反向运动 	
+
+animation-direction 	
+JS:object.style.animationDirection="reverse" 		
+normal 						默认值。动画按正常播放。
+reverse 						动画反向播放。	
+alternate 					动画在奇数次（1、3、5...）正向播放，在偶数次（2、4、6...）反向播放。 alternate:交替
+alternate-reverse 			动画在奇数次（1、3、5...）反向播放，在偶数次（2、4、6...）正向播放。
+initial 						设置该属性为它的默认值。请参阅 initial。 	
+inherit
+
+animation-timing-function: value;三次贝塞尔曲线，速度曲线
+JS:object.style.animationTimingFunction="linear"
+ease 						默认。动画以低速开始，然后加快，在结束前变慢。
+linear 						动画从头到尾的速度是相同的。 	
+ease-in 						动画以低速开始。 	
+ease-out 					动画以低速结束。 	
+ease-in-out 					动画以低速开始和结束。 	
+cubic-bezier(n,n,n,n) 		在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+
+
+animation-fill-mode 			规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。
+
+
+visibility
+collapse
+
+间隔动画:   duration设置长一点 前10%执行动画 后90%隐藏即可
+
+
+
+
+
+
+
+
+
+
+

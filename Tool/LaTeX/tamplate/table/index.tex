@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{amsmath,amsfonts}
+\usepackage{booktabs}
+\usepackage{cellspace}%
+\setlength\cellspacetoplimit{3pt}
+\setlength\cellspacebottomlimit{3pt}
+\usepackage{makecell}
+\setcellgapes{3pt}
+
+\begin{document}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{l*{4}{c}}
+\toprule
+\textbf{Care type} & $\mathbb{P}(Pat ∩ H)$ & $\mathbb{P}(Pat ∩ H')$ & $\mathbb{P}(Pat' ∩ H)$ & $\mathbb{P}(Pat' ∩ H')$ \\ \midrule
+Direct care & $\displaystyle \dfrac{58}{197}$ & $\displaystyle \dfrac{48}{197}$ & $\displaystyle \dfrac{21}{197}$* & $1-\displaystyle \dfrac{58}{197}$ \\\addlinespace%
+Housekeeping & $\displaystyle \dfrac{12}{17}$ & $\displaystyle \dfrac{2}{17}$ & $\displaystyle \dfrac{5}{17}$* & $1-\displaystyle \dfrac{12}{17}$ \\ \bottomrule
+\end{tabular}
+\caption{Probabilities of hand hygiene given direct patient contact}
+\label{tab:handwash_given_pat}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{l*{4}{Sc}}
+\toprule
+\textbf{Care type} & $\mathbb{P}(Pat ∩ H)$ & $\mathbb{P}(Pat ∩ H')$ & $\mathbb{P}(Pat' ∩ H)$ & $\mathbb{P}(Pat' ∩ H')$ \\ \midrule
+Direct care & $\displaystyle \dfrac{58}{197}$ & $\displaystyle \dfrac{48}{197}$ & $\displaystyle \dfrac{21}{197}$* & $1-\displaystyle \dfrac{58}{197}$ \\%
+Housekeeping & $\displaystyle \dfrac{12}{17}$ & $\displaystyle \dfrac{2}{17}$ & $\displaystyle \dfrac{5}{17}$* & $1-\displaystyle \dfrac{12}{17}$ \\ \bottomrule
+\end{tabular}
+\caption{Probabilities of hand hygiene given direct patient contact}
+\label{tab:handwash_given_pat}
+\end{table}
+
+\begin{table}[!htbp]
+\centering\makegapedcells
+\begin{tabular}{l*{4}{c}}
+\toprule
+\textbf{Care type} & $\mathbb{P}(Pat ∩ H)$ & $\mathbb{P}(Pat ∩ H')$ & $\mathbb{P}(Pat' ∩ H)$ & $\mathbb{P}(Pat' ∩ H')$ \\ \midrule
+Direct care & $\displaystyle \dfrac{58}{197}$ & $\displaystyle \dfrac{48}{197}$ & $\displaystyle \dfrac{21}{197}$* & $1-\displaystyle \dfrac{58}{197}$ \\%
+Housekeeping & $\displaystyle \dfrac{12}{17}$ & $\displaystyle \dfrac{2}{17}$ & $\displaystyle \dfrac{5}{17}$* & $1-\displaystyle \dfrac{12}{17}$ \\ \bottomrule
+\end{tabular}
+\caption{Probabilities of hand hygiene given direct patient contact}
+\label{tab:handwash_given_pat}
+\end{table}
+
+\end{document}

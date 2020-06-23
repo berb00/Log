@@ -1,0 +1,86 @@
+Buffer (缓冲)
+    Buffer.from(), Buffer.alloc(), and Buffer.allocUnsafe()
+        --zero-fill-buffers 命令行选项
+        是什么令 Buffer.allocUnsafe() 和 Buffer.allocUnsafeSlow() 不安全？
+    Buffer 与字符编码
+    Buffer 与 TypedArray
+    Buffers and iteration
+    Buffer 类
+        //创建新buffer
+
+        类方法：Buffer.alloc(size[, fill[, encoding]])                                      分配一个大小为 size 字节的新建的 Buffer
+        类方法：Buffer.allocUnsafe(size)
+        类方法：Buffer.allocUnsafeSlow(size)
+        类方法：Buffer.byteLength(string[, encoding])                                       返回一个字符串的实际字节长度
+        类方法：Buffer.compare(buf1, buf2)                                                  比较 buf1 和 buf2 ，通常用于 Buffer 实例数组的排序。 相当于调用 buf1.compare(buf2) 。
+        类方法：Buffer.concat(list[, totalLength])                                          返回一个合并了 list(arr) 中所有 Buffer 实例的新建的 Buffer 。
+        类方法：Buffer.from(array)                                                          通过一个八位字节的 array(一个下标一个字节) 创建一个新的 Buffer 。
+        类方法：Buffer.from(arrayBuffer[, byteOffset[, length]])                            该方法将创建一个 ArrayBuffer 的视图，而不会复制底层内存。例如，当传入一个 TypedArray 实例的 .buffer 属性的引用时，这个新建的 Buffer 会像 TypedArray 那样共享同一分配的内存。
+        类方法：Buffer.from(buffer)
+        类方法：Buffer.from(string[, encoding])
+        Class Method: Buffer.from(object[, offsetOrEncoding[, length]])
+        类方法：Buffer.isBuffer(obj)
+        类方法：Buffer.isEncoding(encoding)
+        类属性：Buffer.poolSize
+        buf[index]
+        buf.buffer
+        buf.compare(target[, targetStart[, targetEnd[, sourceStart[, sourceEnd]]]])
+        buf.copy(target[, targetStart[, sourceStart[, sourceEnd]]])
+        buf.entries()
+        buf.equals(otherBuffer)
+        buf.fill(value[, offset[, end]][, encoding])
+        buf.includes(value[, byteOffset][, encoding])
+        buf.indexOf(value[, byteOffset][, encoding])
+        buf.keys()
+        buf.lastIndexOf(value[, byteOffset][, encoding])
+        buf.length
+        buf.readDoubleBE(offset)
+        buf.readDoubleLE(offset)
+        buf.readFloatBE(offset)
+        buf.readFloatLE(offset)
+        buf.readInt8(offset)
+        buf.readInt16BE(offset)
+        buf.readInt16LE(offset)
+        buf.readInt32BE(offset)
+        buf.readInt32LE(offset)
+        buf.readIntBE(offset, byteLength)
+        buf.readIntLE(offset, byteLength)
+        buf.readUInt8(offset)
+        buf.readUInt16BE(offset)
+        buf.readUInt16LE(offset)
+        buf.readUInt32BE(offset)
+        buf.readUInt32LE(offset)
+        buf.readUIntBE(offset, byteLength)
+        buf.readUIntLE(offset, byteLength)
+        buf.slice([start[, end]])
+        buf.swap16()
+        buf.swap32()
+        buf.swap64()
+        buf.toJSON()
+        buf.toString([encoding[, start[, end]]])
+        buf.values()
+        buf.write(string[, offset[, length]][, encoding])
+        buf.writeDoubleBE(value, offset)
+        buf.writeDoubleLE(value, offset)
+        buf.writeFloatBE(value, offset)
+        buf.writeFloatLE(value, offset)
+        buf.writeInt8(value, offset)
+        buf.writeInt16BE(value, offset)
+        buf.writeInt16LE(value, offset)
+        buf.writeInt32BE(value, offset)
+        buf.writeInt32LE(value, offset)
+        buf.writeIntBE(value, offset, byteLength)
+        buf.writeIntLE(value, offset, byteLength)
+        buf.writeUInt8(value, offset)
+        buf.writeUInt16BE(value, offset)
+        buf.writeUInt16LE(value, offset)
+        buf.writeUInt32BE(value, offset)
+        buf.writeUInt32LE(value, offset)
+        buf.writeUIntBE(value, offset, byteLength)
+        buf.writeUIntLE(value, offset, byteLength)
+    buffer.INSPECT_MAX_BYTES
+    buffer.kMaxLength
+    buffer.transcode(source, fromEnc, toEnc)
+    Buffer Constants
+        buffer.constants.MAX_LENGTH
+        buffer.constants.MAX_STRING_LENGTH

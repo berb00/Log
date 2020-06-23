@@ -1,0 +1,90 @@
+url
+    URL 字符串与 URL 对象
+    The WHATWG URL API
+        Class: URL
+            Constructor: new URL(input[, base])
+            url.hash
+            url.host
+            url.hostname
+            url.href
+            url.origin
+            url.password
+            url.pathname
+            url.port
+            url.protocol
+            url.search
+            url.searchParams
+            url.username
+            url.toString()                                  返回序列化的URL字符串
+            url.toJSON()
+        Class: URLSearchParams                              RLSearchParamsAPI接口提供对URLquery部分的读写权限
+            Constructor: new URLSearchParams()              实例化一个新的空的URLSearchParams对象。
+            Constructor: new URLSearchParams(string)
+            Constructor: new URLSearchParams(obj)
+            Constructor: new URLSearchParams(iterable)
+            urlSearchParams.append(name, value)
+            urlSearchParams.delete(name)
+            urlSearchParams.entries()
+            urlSearchParams.forEach(fn[, thisArg])
+            urlSearchParams.get(name)
+            urlSearchParams.getAll(name)
+            urlSearchParams.has(name)
+            urlSearchParams.keys()
+            urlSearchParams.set(name, value)
+            urlSearchParams.sort()
+            urlSearchParams.toString()
+            urlSearchParams.values()
+            urlSearchParams[Symbol.iterator]()
+        url.domainToASCII(domain)
+        url.domainToUnicode(domain)
+        url.format(URL[, options])
+    Legacy URL API
+        Legacy urlObject        ---由url.parse()函数创建并返回
+            urlObject.auth
+            urlObject.hash
+            urlObject.host
+            urlObject.hostname
+            urlObject.href
+            urlObject.path
+            urlObject.pathname
+            urlObject.port
+            urlObject.protocol
+            urlObject.query
+            urlObject.search
+            urlObject.slashes
+        url.format(urlObject)
+        url.parse(urlString[, parseQueryString[, slashesDenoteHost]])
+        url.resolve(from, to)
+    Percent-Encoding in URLs
+        Legacy API
+        WHATWG API
+
+
+
+
+
+
+
+
+
+
+
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+│                   遗留的url.parse()返回的对象属性href                                          │
+├──────────┬──┬─────────────────────┬─────────────────────┬───────────────────────────┬───────┤
+│ protocol │  │        auth         │        host         │           path            │ hash  │
+│          │  │                     ├──────────────┬──────┼──────────┬────────────────┤       │
+│          │  │                     │   hostname   │ port │ pathname │     search     │       │
+│          │  │                     │              │      │          ├─┬──────────────┤       │
+│          │  │                     │              │      │          │ │    query     │       │
+"  https:   //    user   :   pass   @ sub.host.com : 8080   /p/a/t/h  ?  query=string   #hash "
+│          │  │          │          │   hostname   │ port │          │                │       │
+│          │  │          │          ├──────────────┴──────┤          │                │       │
+│ protocol │  │ username │ password │        host         │          │                │       │
+├──────────┴──┼──────────┴──────────┼─────────────────────┤          │                │       │
+│   origin    │                     │       origin        │ pathname │     search     │ hash  │
+├─────────────┴─────────────────────┴─────────────────────┴──────────┴────────────────┴───────┤
+│                          WHATWG URL对象的属性href                                             │
+└─────────────────────────────────────────────────────────────────────────────────────────────┘
+
+

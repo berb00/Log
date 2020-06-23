@@ -1,0 +1,5 @@
+都不支持
+target 				简写属性设置target-name, target-new,和target-position属性 	3
+target-name 			指定在何处打开链接（目标位置） 	3
+target-new 			指定是否有新的目标链接打开一个新窗口或在现有窗口打开新标签 	3
+target-position 		指定应该放置新的目标链接的位置 	3

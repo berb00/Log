@@ -1,0 +1,14 @@
+
+string_decoder - 字符串解码器         把Buffer对象解码成字符串
+    StringDecoder 类
+        new StringDecoder([encoding])
+        stringDecoder.end([buffer])         //以字符串的形式返回内部buffer中剩余的字节   如果提供了 buffer 参数，则在返回剩余字节之前会再执行一次 stringDecoder.write()。
+        stringDecoder.write(buffer)         //返回一个解码后的字符串
+
+
+
+
+
+
+
+

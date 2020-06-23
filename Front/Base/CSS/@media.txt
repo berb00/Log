@@ -1,0 +1,57 @@
+ @media mediatype and|not|only (media feature) {
+    CSS-Code;
+}
+你也可以针对不同的媒体使用不同 stylesheets :
+<link rel="stylesheet" media="mediatype and|not|only (media feature)" href="mystylesheet.css">
+
+
+mediatype:
+all 			用于所有设备
+print 		用于打印机和打印预览
+screen 		用于电脑屏幕，平板电脑，智能手机等。
+speech 		应用于屏幕阅读器等发声设备
+
+media feature:			执行条件:
+width 						定义输出设备中的页面可见区域宽度。
+height 						定义输出设备中的页面可见区域高度。
+max-width 					实际宽小于该最大可见区域宽度。	<=px  	宽最大为px执行
+max-height 					实际高小于该最大可见区域高度。	<=px		高最大为px执行
+min-width 					实际宽大于该最小可见区域宽度。	>=px		宽最小为px执行
+min-height 					实际高大于该最小可见区域高度。	>=px		高最小为px执行
+
+device-height 				定义输出设备的屏幕可见高度。
+device-width 				定义输出设备的屏幕可见宽度
+max-device-height 			定义输出设备的屏幕可见的最大高度。
+max-device-width 			定义输出设备的屏幕最大可见宽度。
+min-device-width 			定义输出设备的屏幕最小可见宽度。
+min-device-height 			定义输出设备的屏幕的最小可见高度。
+
+color 						定义输出设备每一组彩色原件的个数。如果不是彩色设备，则值等于0
+max-color 					定义输出设备每一组彩色原件的最大个数。
+min-color 					定义输出设备每一组彩色原件的最小个数。
+color-index 					定义在输出设备的彩色查询表中的条目数。如果没有使用彩色查询表，则值等于0
+max-color-index 				定义在输出设备的彩色查询表中的最大条目数。
+min-color-index 				定义在输出设备的彩色查询表中的最小条目数。
+
+resolution 					定义设备的分辨率。如：96dpi, 300dpi, 118dpcm
+max-resolution 				定义设备的最大分辨率。
+min-resolution 				定义设备的最小分辨率。
+
+aspect-ratio 				定义输出设备中的页面可见区域宽度与高度的比率
+max-aspect-ratio 			定义输出设备的屏幕可见宽度与高度的最大比率。
+min-aspect-ratio 			定义输出设备中的页面可见区域宽度与高度的最小比率。
+
+device-aspect-ratio 			定义输出设备的屏幕可见宽度与高度的比率。
+max-device-aspect-ratio 		定义输出设备的屏幕可见宽度与高度的最大比率。
+min-device-aspect-ratio 		定义输出设备的屏幕可见宽度与高度的最小比率。
+
+monochrome 					定义在一个单色框架缓冲区中每像素包含的单色原件个数。如果不是单色设备，则值等于0
+max-monochrome 				定义在一个单色框架缓冲区中每像素包含的最大单色原件个数。
+min-monochrome 				定义在一个单色框架缓冲区中每像素包含的最小单色原件个数
+
+
+
+
+grid 						用来查询输出设备是否使用栅格或点阵。
+orientation 					定义输出设备中的页面可见区域高度是否大于或等于宽度。 	方向 定位
+scan 						定义电视类设备的扫描工序。

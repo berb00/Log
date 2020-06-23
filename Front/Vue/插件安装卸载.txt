@@ -1,0 +1,65 @@
+1.eslint
+
+2.less
+  npm install less less-loader --save-dev
+3.sass
+  npm install sass-loader node-sass --save-dev
+4.d3
+  npm install d3 --save-dev
+element-ui
+npm install element-ui --save
+npm uninstall element-ui
+
+axios
+npm install axios --save
+npm uninstall axios
+
+js-cookie
+npm install js-cookie --save
+npm uninstall js-cookie
+
+lodash
+npm install lodash --save
+npm uninstall lodash
+
+mockjs
+npm install mockjs --save
+npm uninstall mockjs
+
+nprogress
+npm install nprogress --save
+npm uninstall nprogress
+
+vue-i18n
+npm install vue-i18n --save
+npm uninstall vue-i18n
+
+vuex
+npm install vuex --save
+npm uninstall vuex
+
+node-sass sass-loader less less-loader
+直接安装npm install node-sass sass-loader less less-loader --save-dev
+
+node-sass sass-loader
+npm install sass-loader node-sass webpack --save-dev
+npm uninstall node-sass sass-loader
+
+less less-loader
+npm install less less-loader webpack --save-dev
+npm uninstall less less-loader
+
+增加babel-polyfill
+# 安装babel-polyfill
+npm install babel-polyfill --save
+# 卸载babel-plugin-transform-runtime
+npm uninstall babel-plugin-transform-runtime --save
+修改文件.babelrc
+"plugins": [
+    // "transform-runtime"
+],
+在入口文件main.js中引入babel-polyfill
+import 'babel-polyfill'
+
+
+

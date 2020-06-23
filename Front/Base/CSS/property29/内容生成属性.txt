@@ -1,0 +1,9 @@
+内容生成属性(Generated Content Properties)
+
+content 					与 :before 以及 :after 伪元素配合使用，来插入生成内容 	2
+counter-increment 		递增或递减一个或多个计数器 	2
+counter-reset 			创建或重置一个或多个计数器 	2
+quotes 					设置嵌套引用的引号类型 	2
+crop 					允许replaced元素只是作为一个对象代替整个对象的矩形区域 	3
+move-to 					Causes an element to be removed from the flow and reinserted at a later point in the document 	3
+page-policy 				判定基于页面的给定元素的适用于计数器的字符串值 	3

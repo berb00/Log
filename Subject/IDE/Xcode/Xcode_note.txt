@@ -1,0 +1,5 @@
+
+# 编辑快捷键
+    $ open /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist
+chmod 666 
+cd /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/

@@ -1,0 +1,192 @@
+fs - 文件系统
+    File paths
+        URL object support
+    File Descriptors
+    线程池的使用
+    fs.FSWatcher 类
+        'change' 事件
+        'close' 事件
+        'error' 事件
+        watcher.close()
+    fs.ReadStream 类
+        'close' 事件
+        'open' 事件
+        Event: 'ready'
+        readStream.bytesRead
+        readStream.path
+    fs.Stats 类
+        stats.isBlockDevice()                               如果FS.STATS对象描述块设备，则返回true。
+        stats.isCharacterDevice()                           如果FS.STATS对象描述字符设备，则返回true。
+        stats.isDirectory()                                 如果FS.STATS对象描述文件系统目录，则返回true。
+        stats.isFIFO()                                      如果FS.STATS对象描述了先进先出（FIFO）管道，则返回true。
+        stats.isFile()                                      如果FS.STATS对象描述一个常规文件，则返回true。
+        stats.isSocket()                                    如果FS.STATS对象描述套接字，则返回true。
+        stats.isSymbolicLink()                              如果FS.STATS对象描述了符号链接，则返回true。此方法仅在使用FS.LSTATER（）时有效。
+
+        stats.dev                                           包含文件的设备的数字标识符
+        stats.ino                                           文件系统特定的“iNod”文件的编号。
+        stats.mode                                          描述文件类型和模式的位字段。
+        stats.nlink                                         文件存在的硬链接数。
+        stats.uid                                           拥有该文件的用户的数字用户标识符（POSIX）
+        stats.gid                                           拥有文件的组的数字组标识符（POSIX）
+        stats.rdev                                          如果文件被认为是“特殊的”，则数字设备标识符
+        stats.size                                          文件的字节大小。
+        stats.blksize                                       I/O操作的文件系统块大小
+        stats.blocks                                        为此文件分配的块数
+        stats.atimeMs                                       表示从POSIX时代以来以毫秒表示的访问该文件的最后时间的时间戳。
+        stats.mtimeMs                                       表示最后一次修改该文件的时间戳自POSIX时代以来以毫秒表示。
+        stats.ctimeMs                                       指示文件状态被改变的最后时间的时间戳自POSIX时代以来以毫秒表示。
+        stats.birthtimeMs                                   表示从POSIX时代以来以毫秒表示的该文件创建时间的时间戳。
+        stats.atime                                         表示最后一次访问该文件的时间戳。    accessed
+        stats.mtime                                         表示最后一次修改该文件的时间戳。    modified
+        stats.ctime                                         表示文件状态上次更改的时间戳。      changed
+        stats.birthtime                                     表示此文件创建时间的时间戳。
+        Stat 时间值
+    fs.WriteStream 类
+        Event: 'close'
+        'open' 事件
+        Event: 'ready'
+        writeStream.bytesWritten
+        writeStream.path
+    fs.access(path[, mode], callback)                       测试 path 指定的文件或目录的用户权限
+    fs.accessSync(path[, mode])                             同步地测试 path 指定的文件或目录的用户权限
+    fs.appendFile(path, data[, options], callback)          异步将数据追加到文件中，如果文件还不存在则创建文件。数据可以是字符串，也可以是缓冲区。
+    fs.appendFileSync(path, data[, options])                同步地将数据追加到文件中，如果文件尚未存在，则创建文件。数据可以是字符串或缓冲区。
+    fs.chmod(path, mode, callback)                          异步地改变文件的权限。 完成回调只有一个可能的异常参数。
+        File modes
+    fs.chmodSync(path, mode)                                同步地改变文件的权限。 返回 undefined
+    fs.chown(path, uid, gid, callback)                      异步地改变文件的所有者和群组。 完成回调只有一个可能的异常参数。
+    fs.chownSync(path, uid, gid)                            同步地改变文件的所有者和群组。 返回 undefined
+    fs.close(fd, callback)
+    fs.closeSync(fd)
+    fs.constants                                            返回一个包含常用文件系统操作的常量的对象。 具体的常量定义在 FS Constants 中描述。
+    fs.copyFile(src, dest[, flags], callback)               异步的将 src 拷贝到 dest。(覆盖操作)    flags 是一个可选的整数，用于指定行为的拷贝操作。
+    fs.copyFileSync(src, dest[, flags])                     同步的将 src 拷贝到 dest。
+    fs.createReadStream(path[, options])                    返回一个新建的 ReadStream 对象
+    fs.createWriteStream(path[, options])                   返回一个新建的 WriteStream 对象
+    fs.existsSync(path)
+    fs.fchmod(fd, mode, callback)
+    fs.fchmodSync(fd, mode)
+    fs.fchown(fd, uid, gid, callback)
+    fs.fchownSync(fd, uid, gid)
+    fs.fdatasync(fd, callback)
+    fs.fdatasyncSync(fd)
+    fs.fstat(fd, callback)
+    fs.fstatSync(fd)
+    fs.fsync(fd, callback)
+    fs.fsyncSync(fd)
+    fs.ftruncate(fd[, len], callback)
+    fs.ftruncateSync(fd[, len])
+    fs.futimes(fd, atime, mtime, callback)                  改变由所提供的文件描述符所指向的对象的文件系统时间戳。
+    fs.futimesSync(fd, atime, mtime)
+    fs.lchmod(path, mode, callback)                         只在 macOS 有效。
+    fs.lchmodSync(path, mode)
+    fs.lchown(path, uid, gid, callback)
+    fs.lchownSync(path, uid, gid)
+    fs.link(existingPath, newPath, callback)
+    fs.linkSync(existingPath, newPath)
+    fs.lstat(path, callback)                                lstat() 与 stat() 类似，除非 path 是一个符号链接，则自身就是该链接，它指向的并不是文件。
+    fs.lstatSync(path)
+    fs.mkdir(path[, mode], callback)                                        异步地创建目录。 完成回调只有一个可能的异常参数。 mode 默认为 0o777
+    fs.mkdirSync(path[, mode])                                              同步地创建目录。 返回 undefined
+    fs.mkdtemp(prefix[, options], callback)                                 创建一个唯一的临时目录。
+    fs.mkdtempSync(prefix[, options])                                       fs.mkdtemp() 的同步版本。 返回创建的目录的路径。
+    fs.open(path, flags[, mode], callback)                                  异步地打开文件。flags:权限模式
+    fs.openSync(path, flags[, mode])                                        fs.open() 的同步版本。 返回一个表示文件描述符的整数。
+    fs.read(fd, buffer, offset, length, position, callback)                 从 fd 指定的文件中读取数据。
+    fs.readdir(path[, options], callback)                                   异步的 readdir(3)。 读取一个目录的内容。 回调有两个参数 (err, files)，其中 files 是目录中不包括 '.' 和 '..' 的文件名的数组。
+    fs.readdirSync(path[, options])                                         同步的 readdir(3). 返回一个不包括 '.' 和 '..' 的文件名的数组。
+    fs.readFile(path[, options], callback)                                  异步地读取一个文件的全部内容
+    fs.readFileSync(path[, options])                                        fs.readFile() 的同步版本。 返回 path 的内容
+    fs.readlink(path[, options], callback)
+    fs.readlinkSync(path[, options])                                        同步的 readlink(2)。 返回符号链接的字符串值。
+    fs.readSync(fd, buffer, offset, length, position)                       fs.read() 的同步版本。 返回 bytesRead 的数量。
+    fs.realpath(path[, options], callback)                                  异步的 realpath(3)。 callback 有两个参数 (err, resolvedPath)。 可以使用 process.cwd 解析相对路径。
+    fs.realpath.native(path[, options], callback)
+    fs.realpathSync(path[, options])
+    fs.realpathSync.native(path[, options])
+    fs.rename(oldPath, newPath, callback)
+    fs.renameSync(oldPath, newPath)
+    fs.rmdir(path, callback)
+    fs.rmdirSync(path)
+    fs.stat(path, callback)
+    fs.statSync(path)
+    fs.symlink(target, path[, type], callback)
+    fs.symlinkSync(target, path[, type])
+    fs.truncate(path[, len], callback)
+    fs.truncateSync(path[, len])
+    fs.unlink(path, callback)
+    fs.unlinkSync(path)
+    fs.unwatchFile(filename[, listener])                                     停止监视 filename 文件的变化。 如果指定了 listener，则只移除特定的监听器。 否则，所有的监听器都会被移除，且已经有效地停止监视 filename。
+    fs.utimes(path, atime, mtime, callback)
+    fs.utimesSync(path, atime, mtime)
+    fs.watch(filename[, options][, listener])
+        说明
+            可用性
+            索引节点
+            文件名参数
+    fs.watchFile(filename[, options], listener)
+    fs.write(fd, buffer[, offset[, length[, position]]], callback)
+    fs.write(fd, string[, position[, encoding]], callback)
+    fs.writeFile(file, data[, options], callback)
+    fs.writeFileSync(file, data[, options])
+    fs.writeSync(fd, buffer[, offset[, length[, position]]])
+    fs.writeSync(fd, string[, position[, encoding]])
+
+    fs Promises API
+        class: FileHandle
+            filehandle.appendFile(data, options)
+            filehandle.chmod(mode)
+            filehandle.chown(uid, gid)
+            filehandle.close()
+            filehandle.datasync()
+            filehandle.fd
+            filehandle.read(buffer, offset, length, position)
+            filehandle.readFile(options)
+            filehandle.stat()
+            filehandle.sync()
+            filehandle.truncate(len)
+            filehandle.utimes(atime, mtime)
+            filehandle.write(buffer, offset, length, position)
+            filehandle.writeFile(data, options)
+        fsPromises.access(path[, mode])
+        fsPromises.appendFile(path, data[, options])
+        fsPromises.chmod(path, mode)
+        fsPromises.chown(path, uid, gid)
+        fsPromises.copyFile(src, dest[, flags])
+        fsPromises.fchmod(filehandle, mode)
+        fsPromises.fchown(filehandle, uid, gid)
+        fsPromises.fdatasync(filehandle)
+        fsPromises.fstat(filehandle)
+        fsPromises.fsync(filehandle)
+        fsPromises.ftruncate(filehandle[, len])
+        fsPromises.futimes(filehandle, atime, mtime)
+        fsPromises.lchmod(path, mode)
+        fsPromises.lchown(path, uid, gid)
+        fsPromises.link(existingPath, newPath)
+        fsPromises.lstat(path)
+        fsPromises.mkdir(path[, mode])
+        fsPromises.mkdtemp(prefix[, options])
+        fsPromises.open(path, flags[, mode])
+        fsPromises.read(filehandle, buffer, offset, length, position)
+        fsPromises.readdir(path[, options])
+        fsPromises.readFile(path[, options])
+        fsPromises.readlink(path[, options])
+        fsPromises.realpath(path[, options])
+        fsPromises.rename(oldPath, newPath)
+        fsPromises.rmdir(path)
+        fsPromises.stat(path)
+        fsPromises.symlink(target, path[, type])
+        fsPromises.truncate(path[, len])
+        fsPromises.unlink(path)
+        fsPromises.utimes(path, atime, mtime)
+        fsPromises.write(filehandle, buffer[, offset[, length[, position]]])
+        fsPromises.writeFile(file, data[, options])
+    fs 常量
+        文件访问常量
+        File Copy Constants
+        文件打开常量
+        文件类型常量
+        文件模式常量
+    File System Flags
+

@@ -1,0 +1,18 @@
+定时器timer                    全局的 API，用于在某个未来时间段调用调度函数。
+    Immediate 类
+        immediate.ref()
+        immediate.unref()
+    Timeout 类
+        timeout.ref()           返回 Timeout 的一个引用。
+        timeout.unref()         返回对 Timeout 的一个引用。
+
+    预定定时器
+        setImmediate(callback[, ...args])
+        setInterval(callback, delay[, ...args])
+        setTimeout(callback, delay[, ...args])
+
+    取消定时器
+        clearImmediate(immediate)
+        clearInterval(timeout)
+        clearTimeout(timeout)
+

@@ -1,0 +1,69 @@
+Tip.txt
+
+jq 1.x 会兼容IE678
+
+加载函数(入口函数)：
+js: 
+  window.onload = function () {
+    // DOM、图片加载完毕后执行
+  }
+  window.onload = function () {
+    
+  }
+  // 多个入口函数 后写的覆盖之前的
+jq:
+  方式一: $(document).ready(function () {
+    // DOM加载完毕后执行
+  })
+  方式二: $(function () {
+
+  })
+  // 多个入口函数 后写的不会覆盖之前的
+
+
+  jq $符号和其他插件命名冲突：自定义访问符号 var jQ = jQuery.noConflict();
+  var jQ = jQuery.noConflict();
+
+  js的forEach、map不能遍历伪数组 {0: 1, 1: 3, length: 2}
+  jQuery的each、map可以遍历伪数组
+
+
+$.holdReady(true) // 暂停执行$.ready(function () {}) 
+$.holdReady(false) // 恢复执行$.ready(function () {})
+
+$.attr() // 操作属性节点
+$.prop() // 操作属性、属性节点 (如input:checked之类值为true/false的推荐使用该方法)
+
+获取网页偏移 
+$('html').scrollTop() + $('body').scrollTop()  // 兼容IE
+$('html,body').scrollTop(300)
+
+S('div').trigger() // 会触发默认事件、冒泡
+S('div').triggerHandler() // 不会触发默认事件、冒泡
+
+自定义事件
+$('div').on('myEvent', fn)
+$('div').trigger('myEvent')
+
+事件命名空间
+$('div').on('myEvent.namespace', fn)
+$('div').on('myEvent.namespace1', fn1)
+$('div').trigger('myEvent.namespace') // 只执行fn1
+
+事件委托
+$('ul>li').on('click', fn) // 所有li都被绑定事件
+$('ul').delegate('li', 'click', fn) // append新的li到ul点击li仍可触发事件
+
+停止动画
+$('div').stop()
+
+实时监听input输入:(使用事件委托)
+$('body').delegate('.input', 'propertychange input', fn)
+
+获取JS动态创建的元素:
+    $("祖先元素").on("click", "目标元素", function() {});并不是父辈元素,而是长辈元素.所以这个地方你可以这样写
+    $(document).on("click", "目标元素", function() {});
+    事件的触发有三个阶段
+    document 往事件触发地点，捕获前进，遇到相同注册事件立即触发执行
+    到达事件位置，触发事件（如果该处既注册了冒泡事件，也注册了捕获事件，按照注册顺序执行）
+    事件触发地点往 document 方向，冒泡前进，遇到相同注册事件立即触发

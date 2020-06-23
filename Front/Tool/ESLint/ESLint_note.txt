@@ -1,0 +1,25 @@
+#安装
+    npm install eslint --save-dev
+
+
+#初始化 (在根目录生成 .eslintrc.js文件)
+    method 1、./node_modules/.bin/eslint --init
+    method 2、eslint --init
+
+
+#安装babel-eslint
+    npm install babel-eslint --save-dev
+
+
+#配置.eslintrc文件
+
+
+#禁用ESLint验证
+    在js文件首行添加：/* eslint-disable */
+
+
+配置规则：
+    0：禁止使用该规则(off)
+    1：将该规则定义为警告 (warn) 等级（不影响exit code）
+    2：将该规则定义为错误 (error) 等级（exit code为1） 
+

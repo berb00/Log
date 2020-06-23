@@ -1,0 +1,99 @@
+默认库
+    information_schema
+    performance_schema  
+    mysql
+    sys
+
+information_schema
+    保存了MySQl服务所有数据库的信息。
+    具体MySQL服务有多少个数据库，各个数据库有哪些表，
+    各个表中的字段是什么数据类型，各个表中有哪些索引，各个数据库要什么权限才能访问。
+    建库、增删改表都会记录在information_schema库中
+
+performance_schema  
+    主要用于收集数据库服务器性能参数
+    库里表的存储引擎均为PERFORMANCE_SCHEMA，而用户是不能创建存储引擎为PERFORMANCE_SCHEMA的表。MySQL5.7默认是开启的。
+    提供进程等待的详细信息，包括锁、互斥变量、文件信息；
+    保存历史的事件汇总信息，为提供MySQL服务器性能做出详细的判断；
+    对于新增和删除监控事件点都非常容易，并可以随意改变mysql服务器的监控周期，例如（CYCLE、MICROSECOND）
+
+mysql
+    mysql的核心数据库
+    存储数据库的用户、权限设置、关键字等mysql自己需要使用的控制和管理信息
+    保存MySQL的权限、参数、对象和状态信息。
+    如哪些user可以访问这个数据、DB参数、插件、主从
+
+sys
+    Sys库是一个简单版的performance_schema
+    sys库所有的数据源来自：performance_schema。
+    目标是把performance_schema的把复杂度降低，让DBA能更好的阅读这个库里的内容。
+    让DBA更快的了解DB的运行情况。
+
+
+
+
+8.0.11
+#############################################################################################
+    information_schema
+
+    performance_schema  
+
+    mysql
+        columns_priv              
+        component                 
+        db                                  存储了某个用户对一个数据库的权限            
+        default_roles             
+        engine_cost               
+        func                      
+        general_log               
+        global_grants             
+        gtid_executed             
+        help_category             
+        help_keyword              
+        help_relation             
+        help_topic                
+        innodb_index_stats        
+        innodb_table_stats        
+        password_history          
+        plugin                    
+        procs_priv                
+        proxies_priv              
+        role_edges                
+        server_cost               
+        servers                   
+        slave_master_info         
+        slave_relay_log_info      
+        slave_worker_info         
+        slow_log                  
+        tables_priv               
+        time_zone                 
+        time_zone_leap_second     
+        time_zone_name            
+        time_zone_transition      
+        time_zone_transition_type 
+        user                                    用户表
+
+
+    sys
+
+
+
+8.0.20
+#############################################################################################
+    information_schema
+    mysql             
+    performance_schema
+    sakila            
+    sys               
+    world             
+
+
+
+
+
+
+
+
+
+
+

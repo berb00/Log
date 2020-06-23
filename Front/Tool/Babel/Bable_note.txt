@@ -1,0 +1,3 @@
+#在根目录创建babel.config.js并配置
+
+npm install -D babel-loader @babel/preset-env

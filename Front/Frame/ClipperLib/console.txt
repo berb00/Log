@@ -1,0 +1,188 @@
+PolyType: 
+	ptSubject: 0, 
+	ptClip: 1
+ClipType:
+	ctIntersection: 0, 
+	ctUnion: 1, 
+	ctDifference: 2, 
+	ctXor: 3
+PolyFillType: 
+	pftEvenOdd: 0, 
+	pftNonZero: 1, 
+	pftPositive: 2, 
+	pftNegative: 3
+JoinType: 
+	jtSquare: 0, 
+	jtRound: 1, 
+	jtMiter: 2	
+EndType:
+	etOpenSquare: 0,
+	etOpenRound: 1,
+	etOpenButt: 2, 
+	etClosedLine: 3, 
+	etClosedPolygon: 4	
+Direction:
+	dRightToLeft: 0, 
+	dLeftToRight: 1
+EdgeSide:
+	esLeft: 0, 
+	esRight: 1	
+	
+biginteger_used: 1
+use_lines: true
+use_xyz: false
+PI: 3.141592653589793
+PI2: 6.283185307179586
+version: "6.4.2.2"
+
+Cast_Int32: ƒ (a)
+Cast_Int64: ƒ (a)
+Clear: ƒ (a)
+DoublePoint: ƒ ()
+DoublePoint0: ƒ ()
+DoublePoint1: ƒ (a)
+DoublePoint2: ƒ (a,b)
+Error: ƒ (a)
+ExPolygon: ƒ ()
+ExPolygons: ƒ ()
+IntPoint: ƒ ()
+	op_Equality: ƒ (a,b)
+	op_Inequality: ƒ (a,b)
+IntPoint0: ƒ ()
+IntPoint1: ƒ (a)
+IntPoint1dp: ƒ (a)
+IntPoint2: ƒ (a,b,c)
+IntRect: ƒ ()
+IntRect0: ƒ ()
+IntRect1: ƒ (a)
+IntRect4: ƒ (a,b,c,e)
+IntersectNode: ƒ ()
+Join: ƒ ()
+LocalMinima: ƒ ()
+Math_Abs_Double: ƒ (a)
+Math_Abs_Int32: ƒ (a)
+Math_Abs_Int64: ƒ (a)
+Math_Max_Int32_Int32: ƒ (a,b)
+Maxima: ƒ ()
+MyIntersectNodeSort: ƒ ()
+	Compare: ƒ (a,b)
+OutPt: ƒ ()
+OutRec: ƒ ()
+Path: ƒ ()
+Paths: ƒ ()
+PolyNode: ƒ ()
+PolyTree: ƒ ()
+Scanbeam: ƒ ()
+TEdge: ƒ ()
+
+JS: {AreaOfPolygon: ƒ, AreaOfPolygons: ƒ, BoundsOfPath: ƒ, BoundsOfPaths: ƒ, Clean: ƒ, …}
+	AddOuterPolyNodeToExPolygons: ƒ (a,b)
+	AreaOfPolygon: ƒ (a,b)
+	AreaOfPolygons: ƒ (a, b)
+	BoundsOfPath: ƒ (a,b)
+	BoundsOfPaths: ƒ (a,b)
+	Clean: ƒ (a,b)
+	Clone: ƒ (a)
+	ExPolygonsToPaths: ƒ (a)
+	Lighten: ƒ (a,b)
+	PerimeterOfPath: ƒ (a,b,c)
+	PerimeterOfPaths: ƒ (a,b,c)
+	PolyTreeToExPolygons: ƒ (a)
+	ScaleDownPath: ƒ (a,b)
+	ScaleDownPaths: ƒ (a,b)
+	ScaleUpPath: ƒ (a,b)
+	ScaleUpPaths: ƒ (a,b)
+
+Clipper: ƒ (a)
+	NodeType: {ntAny: 0, ntOpen: 1, ntClosed: 2}
+	Skip: -2
+	Unassigned: -1
+	hiRange: 4503599627370495
+	horizontal: -9007199254740992
+	ioPreserveCollinear: 4
+	ioReverseSolution: 1
+	ioStrictlySimple: 2
+	loRange: 47453132
+	tolerance: 1e-20
+	$baseCtor: ƒ ()
+	AddPolyNodeToPaths: ƒ (a,b,c)
+	Area: ƒ (a)
+	CleanPolygon: ƒ (a,b)
+	CleanPolygons: ƒ (a,b)
+	ClosedPathsFromPolyTree: ƒ (a)
+	DistanceFromLineSqrd: ƒ (a,b,c)
+	DistanceSqrd: ƒ (a,b)
+	ExcludeOp: ƒ (a)
+	GetBounds: ƒ (a)
+	IntersectNodeSort: ƒ (a,b)
+	IsHorizontal: ƒ (a)
+	Minkowski: ƒ (a, b,c,e)
+	MinkowskiDiff: ƒ (a,b)
+	MinkowskiSum: ƒ (a,b,c)
+	OpenPathsFromPolyTree: ƒ (a)
+	Orientation: ƒ (a)
+	ParseFirstLeft: ƒ (a)
+	PointInPolygon: ƒ (a,b)
+	PointsAreClose: ƒ (a,b,c)
+	PolyTreeToPaths: ƒ (a)
+	ReversePaths: ƒ (a)
+	Round: ƒ (a)
+	SimplifyPolygon: ƒ (a,b)
+	SimplifyPolygons: ƒ (a,b)
+	SlopesEqual: ƒ ()
+	SlopesEqual3: ƒ (a,b,c)
+	SlopesEqual4: ƒ (a,b,c,e)
+	SlopesEqual5: ƒ (a,b,c,e,f)
+	SlopesNearCollinear: ƒ (a,b,c,e)
+	SwapPolyIndexes: ƒ (a,b)
+	SwapSides: ƒ (a,b)
+	TopX: ƒ (a,b)
+	TranslatePath: ƒ (a,b)
+	near_zero: ƒ (a)
+
+ClipperBase: ƒ ()
+	Skip: -2
+	Unassigned: -1
+	hiRange: 4503599627370495
+	horizontal: -9007199254740992
+	loRange: 47453132
+	tolerance: 1e-20
+	IsHorizontal: ƒ (a)
+	SlopesEqual: ƒ ()
+	SlopesEqual3: ƒ (a,b,c)
+	SlopesEqual4: ƒ (a,b,c,e)
+	SlopesEqual5: ƒ (a,b,c,e,f)
+	near_zero: ƒ (a)
+
+ClipperOffset: ƒ (a,b)
+	def_arc_tolerance: 0.25
+	two_pi: 6.28318530717959
+	GetUnitNormal: ƒ (a,b)
+	Round: ƒ (a)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

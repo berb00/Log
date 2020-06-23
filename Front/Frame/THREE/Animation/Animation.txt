@@ -1,0 +1,44 @@
+AnimationActions 用来调度存储在AnimationClips中的动画。
+AnimationAction( mixer : AnimationMixer, clip : AnimationClip, localRoot : Object3D )
+
+属性
+# .clampWhenFinished : Boolean | false 
+# .enabled : Boolean | true 
+# .loop : Number
+# .paused : Boolean | false
+# .repetitions : Number | Infinity
+# .time : Number | [0, clip.duration]
+# .timeScale : Number | 1
+# .weight : Number | 1
+# .zeroSlopeAtEnd : Boolean | true
+# .zeroSlopeAtStart : Boolean | true
+
+方法
+# .crossFadeFrom ( fadeOutAction : AnimationAction, durationInSeconds : Number, warpBoolean : Boolean ) : AnimationAction
+# .crossFadeTo ( fadeInAction : AnimationAction, durationInSeconds : Number, warpBoolean : Boolean ) : AnimationAction
+# .fadeIn ( durationInSeconds : Number ) : AnimationAction
+# .fadeOut ( durationInSeconds : Number ) : AnimationAction
+# .getEffectiveTimeScale () : Number
+# .getEffectiveWeight () : number
+# .getClip () : AnimationClip
+# .getMixer () : AnimationMixer
+# .getRoot () : Object3D
+# .halt ( durationInSeconds : Number ) : AnimationAction
+# .isRunning () : Boolean
+# .isScheduled () : Boolean
+# .play () : AnimationAction
+# .reset () : AnimationAction
+# .setDuration ( durationInSeconds : Number ) : AnimationAction
+# .setEffectiveTimeScale ( timeScale : Number ) : AnimationAction
+# .setEffectiveWeight ( weight : Number ) : AnimationAction
+# .setLoop ( loopMode : Number, repetitions : Number ) : AnimationAction
+# .startAt ( startTimeInSeconds : Number ) : AnimationAction
+# .stop () : AnimationAction
+# .stopFading () : AnimationAction
+# .stopWarping () : AnimationAction
+# .syncWith ( otherAction : AnimationAction ) : AnimationAction
+# .warp ( startTimeScale : Number, endTimeScale : Number, durationInSeconds : Number ) : AnimationAction
+
+事件
+mixer.addEventListener( 'loop', function( e ) { …} ); // properties of e: type, action and loopDelta
+mixer.addEventListener( 'finished', function( e ) { …} ); // properties of e: type, action and direction

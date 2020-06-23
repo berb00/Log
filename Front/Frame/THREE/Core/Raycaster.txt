@@ -1,0 +1,92 @@
+Constructor
+Raycaster( origin : Vector3, direction : Vector3, near : Float, far : Float )
+origin — The origin vector where the ray casts from.
+direction — The direction vector that gives direction to the ray. Should be normalized.
+near — All results returned are further away than near. Near can't be negative. Default value is 0.
+far — All results returned are closer than far. Far can't be lower than near. Default value is Infinity.
+
+##############################
+Properties
+# .far : float
+# .linePrecision : float
+# .near : float
+# .params : Object
+# .ray : Ray
+##############################
+Methods
+# .set ( origin : Vector3, direction : Vector3 ) : null
+# .setFromCamera ( coords : Vector2, camera : Camera ) : null
+# .intersectObject ( object : Object3D, recursive : Boolean, optionalTarget : Array ) : Array
+# .intersectObjects ( objects : Array, recursive : Boolean, optionalTarget : Array ) : Array
+
+
+
+##############################
+Constructor
+Raycaster( origin : Vector3, direction : Vector3, near : Float, far : Float ) {
+origin — The origin vector where the ray casts from.
+direction — The direction vector that gives direction to the ray. Should be normalized.
+near — All results returned are further away than near. Near can't be negative. Default value is 0.
+far — All results returned are closer than far. Far can't be lower than near. Default value is Infinity.
+
+This creates a new raycaster object.
+Properties
+# .far : float
+The far factor of the raycaster. This value indicates which objects can be discarded based on the distance. This value shouldn't be negative and should be larger than the near property.
+
+# .linePrecision : float
+The precision factor of the raycaster when intersecting Line objects.
+
+# .near : float
+The near factor of the raycaster. This value indicates which objects can be discarded based on the distance. This value shouldn't be negative and should be smaller than the far property.
+
+# .params : Object
+An object with the following properties:
+{
+	Mesh: {},
+	Line: {},
+	LOD: {},
+	Points: { threshold: 1 },
+	Sprite: {}
+}
+# .ray : Ray
+The Ray used for the raycasting.
+
+Methods
+# .set ( origin : Vector3, direction : Vector3 ) : null
+origin — The origin vector where the ray casts from.
+direction — The normalized direction vector that gives direction to the ray.
+
+Updates the ray with a new origin and direction.
+
+# .setFromCamera ( coords : Vector2, camera : Camera ) : null
+coords — 2D coordinates of the mouse, in normalized device coordinates (NDC)---X and Y components should be between -1 and 1.
+camera — camera from which the ray should originate
+
+Updates the ray with a new origin and direction.
+
+# .intersectObject ( object : Object3D, recursive : Boolean, optionalTarget : Array ) : Array
+object — The object to check for intersection with the ray.
+recursive — If true, it also checks all descendants. Otherwise it only checks intersection with the object. Default is false.
+optionalTarget — (optional) target to set the result. Otherwise a new Array is instantiated. If set, you must clear this array prior to each call (i.e., array.length = 0;).
+
+Checks all intersection between the ray and the object with or without the descendants. Intersections are returned sorted by distance, closest first. An array of intersections is returned...
+
+[ { distance, point, face, faceIndex, object }, ... ]
+distance – distance between the origin of the ray and the intersection
+point – point of intersection, in world coordinates
+face – intersected face
+faceIndex – index of the intersected face
+object – the intersected object
+uv - U,V coordinates at point of intersection
+
+Raycaster delegates to the raycast method of the passed object, when evaluating whether the ray intersects the object or not. This allows meshes to respond differently to ray casting than lines and pointclouds.
+
+Note that for meshes, faces must be pointed towards the origin of the ray in order to be detected; intersections of the ray passing through the back of a face will not be detected. To raycast against both faces of an object, you'll want to set the material's side property to THREE.DoubleSide.
+
+# .intersectObjects ( objects : Array, recursive : Boolean, optionalTarget : Array ) : Array
+objects — The objects to check for intersection with the ray.
+recursive — If true, it also checks all descendants of the objects. Otherwise it only checks intersection with the objects. Default is false.
+optionalTarget — (optional) target to set the result. Otherwise a new Array is instantiated. If set, you must clear this array prior to each call (i.e., array.length = 0;).
+
+Checks all intersection between the ray and the objects with or without the descendants. Intersections are returned sorted by distance, closest first. Intersections are of the same form as those returned by .intersectObject.

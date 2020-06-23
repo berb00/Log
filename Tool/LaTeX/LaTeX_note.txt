@@ -1,0 +1,2 @@
+#install macTeX
+curl https://mirrors.chevalier.io/CTAN/systems/mac/mactex/mactex-20190508.pkg --connect-timeout 1000

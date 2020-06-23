@@ -1,0 +1,11 @@
+不支持:
+box-align 				指定如何对齐一个框的子元素 	3
+box-direction 			指定在哪个方向，显示一个框的子元素 	3
+box-flex 				指定一个框的子元素是否是灵活的或固定的大小 	3
+box-flex-group 			指派灵活的元素到Flex组 	3
+box-lines 				每当它在父框的空间运行时，是否指定将再上一个新的行列 	3
+box-ordinal-group 		指定一个框的子元素的显示顺序 	3
+box-orient 				指定一个框的子元素是否在水平或垂直方向应铺设 	3
+box-pack 				指定横向盒在垂直框的水平位置和垂直位置 	3
+
+

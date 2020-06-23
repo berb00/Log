@@ -1,0 +1,74 @@
+数据类型
+	cInt
+	IntPoint
+	Path
+	Paths		
+		cInt > IntPoint > Path > Paths
+	InitOptions
+		enum InitOptions {
+        ioReverseSolution  = 1,
+        ioStrictlySimple   = 2,
+        ioPreserveCollinear = 4};
+		
+	IntRect
+	ClipType
+        AND	(Intersection	求交) 	获取两者相交的部分；
+        OR	(Union			求并) 	获取两者并集部分；
+        NOT	(difference		求异) 	获取Clip区域以外的区域；
+        XOR	(exclusive		求异或) 获取两个区域互相不重复的区域； 
+
+	PolyType
+		被裁剪（subject）
+		裁剪（clip）
+		
+	PolyFillType
+		Even-Odd:	奇偶填充。奇数次环绕的部分被填充，偶数次的部分不填充；
+		基于 边缘方向 和 环绕次数的填充:	(点集顺序 > 轮廓方向 > 环绕次数)
+			Non_Zero:	非零填充。所有的非零环绕次数部分都被填充；
+			Positive:	正填充。  所有环绕次数大于零的部分被填充；
+			Negative:	负填充。  所有环绕次数小于零的部分被填充;
+
+	JoinType
+		相交类型参数:jtMiter、jtSquare、jtRound
+		
+	EndType(结束类型)
+        etClosedPolygon:	末点是相交的，并且使用了JoinType来使路径视作一个多边形进行填充;
+        etClosedLine:		末点是相交的，并且使用了JoinType来使路径视作一条线进行填充;
+        etOpenSqure:		末点使用方形尾和扩展的delta角度;
+        etOpenRound:		末点使用圆形尾和扩展的delta角度;
+        etOpenButt:			末点使用了方向尾，并没有任何扩展;
+        etOpenSingle:		对一个开放式的多段线进行了偏置，等待未来更新;
+
+	ZFillFunction
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

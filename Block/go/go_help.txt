@@ -1,0 +1,97 @@
+Go is a tool for managing Go source code.
+
+Usage:
+
+        go <command> [arguments]
+
+The commands are:
+
+        run         compile and run Go program
+        build       compile packages and dependencies
+        clean       remove object files and cached files
+        fmt         gofmt (reformat) package sources
+
+        get         add dependencies to current module and install them
+        install     compile and install packages and dependencies      
+        list        list packages or modules
+        mod         module maintenance
+
+        bug         start a bug report
+        doc         show documentation for package or symbol
+        env         print Go environment information
+        fix         update packages to use new APIs
+
+        version     print Go version      
+        generate    generate Go files by processing source
+        test        test packages
+
+        tool        run specified go tool
+        vet         report likely mistakes in packages
+
+Use "go help <command>" for more information about a command.
+
+Additional help topics:
+
+        buildmode   build modes
+        c           calling between Go and C
+        cache       build and test caching
+        environment environment variables
+        filetype    file types
+        go.mod      the go.mod file
+        gopath      GOPATH environment variable
+        gopath-get  legacy GOPATH go get
+        goproxy     module proxy protocol
+        importpath  import path syntax
+        modules     modules, module versions, and more
+        module-get  module-aware go get
+        module-auth module authentication using go.sum
+        module-private module configuration for non-public modules
+        packages    package lists and patterns
+        testflag    testing flags
+        testfunc    testing functions
+
+Use "go help <topic>" for more information about that topic.
+
+
+
+
+mod (go 包管理工具)
+    go mod download    download modules to local cache
+    go mod edit        edit go.mod from tools or scripts
+    go mod graph       print module requirement graph
+    go mod init        initialize new module in current directory       go mod init modulename 
+    go mod tidy        add missing and remove unused modules
+    go mod vendor      make vendored copy of dependencies
+    go mod verify      verify dependencies have expected content
+    go mod why         explain why packages or modules are needed
+
+
+// go command
+#############################################################################################
+
+    go env          // 输出当前 Go 开发包的环境变量状态
+    go build        编译命令
+                    -o newname      // 指定生成可执行文件名
+    go clean        清除编译文件 
+                    -i 清除关联的安装的包和可运行文件，也就是通过go install安装的文件；
+                    -n 把需要执行的清除命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的；
+                    -r 循环的清除在 import 中引入的包；
+                    -x 打印出来执行的详细命令，其实就是 -n 打印的执行版本；
+                    -cache 删除所有go build命令的缓存
+                    -testcache 删除当前包所有的测试结果
+
+    go run          编译并运行 
+    go fmt          格式化代码文件 
+    go install      编译并安装 
+                    第一步: 编译代码
+                    第二步: 将生成的可执行文件拷贝到 GOPATH/bin目录
+
+    go get          一键获取代码、编译并安装 
+    go generate     在编译前自动化生成某类代码 
+    go test         测试命令
+    go pprof        性能分析命令
+
+
+
+go.mod 该文件的出现定义了它所在的目录为一个模块   
+go.sum 记录所依赖的项目的版本的锁定。

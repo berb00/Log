@@ -1,0 +1,90 @@
+	核心
+	jQuery 对象
+	
+	    $()
+	    $.noConflict()
+	    $.when()
+	实用工具
+		//迭代器
+		jQuery.each(arr/obj,callback(i,val))						一个通用的迭代函数，$(selector).each()专门用来遍历一个jQuery对象。
+		jQuery.grep(arr,fn(item,i)[,bool])						使用过滤函数检索数组，bool控制返回类型:是否满足过滤函数
+		jQuery.map(iterated,fn(item,i))							arr将一个数组中的所有元素通过转换函数映射到另一个数组中
+
+	    //类型判定
+	    jQuery.inArray(val,arr[,start])							Index在数组中查找指定值并返回它的索引（如果没有找到，则返回-1）。
+	    jQuery.isArray(obj)										bool确定参数是否为一个数组。
+	    jQuery.isEmptyObject(obj)								bool检查对象是否为空
+	    jQuery.isPlainObject()									bool测试对象是否是纯粹的对象（通过 "{}" 或者 "new Object" 创建的）
+	    jQuery.isFunction()										bool确定参数是否为一个Javascript 函数
+	    jQuery.isNumeric(val)									bool
+	    jQuery.isWindow(obj)										bool
+	    jQuery.isXMLDoc()
+	    jQuery.contains(container, contained)					bool 检查一个DOM元素是另一个DOM元素的后代。
+	    jQuery.type(obj)											str确定JavaScript 对象的类型[[Class]] 
+	    
+	    jQuery.noop()											undefined No Operation 
+	    jQuery.parseHTML(str,[,context][,bool?hasJS])			arr将字符串解析到一个DOM节点的数组中
+	    jQuery.parseXML(str)										XMLDocument解析一个字符串到一个XML文档。
+	    jQuery.proxy(fn,context)									fn接受一个函数，然后返回一个新函数，并且这个新函数始终保持了特定的上下文语境。
+	    jQuery.ready
+	    jQuery.readyException(error)								selector
+	    
+	    jQuery.trim(str)											str去掉字符串起始和结尾的空格/换行/指标符
+	    jQuery.now()												num返回一个数字，表示当前时间。(new Date).getTime()
+	    jQuery.makeArray(obj)									arr转换一个类似数组的对象成为真正的JavaScript数组。
+	    jQuery.extend([true],target,obj1,...)					对象合并。将两个或更多对象的内容合并到第一个对象。(以键名为准，取键名并集)
+	    jQuery.merge(arr1,arr2)									arr将arr2追加到arr1
+	    jQuery.fn.extend(obj)									obj扩展对象到JQ原型 提供新的方法
+	    jQuery.globalEval(code)									在全局上下文下执行一些JavaScript代码
+
+	    jQuery.unique()											弃用。jQuery.uniqueSort(array)
+		jQuery.parseJSON(json)									解析json串(不建议使用)		
+		jQuery.support											弃用
+	DOM 元素方法
+	
+	    .get(Index)												通过jQuery对象获取一个对应的DOM元素
+	    .index([selector|element])								index从匹配的元素中搜索给定元素的索引值，从0开始计数
+	    .toArray()												arr 返回一个包含jQuery对象集合中的所有DOM元素的数组。
+	
+	内部构件
+	    .jquery													str一个包含了jQuery版本号的字符串。指向JQ原型 别名:$.fn		(可用来辨别是否为JQ对象)
+	    jQuery.error()
+	    .length													num 在jQuery对象中元素的数量。s
+	    .pushStack()
+	    .selector
+	
+	延迟对象
+	
+	    deferred.always()
+	    deferred.catch()
+	    deferred.done()
+	    deferred.fail()
+	    deferred.isRejected()
+	    deferred.isResolved()
+	    deferred.notify()
+	    deferred.notifyWith()
+	    deferred.pipe()
+	    deferred.progress()
+	    deferred.promise()
+	    deferred.reject()
+	    deferred.rejectWith()
+	    deferred.resolve()
+	    deferred.resolveWith()
+	    deferred.state()
+	    deferred.then()
+	    .promise()
+	
+	回调对象
+	
+	    jQuery.Callbacks()
+	    callbacks.add()
+	    callbacks.disable()
+	    callbacks.empty()
+	    callbacks.fire()
+	    callbacks.fired()
+	    callbacks.fireWith()
+	    callbacks.has()
+	    callbacks.lock()
+	    callbacks.locked()
+	    callbacks.remove()
+	

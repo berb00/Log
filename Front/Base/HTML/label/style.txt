@@ -1,0 +1,254 @@
+    cssText                             设置或返回作为字符串的样式声明的内容
+CSS1:
+    //背景*
+    background 	                        设置或返回在一个声明中的所有背景属性。 	1
+    backgroundAttachment 	            设置或返回背景图像是否固定或随页面滚动。 	1
+    backgroundColor 	                设置或返回元素的背景色。 	1
+    backgroundImage 	                设置或返回元素的背景图像。 	1
+    backgroundPosition 	                设置或返回的背景图像的起始位置。 	1
+    backgroundRepeat 	                设置或返回如何重复背景图像。 	1
+    backgroundClip 	                    设置或返回背景的绘制区域。 	3
+    backgroundOrigin 	                设置或返回背景图像的定位区域。 	3
+    backgroundSize                  	设置或返回背景图像的大小。 	3
+
+    //边框
+    border 	                            设置或返回在一个声明中的 borderWidth、borderStyle 和 borderColor。 	1
+    borderBottom 	                    设置或返回在一个声明中的所有 borderBottom* 属性。 	1
+    borderTop 	                        设置或返回在一个声明中的所有 borderTop* 属性。 	1
+    borderLeft 	                        设置或返回在一个声明中的所有 borderLeft* 属性。 	1
+    borderRight 	                    设置或返回在一个声明中的所有 borderRight* 属性。 	1
+
+    borderStyle 	                    设置或返回元素边框的样式（最多可以有四个值）。 	1
+    borderColor 	                    设置或返回元素边框的颜色（最多可以有四个值）。 	1
+    borderWidth 	                    设置或返回元素边框的宽度（最多可以有四个值）。 	1
+
+    borderBottomColor 	                设置或返回下边框的颜色。 	1
+    borderBottomStyle 	                设置或返回下边框的样式。 	1
+    borderBottomWidth 	                设置或返回下边框的宽度。 	1
+
+    borderLeftColor 	                设置或返回左边框的颜色。 	1
+    borderLeftStyle 	                设置或返回左边框的样式。 	1
+    borderLeftWidth 	                设置或返回左边框的宽度。 	1
+
+    borderRightColor 	                设置或返回右边框的颜色。 	1
+    borderRightStyle 	                设置或返回右边框的样式。 	1
+    borderRightWidth 	                设置或返回右边框的宽度。 	1
+
+    borderTopColor 	                    设置或返回上边框的颜色。 	1
+    borderTopStyle 	                    设置或返回上边框的样式。 	1
+    borderTopWidth 	                    设置或返回上边框的宽度。 	1
+
+    borderBottomLeftRadius 	            设置或返回左下角边框的形状。 	3
+    borderBottomRightRadius 	        设置或返回右下角边框的形状。 	3
+    borderImage 	                    设置或返回所有的 borderImage* 属性的速记属性。 	3
+    borderImageOutset 	                设置或返回边框图像区域超出边界框的量。 	3
+    borderImageRepeat 	                设置或返回图像边框是重复拼接图块还是延伸图块。 	3
+    borderImageSlice 	                设置或返回图像边框的向内偏移。 	3
+    borderImageSource 	                设置或返回要作为边框使用的图像。 	3
+    borderImageWidth 	                设置或返回图像边框的宽度。 	3
+    borderRadius 	                    设置或返回四个 border*Radius 属性的速记属性。 	3
+    borderTopLeftRadius 	            设置或返回左上角边框的形状。 	3
+    borderTopRightRadius 	            设置或返回右上角边框的形状。 	3
+    boxDecorationBreak 	                设置或返回分页处元素的背景和边框行为，或者换行处内联元素的背景和边框行为。 	3
+    boxShadow 	                        设置或返回元素的下拉阴影。 	3
+
+    //轮廓
+    outline 	                        设置或返回在一个声明中的所有 outline 属性。 	2
+    outlineColor 	                    设置或返回一个元素周围的轮廓颜色。 	2
+    outlineStyle 	                    设置或返回一个元素周围的轮廓样式。 	2
+    outlineWidth 	                    设置或返回一个元素周围的轮廓宽度。 	2
+
+    //字体
+    font 	                            设置或返回一个声明中的 fontStyle、fontVariant、fontWeight、fontSize、lineHeight 和 fontFamily。 	1
+    fontFamily 	                        设置或返回文本的字体。 	1
+    fontSize 	                        设置或返回文本的字体尺寸。 	1
+    fontStyle 	                        设置或返回字体样式是否是 normal（正常的）、italic（斜体）或 oblique（倾斜的）。 	1
+    fontVariant 	                    设置或返回是否以小型大写字母显示字体。 	1
+    fontWeight 	                        设置或返回字体的粗细。 	1
+    fontSizeAdjust 	                    当使用备用字体时，确保文本的可读性。 	3
+    fontStretch 	                    从字体库中选择一种正常的、浓缩的或扩大的字体。 	3
+
+    //列表
+    listStyle 	                        设置或返回一个声明中的 listStyleImage、listStylePosition 和 listStyleType。 	1
+    listStyleImage 	                    设置或返回作为列表项标记的图像。 	1
+    listStylePosition 	                设置或返回列表项标记的位置。 	1
+    listStyleType 	                    设置或返回列表项标记的类型。 	1
+
+    //外边距
+    margin 	                            设置或返回元素的外边距（最多可以有四个值）。 	1
+    marginBottom 	                    设置或返回元素的的下外边距。 	1
+    marginLeft 	                        设置或返回元素的左外边距。 	1
+    marginRight 	                    设置或返回元素的右外边距。 	1
+    marginTop 	                        设置或返回元素的上外边距。 	1
+
+    //内边距
+    padding 	                        设置或返回元素的内边距（最多可以有四个值）。 	1
+    paddingBottom 	                    设置或返回元素的下内边距。 	1
+    paddingLeft 	                    设置或返回元素的左内边距。 	1
+    paddingRight 	                    设置或返回元素的右内边距。 	1
+    paddingTop 	                        设置或返回元素的上内边距。 	1
+
+    //文本
+    textAlign 	                        设置或返回文本的水平对齐方式。 	1
+    textDecoration 	                    设置或返回文本的修饰。 	1
+    textIndent 	                        设置或返回文本第一行的缩进。 	1
+    textTransform 	                    设置或返回文本的大小写。 	1
+    verticalAlign 	                    设置或返回元素中内容的垂直对齐方式。 	1
+    color 	                            设置或返回文本的颜色。 	1
+    letterSpacing 	                    设置或返回文本中字符之间的空间。 	1
+    lineHeight                      	设置或返回在文本中行之间的距离。 	1
+    whiteSpace                      	设置或返回如何处理文本中的制表符、换行符和空格符。 	1
+    wordSpacing 	                    设置或返回文本中单词之间的空间。 	1
+    unicodeBidi 	                    设置或返回文本是否被重写，以便在同一文档中支持多种语言。 	2
+    direction 	                        设置或返回文本的方向。 	2
+    textAlignLast 	                    设置或返回当 text-align 属性设置为 "justify" 时，如何对齐一个强制换行符前的最后一行。 	3
+    textDecorationColor 	            设置或返回文本修饰的颜色。 	3
+    textDecorationLine 	                设置或返回文本修饰要使用的线条类型。 	3
+    textDecorationStyle 	            设置或返回文本修饰中的线条样式。 	3
+    textJustify 	                    设置或返回当 text-align 属性设置为 "justify" 时，要使用的对齐方法。 	3
+    textOverflow 	                    设置或返回当文本溢出包含它的元素，应该发生什么。 	3
+    textShadow 	                        设置或返回文本的阴影效果。 	3
+    hangingPunctuation 	                规定一个标点符号是否可以放置在线框外。 	3
+    wordBreak 	                        设置或返回非 CJK 语言的换行规则。 	3
+    wordWrap 	                        允许长单词或 URL 地址换行到下一行。 	3
+
+    //尺寸
+    width 	                            设置或返回元素的宽度。 	1
+    height 	                            设置或返回元素的高度。 	1
+    maxHeight 	                        设置或返回元素的最大高度。 	2
+    maxWidth 	                        设置或返回元素的最大宽度。 	2
+    minHeight 	                        设置或返回元素的最小高度。 	2
+    minWidth 	                        设置或返回元素的最小宽度。 	2
+
+CSS2:
+    //内容生成属性
+    content 	                        与 :before 和 :after 伪元素一起使用，来插入生成的内容。 	2
+    counterIncrement 	                增加一个或多个计数器。 	2
+    counterReset 	                    创建或重置一个或多个计数器。 	2
+    quotes                          	设置或返回嵌入引用的引号类型。 	2
+
+    //定位
+    cssFloat 	                        设置或返回元素的水平对齐方式。 	1
+    clear 	                            设置或返回元素相对浮动对象的位置。 	1
+    position 	                        设置或返回用于元素定位方法的类型（static、relative、absolute 或 fixed）。 	2
+    top 	                            设置或返回定位元素的顶部位置。 	2
+    right 	                            设置或返回定位元素的右部位置。 	2
+    left 	                            设置或返回定位元素的左部位置。 	2
+    bottom 	                            设置或返回定位元素的底部位置。 	2
+    visibility 	                        设置或返回元素是否应该是可见的。 	2
+    clip 	                            设置或返回定位元素的可见部分。 	2
+    cursor 	                            设置或返回鼠标指针显示的光标类型。 	2
+    display 	                        设置或返回元素的显示类型。 	1
+    overflow 	                        设置或返回如何处理呈现在元素框外面的内容。 	2
+    zIndex                          	设置或返回定位元素的堆叠顺序。 	2
+
+    //分页*
+    pageBreakAfter 	                    设置或返回元素后的分页行为。 	2
+    pageBreakBefore                 	设置或返回元素前的分页行为。 	2
+    pageBreakInside 	                设置或返回元素内的分页行为。 	2
+    widows 	                            设置或返回一个元素必须在页面顶部的可见行的最小数量。 	2
+    orphans 	                        设置或返回当元素内有分页时，必须在页面底部预留的最小行数。 	2
+
+    //表格*
+    borderCollapse 	                    设置或返回表格的边框是否被折叠为一个单一的边框。 	2
+    borderSpacing 	                    设置或返回表格中单元格之间的距离。 	2
+    captionSide 	                    设置或返回表格标题的位置。 	2
+    emptyCells 	                        设置或返回是否显示表格中的空单元格的边框和背景。 	2
+    tableLayout 	                    设置或返回表格单元格、行、列的布局方式。 	2
+
+CSS3:
+    //滤镜
+    filter 	                            设置或返回图片滤镜(可视效果，如：高斯模糊与饱和度) 	3
+
+    //页面媒体
+    imageOrientation 	                规定一个用户代理应用到图像上的顺时针方向的旋转。 	3
+
+    //媒体页面内容属性
+    hyphens 	                        设置如何拆分单词来提高段落布局。 	3
+
+    //颜色
+    opacity 	                        设置或返回元素的不透明度。 	3
+
+    //动画*
+    animation 	                        是下面除了 animationPlayState 属性之外的其他属性的速记属性。 	3
+    animationDelay 	                    设置或返回动画何时开始。 	3
+    animationDirection 	                设置或返回是否循环交替反向播放动画。 	3
+    animationDuration 	                设置或返回动画完成需花费的秒数或毫秒数。 	3
+    animationFillMode 	                设置或返回当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。 	3
+    animationIterationCount 	        设置或返回动画的播放次数。 	3
+    animationName 	                    设置或返回关键帧 @keyframes 动画的名称。 	3
+    animationTimingFunction 	        设置或返回动画的速度曲线。 	3
+    animationPlayState 	                设置或返回动画是运行的还是暂停的。 	3
+
+    //新弹性盒模型
+    flex 	                            相对于同一容器其他灵活的项目，设置或返回项目的长度。 	3
+    flexBasis 	                        设置或灵活项目的初始长度。 	3
+    flexDirection 	                    设置或返回灵活项目的方向。 	3
+    flexFlow 	                        是 flexDirection 和 flexWrap 属性的速记属性。 	3
+    flexGrow 	                        设置或返回项目将相对于同一容器内其他灵活的项目进行扩展的量。 	3
+    flexShrink 	                        设置或返回项目将相对于同一容器内其他灵活的项目进行收缩的量。 	3
+    flexWrap 	                        设置或返回灵活项目是否拆行或拆列。 	3
+    alignContent 	                    设置或返回当灵活容器内的各项没有占用所有可用的空间时各项之间的对齐方式（水平）。 	3
+    alignItems 	                        设置或返回灵活容器内的各项的对齐方式。 	3
+    alignSelf 	                        设置或返回灵活容器内被选中项目的对齐方式。 	3
+    justifyContent 	                    设置或返回当灵活容器内的各项没有占用所有可用的空间时各项之间的对齐方式（垂直）。 	3
+    order 	                            设置或返回一个灵活的项目相对于同一容器内其他灵活项目的顺序。 	3
+
+    //盒子
+    overflowX 	                        规定如果内容溢出元素的内容区域，是否对内容的左/右边缘进行裁剪。 	3
+    overflowY 	                        规定如果内容溢出元素的内容区域，是否对内容的上/下边缘进行裁剪。 	3
+
+    //多列
+    columnCount 	                    设置或返回元素应该被划分的列数。 	3
+    columnFill 	                        设置或返回如何填充列。 	3
+    columnGap 	                        设置或返回列之间的间隔。 	3
+    columnRule 	                        设置或返回所有的 columnRule* 属性的速记属性。 	3
+    columnRuleColor 	                设置或返回列之间的颜色规则。 	3
+    columnRuleStyle 	                设置或返回列之间的样式规则。 	3
+    columnRuleWidth 	                设置或返回列之间的宽度规则。 	3
+    columns 	                        设置或返回 columnWidth 和 columnCount 的速记属性。 	3
+    columnSpan 	                        设置或返回一个元素应横跨多少列。 	3
+    columnWidth 	                    设置或返回列的宽度。 	3
+
+    //用户外观
+    appearance*
+    boxSizing 	                        允许您以特定的方式定义匹配某个区域的特定元素。 	3
+    icon 	                            向作者提供为一个带有等价于图标的元素定义样式的功能。 	3
+    navDown 	                        设置或返回当使用向下箭头导航键时要导航到哪里。 	3
+    navIndex 	                        设置或返回元素的显示顺序。 	3
+    navLeft 	                        设置或返回当使用向左箭头导航键时要导航到哪里。 	3
+    navRight 	                        设置或返回当使用向右箭头导航键时要导航到哪里。 	3
+    navUp 	                            设置或返回当使用向上箭头导航键时要导航到哪里。 	3
+    outlineOffset 	                    对轮廓进行偏移，并在边框边缘进行绘制。 	3
+    resize 	                            设置或返回是否可由用户调整元素的尺寸大小。 	3
+
+    //2D/3D转换*
+    transform 	                        向元素应用 2D 或 3D 转换。 	3
+    transformOrigin                 	设置或返回被转换元素的位置。 	3
+    transformStyle                  	设置或返回被嵌套的元素如何呈现在 3D 空间中。 	3
+    backfaceVisibility 	                设置或返回当一个元素背对屏幕时是否可见。 	3
+    perspective 	                    设置或返回 3D 元素被查看的视角。 	3
+    perspectiveOrigin               	设置或返回 3D 元素的底部位置。 	3
+
+    //过渡*
+    transition 	                        设置或返回四个过渡属性的速记属性。 	3
+    transitionProperty 	                应用过渡效果的 CSS 属性的名称。 	3
+    transitionDuration 	                设置或返回完成过渡效果需要花费的时间（以秒或毫秒计）。 	3
+    transitionTimingFunction 	        设置或返回过渡效果的速度曲线。 	3
+    transitionDelay 	                设置或返回过渡效果何时开始。 	3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

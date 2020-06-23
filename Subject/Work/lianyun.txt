@@ -1,0 +1,292 @@
+
+YQ-069 G端第三版迭代需求第二版
+    1、积分仪表api接口联调   100%
+    2、可回收量曲线保存查询接口联调     70%
+    3、积分仪表、覆盖人数曲线、参与覆盖率发现的一些Bug修复
+
+
+YQ-074 数据大屏效果优化
+    1、减量排名指标调整echart图优化     100%
+    2、首页光晕、心跳效果完成优化       100%
+    3、首页参数配置联调                 100%
+    4、B端增加处理范围联调              100%
+
+
+
+
+
+
+
+
+3.11积分仪表				半环图			halfring.ejs			halfringfunction/initecharsjfyb
+3.3参与覆盖率				仪表图(切换)	instrument.ejs			instrumentfunction/initecharscylfgl
+3.					centerbidnum.ejs		centerbidnumfunction/initpagebottomcentermodule
+
+3.4可回收占比				圆饼汇总图(切换)piesummary				piesummaryfunction/initecharskhszb
+3.2减量统计					柱状汇总图		barsummary.ejs			barsummaryfunction/initecharsjltj
+3.15覆盖人数曲线			折线图			lineecharts				lineechartsfunction/initecharsfgrsqx
+分类投放分析				折线柱状图 		polygonalcolumnar		polygonalcolumnarfunction
+资源化分析					圆饼图柱状图	piebar					piebarfunction
+
+13中控面板-大数字显示
+
+
+
+
+
+
+在原来指标管理的基础上
+增加单一指标可以维护多个静态数据功能，
+刘永勃做指标编号为2~9，
+张玲做10~17，内容我还在梳理，中午会提交个版本，你们上午先熟悉下代码，任务截止3月10号
+
+
+bug:
+    1、016仪表图 编辑指标标签名称输入框 找不到E charts id
+    2、001圆饼柱状图 大标签无法编辑(traverseformvalid校验)
+
+增加单一指标维护多个静态数据功能 指标编号2~9 60%
+
+
+Task:
+1、金华项目110服务优化完成
+2、YQ-012 C端添加回收物静态页面
+3、YQ-012 C端预约回收欢迎页、预约回收列表页面
+4、YQ-012 C端预约回收详情页面
+
+    YQ-012 C端预约回收详情页面 完成
+    YQ-012 C端预约回收相关页面优化
+    YQ-012 C端预约回收创建联调
+    YQ-012 C端预约回收列表、预约回收详情联调
+    1、YQ-012 预约回收联调完成 
+02.20
+    1、YQ-003指标配置相关需求 隐藏静态页面相关选项等
+    2、协助后端配置请求超时设置
+
+    1、YQ-003指标配置其他需求
+02.21
+    1、YQ-003指标配置API相关需求  
+    2、验证租户端iconfont   
+    3、筛选运维端与新整理iconname差异部分  80%
+
+    1、运维端iconfont筛选验证
+    2、YQ-003指标配置填报相关需求
+
+1、YQ-012 C端预约回收相关页面优化
+2、YQ-012 C端预约回收列表、预约回收详情联调
+3、YQ-003指标配置相关需求 API、隐藏静态页面相关选项等
+4、整理、验证租户端运维端icon图标
+
+1、YQ-003指标配置-填报需求完成待联调
+
+2、分好啦APP-强制升级需求
+
+1、YQ-041 强制升级需求运维端、app 完成度70% 待联调
+YQ-041 强制升级需求联调
+=============================================
+
+
+1、YQ-003指标配置-填报需求前端页面完成 待联调
+2、G端首页第三版指标静态数据折线汇总图表页面
+3、G端首页第三版指标静态数据词云图表页面
+4、YQ-041 强制升级需求运维端、app 页面
+5、YQ-041 强制升级需求运维端联调
+
+1、YQ-041 强制升级需求C端联调
+
+1、G端首页第三版指标静态数据折线汇总表格调整
+2、YQ-041 强制升级需求运维端联调 
+
+1、强制升级对应我的页面对应app版本号显示 IOS完成 安卓待测
+
+息县至浙江就业直通车
+
+1、YQ-041 强制升级需求转测
+1、G端首页第三版指标静态数据静态页面001～010移植  
+3、收集大屏展示、图标特效案例
+
+远程链接：
+ID：1 751 046 739
+PS: 
+8na2j9
+
+1751046739
+
+VPN:
+用户名：liuyongbo     密码： Yfb$082
+
+
+
+1、G端首页第三版指标静态数据调整优化
+
+
+
+
+
+
+1.金华项目
+	-执法人员管理接口对接
+	-首页聚合功能 完成
+	-末端处置 修改图片个数 对接接口
+
+3.长兴项目- 巡检查询、投放查询相关模块接口对接
+
+
+LJFL-G端-第三版需求补充优化：
+##################################################
+$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/LJFL-G端-第三版完整规划补充需求V1.0.doc
+
+
+
+
+长兴项目二:
+#############################################
+UI:		$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/长兴项目
+demand:	$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/长兴项目/长兴私有化监管平台整体需求.docx
+svn:	https://192.168.10.62/svn/hw4web/f-branches/fp-hw4web-分支-(0106长兴项目前端头发,末端处置)
+API:	$/SAAS平台/01开发库/0104系统设计/接口设计/长兴项目接口/长兴私有化监管平台整体需求API文档.docx
+郜凯IP: 192.168.8.181
+前端分类
+	投放查询
+		其他垃圾	06	112/dropquerylist					dropquerylist			frontsortmanage/otherdropquerylist
+		可回收垃圾	0B	112/recycledropquerylist			recycledropquerylist	frontsortmanage/dropquerylist
+		有害垃圾	0A	112/harmfuldropquerylist			harmfuldropquerylist	frontsortmanage/dropquerylist
+	巡检查询
+		其他垃圾	06	112/otherpatrolquerylist			otherpatrolquerylist	frontsortmanage/patrolquerylist
+		易腐垃圾 	05	112/domesticgarbagepatrol			patrolquery				domesticgarbage/patrolquery
+	
+新增广告位管理:
+#############################################
+demand:	$/应用研发/190826联运好分类APP升级项目/受控区/01需求文档/4.4.1/新增广告位管理
+svn:	https://192.168.10.62/svn/hw4web/f-branches/f-hw4web-分支-（0106新增广告位管理）
+API：	$/应用研发/190826联运好分类APP升级项目/01计划与设计/0106系统设计/LYZH-HW4.2-2019Q4-94-广告位管理新增广告位.docx
+		$/应用研发/190826联运好分类APP升级项目/01计划与设计/0106系统设计/新增广告位管理（闪屏页迭代）-API文档.docx
+闪屏页-svn：https://192.168.10.62/svn/hw4web/f-branches/f-hw4web-分支-（0114新增广告位管理-新分支）
+配置管理
+	展示配置
+		闪屏页-	安培勇					108/flashscreen			flashscreen/flashscreen			
+		广告位管理-王山林0108			108/advertisementlist		advertisementmanage/advertisementlist		
+	公告通知
+		通知推送-王鑫0109				108/noticemanage			noticemanage/noticelist
+
+
+新增广告位管理：
+
+配置管理
+	展示配置    icon-chakantupian
+		闪屏页      108/flashscreen	
+		广告位管理   108/advertisementlist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##################################################################
+#							Done                                 #
+##################################################################
+
+-金华紧急演示项目:
+#############################################
+demand:	$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/金华紧急演示项目/LJFL-G端-金华项目需求.docx
+svn:	https://192.168.10.62/svn/hw4web/f-branches/f-hw4web-分支-（0107金华项目需求）
+API: 	$/SAAS平台/01开发库/0104系统设计/接口设计/G端平台API接口/LYZH-HW4.0-G端平台-API-web.docx 
+统计面板：陶海峰 0110
+末端处置	112/terminalfacilitiesmanage  $/SAAS平台/01开发库/0104系统设计/接口设计/租户平台API接口/LYZH-HW4.0-租户平台-API-web.docx&2.1.6
+执法人员管理 110/marshalsmanage
+线上地址：http://jinhua.lyzhyun.com:8000/index    jinhua/123456
+
+
+-1231沈阳报表:
+##############################################
+demand:	$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/沈阳项目12张报表需求/基于沈阳项目的填报优化需求文档.docx
+demand1:$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/G端参数指标及填报系统/G端参数指标、填报系统需求文档（袁鑫龙）.docx
+API:	$/SAAS平台/01开发库/0104系统设计/接口设计/G端平台API接口/LYZH-HW4.0-G端平台-API-web-填报系统-填报审核.docx
+svn:	https://192.168.10.62/svn/hw4web/f-branches/f-hw4web-hcn-分支(1231沈阳报表)
+test240账号：58968695/123456
+
+
+填报审核	fillintheaudit		111/fillintheaudit		fillintheauditmanage/fillintheauditlist
+数据上报	reporteddata		111/reporteddata		reporteddata/reporteddatalist
+
+环比：reviewechart
+导出：exportfile
+
+
+
+
+-G端监督考核:
+##############################################
+API:		$/SAAS平台/01开发库/0104系统设计/接口设计/G端平台API接口/LYZH-HW4.0-G端平台-API-web-监督考核系统.docx
+demand/UI:	$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/G端监督考核模块
+
+	-考核任务安排
+
+
+
+-新华社广告联盟：
+#############################################
+IOS:		丁彦鹏
+Android:	姚旭斌
+demand:	$/应用研发/190826联运好分类APP升级项目/受控区/01需求文档/4.4.0/对接新华社广告联盟/联运APP-对接广告平台等需求.docx
+	4.H5页面内嵌第三方时无法请求权限(js触发原生回调)
+		摄像头：	
+callhandler(name, data, callback)	// IOSFun
+registerhandler(name, callback)		// jsFun
+
+
+
+-长兴项目一:
+#############################################
+	UI:		$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/长兴项目
+	demand:	$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/长兴项目/长兴私有化监管平台整体需求.docx
+	SVN:	https://192.168.10.62/svn/hw4web/f-branches/fp-hw4web-分支-(1211长兴前端投放,中端收运,末端处置,新闻发布,设置)	
+	API:	$/SAAS平台/01开发库/0104系统设计/接口设计/长兴项目接口/长兴私有化监管平台整体需求API文档.docx
+	好分类app:http://localhost:4106/first#/tlogin?secretKey=sU/jOmL0FRW3oKFatG/fZkVjSDM/bLM3i4XqTrb1ck8=&phoneNo=13989866000&loginstatus=1
+	port: 	4140
+	郜凯IP: 192.168.8.181
+	C端appdemo:http://192.168.8.113:4106/#/home			15558126610     0000
+
+	基础信息-基础概况				baseinformationmanage	112/baseinformationlist		baseinformationmanage/baseinformationlist					
+	基础信息-小区管理				communitylist			112/communityinfor			communityinfor/communitylist					
+	基础信息-用户管理(业主管理?)	ownerinfor				112/ownerinfor				ownerinfor/ownerlist					
+	基础信息-单位信息				unitlist				112/unitinfor				unitinfor/unitlist					
+	前端投放-易腐垃圾-发袋查询		bagsearchlist			112/bagsearchlist			frontsortmanage/bagsearchlist					
+	前端投放-易腐垃圾-巡检查询		patrolquerylist			112/patrolquerylist			frontsortmanage/patrolquerylist					
+
+
+
+-余杭项目:
+#############################################
+	UI:		$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/ui/SaaS紧急改进需求
+	demand:	$/SAAS平台/02受控库/0102项目策划/010206产品策划/V4.3.10/SaaS-紧急改进需求-V4.3.10.docx
+	SVN:	https://192.168.10.62/svn/hw4web/f-branches/f-hw4web-分支-(1204紧急改进需求-余杭项目迁移报表优化)
+	port: 	4140
+	2.1	日垃圾汇总表						// 112/dailyrubbishlist         // rubbishcollectmanage/dailyrubbishlist
+		月垃圾汇总							// 112/monthrubbishlist			// rubbishcollectmanage/monthrubbishlist
+	2.2	系统设置-系统参数设置				// 109/sysparameterlist 		// sysparametermanage/sysparameterlist
+	2.37可回收物-前端减量-投放查询			// 112/deliveryquery			// deliveryquery/deliveryquerylist
+	2.4	积分管理-积分汇总查询				// 112/summaryofpointsmanage	// awardpointmanage/summaryofpointslist
+	2.5	基础信息-设备管理-智能垃圾分类箱	// 112/sortingboxmanage			// sortingboxmanage/sortingboxlist
+	2.6	生活垃圾-前端分类-投放查询			// 112/domesticgarbagethrow		// domesticgarbage/throwquery
+
+
+
+
+
+
+
+window远程
+ID:1751046739
+PASS:725akt

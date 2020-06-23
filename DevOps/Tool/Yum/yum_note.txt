@@ -1,0 +1,90 @@
+yum是一个用于管理rpm包的后台程序，用python写成，可以非常方便的解决rpm的依赖关系。
+rpm原本是Red Hat Linux发行版专门用来管理Linux各项套件的程序.
+在建立好yum服务器后，yum客户端可以通过http、ftp方式获得软件包，并使用方便的命令直接管理、更新所有的rpm包，
+甚至包括kernel的更新。
+
+
+
+
+
+
+
+
+#help
+#check          
+#check-update   
+    yum check-update                                // 检查可更新的rpm包
+
+#update  
+    yum update                                      // 更新所有的rpm包
+    yum update kernel kernel-source                 // 更新指定的rpm包,如更新kernel和kernel source
+
+#update-minimal 
+#updateinfo     
+#upgrade
+    yum upgrade                                     // 大规模的版本升级,与yum update不同的是,连旧的淘汰的包也升级
+
+#list 
+    yum list                                        // 列出资源库中所有可以安装或更新的rpm包
+    yum list perl                                   // 列出名为perl 的包 (列出资源库中特定的可以安装或更新以及已经安装的rpm包)
+    yum list perl*                                  // 列出perl 开头的包
+    yum list updates                                // 列出资源库中所有可以更新的rpm包
+    yum list installed                              // 列出已经安装的所有的rpm包
+    yum list extras                                 // 列出已经安装的但是不包含在资源库中的rpm包(注:extras是repos.d中定义的资源列表名称)
+
+#info   
+    yum info                                        // 列出资源库中所有可以安装或更新的rpm包的信息
+    yum info updates                                // 列出资源库中所有可以更新的rpm包的信息
+    yum info installed                              // 列出已经安装的所有的rpm包的信息
+    yum info extras                                 // 列出已经安装的但是不包含在资源库中的rpm包的信息
+
+#install     
+    yum install perl                                // 安装perl 包
+    yum install perl*                               // 安装perl 开头的包
+
+#reinstall
+
+#clean 
+    yum clean packages                              // 清除暂存中rpm包文件
+    yum clean headers                               // 清除暂存中rpm头文件
+    yum clean oldheaders                            // 清除暂存中旧的rpm头文件
+    yum clean all                                   // 清除暂存中旧的rpm头文件和包文件
+
+#deplist        
+#downgrade      
+#erase          
+    yum remove perl*                                // 会删除perl-* 所有包(包括与该包有倚赖性的包)
+#fs             
+#fssnapshot     
+#groups      
+#history  
+    yum history list packagename                    // 彻底删除安装的依赖包
+    yum history undo ID
+
+#load-transaction
+#makecache      
+#provides
+    yum provides realplay                           // 搜索有包含特定文件名的rpm包       
+      
+#repo-pkgs      
+#repolist       
+#search  
+    yum search perl                                 // 在包名称、包描述等中搜索匹配特定字符的rpm包    
+
+#shell          
+#swap           
+        
+#version        
+
+
+                            
+yum groupinstall “Chinese Support”              // 安装指定的组
+yum groupupdate “Chinese Support”               // 安装了的组成员软件包更新
+yum grouplist “Chinese Support”                 // 安装了的组和可以安装的组一览显示
+yum groupremove “Chinese Support”               // 删除指定的组
+yum groupinfo “Chinese Support”                 // 指定组所包含的软件包显示
+
+yum install -y  yum-fastestmirror
+
+安装依赖环境
+yum -y installgcc zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel git

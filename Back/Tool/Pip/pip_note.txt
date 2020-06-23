@@ -1,0 +1,7 @@
+# 升级pip
+python -m pip install --upgrade pip
+
+
+
+pip install virtualenv
+pip install virtualenvwrapper

@@ -1,0 +1,196 @@
+getContext() 方法可返回一个对象，该对象提供了用于在画布上绘图的方法和属性。
+
+var can = document.getElementById("can");
+var ctx = can.getContext('2d');
+
+颜色、样式和阴影	6+4
+线条样式			4+0
+矩形  			4+0	
+路径				0+12
+转换
+文本
+图像绘制
+像素操作
+合成
+其他
+
+
+
+
+
+
+
+颜色、样式和阴影
+context.fillStyle=color|gradient|pattern; 								设置或返回填充颜色、渐变或模式。
+context.strokeStyle=color|gradient|pattern; 								设置或返回笔触颜色、渐变或模式。
+context.shadowColor=color; 												设置或返回阴影的颜色。
+context.shadowBlur=number; 												设置或返回阴影的模糊级别。
+context.shadowOffsetX=number; 											设置或返回阴影与形状的水平距离。
+context.shadowOffsetY=number; 											设置或返回阴影与形状的垂直距离。
+
+context.createLinearGradient(x0,y0,x1,y1); 								创建线性渐变对象（用在画布内容上）。由两点坐标确定线性渐变方向及范围
+context.createRadialGradient(x0,y0,r0,x1,y1,r1); 							创建放射状/环形的渐变（用在画布内容上）。
+gradient.addColorStop(stop,color); 										规定渐变对象中的颜色和停止位置。
+context.createPattern(image,"repeat|repeat-x|repeat-y|no-repeat"); 		在指定的方向上重复指定的元素。
+
+
+
+线条样式
+context.lineCap="butt|round|square"; 									设置或返回线条的结束端点样式。
+context.lineJoin="bevel|round|miter"; 									设置或返回两条线相交时，所创建的拐角类型。
+context.lineWidth=number; 												设置或返回当前的线条宽度。
+context.miterLimit=number; 												设置或返回最大斜接长度。
+
+
+
+矩形  
+context.rect(x,y,width,height); 					创建矩形。				赋参创建 stroke()绘制
+context.fillRect(x,y,width,height); 				绘制矩形 (有填充)			直接赋参可绘制
+context.strokeRect(x,y,width,height); 			绘制矩形（无填充）		直接赋参可绘制
+context.clearRect(x,y,width,height); 			在给定的矩形内清除指定的像素。
+
+
+
+路径
+context.fill(); 									填充当前绘图（路径）。
+context.stroke(); 								绘制已定义的路径。
+context.beginPath(); 							起始一条路径，或重置当前路径。
+context.closePath(); 							创建从当前点回到起始点的路径。(闭合路径)
+context.moveTo(x,y); 							把路径移动到画布中的指定点，不创建线条。
+context.lineTo(x,y);								添加一个新点，然后在画布中创建从该点到最后指定点的线条。
+
+该方法使用前需moveTo()确定起点
+context.quadraticCurveTo(cpx,cpy,x,y); 			创建二次贝塞尔曲线。
+context.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y); 	创建三次贝塞尔曲线。
+arc(x,y,r,startAngle,stopAngle,anticlockwise) 	该方法使用前需以moveTo()确定圆心	创建弧/曲线（用于创建圆形或部分圆）。startAngle:开始弧度 x轴正向为0弧度 stopAngle:终止弧度   anticlockwise:false:顺时针(默认);true:逆时针
+arcTo() 											创建两切线之间的弧/曲线。
+isPointInPath() 									如果指定的点位于当前路径中，则返回 true，否则返回 false。
+clip() 											从原始画布剪切任意形状和尺寸的区域。
+
+
+转换
+context.scale(scalewidth,scaleheight); 			缩放绘图至更大或更小。
+context.rotate(angle); 							旋转当前绘图。num*Math.PI/180  正值顺时针 负值逆时针
+context.translate(x,y); 							重新映射画布上的 (0,0) 位置。连续使用具有传递性
+context.transform(a,b,c,d,e,f); 					替换绘图的当前转换矩阵。
+setTransform() 									将当前转换重置为单位矩阵。然后运行 transform()。
+
+
+
+文本
+font 											设置或返回文本内容的当前字体属性。
+textAlign 										设置或返回文本内容的当前对齐方式。
+textBaseline 									设置或返回在绘制文本时使用的当前文本基线。
+
+context.fillText(text,x,y,*maxWidth); 			在画布上绘制文本(有填充)
+context.strokeText(text,x,y,*maxWidth); 			在画布上绘制文本(无填充)
+measureText() 									返回包含指定文本宽度的对象。
+
+
+
+图像绘制
+drawImage() 														向画布上绘制图像、画布或视频。
+context.drawImage(img,x,y);  									定位图片
+context.drawImage(img,x,y,width,height); 						定位图片 指定宽高
+context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+像素操作 ImageData对象属性
+width 						返回 ImageData 对象的宽度。
+height 						返回 ImageData 对象的高度。
+data 						返回一个对象，其包含指定的 ImageData 对象的图像数据。(rgba以数组形式存在)
+var imgData=context.createImageData(width,height);							创建新的、空白的 ImageData 对象。
+var imgData=context.createImageData(imageData1);//以另一ImageData对象宽高为参 不涉及data属性 															
+var imgData=context.getImageData(x,y,width,height); 							返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据。
+context.putImageData(imgData,x,y,*dirtyX,*dirtyY,*dirtyWidth,*dirtyHeight);	放回ImageData对象到画布上。
+
+合成
+context.globalAlpha=number; 				设置或返回绘图的当前 alpha 或透明值。完全透明[0,1]不透明
+context.globalCompositeOperation=""; 	设置或返回新图像如何绘制到已有的图像上。
+
+其他
+context.save() 						保存当前环境的状态。
+context.restore() 					返回之前保存过的路径状态和属性。
+createEvent() 	 
+canvas.getContext() 	 
+canvas.toDataURL() 	 
+
+
+
+
+
+
+----------------------Word-------------------------
+颜色、样式和阴影
+gradient:渐变 梯度
+pattern:模式			
+
+线条样式
+round
+square
+bevel:斜边 斜面 锥
+round
+miter:斜接 	头饰		
+lineWidth 				
+miterLimit 				
+
+矩形
+rect() 					
+fillRect() 				
+strokeRect() 			
+clearRect() 				
+
+路径
+fill() 					
+stroke() 				
+beginPath() 				
+closePath() 				
+moveTo() 				
+lineTo() 				
+clip() 					
+quadratic:二次
+bezier:贝塞尔
+Curve:曲线
+arc(x,y,r,startAngle,stopAngle,anticlockwise) 
+arcTo() 					
+isPointInPath() 			
+
+转换
+scale() 					
+rotate() 				
+translate() 				
+transform() 				
+setTransform() 			
+
+文本
+font 					
+textAlign 				
+textBaseline 			
+
+context.fillText(text,x,y,*maxWidth); 				
+context.strokeText(text,x,y,*maxWidth); 			
+measureText() 			
+
+图像绘制
+drawImage() 				
+
+像素操作
+width 					
+height 					
+data 					
+
+createImageData() 		
+getImageData() 			
+putImageData() 			
+
+合成
+Alpha:透明(度) 					
+Composite:混合的 合成的 合成物
+Operation:运算 手术 操作 	
+
+其他			
+restore				
+
+
+
+
+
+

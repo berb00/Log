@@ -1,0 +1,181 @@
+#、go env
+#############################################################################################
+    GO111MODULE=""
+    GOARCH="amd64"
+    GOBIN=""
+    GOCACHE="/Users/berb00/Library/Caches/go-build"
+    GOENV="/Users/berb00/Library/Application Support/go/env"
+    GOEXE=""
+    GOFLAGS=""
+    GOHOSTARCH="amd64"
+    GOHOSTOS="darwin"
+    GOINSECURE=""
+    GONOPROXY=""
+    GONOSUMDB=""
+    GOOS="darwin"
+    GOPATH="/Users/berb00/go"
+    GOPRIVATE=""
+    GOPROXY="https://proxy.golang.org,direct"
+    GOROOT="/usr/local/Cellar/go/1.14.3/libexec"
+    GOSUMDB="sum.golang.org"
+    GOTMPDIR=""
+    GOTOOLDIR="/usr/local/Cellar/go/1.14.3/libexec/pkg/tool/darwin_amd64"
+    GCCGO="gccgo"
+    AR="ar"
+    CC="clang"
+    CXX="clang++"
+    CGO_ENABLED="1"
+    GOMOD=""
+    CGO_CFLAGS="-g -O2"
+    CGO_CPPFLAGS=""
+    CGO_CXXFLAGS="-g -O2"
+    CGO_FFLAGS="-g -O2"
+    CGO_LDFLAGS="-g -O2"
+    PKG_CONFIG="pkg-config"
+    GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments-fmessage-length=0 -fdebug-prefix-map=/var/folders/yk/c_jbx6rn0q74t943jd8kg9xh0000gn/T/go-build111615607=/tmp/go-build -gno-record-gcc-switches -fno-common"
+
+    修改go环境变量
+        go env -w GO111MODULE=on
+
+    GO111MODULE=off 无模块支持，go 会从 GOPATH 和 vendor 文件夹寻找包。
+    GO111MODULE=on 模块支持，go 会忽略 GOPATH 和 vendor 文件夹，只根据 go.mod 下载依赖。
+    GO111MODULE=auto 在 $GOPATH/src 外面且根目录有 go.mod 文件时，开启模块支持。
+    在使用模块的时候，GOPATH 是无意义的，不过它还是会把下载的依赖储存在 $GOPATH/src/mod 中，也会把 go install 的结果放在 $GOPATH/bin 中。
+
+    修改环境变量:
+        windows:    set GO111MODULE=on
+    go代理镜像:
+        官方： < 全球 CDN 加速 https://goproxy.io/>
+        七牛：Goproxy 中国 https://goproxy.cn
+        其他：jfrog 维护 https://gocenter.io
+        阿里： https://mirrors.aliyun.com/goproxy/
+            
+        export GOPROXY=https://mirrors.aliyun.com/goproxy/
+
+
+
+
+
+#、交叉编译(跨平台编译)
+#############################################################################################
+    set CGO_ENABLED=0       // 禁用CGO  交叉编译不支持CGO
+    set GOOS=linux          // 设置目标平台操作系统 darwin、freebsd、linux、windows
+    set GOARCH=amd64        // 设置目标处理器架构   386、amd64、arm
+
+    Mac 下编译 Linux 和 Windows 64位可执行程序
+        CGO_ENABLED=0 
+        GOOS=linux 
+        GOARCH=amd64 
+        go build main.go
+
+        CGO_ENABLED=0 
+        GOOS=windows 
+        GOARCH=amd64 
+        go build main.go
+    Linux 下编译 Mac 和 Windows 64位可执行程序
+        CGO_ENABLED=0 
+        GOOS=darwin 
+        GOARCH=amd64 
+        go build main.go
+
+        CGO_ENABLED=0 
+        GOOS=windows 
+        GOARCH=amd64 
+        go build main.go
+
+    Windows 下编译 Mac 和 Linux 64位可执行程序
+        SET CGO_ENABLED=0
+        SET GOOS=darwin
+        SET GOARCH=amd64
+        go build main.go
+
+        SET CGO_ENABLED=0
+        SET GOOS=linux
+        SET GOARCH=amd64
+        go build main.go
+
+
+
+#、关键字25个
+#############################################################################################
+    import      package
+    func        return
+    struct      interface
+    if          else
+    switch      case
+    const       var
+    continue    break default 
+    for
+
+
+    select
+    defer 
+    go 
+    map 
+    chan  
+    goto  
+    type    
+    fallthrough         如果case带有fallthrough，程序会继续执行下一条case,不会再判断下一条case的值 
+    range               从slice、map等结构中取元素 
+
+
+
+#、保留字
+#############################################################################################
+    constants:
+        true        false       nil         iota
+    types:
+        bool        
+        byte
+        string
+        int         uint
+        int8        uint8
+        int16       uint16
+        int32       uint32
+        int64       uint64
+        float32     float64
+        complex64   complex128
+        error
+        rune        // int32的别名，几乎在所有方面等同于int32   它用来区分字符值和整数值
+        uintptr     // 无符号整型，用于存放一个指针
+    functions:
+        len 	
+        make 	
+        new
+        cap 	
+        append 	 	 	
+        copy 	 	
+        close 	
+        delete
+        panic 	 	    
+        recover 	
+        complex
+        imag 	 	 	 	
+        real
+
+
+
+#、go mod 
+#############################################################################################   
+    Module 是多个 package 的集合，仓库版本管理的基本单元，使用 go.mod 文件记录依赖的 module。
+    在使用go mod的时候，本地包就不能使用相对路径来引用了，需要使用module名字作为前缀，即go mod init 时指定的module名字
+
+#、引用第三方包
+#############################################################################################   
+    1、
+        直接在包内引入第三方包路径
+        go run main.go 直接下载
+    2、 全局保存
+        go get -u -v github.com/kardianos/govendor
+
+
+
+
+解决Git :fatal: refusing to merge unrelated histories(两个分支是两个不同的版本，具有不同的提交历史)
+    git pull origin master --allow-unrelated-histories
+
+
+
+
+
+    

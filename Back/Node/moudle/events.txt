@@ -1,0 +1,61 @@
+events (事件)                                                 return                                  描述
+    给监听器传入参数与 this
+    异步与同步
+    只处理事件一次
+    错误事件
+    EventEmitter 类
+        'newListener' 事件                                        //新的监听器被添加时
+        'removeListener' 事件                                     //移除已存在的监听器时
+
+        //添加
+        emitter.on(eventName, listener)                             EventEmitter引用,可以链式调用              添加 listener 函数到名为 eventName 的事件的监听器数组的末尾。
+        emitter.addListener(eventName, listener)
+        emitter.once(eventName, listener)
+        emitter.prependListener(eventName, listener)
+        emitter.prependOnceListener(eventName, listener)
+        //删除
+        emitter.removeAllListeners([eventName])
+        emitter.removeListener(eventName, listener)                 EventEmitter引用,可以链式调用              从名为 eventName 的事件的监听器数组中移除指定的 listener(监听器实例)。
+        emitter.off(eventName, listener)                                                                     别名:emitter.removeListener(eventName, listener)
+
+        emitter.emit(eventName[, ...args])                          bool                                     按监听器的注册顺序，同步地调用每个注册到名为 eventName 事件的监听器，并传入提供的参数。
+        emitter.eventNames()                                        arr                                      返回一个列出触发器已注册监听器的事件的数组。 数组中的值为字符串或符号。
+
+        emitter.listenerCount(eventName)                            返回正在监听名为 eventName 的事件的监听器的数量。
+        emitter.listeners(eventName)                                返回名为 eventName 的事件的监听器数组的副本。
+
+        //监听器限制值
+        EventEmitter.defaultMaxListeners
+        emitter.getMaxListeners()                                   返回 EventEmitter 当前的最大监听器限制值
+        emitter.setMaxListeners(n)                                  返回 EventEmitter引用,可以链式调用              修改指定的 EventEmitter 实例的限制(默认10个，超过报错)
+
+
+
+
+        emitter.rawListeners(eventName)
+
+
+
+--------------------------------------------------------------------------------
+所有能触发事件的对象都是 EventEmitter 类的实例
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

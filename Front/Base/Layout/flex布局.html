@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex</title>
+    <style>
+        #main {
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border:1px solid red;
+
+            display:flex;
+            flex-flow:row wrap;
+
+            justify-content: flex-start;
+            align-items: flex-end;
+            align-content: flex-end;
+
+
+
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            border:1px solid;
+            border-radius:50%;
+            text-align: center;
+            line-height:100px;
+            flex-basis:50px;
+        }
+        .item1 {
+            order: 3;
+        }
+        /*.item3 {*/
+            /*flex-grow: 2;*/
+            /*order: 2;*/
+        /*}*/
+        /*.item6 {*/
+            /*flex-grow: 8;*/
+            /*order: 3;*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+    <!--
+    flex布局：
+        容器属性：
+            flex-flow           flex-direction flex-wrap|initial|inherit;
+            flex-direction      row|row-reverse|column|column-reverse
+            flex-wrap           nowrap|wrap|wrap-reverse|initial|inherit;
+            justify-content     flex-start|flex-end|center|space-between|space-around|initial|inherit;
+            align-items         stretch|center|flex-start|flex-end|baseline|initial|inherit;
+            align-content       stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;
+        子项属性：
+            flex                flex-grow flex-shrink flex-basis|auto|initial|inherit;
+            flex-grow           number|initial|inherit;
+            flex-shrink         number|initial|inherit;
+            flex-basis          number|auto|initial|inherit;
+            order               number|initial|inherit;
+            align-self          auto|stretch|center|flex-start|flex-end|baseline|initial|inherit;
+    -->
+    <div id="main">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+

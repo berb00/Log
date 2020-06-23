@@ -1,0 +1,18 @@
+History 对象
+History 对象包含用户（在浏览器窗口中）访问过的 URL。
+History 对象是 window 对象的一部分，可通过 window.history 属性对其进行访问。
+Note注意： 没有应用于History对象的公开标准，不过所有浏览器都支持该对象。
+history对象记录历史信息 在同一窗口下发生页面之间的跳转才会产生历史记录
+
+
+History 对象属性
+    history.length 				返回历史列表中的网址数
+    history.scrollRestoration: "auto"
+    history.state: null
+
+History 对象方法
+    history.back() 				加载 history 列表中的前一个 URL
+    history.forward() 			加载 history 列表中的下一个 URL
+    history.go(number|URL)		加载 history 列表中的某个具体页面。 num>0：前进到num页，num<0:后退到num页
+    history.pushState(data,title,url)
+    history.replaceState(data,title,url)

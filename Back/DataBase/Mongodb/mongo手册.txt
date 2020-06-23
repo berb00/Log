@@ -1,0 +1,349 @@
+MongoDB 中文手册
+    操作符
+        查询和计划操作符
+            比较查询操作符
+            逻辑查询操作符
+            元查询操作符
+            评价查询操作符
+            Geospatia查询操作符
+            数组查询操作符
+            位查询操作符
+        更新操作符
+            字段更新操作符
+            数组更新操作符
+            位更新操作符
+        聚合管道操作符
+            group查询操作符
+            管道聚合阶段
+    数据库命令
+        聚合命令
+        查询和写入操作命令
+        查询计划缓存命令
+        用户管理命令
+        角色管理命令
+        复制命令
+        分片命令
+        管理命令
+    Shell方法
+        集合方法
+        数据库方法
+        用户管理方法
+        游标方法
+        查询计划缓存方法
+        副本集方法
+        分片方法
+        连接方法
+    工具组件
+------------------------------------------------------------------------------------------------------------------------
+操作符-查询和计划操作符-比较查询操作符
+    $lte 	        小于等于
+    $lt 	        小于
+    $gte 	        大于等于
+    $gt 	        大于
+    $eq 	        等于
+    $ne 	        不等于
+    $in 	        包含
+    $nin 	        不包含
+操作符-查询和计划操作符-逻辑查询操作符
+    $nor
+    $not
+    $and
+    $or
+操作符-查询和计划操作符-元查询操作符
+    $exists 	    判断字段是否存在
+    $type 	        数据类型操作符
+操作符-查询和计划操作符-评价查询操作符
+    $where
+    $text
+    $regex
+    $mod 	        取模计算
+操作符-查询和计划操作符-Geospatia查询操作符
+操作符-查询和计划操作符-数组查询操作符
+    $all 	        匹配所有
+    $elemMatch
+    $size 	        匹配数组元素个数
+操作符-查询和计划操作符-位查询操作符
+
+
+操作符-更新操作符-字段更新操作符
+    $currentDate
+    $max
+    $min
+    $unset 	        删除字段。
+    $set 	        设置某一个字段的值。
+    $setOnInsert
+    $rename 	    字段的重命名
+    $mul
+    $inc 	        对一个数字字段的某个field增加value
+操作符-更新操作符-数组更新操作符
+    $position
+    $addToSet 	    加一个值到数组内，而且只有当这个值不在数组内才增加。
+    $pop 	        删除数组内的一个值。
+    $pullAll 	    用法同$pull一样，可以一次删除数组内的多个值。
+    $pull 	        从数组field内删除一个等于value的值。
+    $pushAll 	    用法同$push一样，只是$pushAll一次可以追加多个值到一个数组字段内。
+    $push 	        把value追加到field里。
+    $each
+    $sort
+操作符-更新操作符-位更新操作符
+操作符-聚合管道操作符-group查询操作符
+    $sum 	        计算总和
+    $avg 	        计算平均值
+    $first 	        根据资源文档的排序获取第一个文档数据。
+    $last 	        根据资源文档的排序获取最后一个文档数据
+    $max 	        获取集合中所有文档对应值得最大值。
+    $min 	        获取集合中所有文档对应值得最小值。
+    $push 	        在结果文档中插入值到一个数组中。
+    $addToSet 	    在结果文档中插入值到一个数组中，但不创建副本。
+    $stdDevPop
+    $stdDevSamp
+操作符-聚合管道操作符-管道聚合阶段
+    $project 	    修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档。
+    $match 	        用于过滤数据，只输出符合条件的文档。$match使用MongoDB的标准查询操作。
+    $redact
+    $limit 	        用来限制MongoDB聚合管道返回的文档数。
+    $skip 	        在聚合管道中跳过指定数量的文档，并返回余下的文档。
+    $unwind 	    将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值。
+    $group 	        将集合中的文档分组，可用于统计结果。
+    $sample
+    $sort 	        将输入文档排序后输出。
+    $geoNear 	    输出接近某一地理位置的有序文档。
+
+------------------------------------------------------------------------------------------------------------------------
+数据库命令-聚合命令
+    aggregate
+    count 	        查询记录条数
+    distinct
+    group
+    mapReduce
+数据库命令-查询和写入操作命令
+    find
+    insert
+    update 	        更新命令
+    delete
+    findAndModify
+    getMore
+    getLastError
+    getLastError
+    resetError
+    eval
+    parallelCollectionScan
+数据库命令-查询计划缓存命令
+    planCacheListFilters
+    planCacheSetFilter
+    planCacheClearFilters
+    planCacheListQueryShapes
+    planCacheListPlans
+    planCacheClear
+数据库命令-用户管理命令
+    createUser 	    创建一个数据库新用户
+    updateUser
+    dropUser
+    dropAllUsersFromDatabase
+    grantRolesToUser
+    revokeRolesFromUser
+    usersInfo
+数据库命令-角色管理命令
+    createRole
+    updateRole
+    dropRole
+    dropAllRolesFromDatabase
+    grantPrivilegesToRole
+    revokePrivilegesFromRole
+    grantRolesToRole
+    revokeRolesFromRole
+    rolesInfo
+    invalidateUserCache
+数据库命令-复制命令
+    replSetFreeze
+    replSetGetStatus
+    replSetInitiate
+    replSetMaintenance
+    replSetReconfig
+    replSetStepDown
+    replSetSyncFrom
+    resync
+    applyOps
+    isMaster
+    replSetGetConfig
+数据库命令-分片命令
+    flushRouterConfig 	        强制更新一个 mongos 缓存的集群元信息.
+    addShard 	                在 sharded cluster 中增加一个 shard.
+    cleanupOrphaned 	        移除不属于某个分片却存储在这个分片的数据.
+    checkShardingIndex 	        验证片键上索引有效性的内部命令.
+    enableSharding 	            对某个数据库开启分片
+    listShards              	返回配置服务器中的分片列表
+    removeShard             	开始删除一个分片的过程.
+    getShardMap 	            报告集群状态的内部命令.
+    getShardVersion         	返回 配置服务器 版本的内部命令.
+    mergeChunks 	            可以合并在一个分片上的数据块.
+    setShardVersion 	        设置 配置服务器 上数据块版本的内部命令.
+    shardCollection 	        对某个集合开启分片.
+    shardingState 	            报告一个 mongod 是不是集群中的一个分片.
+    unsetSharding 	            在MongoDB部署中影响实例间连接的内部命令.
+    split 	                    创建一个新的 chunk.
+    splitChunk              	分裂数据块的内部命令,使用 sh.splitFind() 和 sh.splitAt() 进行替代.
+    splitVector             	决定分裂点的内部命令.
+    medianKey 	                废弃非内部命令,参见 splitVector.
+    moveChunk 	                在分片间迁移数据块的内部命令.
+    movePrimary 	            在将某个分片从集群中删除时,重新设置 primary shard .
+    isdbgrid 	                Verifies that a process is a mongos.
+数据库命令-管理命令
+------------------------------------------------------------------------------------------------------------------------
+Shell方法-集合方法
+    db.collection.aggregate() 	        聚合，主要用于处理数据(诸如统计平均值,求和等)，并返回计算后的数据结果
+    db.collection.bulkWrite() 	        批量写入
+    db.collection.count() 	            返回集合总数或匹配查询的结果集总数
+    db.collection.createIndex()         创建一个集合索引
+    db.collection.dataSize() 	        返回集合的大小
+    db.collection.deleteOne() 	        删除集合中的一个文档
+    db.collection.deleteMany() 	        删除集合中的多个文档
+    db.collection.distinct() 	        返回具有指定字段不同值的文档（去除指定字段的重复数据）
+    db.collection.drop() 	            删除当前数据库中的collection集合
+    db.collection.dropIndex() 	        删除一个集合中的指定索引
+    db.collection.dropIndexes()         删除一个集合中的所有索引
+    db.collection.ensureIndex()         已过时，现使用db.collection.createIndex()
+    db.collection.explain() 	        返回各种方法的查询执行信息
+    db.collection.find() 	            查询集合，无参数则查询所有，并返回一个游标对象
+    db.collection.findAndModify() 	    查询并修改
+    db.collection.findOne() 	        查询单条数据
+    db.collection.findOneAndDelete() 	查询单条数据并删除
+    db.collection.findOneAndReplace() 	查询单条数据并替换
+    db.collection.findOneAndUpdate() 	查询单条数据并更新
+    db.collection.getIndexes() 	        返回当前集合的所有索引数组
+    db.collection.group() 	            提供简单的数据聚合功能
+    db.collection.insert() 	            在当前集合插入一条或多条数据（或叫文档）
+    db.collection.insertOne() 	        在当前集合插入一条数据
+    db.collection.insertMany() 	        在当前集合插入多条数据
+    db.collection.isCapped() 	        判断集合是否为定容量
+    db.collection.reIndex() 	        重建当前集合的所有索引
+    db.collection.replaceOne() 	        替换集合中的一个文档（一条数据）
+    db.collection.remove() 	            从当前集合删除数据
+    db.collection.renameCollection() 	重命名集合名称
+    db.collection.save() 	            已插入数据更新
+    db.collection.stats() 	            返回当前集合的状态
+    db.collection.storageSize() 	    返回当前集合已使用的空间大小
+    db.collection.totalSize() 	        返回当前集合的总占用空间，包括所有文件和所有索引
+    db.collection.totalIndexSize() 	    返回当前集合所有的索引所占用的空间大小
+    db.collection.updateMany() 	        修改集合中的多条数据
+    db.collection.update() 	            修改集合中的数据
+    db.collection.updateOne() 	        修改集合中的一条数据
+    db.collection.validate() 	        执行对集合验证操作
+Shell方法-数据库方法
+    db.cloneDatabase(） 	                从指定主机上克隆数据库
+    db.copyDatabase(） 	                从指定的机器上复制指定数据库数据到某个数据库
+    db.createCollection() 	            创建一个聚集集合（table）
+    db.cloneCollection() 	            在MongoDB实例之间复制集合数据
+    db.commandHelp() 	                返回数据库命令的帮助信息
+    db.currentOp() 	                    显示当前正在进行的操作
+    db.dropDatabase(); 	                删除当前使用数据库
+    db.fsyncLock() 	                    刷新写入磁盘并锁定该数据库，以防止写入操作，并协助备份操作
+    db.fsyncUnlock() 	                允许继续进行写入锁住的数据库（解锁）
+    db.getName() 	                    查看当前使用的数据库
+    db.getMongo() 	                    查看当前db的链接机器地址
+    db.getCollection(） 	                得到指定名称的聚集集合（table）
+    db.getCollectionNames() 	        得到当前db的所有聚集集合
+    db.getCollectionInfos() 	        返回当前数据库中的所有集合信息
+    db.getLastError() 	                返回上一次错误，如果没有错误则为空
+    db.getLastErrorObj() 	            查看完整的错误结果
+    db.getLogComponents() 	            返回日志消息详细级别
+    db.getPrevError() 	                返回包含自上次错误复位所有的错误状态文件
+    db.hostInfo() 	                    返回当前数据库主机系统的相关信息
+    db.killOp() 	                    终止指定的操作
+    db.listCommands() 	                显示公共数据库的命令列表
+    db.logout() 	                    注销登录
+    db.printCollectionStats() 	        显示当前db所有聚集索引的状态
+    db.repairDatabase() 	            修复当前数据库
+    db.repairDatabase() 	            修复当前数据库
+    db.resetError() 	                重置db.getPrevError()和getPrevError返回的错误信息
+    db.runCommand() 	                运行一个数据库命令
+    db.stats() 	                        显示当前db状态
+    db.serverStatus() 	                返回当前数据库状态的概要
+    db.setLogLevel() 	                设置一个单独的日志信息级别
+    db.setProfilingLevel() 	            修改当前数据库的分析级别
+    db.shutdownServer() 	            关闭当前数据库运行实例或安全停止有关操作进程
+    db.version() 	                    查看当前db版本
+Shell方法-用户管理方法
+    db.removeUser() 	                删除用户
+    db.createUser()
+    db.updateUser()
+    db.changeUserPassword()
+    db.dropAllUsers()
+    db.grantRolesToUser()
+    db.revokeRolesFromUser()
+    db.getUsers()
+    db.getUser()
+    db.auth() 	                        数据库认证、安全模式
+Shell方法-游标方法
+    cursor.batchSize()
+    cursor.close()
+    cursor.comment()
+    cursor.count()
+    cursor.explain()
+    cursor.forEach()
+    cursor.hasNext()
+    cursor.hint()
+    cursor.itcount()
+    cursor.limit()
+    cursor.map()
+    cursor.maxScan()
+    cursor.maxTimeMS()
+    cursor.max()
+    cursor.min()
+    cursor.next()
+    cursor.noCursorTimeout()
+    cursor.objsLeftInBatch()
+    cursor.pretty()
+    cursor.readConcern()
+    cursor.readPref()
+    cursor.returnKey()
+    cursor.showRecordId()
+    cursor.size()
+    cursor.skip()
+    cursor.snapshot()
+    cursor.sort()
+    cursor.tailable()
+    cursor.toArray()
+Shell方法-查询计划缓存方法
+    planCacheListFilters
+    planCacheSetFilter
+    planCacheClearFilters
+    planCacheListQueryShapes
+    planCacheListPlans
+    planCacheClear
+Shell方法-副本集方法
+    rs.add() 	                    增加副本集节点
+    rs.addArb()
+    rs.conf()
+    rs.freeze() 	                “冻结”mongodb实例
+    rs.help()
+    rs.initiate()
+    rs.printReplicationInfo() 	    查看到副本集操作日志
+    rs.reconfig()
+    rs.remove() 	                减少副本集节点
+    rs.slaveOk()
+    rs.syncFrom()
+    rs.stepDown() 	                将当前主库“降级”
+    rs.status() 	                查看副本集状态
+    db.printSlaveReplicationInfo 	查看复制集的同步状态
+Shell方法-分片方法
+
+Shell方法-连接方法
+    Mongo.setSlaveOk() 	            设置从库可以进行数据查询操作
+    Mongo.setReadPref()
+    Mongo.getReadPrefTagSet()
+    Mongo.getReadPrefMode()
+    Mongo.getDB()
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

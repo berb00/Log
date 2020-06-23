@@ -1,0 +1,27 @@
+#全局属性/方法
+    属性
+    Infinity 			        代表正的无穷大的数值。
+    NaN 				        指示某个值是不是数字值。
+    undefined 			        指示未定义的值。
+
+
+    函数
+    decodeURI(uri) 				解码某个编码的 URI。
+    decodeURIComponent(uri) 	解码一个编码的 URI 组件。
+
+    encodeURI(uri) 				把字符串编码为 URI。
+    encodeURIComponent(uri) 	把字符串编码为 URI 组件。
+
+    escape(str) 				对字符串进行编码。
+    unescape(str) 				对由 escape() 编码的字符串进行解码。
+
+    parseFloat(str) 			解析一个字符串并返回一个浮点数。
+    parseInt(str,[radix]) 		解析一个字符串并返回一个整数。
+
+    isFinite(val) 				检查某个值是否为有穷大的数。
+    isNaN(val) 					检查某个值是否是数字。
+
+    Number(obj) 				把对象的值转换为数字。
+    String(obj) 				把对象的值转换为字符串。
+
+    eval(str) 					计算 JavaScript 字符串，并把它作为脚本代码来执行。

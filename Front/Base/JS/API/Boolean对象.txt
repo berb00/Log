@@ -1,0 +1,30 @@
+Boolean 对象
+
+Boolean 对象用于转换一个不是 Boolean 类型的值转换为 Boolean 类型值 (true 或者false).
+
+属性 	
+boolean.constructor 				返回对创建此对象的 Boolean 函数的引用
+Boolean.prototype.name=value 	    使您有能力向对象添加属性和方法。
+
+方法 	
+boolean.toString() 				    把布尔值转换为字符串，并返回结果。
+boolean.valueOf() 				    返回 Boolean 
+
+
+
+
+<body>
+<p id="demo">单击按钮以字符串的形式显示Boolean对象的值。</p>
+<button onclick="myFunction()">点我</button>
+<script>
+function myFunction(){
+	var myvar=new Boolean(1);
+	var x=document.getElementById("demo");
+	x.innerHTML=myvar.toString();
+}
+</script>
+</body>
+
+
+
+

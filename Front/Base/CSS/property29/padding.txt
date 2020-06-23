@@ -1,0 +1,5 @@
+padding 			在一个声明中设置所有填充属性 	1
+padding-bottom 	设置元素的底填充 	1
+padding-left 	设置元素的左填充 	1
+padding-right 	设置元素的右填充 	1
+padding-top 		设置元素的顶部填充 	1

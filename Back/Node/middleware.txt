@@ -1,0 +1,20 @@
+node中间件
+
+http-errors
+path
+cookie-parser
+morgan              // 记录日志。development:请求信息打印在控制台，productment:将日志记录在log文件
+express-session
+connect-redis       // 由 node_redis 支持的Redis会话存储
+compression         // 启动Gzip压缩功能
+helmet
+
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+const compression = require('compression');
+const helmet = require('helmet');

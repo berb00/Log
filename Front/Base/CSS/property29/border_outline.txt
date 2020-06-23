@@ -1,0 +1,89 @@
+outline 	复合属性。设置或检索对象外的线条轮廓。 	2
+outline-style 	设置或检索对象外的线条轮廓的样式。 	2
+outline-color:color|invert 	设置或检索对象外的线条轮廓的颜色。 	invert 	默认。执行颜色反转（逆向的颜色）。可使轮廓在不同的背景颜色中都是可见。
+请始终在 outline-color 属性之前声明 outline-style 属性。元素只有获得轮廓以后才能改变其轮廓的颜色。
+outline-width 	设置或检索对象外的线条轮廓的宽度。 	2
+
+border 	复合属性。设置对象边框的特性。 	1
+border-color 	置或检索对象的边框颜色。 	1
+border-style 	设置或检索对象的边框样式。 	1
+border-width 	设置或检索对象的边框宽度。 	1
+
+border-top 	复合属性。设置对象顶部边框的特性。 	1
+border-top-color 	设置或检索对象的顶部边框颜色 	1
+border-top-style 	设置或检索对象的顶部边框样式。 	1
+border-top-width 	设置或检索对象的顶部边框宽度。 	1
+
+border-bottom 	复合属性。设置对象底部边框的特性。 	1
+border-bottom-color 	设置或检索对象的底部边框颜色。 	1 
+border-bottom-style 	设置或检索对象的底部边框样式。 	1
+border-bottom-width 	设置或检索对象的底部边框宽度。 	1
+
+border-left 	复合属性。设置对象左边边框的特性。 	1
+border-left-color 	设置或检索对象的左边边框颜色。 	1
+border-left-style 	设置或检索对象的左边边框样式。 	1
+border-left-width 	设置或检索对象的左边边框宽度。 	1
+
+border-right 	复合属性。设置对象右边边框的特性。 	1
+border-right-color 	设置或检索对象的右边边框颜色。 	1
+border-right-style 	设置或检索对象的右边边框样式。 	1
+border-right-width 	设置或检索对象的右边边框宽度。 	1
+
+border-radius 				设置或检索对象使用圆角边框。 	3
+border-bottom-left-radius 	设置或检索对象的左下角圆角边框。提供2个参数，2个参数以空格分隔，每个参数允许设置1个参数值，第1个参数表示水平半径，第2个参数表示垂直半径，如第2个参数省略，则默认等于第1个参数 	3
+border-bottom-right-radius 	设置或检索对象的右下角圆角边框。 	3
+border-top-left-radius 		定义左上角边框的形状。 	3
+border-top-right-radius 		定义右上角边框的形状。 	3
+
+border-image 		设置或检索对象的边框样式使用图像来填充。 	3
+border-image-slice 	规定图像边框的向内偏移。 	3
+border-image-source 	规定要使用的图像，代替 border-style 属性中设置的边框样式。 	3
+border-image-width 	规定图像边框的宽度。 	3
+border-image-outset 	规定边框图像超过边框的量。 	3
+border-image-repeat 	规定图像边框是否应该被重复（repeated）、拉伸（stretched）或铺满（rounded）。 	3
+
+
+
+
+outline-style
+border-style
+none 	定义无边框。
+hidden 	与 "none" 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。
+dotted 	定义点状边框。在大多数浏览器中呈现为实线。
+dashed 	定义虚线。在大多数浏览器中呈现为实线。
+solid 	定义实线。
+double 	定义双线。双线的宽度等于 border-width 的值。
+groove 	定义 3D 凹槽边框。其效果取决于 border-color 的值。
+ridge 	定义 3D 垄状边框。其效果取决于 border-color 的值。
+inset 	定义 3D inset 边框。其效果取决于 border-color 的值。
+outset 	定义 3D outset 边框。其效果取决于 border-color 的值。
+
+outline-width
+border-width
+medium 	默认。定义中等的边框。
+thin 	定义细的边框。
+thick 	定义粗的边框。
+length 	允许您自定义边框的宽度。
+
+border-radius:	左上角，右上角，右下角，左下角
+				左上，右上/左下，右下
+				左上右下，右上左下
+				
+				
+box-decoration-break 	规定行内元素被折行 	3
+box-shadow: h-shadow v-shadow blur spread color inset; 	向方框添加一个或多个阴影。 	3
+h-shadow 	必需的。水平阴影偏移距离。允许负值
+v-shadow 	必需的。垂直阴影偏移距离。允许负值
+blur 		可选。模糊距离
+spread 		可选。阴影的大小
+color 		可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表
+inset 		可选。从外层的阴影（开始时）改变阴影内侧阴影
+
+
+
+
+
+
+
+
+

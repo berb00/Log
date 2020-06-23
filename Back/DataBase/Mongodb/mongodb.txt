@@ -1,0 +1,176 @@
+mac安装和使用MongoDB
+安装mongodb中出现的问题
+命令行执行brew install mongodb，结果Error: mongodb: unknown version :mountain_lion，原因HomeBrew 从核心仓库 (#43770) 当中移除了mongodb 模块
+解决：
+brew uninstall mongodb
+brew tap mongodb/brew
+brew install mongodb-community
+
+启动mongodb
+mongod
+
+操作mongodb
+mongo
+
+退出mongodb
+执行
+use admin;
+db.shutdownServer();
+
+
+
+
+brew services start mongodb  ---启动  mongo --连接到数据库
+brew services stop mongodb --停止
+brew services restart mongodb --重启
+或者
+mongod --config /usr/local/etc/mongod.conf --启动
+use admin, db.shutdownServer() --关闭
+
+
+1.打开终端 执行 brew services start mongodb 启动 MongoDB服务，执行 mongo 开启shell操作；
+
+2.显示所有db： show dbs
+
+3.启用某个db： use mydb   （如果没有mydb会自动创建此库）
+
+4.显示库中的表：show tables 或 show collections  （在mongodb中，table称之为collection）
+
+5.插入一条数据：db.myCollection.insertOne( { x: 1 } );  （如果没有myCollection会自动创建此表）
+
+6.查询表中所有数据：db.myCollection.find()   (mongodb的所有数据以文档（json）的形式存放于collection中)
+
+7.查询表中所有数据，优美排版显示：db.myCollection.find().pretty()
+
+8.使用tab键代码提示：输入 db.my 点击tab键，会自动完成代码；输入 db.myCollection.c 点击tab键会提示所有模糊指令，手动敲指令完成即可。
+
+9.退出shell操作： quit()  或 <control-C>快捷键
+
+
+
+
+sudo mongod --dbpath=pathname                 //启动mongodb 并指定数据库地址
+mongo                                         //连接已启动的数据库(在另一个命令窗口)
+
+//----------------------------数据库操作-------------------------------------
+use dbname                                      //使用或创建数据库
+db.dropDatabase()                               //删除数据库
+show dbs                                        //查看所有数据库
+db                                              //显示当前数据库对象或集合
+
+//-----------------------------集合操作--------------------------------------
+db.createCollection(name, [options])            //创建集合
+db.collection.drop()                            //删除集合
+show collections                                //查看已存在的集合
+
+
+//-----------------------------文档操作--------------------------------------
+//增
+
+db.collection.insert(document)                  //插入文档
+db.person.insert({name:'berb',age:18})          //插入文档
+db.person.insert([{name:'aaa',age:12},{name:'ccc',age:50}])//插入多条数据
+
+//删
+db.collection.remove(//删除文档
+   [{query}],
+   {
+     [justOne: <boolean>],//删除个数
+     [writeConcern: <document>]//删除异常的级别
+   }
+)
+
+db.col.remove({})//删除所有文档
+
+
+//改
+db.collection.update(
+   <query>,
+   <update>,
+   {
+     upsert: <boolean>,
+     multi: <boolean>,
+     writeConcern: <document>
+   }
+)
+
+db.person.find({age:{$lt:50}})
+db.person.update({name:'aaa'},{$set:{name:'xxx',age:00}})                       //更新一条数据
+db.person.update({name:'bbb'},{$set:{name:'xxx',age:00}},{multi:true})          //更新多条数据
+db.collection.save(document)                                                    //替换已有文档，不存在则插入文档
+
+
+//查
+db.collection.find([query], [projection])
+db.collection.find()                          //查看已插入文档
+db.collection.findOne()                       //查看一条已插入文档
+db.collection.findById()
+db.collection.find({},{field1:1})                  //查询某字段     第二参数:filed:boolean  默认1
+
+//条件查询
+db.collection.find({<key>:<value>})             //等于
+db.collection.find({<key>:{$ne:<value>}})       //不等于
+db.collection.find({<key>:{$lt:<value>}})       //小于
+db.collection.find({<key>:{$lte:<value>}})      //小于等于
+db.collection.find({<key>:{$gt:<value>}})       //大于
+db.collection.find({<key>:{$gte:<value>}})      //大于等于
+
+db.collection.find({key1:value1, key2:value2})                                  //and
+db.collection.find({$or: [{key1: value1}, {key2:value2}]})                      //or
+db.col.find({<key>:{$lte:<value>},$or: [{key1: value1}, {key2:value2}]})       //and or         大括号内两个参数最外层均无{}
+
+db.collection.find(query, {title: 1, by: 1}) // inclusion模式 指定返回的键，不返回其他键
+db.collection.find(query, {title: 0, by: 0}) // exclusion模式 指定不返回的键,返回其他键
+
+//限制查询
+db.collection.find({}).limit(n)             //从第一条查询n条文档
+db.collection.find({}).limit(n).skip(m)     //从第m条之后开始查询n条文档
+
+
+//排序
+db.collection.find().sort({KEY:1})
+
+skip(), limilt(), sort()三个放在一起执行的时候，执行顺序:sort()、skip()、limit()
+
+
+
+
+db.collection.find([query]).count()          //返回查询到的文档条数
+
+db.collection.find().pretty()                   //格式化显示查找的文档
+
+
+
+
+--------------------------------------------------node操作数据库基本方法----------------------------------------------------------------
+//引用mongoose模块
+
+//连接到启动的mongo数据库
+
+//验证数据库连接状态
+//方法1:promise
+//方法2:监听回调
+//-------------------------------------------------------------
+//创建schema模型
+
+//为schema模型添加方法
+
+//创建Model模型
+
+//数据库操作----------------------------------------------------
+//增
+//方法1:创建entity实体
+//方法2:Model.create(document,cb)
+
+//删
+//Model.remove(conditions,cb);
+
+//改
+//Model.update(conditions,field,options,cb);
+
+//查
+//Model.find(conditions,field,options,cb);
+
+//其他操作-----------------------------------------------------
+
+

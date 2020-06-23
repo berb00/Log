@@ -1,0 +1,102 @@
+
+-:插件
+
+function
+    基础类
+        Pixel: ƒ c()            像素坐标，确定地图上的一个像素点。
+        Size: ƒ c()             地物对象的像素尺寸
+        LngLat: ƒ c()           地理坐标类                  latitude纬度,longitude经度
+        Bounds: ƒ c()           地物对象的经纬度矩形范围
+    地图
+        Map: ƒ c(el/elId, opts) 构造一个地图对象
+        View2D: ƒ c(opts)       构造一个二维地图显示视口对象
+        ArrayBounds: ƒ c()      经纬度路径边界。描述地图当前视口的边界范围，它使用一组经纬度路径来表述一个闭合的区域边界
+    3D地图
+    事件
+    图层
+        TileLayer: ƒ c()
+        TileLayer.Satellite     卫星图层类，继承自TileLayer 
+        TileLayer.RoadNet 	    路网图层类，继承自TileLayer 
+        TileLayer.Traffic 	    实时交通图层类，继承自TileLayer 
+        Buildings: ƒ c()        楼块图层，独立显示矢量楼块数据的一种图层 
+        MassMarks: ƒ c()        图海量麻点图层类
+        LayerGroup: ƒ c()       图层集合，用来包装其它图层类的实例并对集合做批量操作
+        LabelsLayer: ƒ c()      标注图层，用于添加 LabelMarker 类型标注
+        -Heatmap                热力图插件
+    自建图层
+        TileLayer.Flexible      自定义切片图层，即可灵活自定义切片内容的栅格图层，继承自AMap.TileLayer
+        ImageLayer: ƒ c()       图片图层，可将图片叠加在地图的对应区域
+        CanvasLayer: ƒ c()	    Canvas图层，可将Canvas叠加在地图的对应区域
+        VideoLayer: ƒ c()       Video图层，可将视频叠加在地图的对应区域
+        CustomLayer: ƒ c()      完全自定义绘制的图层
+    WMS/WMTS
+        TileLayer.WMS           用于加载OGC标准的WMS图层
+        TileLayer.WMTS          用于加载OGC标准的WMTS图层
+    覆盖物
+        Marker: ƒ c()           点标记
+        Icon: ƒ c()             图标类，用于作为Marker的icon属性
+        Text: ƒ c()             纯文本标记
+        Polyline: ƒ c()         覆盖物>折线 
+        Polygon: ƒ c()          覆盖物>多边形 
+        Circle: ƒ c()           覆盖物>圆 
+        CircleMarker: ƒ c()     覆盖物>圆点标记 
+        Ellipse: ƒ c()          覆盖物>椭圆 
+        Rectangle: ƒ c()        覆盖物>矩形 
+        OverlayGroup: ƒ c()     覆盖物集合
+        GeoJSON: ƒ c()          GeoJSON用于实现GeoJSON和OverlayGroup的相互转化
+        GroundImage: ƒ c()      图片覆盖物
+        LabelMarker: ƒ c()      标注
+        -ElasticMarker 	        灵活点标记，一种可以随着级别改变图标和大小的点标记 
+    信息窗体
+        InfoWindow: ƒ c()           信息窗体
+        -AdvancedInfoWindow         高级信息窗体，在普通信息窗体的基础上，整合了POI搜索和多种路径规划的功能
+    坐标与地址
+        -Geocoder                    地理编码与逆地理编码服务，用于地址描述与坐标间的相互转换
+        convertFrom: ƒ (a,b,c)      坐标转换接口，支持将坐标点从其他坐标系转换为高德坐标系
+    搜索服务
+    路径规划
+    轨迹纠偏
+    室内地图
+    地图控件
+    定位
+    数学计算库
+    基础库
+    工具类
+    云图
+    其他服务
+    错误信息列表 
+
+
+
+
+    BezierCurve: ƒ c()
+    Class: ƒ ()
+    CompositeLayer: ƒ c()
+    ContextMenu: ƒ c()
+    DistrictSearch: ƒ c()
+    GLCustomLayer: ƒ c()
+    IndoorMap: ƒ c()
+    MarkerShape: ƒ c()
+    Panorama: ƒ c()
+    PanoramaMarker: ƒ c()
+    PixelBounds: ƒ c()
+    VectorLayer: ƒ c()
+    convertFrom: ƒ (a,b,c)
+    plugin: ƒ (a,b)
+    service: ƒ (a,b)
+
+    Browser: {}             当前浏览器的一些信息
+    DomUtil: {}             DOM相关的库函数集合
+    GeometryUtil: {}        数学计算库
+    PlaneGeometryUtil: {}
+    Util: {}                常用库函数集合
+
+    BuryPoint: {}
+    Http: {}
+    UA: {}                  User Agent
+    User: {key: "e3a269612ee8231d18c8865f6ed9d68e"}
+    event: {}
+    CANVAS: "canvas"
+    DOM: "dom"
+    ImageMarker: undefined
+    v: "1.4.15"

@@ -1,0 +1,77 @@
+unicast:单播
+broadcast:广播
+multicast:多播
+
+LAN:局域网
+WAN:广域网
+traceroute:跟踪路由
+Transmission:传输
+duplex:双工
+full-duplex:全双工
+router:路由
+gateway:网关
+End system:端系统
+Intermediate system:中间系统
+End-to-end:端到端
+Hop-by-hop:逐跳
+datagram:数据报
+fragment:片段
+byte:字节
+bit:位
+demultiplexing:分用
+TCP segment:TCP报文段
+serial:串行
+loopback interface:环回接口
+serial:连续的 连载的
+byte stuffing:字节填充
+character stuffing:字符填充
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

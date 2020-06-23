@@ -1,0 +1,213 @@
+Benchmark                   基准, 基准值,基准点
+coordinate                  协调,配合;坐标
+misc        	            杂项;混杂;其它设置;杂七杂八
+Threshold        	        阈值
+Slopes        		        斜率
+Distort        	            扭曲, 变形
+Category        	        类别,种类
+exclusive        	        专有,独占
+Orientation        	        方向,目标,心意
+hexadecimal                 十六进制的
+octal                       八进制的
+decimal                     十进制的
+wildcard                    通配符
+Create                      增加
+Retrieve                    检索
+Update                      更新
+Delete                      删除
+alias                       别名
+Emitter                     发射器
+Convert                     转换 转换器
+duplicate                   重复 复制 复制品
+extend                      扩张
+Shrink                      收缩
+Macros                      宏命令
+Favorites                   收藏夹
+sync                        同步
+specify                     指定
+breadcrumb                  面包屑
+SYNOPSIS                    大纲 摘要
+shuffle                     洗牌 使随机
+trim                        修饰 修剪
+proxy                       代理人 代理服务器 代替物
+merge                       合并 融入
+detructuring                解构
+trait                       特点特性 叛徒
+statement                   声明
+directive                   指令 命令
+composer                    设计者 作曲家
+configure                   配置
+prefix                      前缀
+trait                       特点 特性
+deny                        拒绝
+vector                      矢量
+scalar                      标量的 数量标量
+fatal                       致命的 攸关的 
+argument                    论据 争论 
+enumerate                   枚举 列举
+activation                  激活
+assist                      帮助 协助 助手
+Manipulation                操作 操纵
+ambiguous                   模棱两可的 歧义的
+ascent                      上升 上坡
+descend                     降临 下降
+ASC                         升序
+DESC                        降序
+rect                        矩形
+clip                        剪辑
+scroll                      滚动
+overflow                    溢出
+hidden                      隐藏
+thumbnail                   缩略图
+display                     显示
+Visibility                  可见性
+column                      列
+row                         行
+wrap                        包裹
+flow                        流
+align                       排列
+items                       项目
+content                     内容
+stretch                     伸展
+shrink                      收缩
+stretch                     拉伸
+alter                       改变
+horizontal                  水平的
+vertical                    垂直的
+subscript                   下标
+decoration                  装饰
+initial                     初始化 最初的
+inherit                     继承
+radius                      半径
+Browser                     浏览器
+rem                         （font size of the root element）
+odd                         奇
+even                        偶
+scroll                      滚动
+transition                  过渡，转变
+transform                   改变 转变
+frames                      帧
+Query                       查询
+indent                      缩进
+infinity                    无穷
+parse                       解析
+CDN                         Content Delivery Network内容分发网络
+prototype                   原型，蓝本  
+separator                   分离器 分隔符
+delimiter                   定界符 分隔符
+prompt                      提示符 迅速 敏捷 准时
+compile                     编译
+pattern                     模式
+attributes                  属性
+URI                         UniformResourceIdentifier通用资源标识符
+Identifier                  标识符
+Anchor                      锚
+Capture                     捕获
+uncaught                    捕获
+quote                       引用
+cursor                      光标
+Interface                   接口 界面
+origin                      起点 原点
+ease                        缓解，轻松前进
+infinite                    无限的
+offset                      偏移
+resolution                  分辨率
+hyphens                     连字符
+coordinates                 坐标
+coords                      坐标
+toggle                      切换
+expires                     到期
+filter                      滤波器 过滤
+trigger                     触发 扳机
+previous                    前面的 以前的
+vertival                    垂直的
+horizontal                  水平的
+scale                       比例
+Compiler                    编译器
+Interpreter                 解释器
+Renderer                    渲染器
+Process                     进程
+thread                      线程
+Indentation                 缩进
+instanceof                  运算符
+instance                    实例 举例
+scheme                      方案 计划 谋划 
+format                      格式 版式
+Tag                         标签
+prop                        道具 支撑物 靠山
+generator                   发生器 生成器 发电机 
+key generator               秘钥生成器
+scope                       范围 眼界 余地 审视
+alternative                 可代替的 备选的 备选项
+Notation                    符号
+invalid                     无效的
+syntax                      语法
+radix                       基数 
+variable                    变量
+oriented                    面向的 定向的
+repositories                仓库 学识渊博的人
+Asynchronous                异步的
+minify                      缩小 压缩
+reference                   参考 引用
+bind                        绑定
+temporary                   暂时的 临时的
+Destructuring               解构
+iteration                   迭代 循环
+iterator                    迭代器
+parameter                   参数
+insensitive                 不敏感的
+case                        案例 容器
+markup                      标记
+reminder                    提醒 通知n
+Release                     发布 发行
+ampersand                   &
+apostrophe                  撇号
+quotation mark              引号
+aborted                     流产的 失败的
+request                     请求
+response                    响应
+evaluate                    评价 求值
+revision                    修订
+revert                      恢复 
+merge                       融入 混合 合并
+commite                     提交 
+conflicted                  冲突
+modified                    修饰 改进
+available                   可获得的
+preserve                    保持 保存
+valid                       合法的 有效的
+serialize                   序列化
+potential                   潜在的
+Malicious                   恶意的
+component                   成分 组件
+deferred                    延迟
+plain object                普通对象
+statistic                   统计
+anonymous                   匿名的
+reject                      拒绝 排斥
+resolve                     受理 决定
+devision                    分开 分隔 部门 除法 
+pseudo                      伪 假的 虚伪的 笔名 化名
+reverse                     逆置 反转
+conversion                  转换 兑换 
+encode                      编码 编码器
+multiple                    多重的 复杂的 倍数
+preview                     预览 预演 象征
+timestamp                   时间戳
+deprecate                   不赞成 反对
+asset                       资产 优点
+strip                       剥光 剥除 删除
+recursive                   递归
+incement                    增量 增长
+operator                    操作员 经营者 运算符
+schema                      概要 计划 图表
+formula                     公式 准则 方案
+workbench                   工作台
+schemas                     模型 图示 计划 纲要
+stored                      存储的
+migrate                     移植 迁移
+dump                        倾倒 卸下 垃圾场
+associate                   关联 联合 结交
+alter                       改变 替代 轮流
+truncate                    缩短 截断
+deny                        拒绝

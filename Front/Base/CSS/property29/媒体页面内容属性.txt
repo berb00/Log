@@ -1,0 +1,13 @@
+bookmark-label 		指定书签的标签 	3
+bookmark-level 		指定了书签级别 	3
+bookmark-target 		指定了书签链接的目标 	3
+float-offset 		在相反的方向推动浮动元素，他们一直具有浮动 	3
+hyphenate-after 		指定一个断字的单词断字字符后的最少字符数 	3
+hyphenate-before 	指定一个断字的单词断字字符前的最少字符数 	3
+hyphenate-character 	指定了当一个断字发生时，要显示的字符串 	3
+hyphenate-lines 		表示连续断字的行在元素的最大数目 	3
+hyphenate-resource 	外部资源指定一个逗号分隔的列表，可以帮助确定浏览器的断字点 	3
+hyphens 				设置如何分割单词以改善该段的布局 	3
+image-resolution 	指定了正确的图像分辨率 	3
+marks 				将crop and/or cross标志添加到文档 	3
+string-set 	  											3

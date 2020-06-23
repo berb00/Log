@@ -1,0 +1,173 @@
+==========================================================================================
+<router-link>
+    将激活 class 应用在外层元素
+
+
+==========================================================================================
+<router-link> Props
+    to
+    replace
+    append
+    tag
+    active-class
+    exact
+    event
+    exact-active-class
+
+
+==========================================================================================
+<router-view>
+<router-view> Props
+    name
+
+==========================================================================================
+Router 构建选项
+    routes
+    mode
+    base
+    linkActiveClass
+    linkExactActiveClass
+    scrollBehavior
+    parseQuery / stringifyQuery
+    fallback
+
+==========================================================================================
+Router 实例属性
+    router.app
+    router.mode
+    router.currentRoute
+
+==========================================================================================
+Router 实例方法
+    router.onReady
+    router.onError
+
+    router.beforeEach
+    router.afterEach
+
+    router.beforeResolve
+    router.resolve
+
+    router.push
+    router.replace
+    router.go
+    router.back
+    router.forward
+
+    router.addRoutes
+    router.getMatchedComponents
+    
+
+==========================================================================================
+路由对象
+    路由对象属性
+
+
+==========================================================================================
+组件注入
+    注入的属性
+    增加的组件配置选项
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+API 参考
+    <router-link
+            to="目标路由"
+            tag="标签"
+            replace
+
+    >
+        将激活 class 应用在外层元素
+
+    <router-link> Props
+        to                              目标路由的链接 调用router.push()     (向 history 栈添加一个新的记录)                     name、path、${}、params:{query}(伪静态参数)、query:{query}(query参数)
+        replace                                      调用router.replace()  (替换掉当前的 history 记录为新记录{replace值})
+        append
+        tag
+        active-class
+        exact
+        event
+        exact-active-class
+
+
+
+-------------------------------------------------------------------------------------------------------------
+    <router-view>
+    <router-view> Props
+        name
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
+    Router 构建选项
+        routes                                  Array<RouteConfig>
+        mode                                    配置路由模式          "hash" | "history" | "abstract"(node.js)
+        base                                    应用的基路径          "默认值: "/""
+        linkActiveClass                         全局配置 <router-link> 的默认“激活 class 类名"   ".router-link-active"(默认)
+        linkExactActiveClass                    全局配置 <router-link> 精确激活的默认的 class
+        scrollBehavior                          滚动行为
+        parseQuery / stringifyQuery             提供自定义查询字符串的解析/反解析函数。覆盖默认行为。
+        fallback                                当浏览器不支持 history.pushState 控制路由是否应该回退到 hash 模式。默认值为 true
+-------------------------------------------------------------------------------------------------------------
+
+
+
+    Router 实例属性
+        router.app
+        router.mode
+        router.currentRoute
+-------------------------------------------------------------------------------------------------------------
+    Router 实例方法
+        router.beforeEach
+        router.beforeResolve
+        router.afterEach
+        router.push
+        router.replace
+        router.go
+        router.back
+        router.forward
+        router.getMatchedComponents
+        router.resolve
+        router.addRoutes
+        router.onReady
+        router.onError
+-------------------------------------------------------------------------------------------------------------
+    路由对象
+        路由对象属性
+    组件注入
+        注入的属性
+        增加的组件配置选项

@@ -1,0 +1,19 @@
+list-style 								在一个声明中设置所有的列表属性 	1
+list-style-image:none|URL 				将图象设置为列表项标记 	1
+list-style-position:inside|outside 		设置列表项标记的放置位置 	1
+list-style-type 							设置列表项标记的类型 	1	
+
+
+
+list-style-image:none|URL
+object.style.listStyleImage="url('/images/blueball.gif')"
+
+
+list-style-position:inside|outside
+object.style.listStylePosition="inside" 
+inside 	列表项目标记放置在文本以内，且环绕文本根据标记对齐。
+outside 	默认值。保持标记位于文本的左侧。列表项目标记放置在文本以外，且环绕文本不根据标记对齐。
+
+
+
+

@@ -1,0 +1,70 @@
+https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+
+
+
+标示文档、文件或字节流的性质和格式
+
+
+
+MIME类型对大小写不敏感，但是传统写法都是小写。
+
+
+
+通用结构
+    type/subtype
+    type 表示可以被分多个子类的独立类别。
+    subtype 表示细分后的每个类型。
+
+独立类型
+#############################################################################################
+    text 	        表明文件是普通文本，理论上是人类可读 	
+    image 	        表明是某种图像。不包括视频，但是动态图（比如动态gif）也使用image类型 	
+    audio 	        表明是某种音频文件 	
+    video 	        表明是某种视频文件 	
+    application 	表明是某种二进制数据 	
+
+    text
+        text/plain                          // 若没有特定的subtype，就使用 text/plain
+        text/html
+        text/css
+        text/javascript                     // 废弃
+    image
+        image/gif                           // GIF 图片 (无损耗压缩方面被PNG所替代)
+        image/png
+        image/svg+xml 	                    // SVG图片 (矢量图)
+        image/jpeg
+        image/bmp
+        image/webp
+        image/x-icon
+        image/vnd.microsoft.icon
+    audio
+        audio/midi
+        audio/mpeg
+        audio/webm
+        audio/ogg
+        audio/wav
+    video
+        video/webm
+        video/ogg
+    application
+        application/octet-stream            // 二进制文件没有特定或已知的 subtype，即使用 application/octet-stream。
+        application/pkcs12
+        application/vnd.mspowerpoint
+        application/xhtml+xml
+        application/xml
+        application/pdf
+        application/javascript
+        application/ecmascript
+
+
+
+Multipart 类型  (Multipart 类型表示细分领域的文件类型的种类，经常对应不同的 MIME 类型。这是复合文件的一种表现方式)
+#############################################################################################
+    multipart/form-data
+    multipart/byteranges
+
+
+
+
+
+    

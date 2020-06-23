@@ -1,0 +1,176 @@
+HTTP:Hyper Text Transfer Protocol（超文本传输协议）
+基于TCP/IP协议的应用层的C/S架构的无状态协议
+
+
+HTTP报文结构
+#############################################################################################
+    请求行
+    请求头(也叫首部)
+        通用首部：请求报文和响应报文两方都会使用的首部。
+        请求首部：从客户端向服务器端发送请求报文时使用的首部。补充了请求的附加内容、客户端信息、响应内容相关优先级等信息。
+        响应首部：从服务器端向客户端返回响应报文时使用的首部。补充了响应的附加内容，也会要求客户端附加额外的内容信息。
+        实体首部：针对请求报文和响应报文的实体部分使用的首部。描述主体的长度和内容，或者资源自身;补充了资源内容更新时间等和实体有关的信息。
+        扩展首部：规范中没有定义的新首部
+    空行
+    请求体(可选)
+
+
+
+HTTP请求方法
+#############################################################################################
+    HTTP1.0:    GET、POST、HEAD
+    HTTP1.1:    OPTIONS、PUT、DELETE、TRACE、CONNECT
+
+    GET		    请求指定的页面信息，并返回实体主体。
+    HEAD	    用于获取报头	类似于get请求	返回的响应中没有具体的内容，
+    POST	    向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。
+    PUT		    从客户端向服务器传送的数据‘取代’指定的文档的内容。
+    DELETE	    请求服务器删除指定的页面。
+    OPTIONS     允许客户端查看服务器的性能。
+    TRACE	    回显服务器收到的请求，主要用于测试或诊断。
+    CONNECT	    HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。
+
+
+HTTP状态码
+#############################################################################################
+    1XX 请求正在处理
+
+    2XX 请求成功 
+        200 OK 正常处理  
+        204 no content 请求处理成功但没有资源可返回 
+        206 Partial Content 对资源的某一部分请求
+
+    3XX 重定向 
+        301 Moved Permanenly请求资源的URI已经更新（永久移动），客户端会同步更新URI。
+        302 Found 资源的URI已临时定位到其他位置，客户端不会更新URI。
+        303 See Other 资源的URI已更新，明确表示客户端要使用GET方法获取资源。
+        304 Not Modified 当客户端附带条件请求访问资源时资源已找到但未符合条件请求。
+        307 Temporary Redirect临时重定向
+
+    4XX 客户端错误 
+        400 Bad Request 请求报文中存在语法错误，一般为参数异常。
+        401 Unauthorized 发送的请求需要HTTP认证。
+        403 Forbiddden 不允许访问，对请求资源的访问被服务器拒绝   
+        404 Not Found 无法找到请求的资源，请求资源不存在。
+        405 请求的方式不支持。
+
+    5XX 服务器错误
+        500 Internal Server Error 服务器的内部资源出故障，服务器在执行请求时发生了错误。
+        503 Service Unavailable 服务器暂时处于超负载状态或正在进行停机维护，无法处理请求，服务器正忙。
+
+
+HTTP请求报文
+#############################################################################################
+    方法（method）
+        客户端希望服务器对资源执行的动作，是一个单独的词，如GET,POST等。
+    请求RUL（request-URL）
+        命名了所请求资源，或者URL路径组件的完整URL。如果直接与服务器进行对话，只要URL的路径组件是资源的绝对路径，通常就不会有什么问题——服务器可以嘉定自己是URL的主机/端口。
+    版本(version)
+        报文锁使用的HTTP版本，其格式如下：
+        HTTP/<major>.<minor>
+        其中主要版本号(major)和次要版本号(minor)都是整数。
+    状态码（status-code）
+        这三位数字描述了请求过程中所发生的情况。每个状态码的第一位数字用于描述状态的一般类型（“成功”、“出错”等）。
+    原因短语（reason-phrase）
+        数字状态码的可读版本，包含行种植序列之前的所有文本。原因短语只对人类有意义。
+    首部（header）
+        可以有另个或多个首部，每个首部都包含一个名字，后面跟着一个冒号（;），然后是一个可选的空格，接着是一个值，最后是一个CRLF。首部是由一个空行（CRLF）结束的，表示了首部列表的结束和实体主体部分的开始。
+    实体的主体部分（entity-body）
+        实体的主体部分包含一个由任意数据组成的数据块。并不是所有的报文都包含实体的主体部分，有时候，报文只是以一个CRLF结束。
+
+    请求行
+        所有的HTTP报文都是以一个起始行作为开始。请求报文的起始行说明了要做些什么。响应报文的起始行说明发生了什么。
+    请求头
+    
+
+HTTP请求报文
+#############################################################################################
+    <method><request-URL><version>
+    <headers>
+    <blank line>
+    <entity-body>
+
+    请求行(用空格分隔)
+        请求方法
+        请求URL
+        HTTP协议版本
+    请求头(键值对)
+        Accept-Charset
+        Content-Encoding
+        Accept
+        Accept-Encoding
+        Accept-Language
+        Connection
+        Content-Length
+        Content-Type
+        Cookie
+        Host
+        Origin
+        Referer
+        User-Agent
+        X-Requested-With
+
+        Authorization：         授权信息，通常出现在对服务器发送的WWW-Authenticate头的应答中
+        Accept-Charset：        标识浏览器可接受的字符集　　
+        Content-Encoding：      标识WEB服务器表明自己使用了什么压缩方法（gzip，deflate）压缩响应中的对象。
+
+        
+        User-Agent：            标识浏览器的具体类型　　
+        Accept：                标识浏览器可接受的MIME类型　
+        Accept-Encoding：       标识浏览器可接受的解码数据压缩格式　　
+        Accept-Language：       标识浏览器可接受的语言环境  当服务器能够提供一种以上的语言版本时要用到　
+        Host：                  标识请求的主机名，允许多个域名同处一个IP地址，即虚拟主机。
+        Connection：            标识表示是否需要持久连接。Keep-Alive/close，HTTP1.1默认是持久连接，它可以利用持久连接的优点，当页面包含多个元素时（例如Applet，图片），显著地减少下载所需要的时间。要实现这一点，Servlet需要在应答中发送一个Content-Length头，最简单的实现方法是：先把内容写入ByteArrayOutputStream，然后在正式写出内容之前计算它的大小。
+        Content-Length：        标识请求消息正文的长度。POST请求Content-Length必须出现。
+        Content-Type：          标识请求内容的类型    WEB服务器告诉浏览器自己响应的对象的类型和字符集。
+        Content-Language：      标识WEB服务器告诉浏览器自己响应的对象的语言。
+        Cookie：                标识最常用的请求头，浏览器每次都会将cookie发送到服务器上，允许服务器在客户端存储少量数据。
+        Origin:
+        Referer:
+        X-Requested-With:
+
+
+        Accept-Charset: 
+            ISO-8859-1
+        Content-Encoding：
+            gzip
+        Accept: 
+            application/json, text/javascript, */*; q=0.01
+        Accept-Encoding: 
+            gzip, deflate
+        Accept-Language: 
+            zh-CN,zh;q=0.9
+        Connection: 
+            keep-alive
+        Content-Length: 
+            242
+        Content-Type: 
+            application/json
+        Cookie: 
+            saas=fdsfsd
+        Host: 
+            qq.lyzhyun.com:4109
+        Origin: 
+            http://qq.lyzhyun.com:4109
+        Referer: 
+            http://qq.lyzhyun.com:4109/index
+        User-Agent: 
+            Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+        X-Requested-With: 
+            XMLHttpRequest
+
+    请求体
+
+
+
+
+
+
+HTTP响应报文
+#############################################################################################
+    <version><status><reason-phrase>
+    <headers>
+    <blank line>
+    <entity-body>
+
+

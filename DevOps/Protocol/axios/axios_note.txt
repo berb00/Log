@@ -1,0 +1,3 @@
+ajax与axios传值格式：
+    ajax:       Form Data
+    axios:      Request payload

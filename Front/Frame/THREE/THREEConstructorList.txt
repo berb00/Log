@@ -1,0 +1,407 @@
+ACESFilmicToneMapping: 5
+AddEquation: 100
+AddOperation: 2
+AdditiveBlending: 2
+AlphaFormat: 1021
+AlwaysDepth: 1
+AmbientLight: ƒ AmbientLight( color, intensity )
+AnimationClip: ƒ AnimationClip( name, duration, tracks )
+AnimationLoader: ƒ AnimationLoader( manager )
+AnimationMixer: ƒ AnimationMixer( root )
+AnimationObjectGroup: ƒ AnimationObjectGroup()
+AnimationUtils: Object
+ArcCurve: ƒ ArcCurve( aX, aY, aRadius, aStartAngle, aEndAngle, aClockwise )
+ArrayCamera: ƒ ArrayCamera( array )
+ArrowHelper: ƒ ArrowHelper( dir, origin, length, color, headLength, headWidth )
+Audio: ƒ Audio( listener )
+AudioAnalyser: ƒ AudioAnalyser( audio, fftSize )
+AudioContext: Object
+AudioListener: ƒ AudioListener()
+AudioLoader: ƒ AudioLoader( manager )
+AxesHelper: ƒ AxesHelper( size )
+AxisHelper: ƒ AxisHelper( size )
+BackSide: 1
+BasicDepthPacking: 3200
+BasicShadowMap: 0
+BinaryTextureLoader: ƒ BinaryTextureLoader( manager )
+Bone: ƒ Bone()
+BooleanKeyframeTrack: ƒ BooleanKeyframeTrack( name, times, values )
+BoundingBoxHelper: ƒ BoundingBoxHelper( object, color )
+Box2: ƒ Box2( min, max )
+Box3: ƒ Box3( min, max )
+Box3Helper: ƒ Box3Helper( box, hex )
+BoxBufferGeometry: ƒ BoxBufferGeometry( width, height, depth, widthSegments, heightSegments, depthSegments )
+BoxGeometry: ƒ BoxGeometry( width, height, depth, widthSegments, heightSegments, depthSegments )
+BoxHelper: ƒ BoxHelper( object, color )
+BufferAttribute: ƒ BufferAttribute( array, itemSize, normalized )
+BufferGeometry: ƒ BufferGeometry()
+BufferGeometryLoader: ƒ BufferGeometryLoader( manager )
+ByteType: 1010
+Cache: Object
+Camera: ƒ Camera()
+CameraHelper: ƒ CameraHelper( camera )
+CanvasRenderer: ƒ CanvasRenderer()
+CanvasTexture: ƒ CanvasTexture( canvas, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy )
+CatmullRomCurve3: ƒ CatmullRomCurve3( points, closed, curveType, tension )
+CineonToneMapping: 4
+CircleBufferGeometry: ƒ CircleBufferGeometry( radius, segments, thetaStart, thetaLength )
+CircleGeometry: ƒ CircleGeometry( radius, segments, thetaStart, thetaLength )
+ClampToEdgeWrapping: 1001
+Clock: ƒ Clock( autoStart )
+ClosedSplineCurve3: ƒ ClosedSplineCurve3( points )
+Color: ƒ Color( r, g, b )
+ColorKeyframeTrack: ƒ ColorKeyframeTrack( name, times, values, interpolation )
+CompressedTexture: ƒ CompressedTexture( mipmaps, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, encoding )
+CompressedTextureLoader: ƒ CompressedTextureLoader( manager )
+ConeBufferGeometry: ƒ ConeBufferGeometry( radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+ConeGeometry: ƒ ConeGeometry( radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+CubeCamera: ƒ CubeCamera( near, far, cubeResolution, options )
+CubeGeometry: ƒ BoxGeometry( width, height, depth, widthSegments, heightSegments, depthSegments )
+CubeReflectionMapping: 301
+CubeRefractionMapping: 302
+CubeTexture: ƒ CubeTexture( images, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding )
+CubeTextureLoader: ƒ CubeTextureLoader( manager )
+CubeUVReflectionMapping: 306
+CubeUVRefractionMapping: 307
+CubicBezierCurve: ƒ CubicBezierCurve( v0, v1, v2, v3 )
+CubicBezierCurve3: ƒ CubicBezierCurve3( v0, v1, v2, v3 )
+CubicInterpolant: ƒ CubicInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+CullFaceBack: 1
+CullFaceFront: 2
+CullFaceFrontBack: 3
+CullFaceNone: 0
+Curve: ƒ Curve()
+CurvePath: ƒ CurvePath()
+CustomBlending: 5
+CylinderBufferGeometry: ƒ CylinderBufferGeometry( radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+CylinderGeometry: ƒ CylinderGeometry( radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+Cylindrical: ƒ Cylindrical( radius, theta, y )
+DataTexture: ƒ DataTexture( data, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, encoding )
+DataTexture3D: ƒ DataTexture3D( data, width, height, depth )
+DataTextureLoader: ƒ DataTextureLoader( manager )
+DefaultLoadingManager: LoadingManager
+DepthFormat: 1026
+DepthStencilFormat: 1027
+DepthTexture: ƒ DepthTexture( width, height, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, format )
+DirectionalLight: ƒ DirectionalLight( color, intensity )
+DirectionalLightHelper: ƒ DirectionalLightHelper( light, size, color )
+DirectionalLightShadow: ƒ DirectionalLightShadow( )
+DiscreteInterpolant: ƒ DiscreteInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+DodecahedronBufferGeometry: ƒ DodecahedronBufferGeometry( radius, detail )
+DodecahedronGeometry: ƒ DodecahedronGeometry( radius, detail )
+DoubleSide: 2
+DstAlphaFactor: 206
+DstColorFactor: 208
+DynamicBufferAttribute: ƒ DynamicBufferAttribute( array, itemSize )
+EdgesGeometry: ƒ EdgesGeometry( geometry, thresholdAngle )
+EdgesHelper: ƒ EdgesHelper( object, hex )
+EllipseCurve: ƒ EllipseCurve( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation )
+EqualDepth: 4
+EquirectangularReflectionMapping: 303
+EquirectangularRefractionMapping: 304
+Euler: ƒ Euler( x, y, z, order )
+EventDispatcher: ƒ EventDispatcher()
+ExtrudeBufferGeometry: ƒ ExtrudeBufferGeometry( shapes, options )
+ExtrudeGeometry: ƒ ExtrudeGeometry( shapes, options )
+Face3: ƒ Face3( a, b, c, normal, color, materialIndex )
+Face4: ƒ Face4( a, b, c, d, normal, color, materialIndex )
+FaceColors: 1
+FaceNormalsHelper: ƒ FaceNormalsHelper( object, size, hex, linewidth )
+FileLoader: ƒ FileLoader( manager )
+FlatShading: 1
+Float32Attribute: ƒ Float32Attribute( array, itemSize )
+Float32BufferAttribute: ƒ Float32BufferAttribute( array, itemSize, normalized )
+Float64Attribute: ƒ Float64Attribute( array, itemSize )
+Float64BufferAttribute: ƒ Float64BufferAttribute( array, itemSize, normalized )
+FloatType: 1015
+Fog: ƒ Fog( color, near, far )
+FogExp2: ƒ FogExp2( color, density )
+Font: ƒ Font( data )
+FontLoader: ƒ FontLoader( manager )
+FrontFaceDirectionCCW: 1
+FrontFaceDirectionCW: 0
+FrontSide: 0
+Frustum: ƒ Frustum( p0, p1, p2, p3, p4, p5 )
+GammaEncoding: 3007
+Geometry: ƒ Geometry()
+GeometryUtils: Object
+GreaterDepth: 6
+GreaterEqualDepth: 5
+GridHelper: ƒ GridHelper( size, divisions, color1, color2 )
+Group: ƒ Group()
+HalfFloatType: 1016
+HemisphereLight: ƒ HemisphereLight( skyColor, groundColor, intensity )
+HemisphereLightHelper: ƒ HemisphereLightHelper( light, size, color )
+IcosahedronBufferGeometry: ƒ IcosahedronBufferGeometry( radius, detail )
+IcosahedronGeometry: ƒ IcosahedronGeometry( radius, detail )
+ImageBitmapLoader: ƒ ImageBitmapLoader( manager )
+ImageLoader: ƒ ImageLoader( manager )
+ImageUtils: Object
+ImmediateRenderObject: ƒ ImmediateRenderObject( material )
+InstancedBufferAttribute: ƒ InstancedBufferAttribute( array, itemSize, normalized, meshPerAttribute )
+InstancedBufferGeometry: ƒ InstancedBufferGeometry()
+InstancedInterleavedBuffer: ƒ InstancedInterleavedBuffer( array, stride, meshPerAttribute )
+Int8Attribute: ƒ Int8Attribute( array, itemSize )
+Int8BufferAttribute: ƒ Int8BufferAttribute( array, itemSize, normalized )
+Int16Attribute: ƒ Int16Attribute( array, itemSize )
+Int16BufferAttribute: ƒ Int16BufferAttribute( array, itemSize, normalized )
+Int32Attribute: ƒ Int32Attribute( array, itemSize )
+Int32BufferAttribute: ƒ Int32BufferAttribute( array, itemSize, normalized )
+IntType: 1013
+InterleavedBuffer: ƒ InterleavedBuffer( array, stride )
+InterleavedBufferAttribute: ƒ InterleavedBufferAttribute( interleavedBuffer, itemSize, offset, normalized )
+Interpolant: ƒ Interpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+InterpolateDiscrete: 2300
+InterpolateLinear: 2301
+InterpolateSmooth: 2302
+JSONLoader: ƒ JSONLoader()
+KeyframeTrack: ƒ KeyframeTrack( name, times, values, interpolation )
+LOD: ƒ LOD()
+LatheBufferGeometry: ƒ LatheBufferGeometry( points, segments, phiStart, phiLength )
+LatheGeometry: ƒ LatheGeometry( points, segments, phiStart, phiLength )
+Layers: ƒ Layers()
+LensFlare: ƒ LensFlare()
+LessDepth: 2
+LessEqualDepth: 3
+Light: ƒ Light( color, intensity )
+LightShadow: ƒ LightShadow( camera )
+Line: ƒ Line( geometry, material, mode )
+Line3: ƒ Line3( start, end )
+LineBasicMaterial: ƒ LineBasicMaterial( parameters )
+LineCurve: ƒ LineCurve( v1, v2 )
+LineCurve3: ƒ LineCurve3( v1, v2 )
+LineDashedMaterial: ƒ LineDashedMaterial( parameters )
+LineLoop: ƒ LineLoop( geometry, material )
+LinePieces: 1
+LineSegments: ƒ LineSegments( geometry, material )
+LineStrip: 0
+LinearEncoding: 3000
+LinearFilter: 1006
+LinearInterpolant: ƒ LinearInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+LinearMipMapLinearFilter: 1008
+LinearMipMapNearestFilter: 1007
+LinearToneMapping: 1
+Loader: ƒ Loader()
+LoaderUtils: Object
+LoadingManager: ƒ LoadingManager( onLoad, onProgress, onError )
+LogLuvEncoding: 3003
+LoopOnce: 2200
+LoopPingPong: 2202
+LoopRepeat: 2201
+LuminanceAlphaFormat: 1025
+LuminanceFormat: 1024
+MOUSE: Object
+Material: ƒ Material()
+MaterialLoader: ƒ MaterialLoader( manager )
+Math: Object
+Matrix3: ƒ Matrix3()
+Matrix4: ƒ Matrix4()
+MaxEquation: 104
+Mesh: ƒ Mesh( geometry, material )
+MeshBasicMaterial: ƒ MeshBasicMaterial( parameters )
+MeshDepthMaterial: ƒ MeshDepthMaterial( parameters )
+MeshDistanceMaterial: ƒ MeshDistanceMaterial( parameters )
+MeshFaceMaterial: (...)
+MeshLambertMaterial: ƒ MeshLambertMaterial( parameters )
+MeshMatcapMaterial: ƒ MeshMatcapMaterial( parameters )
+MeshNormalMaterial: ƒ MeshNormalMaterial( parameters )
+MeshPhongMaterial: ƒ MeshPhongMaterial( parameters )
+MeshPhysicalMaterial: ƒ MeshPhysicalMaterial( parameters )
+MeshStandardMaterial: ƒ MeshStandardMaterial( parameters )
+MeshToonMaterial: ƒ MeshToonMaterial( parameters )
+MinEquation: 103
+MirroredRepeatWrapping: 1002
+MixOperation: 1
+MultiMaterial: ƒ MultiMaterial( materials )
+MultiplyBlending: 4
+MultiplyOperation: 0
+NearestFilter: 1003
+NearestMipMapLinearFilter: 1005
+NearestMipMapNearestFilter: 1004
+NeverDepth: 0
+NoBlending: 0
+NoColors: 0
+NoToneMapping: 0
+NormalBlending: 1
+NotEqualDepth: 7
+NumberKeyframeTrack: ƒ NumberKeyframeTrack( name, times, values, interpolation )
+Object3D: ƒ Object3D()
+ObjectLoader: ƒ ObjectLoader( manager )
+ObjectSpaceNormalMap: 1
+OctahedronBufferGeometry: ƒ OctahedronBufferGeometry( radius, detail )
+OctahedronGeometry: ƒ OctahedronGeometry( radius, detail )
+OneFactor: 201
+OneMinusDstAlphaFactor: 207
+OneMinusDstColorFactor: 209
+OneMinusSrcAlphaFactor: 205
+OneMinusSrcColorFactor: 203
+OrthographicCamera: ƒ OrthographicCamera( left, right, top, bottom, near, far )
+PCFShadowMap: 1
+PCFSoftShadowMap: 2
+ParametricBufferGeometry: ƒ ParametricBufferGeometry( func, slices, stacks )
+ParametricGeometry: ƒ ParametricGeometry( func, slices, stacks )
+Particle: ƒ Particle( material )
+ParticleBasicMaterial: ƒ ParticleBasicMaterial( parameters )
+ParticleSystem: ƒ ParticleSystem( geometry, material )
+ParticleSystemMaterial: ƒ ParticleSystemMaterial( parameters )
+Path: ƒ Path( points )
+PerspectiveCamera: ƒ PerspectiveCamera( fov, aspect, near, far )
+Plane: ƒ Plane( normal, constant )
+PlaneBufferGeometry: ƒ PlaneBufferGeometry( width, height, widthSegments, heightSegments )
+PlaneGeometry: ƒ PlaneGeometry( width, height, widthSegments, heightSegments )
+PlaneHelper: ƒ PlaneHelper( plane, size, hex )
+PointCloud: ƒ PointCloud( geometry, material )
+PointCloudMaterial: ƒ PointCloudMaterial( parameters )
+PointLight: ƒ PointLight( color, intensity, distance, decay )
+PointLightHelper: ƒ PointLightHelper( light, sphereSize, color )
+Points: ƒ Points( geometry, material )
+PointsMaterial: ƒ PointsMaterial( parameters )
+PolarGridHelper: ƒ PolarGridHelper( radius, radials, circles, divisions, color1, color2 )
+PolyhedronBufferGeometry: ƒ PolyhedronBufferGeometry( vertices, indices, radius, detail )
+PolyhedronGeometry: ƒ PolyhedronGeometry( vertices, indices, radius, detail )
+PositionalAudio: ƒ PositionalAudio( listener )
+Projector: ƒ Projector()
+PropertyBinding: ƒ PropertyBinding( rootNode, path, parsedPath )
+PropertyMixer: ƒ PropertyMixer( binding, typeName, valueSize )
+QuadraticBezierCurve: ƒ QuadraticBezierCurve( v0, v1, v2 )
+QuadraticBezierCurve3: ƒ QuadraticBezierCurve3( v0, v1, v2 )
+Quaternion: ƒ Quaternion( x, y, z, w )
+QuaternionKeyframeTrack: ƒ QuaternionKeyframeTrack( name, times, values, interpolation )
+QuaternionLinearInterpolant: ƒ QuaternionLinearInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+REVISION: "101"
+RGBADepthPacking: 3201
+RGBAFormat: 1023
+RGBA_ASTC_4x4_Format: 37808
+RGBA_ASTC_5x4_Format: 37809
+RGBA_ASTC_5x5_Format: 37810
+RGBA_ASTC_6x5_Format: 37811
+RGBA_ASTC_6x6_Format: 37812
+RGBA_ASTC_8x5_Format: 37813
+RGBA_ASTC_8x6_Format: 37814
+RGBA_ASTC_8x8_Format: 37815
+RGBA_ASTC_10x5_Format: 37816
+RGBA_ASTC_10x6_Format: 37817
+RGBA_ASTC_10x8_Format: 37818
+RGBA_ASTC_10x10_Format: 37819
+RGBA_ASTC_12x10_Format: 37820
+RGBA_ASTC_12x12_Format: 37821
+RGBA_PVRTC_2BPPV1_Format: 35843
+RGBA_PVRTC_4BPPV1_Format: 35842
+RGBA_S3TC_DXT1_Format: 33777
+RGBA_S3TC_DXT3_Format: 33778
+RGBA_S3TC_DXT5_Format: 33779
+RGBDEncoding: 3006
+RGBEEncoding: 3002
+RGBEFormat: 1023
+RGBFormat: 1022
+RGBM7Encoding: 3004
+RGBM16Encoding: 3005
+RGB_ETC1_Format: 36196
+RGB_PVRTC_2BPPV1_Format: 35841
+RGB_PVRTC_4BPPV1_Format: 35840
+RGB_S3TC_DXT1_Format: 33776
+RawShaderMaterial: ƒ RawShaderMaterial( parameters )
+Ray: ƒ Ray( origin, direction )
+Raycaster: ƒ Raycaster( origin, direction, near, far )
+RectAreaLight: ƒ RectAreaLight( color, intensity, width, height )
+RectAreaLightHelper: ƒ RectAreaLightHelper( light, color )
+RedFormat: 1028
+ReinhardToneMapping: 2
+RepeatWrapping: 1000
+ReverseSubtractEquation: 102
+RingBufferGeometry: ƒ RingBufferGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength )
+RingGeometry: ƒ RingGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength )
+Scene: ƒ Scene()
+SceneUtils: Object
+ShaderChunk: Object
+ShaderLib: Object
+ShaderMaterial: ƒ ShaderMaterial( parameters )
+ShadowMaterial: ƒ ShadowMaterial( parameters )
+Shape: ƒ Shape( points )
+ShapeBufferGeometry: ƒ ShapeBufferGeometry( shapes, curveSegments )
+ShapeGeometry: ƒ ShapeGeometry( shapes, curveSegments )
+ShapePath: ƒ ShapePath()
+ShapeUtils: Object
+ShortType: 1011
+Skeleton: ƒ Skeleton( bones, boneInverses )
+SkeletonHelper: ƒ SkeletonHelper( object )
+SkinnedMesh: ƒ SkinnedMesh( geometry, material )
+SmoothShading: 2
+Sphere: ƒ Sphere( center, radius )
+SphereBufferGeometry: ƒ SphereBufferGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength )
+SphereGeometry: ƒ SphereGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength )
+Spherical: ƒ Spherical( radius, phi, theta )
+SphericalReflectionMapping: 305
+Spline: ƒ Spline( points )
+SplineCurve: ƒ SplineCurve( points /* array of Vector2 */ )
+SplineCurve3: ƒ SplineCurve3( points )
+SpotLight: ƒ SpotLight( color, intensity, distance, angle, penumbra, decay )
+SpotLightHelper: ƒ SpotLightHelper( light, color )
+SpotLightShadow: ƒ SpotLightShadow()
+Sprite: ƒ Sprite( material )
+SpriteMaterial: ƒ SpriteMaterial( parameters )
+SrcAlphaFactor: 204
+SrcAlphaSaturateFactor: 210
+SrcColorFactor: 202
+StereoCamera: ƒ StereoCamera()
+StringKeyframeTrack: ƒ StringKeyframeTrack( name, times, values, interpolation )
+SubtractEquation: 101
+SubtractiveBlending: 3
+TangentSpaceNormalMap: 0
+TetrahedronBufferGeometry: ƒ TetrahedronBufferGeometry( radius, detail )
+TetrahedronGeometry: ƒ TetrahedronGeometry( radius, detail )
+TextBufferGeometry: ƒ TextBufferGeometry( text, parameters )
+TextGeometry: ƒ TextGeometry( text, parameters )
+Texture: ƒ Texture( image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding )
+TextureLoader: ƒ TextureLoader( manager )
+TorusBufferGeometry: ƒ TorusBufferGeometry( radius, tube, radialSegments, tubularSegments, arc )
+TorusGeometry: ƒ TorusGeometry( radius, tube, radialSegments, tubularSegments, arc )
+TorusKnotBufferGeometry: ƒ TorusKnotBufferGeometry( radius, tube, tubularSegments, radialSegments, p, q )
+TorusKnotGeometry: ƒ TorusKnotGeometry( radius, tube, tubularSegments, radialSegments, p, q, heightScale )
+Triangle: ƒ Triangle( a, b, c )
+TriangleFanDrawMode: 2
+TriangleStripDrawMode: 1
+TrianglesDrawMode: 0
+TubeBufferGeometry: ƒ TubeBufferGeometry( path, tubularSegments, radius, radialSegments, closed )
+TubeGeometry: ƒ TubeGeometry( path, tubularSegments, radius, radialSegments, closed, taper )
+UVMapping: 300
+Uint8Attribute: ƒ Uint8Attribute( array, itemSize )
+Uint8BufferAttribute: ƒ Uint8BufferAttribute( array, itemSize, normalized )
+Uint8ClampedAttribute: ƒ Uint8ClampedAttribute( array, itemSize )
+Uint8ClampedBufferAttribute: ƒ Uint8ClampedBufferAttribute( array, itemSize, normalized )
+Uint16Attribute: ƒ Uint16Attribute( array, itemSize )
+Uint16BufferAttribute: ƒ Uint16BufferAttribute( array, itemSize, normalized )
+Uint32Attribute: ƒ Uint32Attribute( array, itemSize )
+Uint32BufferAttribute: ƒ Uint32BufferAttribute( array, itemSize, normalized )
+Uncharted2ToneMapping: 3
+Uniform: ƒ Uniform( value )
+UniformsLib: Object
+UniformsUtils: Object
+UnsignedByteType: 1009
+UnsignedInt248Type: 1020
+UnsignedIntType: 1014
+UnsignedShort565Type: 1019
+UnsignedShort4444Type: 1017
+UnsignedShort5551Type: 1018
+UnsignedShortType: 1012
+Vector2: ƒ Vector2( x, y )
+Vector3: ƒ Vector3( x, y, z )
+Vector4: ƒ Vector4( x, y, z, w )
+VectorKeyframeTrack: ƒ VectorKeyframeTrack( name, times, values, interpolation )
+Vertex: ƒ Vertex( x, y, z )
+VertexColors: 2
+VertexNormalsHelper: ƒ VertexNormalsHelper( object, size, hex, linewidth )
+VideoTexture: ƒ VideoTexture( video, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy )
+WebGLMultisampleRenderTarget: ƒ WebGLMultisampleRenderTarget( width, height, options )
+WebGLRenderTarget: ƒ WebGLRenderTarget( width, height, options )
+WebGLRenderTargetCube: ƒ WebGLRenderTargetCube( width, height, options )
+WebGLRenderer: ƒ WebGLRenderer( parameters )
+WebGLUtils: ƒ WebGLUtils( gl, extensions, capabilities )
+WireframeGeometry: ƒ WireframeGeometry( geometry )
+WireframeHelper: ƒ WireframeHelper( object, hex )
+WrapAroundEnding: 2402
+XHRLoader: ƒ XHRLoader( manager )
+ZeroCurvatureEnding: 2400
+ZeroFactor: 200
+ZeroSlopeEnding: 2401
+sRGBEncoding: 3001

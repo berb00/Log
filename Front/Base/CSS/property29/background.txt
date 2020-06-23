@@ -1,0 +1,53 @@
+background 	复合属性。设置对象的背景特性。 	1
+JS:object.style.background="red url(smiley.gif) top left no-repeat"
+
+background-color:color|transparent 				设置或检索对象的背景颜色。 	1
+background-size 					检索或设置对象的背景图像的尺寸大小。
+background-clip 					指定对象的背景图像向外裁剪的区域。指定背景绘制区域 	3
+
+background-image:url("URL") 					设置或检索对象的背景图像。 	1
+background-attachment:scroll|fixed 			设置或检索背景图像是随对象内容滚动还是固定的。必须先指定background-image属性。 	1
+background-origin 				设置或检索对象的背景图像计算background-position时的参考原点(位置)。 	3
+background-position 				设置或检索对象的背景图像位置。必须先指定background-image属性。 	1
+background-repeat 				设置或检索对象的背景图像如何铺排填充。必须先指定background-image属性。 	1
+
+
+background-size: length|percentage|cover|contain;
+length 		设置背景图片高度和宽度。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为 auto(自动)
+percentage 	将计算相对于背景定位区域的百分比。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为"auto(自动)"
+cover 		此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。
+contain 		此时会保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。
+
+
+
+background-position
+left 	top				如果仅指定一个关键字，其他值将会是"center"
+left 	center
+left 	bottom
+right 	top
+right 	center
+right 	bottom
+center 	top
+center 	center
+center 	bottom 	
+x% 		y% 				第一个值是水平位置，第二个值是垂直。左上角是0％0％。右下角是100％100％。如果仅指定了一个值，其他值将是50％。 。默认值为：0％0％
+xpos 	ypos 			第一个值是水平位置，第二个值是垂直。左上角是0。单位可以是像素（0px0px）或任何其他 CSS单位。如果仅指定了一个值，其他值将是50％。你可以混合使用％和positions 
+background-origin: padding-box|border-box|content-box;
+padding-box 	背景图像填充框的相对位置
+border-box 	背景图像边界框的相对位置
+content-box 	背景图像的相对位置的内容框
+
+background-repeat
+repeat 		背景图像将向垂直和水平方向重复。这是默认
+repeat-x 	只有水平位置会重复背景图像
+repeat-y 	只有垂直位置会重复背景图像
+no-repeat 	background-image不会重复
+
+
+background-clip: border-box|padding-box|content-box;
+border-box 	默认值。背景绘制在边框方框内（剪切成边框方框）。
+padding-box 	背景绘制在衬距方框内（剪切成衬距方框）。
+content-box 	背景绘制在内容方框内（剪切成内容方框）。
+
+
+

@@ -1,0 +1,44 @@
+Navigator(导航)对象
+Navigator 对象包含有关浏览器的信息。
+Note注意： 没有应用于 navigator 对象的公开标准，不过所有浏览器都支持该对象。
+
+Navigator 对象属性
+navigator.appCodeName 			    返回浏览器的代码名
+navigator.appName 					返回浏览器的名称
+navigator.appVersion 				返回浏览器的平台和版本信息
+navigator.cookieEnabled 		    返回指明浏览器中是否启用 cookie 的布尔值
+navigator.platform 					返回运行浏览器的操作系统平台
+navigator.userAgent 				返回由客户机发送服务器的user-agent 头部的值，存储当前浏览器的名称和版本号，
+									浏览器嗅探：通过"Chrome Firefox Safari IE Opera"这些浏览器名称关键字来判断当前处于的浏览器 可结合indexOf()判断是否包含对应的名称关键字
+									通过判断是否含有Mobile关键字确定用户是否在移动端打开
+									常用于判断浏览器处理浏览器兼容
+								
+Firefox下
+	appCodeName:		Mozilla
+	appName:				Netscape(网景)
+	appVersion:			5.0 (Macintosh)
+	platform:				MacIntel
+	cookieEnabled:	true
+	userAgent:			Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+								
+								
+								
+Navigator 对象方法
+navigator.javaEnabled() 		指定是否在浏览器中启用Java
+navigator.taintEnabled() 		规定浏览器是否启用数据污点(data tainting)
+
+navigator.userAgent:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36															// Chrome
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0																								// Firefox
+Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; McAfee; rv:11.0) like Gecko				// IE											
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.25 Safari/537.36 Core/1.70.3650.400 QQBrowser/10.4.3400.400					// QQBrowser
+
+判断是否微信内置的浏览器: "MicroMessenger:
+	iPhone 通过微信内置浏览器访问网页时得到 User Agent:
+		Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B329 MicroMessenger/5.0.1
+	Android 通过微信内置浏览器访问网页时得到 User Agent：
+		Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-S5660 Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 MicroMessenger/4.5.255
+
+
+判定IE:
+navigator.userAgent.indexOf("MSIE") > 0

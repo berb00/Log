@@ -1,0 +1,9 @@
+创建RegExp对象：
+
+new RegExp(pattern, attributes);
+pattern:            匹配模式
+attributes:         g-全局匹配 i-不区分大小写  m-多行匹配
+
+test()              检索字符串中的指定值。返回值是 true 或 false。
+exec()              检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+compile()           用于改变 RegExp.

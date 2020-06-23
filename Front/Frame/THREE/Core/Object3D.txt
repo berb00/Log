@@ -1,0 +1,356 @@
+Constructor
+	Object3D()
+	
+################################################################
+Properties
+# .castShadow : Boolean
+# .children : Object3D
+# .customDepthMaterial : Material
+# .customDistanceMaterial : Material
+# .frustumCulled : Boolean
+# .id : Integer
+# .isObject3D : Boolean
+# .layers : Layers
+# .matrix : Matrix4
+# .matrixAutoUpdate : Boolean
+# .matrixWorld : Matrix4
+# .matrixWorldNeedsUpdate : Boolean
+# .modelViewMatrix : Matrix4
+# .name : String
+# .normalMatrix : Matrix3
+# .onAfterRender : Function
+# .onBeforeRender : Function
+# .parent : Object3D
+# .position : Vector3
+# .quaternion : Quaternion
+# .receiveShadow : Boolean
+# .renderOrder : Number
+# .rotation : Euler
+# .scale : Vector3
+# .up : Vector3
+# .userData : Object
+# .uuid : String
+# .visible : Boolean
+# .DefaultUp : Vector3
+# .DefaultMatrixAutoUpdate : Vector3
+
+################################################################
+Methods
+# .add ( object : Object3D, ... ) : this
+# .applyMatrix ( matrix : Matrix4 ) : null
+# .applyQuaternion ( quaternion : Quaternion ) : this
+# .clone ( recursive : Boolean ) : Object3D
+# .copy ( object : Object3D, recursive : Boolean ) : this
+# .getObjectById ( id : Integer ) : Object3D
+# .getObjectByName ( name : String ) : Object3D
+# .getObjectByProperty ( name : String, value : Float ) : Object3D
+# .getWorldPosition ( target : Vector3 ) : Vector3
+# .getWorldQuaternion ( target : Quaternion ) : Quaternion
+# .getWorldScale ( target : Vector3 ) : Vector3
+# .getWorldDirection ( target : Vector3 ) : Vector3
+# .localToWorld ( vector : Vector3 ) : Vector3
+# .lookAt ( vector : Vector3 ) : null
+# .lookAt ( x : Float, y : Float, z : Float ) : null
+# .raycast ( raycaster : Raycaster, intersects : Array ) : Array
+# .remove ( object : Object3D, ... ) : this
+# .rotateOnAxis ( axis : Vector3, angle : Float ) : this
+# .rotateOnWorldAxis ( axis : Vector3, angle : Float ) : this
+# .rotateX ( rad : Float ) : this
+# .rotateY ( rad : Float ) : this
+# .rotateZ ( rad : Float ) : this
+# .setRotationFromAxisAngle ( axis : Vector3, angle : Float ) : null
+# .setRotationFromEuler ( euler : Euler ) : null
+# .setRotationFromMatrix ( m : Matrix4 ) : null
+# .setRotationFromQuaternion ( q : Quaternion ) : null
+# .toJSON ( q : Quaternion ) : null
+# .translateOnAxis ( axis : Vector3, distance : Float ) : this
+# .translateX ( distance : Float ) : this
+# .translateY ( distance : Float ) : this
+# .translateZ ( distance : Float ) : this
+# .traverse ( callback : Function ) : null
+# .traverseVisible ( callback : Function ) : null
+# .traverseAncestors ( callback : Function ) : null
+# .updateMatrix () : null
+# .updateMatrixWorld ( force : Boolean ) : null
+# .worldToLocal ( vector : Vector3 ) : Vector3
+
+
+
+################################################################
+Properties
+# .castShadow : Boolean
+Whether the object gets rendered into shadow map. Default is false.
+
+# .children : Object3D
+Array with object's children. See Group for info on manually grouping objects.
+
+# .customDepthMaterial : Material
+Custom depth material to be used when rendering to the depth map. Can only be used in context of meshes. When shadow-casting with a DirectionalLight or SpotLight, if you are (a) modifying vertex positions in the vertex shader, (b) using a displacement map, (c) using an alpha map with alphaTest, or (d) using a transparent texture with alphaTest, you must specify a customDepthMaterial for proper shadows. Default is undefined.
+
+# .customDistanceMaterial : Material
+Same as customDepthMaterial, but used with PointLight. Default is undefined.
+
+# .frustumCulled : Boolean
+When this is set, it checks every frame if the object is in the frustum of the camera before rendering the object. Otherwise the object gets rendered every frame even if it isn't visible. Default is true.
+
+# .id : Integer
+readonly – Unique number for this object instance.
+
+# .isObject3D : Boolean
+Used to check whether this or derived classes are Object3Ds. Default is true.
+
+You should not change this, as it is used internally for optimisation.
+
+# .layers : Layers
+The layer membership of the object. The object is only visible if it has at least one layer in common with the Camera in use.
+
+# .matrix : Matrix4
+The local transform matrix.
+
+# .matrixAutoUpdate : Boolean
+When this is set, it calculates the matrix of position, (rotation or quaternion) and scale every frame and also recalculates the matrixWorld property. Default is Object3D.DefaultMatrixAutoUpdate (true).
+
+# .matrixWorld : Matrix4
+The global transform of the object. If the Object3D has no parent, then it's identical to the local transform .matrix.
+
+# .matrixWorldNeedsUpdate : Boolean
+When this is set, it calculates the matrixWorld in that frame and resets this property to false. Default is false.
+
+# .modelViewMatrix : Matrix4
+This is passed to the shader and used to calculate the position of the object.
+
+# .name : String
+Optional name of the object (doesn't need to be unique). Default is an empty string.
+
+# .normalMatrix : Matrix3
+This is passed to the shader and used to calculate lighting for the object. It is the transpose of the inverse of the upper left 3x3 sub-matrix of this object's modelViewMatrix.
+
+The reason for this special matrix is that simply using the modelViewMatrix could result in a non-unit length of normals (on scaling) or in a non-perpendicular direction (on non-uniform scaling).
+
+On the other hand the translation part of the modelViewMatrix is not relevant for the calculation of normals. Thus a Matrix3 is sufficient.
+
+# .onAfterRender : Function
+An optional callback that is executed immediately after the Object3D is rendered. This function is called with the following parameters: renderer, scene, camera, geometry, material, group.
+
+# .onBeforeRender : Function
+An optional callback that is executed immediately before the Object3D is rendered. This function is called with the following parameters: renderer, scene, camera, geometry, material, group.
+
+# .parent : Object3D
+Object's parent in the scene graph. An object can have at most one parent.
+
+# .position : Vector3
+A Vector3 representing the object's local position. Default is (0, 0, 0).
+
+# .quaternion : Quaternion
+Object's local rotation as a Quaternion.
+
+# .receiveShadow : Boolean
+Whether the material receives shadows. Default is false.
+
+# .renderOrder : Number
+This value allows the default rendering order of scene graph objects to be overridden although opaque and transparent objects remain sorted independently. When this property is set for an instance of Group, all descendants objects will be sorted and rendered together. Sorting is from lowest to highest renderOrder. Default value is 0.
+
+# .rotation : Euler
+Object's local rotation (see Euler angles), in radians.
+
+# .scale : Vector3
+The object's local scale. Default is Vector3( 1, 1, 1 ).
+
+# .up : Vector3
+This is used by the lookAt method, for example, to determine the orientation of the result.
+Default is Object3D.DefaultUp - that is, ( 0, 1, 0 ).
+
+# .userData : Object
+An object that can be used to store custom data about the Object3D. It should not hold references to functions as these will not be cloned.
+
+# .uuid : String
+UUID of this object instance. This gets automatically assigned, so this shouldn't be edited.
+
+# .visible : Boolean
+Object gets rendered if true. Default is true.
+
+Static Properties
+Static properties and methods are defined per class rather than per instance of that class. This means that changing Object3D.DefaultUp or Object3D.DefaultMatrixAutoUpdate will change the values of up and matrixAutoUpdate for every	instance of Object3D (or derived classes)	created after the change has been made (already created Object3Ds will not be affected).
+
+# .DefaultUp : Vector3
+The default up direction for objects, also used as the default position for DirectionalLight, HemisphereLight and Spotlight (which creates lights shining from the top down).
+Set to ( 0, 1, 0 ) by default.
+
+# .DefaultMatrixAutoUpdate : Vector3
+The default setting for matrixAutoUpdate for newly created Object3Ds.
+
+
+################################################################
+Methods
+EventDispatcher methods are available on this class.
+# .add ( object : Object3D, ... ) : this
+Adds object as child of this object. An arbitrary number of objects may be added. Any current parent on an object passed in here will be removed, since an object can have at most one parent.
+
+See Group for info on manually grouping objects.
+
+# .applyMatrix ( matrix : Matrix4 ) : null
+Applies the matrix transform to the object and updates the object's position, rotation and scale.
+
+# .applyQuaternion ( quaternion : Quaternion ) : this
+Applies the rotation represented by the quaternion to the object.
+
+# .clone ( recursive : Boolean ) : Object3D
+recursive -- if true, descendants of the object are also cloned. Default is true.
+
+Returns a clone of this object and optionally all descendants.
+
+# .copy ( object : Object3D, recursive : Boolean ) : this
+recursive -- if true, descendants of the object are also copied. Default is true.
+
+Copy the given object into this object. Note: event listeners and user-defined callbacks (.onAfterRender and .onBeforeRender) are not copied.
+
+# .getObjectById ( id : Integer ) : Object3D
+id -- Unique number of the object instance
+
+Searches through the object's children and returns the first with a matching id.
+Note that ids are assigned in chronological order: 1, 2, 3, ..., incrementing by one for each new object.
+
+# .getObjectByName ( name : String ) : Object3D
+name -- String to match to the children's Object3D.name property. 
+
+Searches through the object's children and returns the first with a matching name.
+Note that for most objects the name is an empty string by default. You will have to set it manually to make use of this method.
+
+# .getObjectByProperty ( name : String, value : Float ) : Object3D
+name -- the property name to search for. 
+value -- value of the given property. 
+
+Searches through the object's children and returns the first with a property that matches the value given.
+
+# .getWorldPosition ( target : Vector3 ) : Vector3
+target — the result will be copied into this Vector3. 
+
+Returns a vector representing the position of the object in world space.
+
+# .getWorldQuaternion ( target : Quaternion ) : Quaternion
+target — the result will be copied into this Quaternion. 
+
+Returns a quaternion representing the rotation of the object in world space.
+
+# .getWorldScale ( target : Vector3 ) : Vector3
+target — the result will be copied into this Vector3. 
+
+Returns a vector of the scaling factors applied to the object for each axis in world space.
+
+# .getWorldDirection ( target : Vector3 ) : Vector3
+target — the result will be copied into this Vector3. 
+
+Returns a vector representing the direction of object's positive z-axis in world space.
+
+# .localToWorld ( vector : Vector3 ) : Vector3
+vector - A vector representing a position in local (object) space.
+
+Converts the vector from local space to world space.
+
+# .lookAt ( vector : Vector3 ) : null
+# .lookAt ( x : Float, y : Float, z : Float ) : null
+vector - A vector representing a position in world space.
+
+Optionally, the x, y and z components of the world space position.
+
+Rotates the object to face a point in world space.
+
+This method does not support objects having non-uniformly-scaled parent(s).
+
+# .raycast ( raycaster : Raycaster, intersects : Array ) : Array
+Abstract (empty) method to get intersections between a casted ray and this object. Subclasses such as Mesh, Line, and Points implement this method in order to use raycasting.
+
+# .remove ( object : Object3D, ... ) : this
+Removes object as child of this object. An arbitrary number of objects may be removed.
+
+# .rotateOnAxis ( axis : Vector3, angle : Float ) : this
+axis -- A normalized vector in object space. 
+angle -- The angle in radians.
+
+Rotate an object along an axis in object space. The axis is assumed to be normalized.
+
+# .rotateOnWorldAxis ( axis : Vector3, angle : Float ) : this
+axis -- A normalized vector in world space. 
+angle -- The angle in radians.
+
+Rotate an object along an axis in world space. The axis is assumed to be normalized. Method Assumes no rotated parent.
+
+# .rotateX ( rad : Float ) : this
+rad - the angle to rotate in radians.
+
+Rotates the object around x axis in local space.
+
+# .rotateY ( rad : Float ) : this
+rad - the angle to rotate in radians.
+
+Rotates the object around y axis in local space.
+
+# .rotateZ ( rad : Float ) : this
+rad - the angle to rotate in radians.
+
+Rotates the object around z axis in local space.
+
+# .setRotationFromAxisAngle ( axis : Vector3, angle : Float ) : null
+axis -- A normalized vector in object space. 
+angle -- angle in radians
+
+Calls setFromAxisAngle( axis, angle ) on the .quaternion.
+
+# .setRotationFromEuler ( euler : Euler ) : null
+euler -- Euler angle specifying rotation amount.
+Calls setRotationFromEuler( euler) on the .quaternion.
+
+# .setRotationFromMatrix ( m : Matrix4 ) : null
+m -- rotate the quaternion by the rotation component of the matrix.
+Calls setFromRotationMatrix( m) on the .quaternion.
+
+Note that this assumes that the upper 3x3 of m is a pure rotation matrix (i.e, unscaled).
+
+# .setRotationFromQuaternion ( q : Quaternion ) : null
+q -- normalized Quaternion.
+
+Copy the given quaternion into .quaternion.
+
+# .toJSON ( q : Quaternion ) : null
+Convert the object to JSON format.
+
+# .translateOnAxis ( axis : Vector3, distance : Float ) : this
+axis -- A normalized vector in object space.
+distance -- The distance to translate.
+
+Translate an object by distance along an axis in object space. The axis is assumed to be normalized.
+
+# .translateX ( distance : Float ) : this
+Translates object along x axis in object space by distance units.
+
+# .translateY ( distance : Float ) : this
+Translates object along y axis in object space by distance units.
+
+# .translateZ ( distance : Float ) : this
+Translates object along z axis in object space by distance units.
+
+# .traverse ( callback : Function ) : null
+callback - A function with as first argument an object3D object.
+
+Executes the callback on this object and all descendants.
+
+# .traverseVisible ( callback : Function ) : null
+callback - A function with as first argument an object3D object.
+
+Like traverse, but the callback will only be executed for visible objects. Descendants of invisible objects are not traversed.
+
+# .traverseAncestors ( callback : Function ) : null
+callback - A function with as first argument an object3D object.
+
+Executes the callback on all ancestors.
+
+# .updateMatrix () : null
+Update the local transform.
+
+# .updateMatrixWorld ( force : Boolean ) : null
+Update the global transform of the object and its children.
+
+# .worldToLocal ( vector : Vector3 ) : Vector3
+vector - A world vector.
+
+Updates the vector from world space to local space.

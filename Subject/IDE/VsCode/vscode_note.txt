@@ -1,0 +1,20 @@
+
+#、打开settings.json文件
+    1.cmd +shift + p
+    2.搜索setting 选择Preferences: Open Settings(JSON)
+editor.tabSize              // 文件缩进
+editor.detectIndentation    // 是否在打开文件上检测文件缩进并应用
+
+#、设置模板
+文件-->首选项-->用户代码片段-->点击新建代码片段--取名vue.json 确定
+
+
+#、解决中文乱码
+    设置--settings--搜索
+    配置 "files.autoGuessEncoding": true,
+
+
+
+#、Plugins
+    prettier
+

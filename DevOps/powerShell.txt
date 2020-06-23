@@ -1,0 +1,10 @@
+
+
+管理员身份运行power shell
+
+>   set-ExecutionPolicy RemoteSigned                    // 执行策略更改(授权脚本权限)
+
+
+
+
+

@@ -1,0 +1,460 @@
+
+####################################################################
+Core
+缓存属性(BufferAttribute)
+  BufferAttribute: ƒ BufferAttribute( array, itemSize, normalized )
+  DynamicBufferAttribute: ƒ DynamicBufferAttribute( array, itemSize )
+  Float32BufferAttribute: ƒ Float32BufferAttribute( array, itemSize )
+  Float64BufferAttribute: ƒ Float64BufferAttribute( array, itemSize )
+  InstancedBufferAttribute: ƒ InstancedBufferAttribute( array, itemSize, meshPerAttribute )
+  Int8BufferAttribute: ƒ Int8BufferAttribute( array, itemSize )
+  Int16BufferAttribute: ƒ Int16BufferAttribute( array, itemSize )
+  Int32BufferAttribute: ƒ Int32BufferAttribute( array, itemSize )
+  InterleavedBufferAttribute: ƒ InterleavedBufferAttribute( interleavedBuffer, itemSize, offset, normalized )
+  Uint8BufferAttribute: ƒ Uint8BufferAttribute( array, itemSize )
+  Uint8ClampedBufferAttribute: ƒ Uint8ClampedBufferAttribute( array, itemSize )
+  Uint16BufferAttribute: ƒ Uint16BufferAttribute( array, itemSize )
+  Uint32BufferAttribute: ƒ Uint32BufferAttribute( array, itemSize )
+几何模型(Geometry)
+  Geometry: ƒ Geometry()  
+缓存几何模型(BufferGeometry)
+  BufferGeometry: ƒ BufferGeometry()
+时钟(Clock)
+  Clock: ƒ Clock( autoStart )
+事件分发器(EventDispatcher)
+  EventDispatcher: ƒ EventDispatcher()
+三角面(Face3)
+  Face3: ƒ Face3( a, b, c, normal, color, materialIndex )
+  Face4: ƒ Face4( a, b, c, d, normal, color, materialIndex )
+3D对象(Object3D)
+  Object3D: ƒ Object3D()
+光线投射器(Raycaster)
+  Raycaster: ƒ Raycaster( origin, direction, near, far )
+
+Float32Attribute: ƒ Float32Attribute( array, itemSize )
+Float64Attribute: ƒ Float64Attribute( array, itemSize )
+Int8Attribute: ƒ Int8Attribute( array, itemSize )
+Int16Attribute: ƒ Int16Attribute( array, itemSize )
+Int32Attribute: ƒ Int32Attribute( array, itemSize )
+Uint8Attribute: ƒ Uint8Attribute( array, itemSize )
+Uint8ClampedAttribute: ƒ Uint8ClampedAttribute( array, itemSize )
+Uint16Attribute: ƒ Uint16Attribute( array, itemSize )
+Uint32Attribute: ƒ Uint32Attribute( array, itemSize )
+
+###################################################################
+渲染器(Renderers)
+CanvasRenderer: ƒ CanvasRenderer()
+WebGLRenderTarget: ƒ WebGLRenderTarget( width, height, options )
+WebGLRenderTargetCube: ƒ WebGLRenderTargetCube( width, height, options )
+WebGLRenderer: ƒ WebGLRenderer( parameters )
+
+######################################################################
+渲染器 / WebGL
+
+#################################################################
+渲染器 / 着色器(Shaders)
+ShaderChunk: {alphamap_fragment: "#ifdef USE_ALPHAMAP↵	diffuseColor.a *= texture2D( alphaMap, vUv ).g;↵#endif↵", alphamap_pars_fragment: "#ifdef USE_ALPHAMAP↵	uniform sampler2D alphaMap;↵#endif↵", alphatest_fragment: "#ifdef ALPHATEST↵	if ( diffuseColor.a < ALPHATEST ) discard;↵#endif↵", aomap_fragment: "#ifdef USE_AOMAP↵	float ambientOcclusion = ( textu…on, material.specularRoughness );↵	#endif↵#endif↵", aomap_pars_fragment: "#ifdef USE_AOMAP↵	uniform sampler2D aoMap;↵	uniform float aoMapIntensity;↵#endif", …}
+ShaderLib: {basic: {…}, lambert: {…}, phong: {…}, standard: {…}, points: {…}, …}
+Uniform: ƒ Uniform( value )  
+UniformsLib: {common: {…}, aomap: {…}, lightmap: {…}, emissivemap: {…}, bumpmap: {…}, …}
+UniformsUtils: {merge: ƒ, clone: ƒ}
+
+###################################################################
+场景(Scenes)
+Scene: ƒ Scene()
+SceneUtils: {createMultiMaterialObject: ƒ, detach: ƒ, attach: ƒ}
+Fog: ƒ Fog( color, near, far )
+FogExp2: ƒ FogExp2( color, density )
+
+#####################################################################
+相机(Cameras)
+Camera: ƒ Camera()
+CubeCamera: ƒ CubeCamera( near, far, cubeResolution )
+OrthographicCamera: ƒ OrthographicCamera( left, right, top, bottom, near, far )
+PerspectiveCamera: ƒ PerspectiveCamera( fov, aspect, near, far )
+StereoCamera: ƒ StereoCamera()
+######################################################################
+光照(Lights)
+  光照(Light)
+    Light: ƒ Light( color, intensity )
+  环境光(AmbientLight)
+    AmbientLight: ƒ AmbientLight( color, intensity )
+  平行光(DirectionalLight)
+    DirectionalLight: ƒ DirectionalLight( color, intensity )
+  平行光阴影(DirectionalLightShadow)
+    DirectionalLightShadow: ƒ DirectionalLightShadow( light )
+  半球光源(HemisphereLight)
+    HemisphereLight: ƒ HemisphereLight( skyColor, groundColor, intensity ) 
+  光照阴影(LightShadow)
+    LightShadow: ƒ LightShadow( camera )
+  点光源(PointLight)
+    PointLight: ƒ PointLight( color, intensity, distance, decay )
+  聚光光源(SpotLight)
+    SpotLight: ƒ SpotLight( color, intensity, distance, angle, penumbra, decay )
+  聚光阴影(SpotLightShadow)
+    SpotLightShadow: ƒ SpotLightShadow()
+    RectAreaLight: ƒ RectAreaLight( color, intensity, width, height )
+
+###############################################################
+Loader: ƒ Loader()
+AudioLoader: ƒ AudioLoader( manager )
+BinaryTextureLoader: ƒ BinaryTextureLoader( manager )
+BufferGeometryLoader: ƒ BufferGeometryLoader( manager )
+CompressedTextureLoader: ƒ CompressedTextureLoader( manager )
+CubeTextureLoader: ƒ CubeTextureLoader( manager )
+DataTextureLoader: ƒ BinaryTextureLoader( manager )
+FileLoader: ƒ FileLoader( manager )
+FontLoader: ƒ FontLoader( manager )
+ImageLoader: ƒ ImageLoader( manager )
+JSONLoader: ƒ JSONLoader( manager )
+MaterialLoader: ƒ MaterialLoader( manager )
+ObjectLoader: ƒ ObjectLoader( manager )
+TextureLoader: ƒ TextureLoader( manager )
+XHRLoader: ƒ XHRLoader( manager )
+################################################################
+Material: ƒ Material()
+LineBasicMaterial: ƒ LineBasicMaterial( parameters )
+LineDashedMaterial: ƒ LineDashedMaterial( parameters )
+ParticleBasicMaterial: ƒ ParticleBasicMaterial( parameters )
+ParticleSystemMaterial: ƒ ParticleSystemMaterial( parameters )
+PointCloud: ƒ PointCloud( geometry, material )
+PointCloudMaterial: ƒ PointCloudMaterial( parameters )
+PointsMaterial: ƒ PointsMaterial( parameters )
+RawShaderMaterial: ƒ RawShaderMaterial( parameters )
+ShaderMaterial: ƒ ShaderMaterial( parameters )
+ShadowMaterial: ƒ ShadowMaterial()
+SpriteMaterial: ƒ SpriteMaterial( parameters )
+MeshBasicMaterial: ƒ MeshBasicMaterial( parameters )
+MeshDepthMaterial: ƒ MeshDepthMaterial( parameters )
+MeshFaceMaterial: ƒ MeshFaceMaterial( materials )
+MeshLambertMaterial: ƒ MeshLambertMaterial( parameters )
+MeshNormalMaterial: ƒ MeshNormalMaterial( parameters )
+MeshPhongMaterial: ƒ MeshPhongMaterial( parameters )
+MeshPhysicalMaterial: ƒ MeshPhysicalMaterial( parameters )
+MeshStandardMaterial: ƒ MeshStandardMaterial( parameters )
+MeshToonMaterial: ƒ MeshToonMaterial( parameters )
+MultiMaterial: ƒ MultiMaterial( materials )
+
+####################################################################
+几何模型(Geometries)
+Geometry: ƒ Geometry()
+BoxGeometry: ƒ BoxGeometry( width, height, depth, widthSegments, heightSegments, depthSegments )
+CircleGeometry: ƒ CircleGeometry( radius, segments, thetaStart, thetaLength )
+ConeGeometry: ƒ ConeGeometry( radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+CylinderGeometry: ƒ CylinderGeometry( radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+DodecahedronGeometry: ƒ DodecahedronGeometry( radius, detail )
+IcosahedronGeometry: ƒ IcosahedronGeometry( radius, detail )
+LatheGeometry: ƒ LatheGeometry( points, segments, phiStart, phiLength )
+OctahedronGeometry: ƒ OctahedronGeometry( radius, detail )
+ParametricGeometry: ƒ ParametricGeometry( func, slices, stacks )
+PlaneGeometry: ƒ PlaneGeometry( width, height, widthSegments, heightSegments )
+PolyhedronGeometry: ƒ PolyhedronGeometry( vertices, indices, radius, detail )
+RingGeometry: ƒ RingGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength )
+ShapeGeometry: ƒ ShapeGeometry( shapes, curveSegments )
+SphereGeometry: ƒ SphereGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength )
+TetrahedronGeometry: ƒ TetrahedronGeometry( radius, detail )
+TorusGeometry: ƒ TorusGeometry( radius, tube, radialSegments, tubularSegments, arc )
+TorusKnotGeometry: ƒ TorusKnotGeometry( radius, tube, tubularSegments, radialSegments, p, q, heightScale )
+TubeGeometry: ƒ TubeGeometry( path, tubularSegments, radius, radialSegments, closed, taper )
+EdgesGeometry: ƒ EdgesGeometry( geometry, thresholdAngle )
+ExtrudeGeometry: ƒ ExtrudeGeometry( shapes, options )
+GeometryIdCount: ƒ GeometryIdCount()
+GeometryUtils: {merge: ƒ, center: ƒ}
+WireframeGeometry: ƒ WireframeGeometry( geometry )
+
+BufferGeometry: ƒ BufferGeometry()
+BoxBufferGeometry: ƒ BoxBufferGeometry( width, height, depth, widthSegments, heightSegments, depthSegments )
+CircleBufferGeometry: ƒ CircleBufferGeometry( radius, segments, thetaStart, thetaLength )
+ConeBufferGeometry: ƒ ConeBufferGeometry( radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+CubeGeometry: ƒ BoxGeometry( width, height, depth, widthSegments, heightSegments, depthSegments )
+CylinderBufferGeometry: ƒ CylinderBufferGeometry( radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength )
+DodecahedronBufferGeometry: ƒ DodecahedronBufferGeometry( radius, detail )
+IcosahedronBufferGeometry: ƒ IcosahedronBufferGeometry( radius, detail )
+LatheBufferGeometry: ƒ LatheBufferGeometry( points, segments, phiStart, phiLength )
+OctahedronBufferGeometry: ƒ OctahedronBufferGeometry( radius,detail )
+ParametricBufferGeometry: ƒ ParametricBufferGeometry( func, slices, stacks )
+PlaneBufferGeometry: ƒ PlaneBufferGeometry( width, height, widthSegments, heightSegments )
+PolyhedronBufferGeometry: ƒ PolyhedronBufferGeometry( vertices, indices, radius, detail )
+RingBufferGeometry: ƒ RingBufferGeometry( innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength )
+ShapeBufferGeometry: ƒ ShapeBufferGeometry( shapes, curveSegments )
+SphereBufferGeometry: ƒ SphereBufferGeometry( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength )
+TetrahedronBufferGeometry: ƒ TetrahedronBufferGeometry( radius, detail )
+TextGeometry: ƒ TextGeometry( text, parameters )
+TorusBufferGeometry: ƒ TorusBufferGeometry( radius, tube, radialSegments, tubularSegments, arc )
+TorusKnotBufferGeometry: ƒ TorusKnotBufferGeometry( radius, tube, tubularSegments, radialSegments, p, q )
+TubeBufferGeometry: ƒ TubeBufferGeometry( path, tubularSegments, radius, radialSegments, closed )
+InstancedBufferGeometry: ƒ InstancedBufferGeometry()
+
+########################################################################
+纹理(Textures)
+Texture: ƒ Texture( image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding )
+TextureFilter: {NearestFilter: 1003, NearestMipMapNearestFilter: 1004, NearestMipMapLinearFilter: 1005, LinearFilter: 1006, LinearMipMapNearestFilter: 1007, …}
+TextureMapping: {UVMapping: 300, CubeReflectionMapping: 301, CubeRefractionMapping: 302, EquirectangularReflectionMapping: 303, EquirectangularRefractionMapping: 304, …}
+TextureWrapping: {RepeatWrapping: 1000, ClampToEdgeWrapping: 1001, MirroredRepeatWrapping: 1002}
+VideoTexture: ƒ VideoTexture( video, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy )
+CanvasTexture: ƒ CanvasTexture( canvas, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy )
+CompressedTexture: ƒ CompressedTexture( mipmaps, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, encoding )
+CubeTexture: ƒ CubeTexture( images, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, encoding )
+DataTexture: ƒ DataTexture( data, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, encoding )
+DepthTexture: ƒ DepthTexture( width, height, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, format )
+
+########################################################################
+动画(Animation)
+AnimationClip: ƒ AnimationClip( name, duration, tracks )
+AnimationMixer: ƒ AnimationMixer( root )
+AnimationObjectGroup: ƒ AnimationObjectGroup( var_args )
+AnimationUtils: {arraySlice: ƒ, convertArray: ƒ, isTypedArray: ƒ, getKeyframeOrder: ƒ, sortedArray: ƒ, …}
+
+########################################################################
+辅助对象(Helpers)
+CameraHelper: ƒ CameraHelper( camera )
+DirectionalLightHelper: ƒ DirectionalLightHelper( light, size )
+HemisphereLightHelper: ƒ HemisphereLightHelper( light, size )
+PointLightHelper: ƒ PointLightHelper( light, sphereSize )
+RectAreaLightHelper: ƒ RectAreaLightHelper( light )
+SpotLightHelper: ƒ SpotLightHelper( light )
+ArrowHelper: ƒ ArrowHelper( dir, origin, length, color, headLength, headWidth )
+AxisHelper: ƒ AxisHelper( size )
+BoundingBoxHelper: ƒ BoundingBoxHelper( object, color )
+BoxHelper: ƒ BoxHelper( object, color )
+EdgesHelper: ƒ EdgesHelper( object, hex )
+FaceNormalsHelper: ƒ FaceNormalsHelper( object, size, hex, linewidth )
+GridHelper: ƒ GridHelper( size, divisions, color1, color2 )
+PolarGridHelper: ƒ PolarGridHelper( radius, radials, circles, divisions, color1, color2 )
+SkeletonHelper: ƒ SkeletonHelper( object )
+VertexNormalsHelper: ƒ VertexNormalsHelper( object, size, hex, linewidth )
+WireframeHelper: ƒ WireframeHelper( object, hex )
+
+########################################################################
+对象(Objects)
+Bone: ƒ Bone()
+LensFlare: ƒ LensFlare( texture, size, distance, blending, color )
+Line: ƒ Line( geometry, material, mode )
+LineSegments: ƒ LineSegments( geometry, material )
+LineCurve: ƒ LineCurve( v1, v2 )
+LineCurve3: ƒ ( v1, v2 )
+LinearInterpolant: ƒ LinearInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+LOD: ƒ LOD()
+Mesh: ƒ Mesh( geometry, material )
+MorphBlendMesh: ƒ MorphBlendMesh( geometry, material )
+SkinnedMesh: ƒ SkinnedMesh( geometry, material, useVertexTexture )
+Points: ƒ Points( geometry, material )
+Skeleton: ƒ Skeleton( bones, boneInverses, useVertexTexture )
+Sprite: ƒ Sprite( material )
+
+########################################################################
+数学工具库(Math)
+Box2: ƒ Box2( min, max )
+Box3: ƒ Box3( min, max )
+Color: ƒ Color( r, g, b )
+Euler: ƒ Euler( x, y, z, order )
+Frustum: ƒ Frustum( p0, p1, p2, p3, p4, p5 )
+Line3: ƒ Line3( start, end )
+Math: {DEG2RAD: 0.017453292519943295, RAD2DEG: 57.29577951308232, generateUUID: ƒ, clamp: ƒ, euclideanModulo: ƒ, …}
+Matrix3: ƒ Matrix3()
+Matrix4: ƒ Matrix4()
+Plane: ƒ Plane( normal, constant )
+Quaternion: ƒ Quaternion( x, y, z, w )
+QuaternionKeyframeTrack: ƒ QuaternionKeyframeTrack( name, times, values, interpolation )
+QuaternionLinearInterpolant: ƒ QuaternionLinearInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+Ray: ƒ Ray( origin, direction )
+球体(Sphere)
+  Sphere: ƒ Sphere( center, radius )
+样条(Spline)
+  Spline: ƒ Spline( points )
+  SplineCurve: ƒ SplineCurve( points /* array of Vector2 */ )
+  SplineCurve3: ƒ ( points /* array of Vector3 */ )
+三角形(Triangle)
+  Triangle: ƒ Triangle( a, b, c )
+  TriangleFanDrawMode: 2
+  TriangleStripDrawMode: 1
+  TrianglesDrawMode: 0
+向量(Vector)
+Vector2: ƒ Vector2( x, y )
+Vector3: ƒ Vector3( x, y, z )
+Vector4: ƒ Vector4( x, y, z, w )
+VectorKeyframeTrack: ƒ VectorKeyframeTrack( name, times, values, interpolation )
+
+########################################################################
+AddEquation: 100
+AddOperation: 2
+AdditiveBlending: 2
+AlphaFormat: 1021
+AlwaysDepth: 1
+
+BasicDepthPacking: 3200
+BasicShadowMap: 0
+ByteType: 1010
+CineonToneMapping: 4
+ClampToEdgeWrapping: 1001
+CubeReflectionMapping: 301
+CubeRefractionMapping: 302
+CubeUVReflectionMapping: 306
+CubeUVRefractionMapping: 307
+CullFaceBack: 1
+CullFaceFront: 2
+CullFaceFrontBack: 3
+CullFaceNone: 0
+CustomBlending: 5
+DepthFormat: 1026
+DepthStencilFormat: 1027
+
+side:
+  BackSide: 1
+  FrontSide: 0
+  DoubleSide: 2
+
+DstAlphaFactor: 206
+DstColorFactor: 208
+EqualDepth: 4
+EquirectangularReflectionMapping: 303
+EquirectangularRefractionMapping: 304
+FaceColors: 1
+FlatShading: 1
+FloatType: 1015
+FrontFaceDirectionCCW: 1
+FrontFaceDirectionCW: 0
+
+GammaEncoding: 3007
+GreaterDepth: 6
+GreaterEqualDepth: 5
+HalfFloatType: 1016
+IntType: 1013
+InterpolateDiscrete: 2300
+InterpolateLinear: 2301
+InterpolateSmooth: 2302
+LessDepth: 2
+LessEqualDepth: 3
+LogLuvEncoding: 3003
+LoopOnce: 2200
+LoopPingPong: 2202
+LoopRepeat: 2201
+LuminanceAlphaFormat: 1025
+LuminanceFormat: 1024
+MaxEquation: 104
+MinEquation: 103
+MirroredRepeatWrapping: 1002
+MixOperation: 1
+MultiplyBlending: 4
+MultiplyOperation: 0
+NearestFilter: 1003
+NearestMipMapLinearFilter: 1005
+NearestMipMapNearestFilter: 1004
+NeverDepth: 0
+NoBlending: 0
+NoColors: 0
+NoToneMapping: 0
+NormalBlending: 1
+NotEqualDepth: 7
+OneFactor: 201
+OneMinusDstAlphaFactor: 207
+OneMinusDstColorFactor: 209
+OneMinusSrcAlphaFactor: 205
+OneMinusSrcColorFactor: 203
+PCFShadowMap: 1
+PCFSoftShadowMap: 2
+REVISION: "83"
+RGBADepthPacking: 3201
+RGBAFormat: 1023
+RGBA_PVRTC_2BPPV1_Format: 2103
+RGBA_PVRTC_4BPPV1_Format: 2102
+RGBA_S3TC_DXT1_Format: 2002
+RGBA_S3TC_DXT3_Format: 2003
+RGBA_S3TC_DXT5_Format: 2004
+RGBDEncoding: 3006
+RGBEEncoding: 3002
+RGBEFormat: 1023
+RGBFormat: 1022
+RGBM7Encoding: 3004
+RGBM16Encoding: 3005
+RGB_ETC1_Format: 2151
+RGB_PVRTC_2BPPV1_Format: 2101
+RGB_PVRTC_4BPPV1_Format: 2100
+RGB_S3TC_DXT1_Format: 2001
+ReinhardToneMapping: 2
+RepeatWrapping: 1000
+ReverseSubtractEquation: 102
+ShortType: 1011
+SmoothShading: 2
+SphericalReflectionMapping: 305
+SrcAlphaFactor: 204
+SrcAlphaSaturateFactor: 210
+SrcColorFactor: 202
+SubtractiveBlending: 3
+UVMapping: 300
+Uncharted2ToneMapping: 3
+UnsignedByteType: 1009
+UnsignedInt248Type: 1020
+UnsignedIntType: 1014
+UnsignedShort565Type: 1019
+UnsignedShort4444Type: 1017
+UnsignedShort5551Type: 1018
+UnsignedShortType: 1012
+SubtractEquation: 101
+VertexColors: 2
+WrapAroundEnding: 2402
+ZeroCurvatureEnding: 2400
+ZeroFactor: 200
+ZeroSlopeEnding: 2401
+sRGBEncoding: 3001
+LinePieces: 1
+LineStrip: 0
+LinearEncoding: 3000
+LinearFilter: 1006
+LinearMipMapLinearFilter: 1008
+LinearMipMapNearestFilter: 1007
+LinearToneMapping: 1
+
+########################################################################
+AudioContext: {getContext: ƒ, setContext: ƒ}
+BlendingMode: {NoBlending: 0, NormalBlending: 1, AdditiveBlending: 2, SubtractiveBlending: 3, MultiplyBlending: 4, …}
+Cache: {enabled: false, files: {…}, add: ƒ, get: ƒ, remove: ƒ, …}
+CurveUtils: {tangentQuadraticBezier: ƒ, tangentCubicBezier: ƒ, tangentSpline: ƒ, interpolate: ƒ}
+ImageUtils: {crossOrigin: undefined, loadTexture: ƒ, loadTextureCube: ƒ, loadCompressedTexture: ƒ, loadCompressedTextureCube: ƒ}
+MOUSE: {LEFT: 0, MIDDLE: 1, RIGHT: 2}
+ShapeUtils: {area: ƒ, triangulate: ƒ, triangulateShape: ƒ, isClockWise: ƒ, b2: ƒ, …}
+
+########################################################################
+ArcCurve: ƒ ArcCurve( aX, aY, aRadius, aStartAngle, aEndAngle, aClockwise )
+Audio: ƒ Audio( listener )
+AudioAnalyser: ƒ AudioAnalyser( audio, fftSize )
+AudioListener: ƒ AudioListener()
+BooleanKeyframeTrack: ƒ BooleanKeyframeTrack( name, times, values )
+CatmullRomCurve3: ƒ ( p /* array of Vector3 */ )
+ClosedSplineCurve3: ƒ ClosedSplineCurve3( points )
+ColorKeyframeTrack: ƒ ColorKeyframeTrack( name, times, values, interpolation )
+CubicBezierCurve: ƒ CubicBezierCurve( v0, v1, v2, v3 )
+CubicBezierCurve3: ƒ ( v0, v1, v2, v3 )
+CubicInterpolant: ƒ CubicInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+Curve: ƒ Curve()
+CurvePath: ƒ CurvePath()
+Cylindrical: ƒ Cylindrical( radius, theta, y )
+DiscreteInterpolant: ƒ DiscreteInterpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+EllipseCurve: ƒ EllipseCurve( aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation )
+EventDispatcher: ƒ EventDispatcher()
+DefaultLoadingManager: LoadingManager {onStart: undefined, onLoad: undefined, onProgress: undefined, onError: undefined, itemStart: ƒ, …}
+Font: ƒ Font( data )
+Group: ƒ Group()
+ImmediateRenderObject: ƒ ImmediateRenderObject( material )
+InstancedInterleavedBuffer: ƒ InstancedInterleavedBuffer( array, stride, meshPerAttribute )
+InterleavedBuffer: ƒ InterleavedBuffer( array, stride )
+Interpolant: ƒ Interpolant( parameterPositions, sampleValues, sampleSize, resultBuffer )
+KeyframeTrack: ƒ KeyframeTrack( name, times, values, interpolation )
+Layers: ƒ Layers()
+LoadingManager: ƒ LoadingManager( onLoad, onProgress, onError )
+NumberKeyframeTrack: ƒ NumberKeyframeTrack( name, times, values, interpolation )
+Object3D: ƒ Object3D()
+Particle: ƒ Particle( material )
+ParticleSystem: ƒ ParticleSystem( geometry, material )
+Path: ƒ Path( points )
+PositionalAudio: ƒ PositionalAudio( listener )
+Projector: ƒ Projector()
+PropertyBinding: ƒ PropertyBinding( rootNode, path, parsedPath )
+PropertyMixer: ƒ PropertyMixer( binding, typeName, valueSize )
+QuadraticBezierCurve: ƒ QuadraticBezierCurve( v0, v1, v2 )
+QuadraticBezierCurve3: ƒ ( v0, v1, v2 )
+Shape: ƒ Shape()
+ShapePath: ƒ ShapePath()
+Spherical: ƒ Spherical( radius, phi, theta )
+StringKeyframeTrack: ƒ StringKeyframeTrack( name, times, values, interpolation )
+Vertex: ƒ Vertex( x, y, z )

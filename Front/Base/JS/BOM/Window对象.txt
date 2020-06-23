@@ -1,0 +1,75 @@
+Window 对象
+
+Window 对象表示浏览器中打开的窗口。
+如果文档包含框架（<frame> 或 <iframe> 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。
+Note注意： 没有应用于 window 对象的公开标准，不过所有浏览器都支持该对象。
+
+Window 对象属性25
+closed 				返回窗口是否已被关闭。
+defaultStatus 		设置或返回窗口状态栏中的默认文本。
+frames 				返回窗口中所有命名的框架。该集合是 Window 对象的数组，每个 Window 对象在窗口中含有一个框架。
+length 				设置或返回窗口中的框架数量。
+name 				设置或返回窗口的名称。
+opener 				返回对创建此窗口的窗口的引用。
+parent 				返回父窗口。
+self 				返回对当前窗口的引用。等价于 Window 属性。
+status 				设置窗口状态栏的文本。
+top 				返回最顶层的父窗口。
+
+outerHeight 		返回窗口的外部高度，包含工具条与滚动条。
+outerWidth 			返回窗口的外部宽度，包含工具条与滚动条。
+pageXOffset 		设置或返回当前页面相对于窗口显示区左上角的 X 位置。
+pageYOffset 		设置或返回当前页面相对于窗口显示区左上角的 Y 位置。
+innerHeight		 	返回窗口的文档显示区的高度。
+innerWidth 			返回窗口的文档显示区的宽度。
+screenLeft 			返回相对于屏幕窗口的x坐标
+screenTop 			返回相对于屏幕窗口的y坐标
+screenX 			返回相对于屏幕窗口的x坐标
+screenY 			返回相对于屏幕窗口的y坐标
+
+
+
+
+document 			对 Document 对象的只读引用。     请参阅Document对象 
+history 		    对 History 对象的只读引用。      请参数History对象
+navigator 			对 Navigator 对象的只读引用。    请参数Navigator对象 
+screen 				对 Screen 对象的只读引用。       请参数Screen对象 
+location 			用于窗口或框架的 Location 对象。  请参阅Location对象 
+
+
+
+Window 对象方法20
+print() 							打印当前窗口的内容。
+//键盘焦点
+focus() 							把键盘焦点给予一个窗口。
+blur() 							    把键盘焦点从顶层窗口移开。
+//开关窗口
+open(URL,name,specs,replace) 	    打开一个新的浏览器窗口或查找一个已命名的窗口。返回值为一个window对象
+close() 							关闭浏览器窗口。只能关闭通过JS脚本打开的窗口
+//窗口尺寸
+resizeBy(width,height) 			    按照指定的像素调整窗口的大小。（利用参数正负，相对当前窗口实现宽高增减）
+resizeTo(width,height) 			    把窗口的大小调整到指定的宽度和高度。
+//窗口坐标
+moveBy(x,y) 						可相对窗口的当前坐标把它移动指定的像素。
+moveTo(x,y) 						把窗口的左上角移动到一个指定的坐标。
+scroll() 	 
+scrollBy(x,y) 					    按照指定的像素值来滚动内容。
+scrollTo(x,y) 					    把内容滚动到指定的坐标。
+//定时器
+setInterval() 					    按照指定的周期（以毫秒计）来调用函数或计算表达式。
+setTimeout() 					    在指定的毫秒数后调用函数或计算表达式。
+clearInterval() 					取消由 setInterval() 设置的 timeout。
+clearTimeout() 					    取消由 setTimeout() 方法设置的 timeout。
+//弹框 会阻断JS代码执行 取消或确认后才会执行
+alert(message) 					    警告框		显示一段消息 确认按钮
+confirm(message) 				    确认框		显示一段消息 确认按钮和取消按钮。点击"确定"返回true，否则返回false。
+prompt(msg,defaultText) 			消息提示框	显示一段消息 确认按钮和取消按钮 可提示用户输入的对话框。点击确定返回用户输入的字符串，点击取消无返回值
+
+requestAnimationFrame()
+//请求动画 类似setInterval 无需设置刷新间隔事件 默认为浏览器刷新频率 重复执行 
+//当页面处于非活跃状态(即打开页面但处于其他页面时)时暂停动画，回到活跃状态时继续执行
+
+
+
+
+createPopup() 					创建一个 pop-up 窗口。仅IE支持

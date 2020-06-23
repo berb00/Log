@@ -1,0 +1,35 @@
+# 全局引入
+    css     可直接在main.js文件import
+    scss    可直接在main.js文件引入, 但直接引入不能使用高级语法(变量等)
+    js      在main.js引入，并挂载在vue原型链上
+
+
+
+
+
+
+
+版本:
+    common: CommonJS标准
+    esm:    EcmaScript Module
+
+    vue.common.dev.js
+    vue.common.prod.js
+
+    vue.runtime.common.dev.js
+    vue.runtime.common.prod.js
+
+    vue.js                          // 完整版本
+    vue.runtime.js                  // 运行时版本   不包含模版编译器来获得整个包体积的减少,开发时本地编译模板.生产的运行时，需要预编译，比完整版小30%左右，前端性能最优
+    vue.esm.js                      // 预编译调试时， EcmaScript Module（ES MODULE)，支持import from 最新标准的。
+    vue.common.js                   // 预编译调试时，CommonJS规范的格式，可以使用require("")引用的NODEJS格式。
+
+    vue.runtime.common.js           // 生产运行时，commonJS标准。
+    vue.runtime.esm.js              // 生产运行时，esm标准。
+    vue.esm.browser.js              // ES Module (直接用于浏览器)
+
+    vue.min.js                      // 完整版 (生产环境)
+    vue.runtime.min.js              // 运行时版 (生产环境)
+    vue.esm.browser.min.js
+
+

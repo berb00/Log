@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid;
+        }
+        .left {
+            width: 100px;
+            background-color: blue;
+        }
+        .right {
+            width: 100px;
+            background-color: green;
+        }
+        .middle {
+            background-color: red;
+        }
+        section > div {
+            margin: 110px auto;
+        }
+        /*方案一：table*/
+        #table {
+            width: 100%;
+            display: table;
+        }
+        #table > div{
+            display: table-cell;
+
+        }
+        #table .right {
+            display: table-cell;
+        }
+        /*方案二：float*/
+        #float .left{
+            float: left;
+        }
+        #float .right {
+            float: right;
+        }
+
+        /*方案三：position*/
+        #position {
+            position: relative;
+        }
+        #position .left {
+            position: absolute;
+            left: 0;
+        }
+        #position .right {
+            position: absolute;
+            right: 0;
+        }
+        #position .middle {
+            position: absolute;
+            left: 100px;
+            right: 100px;
+        }
+        /*方案四：flex*/
+        #flex {
+            display: flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: space-between;
+        }
+        #flex .middle {
+            flex:1;
+        }
+        
+        /*方案五：grid*/
+
+        #grid {
+            display: grid;
+            width: 100%;
+            grid-template-rows:50px;
+            grid-template-columns:100px auto 100px;
+        }
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+<!--
+两侧固定宽度 中间自适应布局
+方案一：table
+方案二：float
+方案三：position
+方案四：flex
+方案五：grid
+-->
+
+    <section>
+        <div id="table">
+            <div class="left"></div>
+            <div class="middle">
+                <p>table</p>
+                <p>table</p>
+            </div>
+            <div class="right"></div>
+        </div>
+    </section>
+
+    <section>
+        <div id="float">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="middle">
+                <p>float</p>
+                <p>float</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="position">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="middle">
+                <p>position</p>
+                <p>position</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="flex">
+            <div class="left"></div>
+            <div class="middle">
+                <p>flex</p>
+                <p>flex</p>
+            </div>
+            <div class="right"></div>
+        </div>
+    </section>
+
+    <section>
+        <div id="grid">
+            <div class="left"></div>
+            <div class="middle">
+                <p>grid</p>
+                <p>grid</p>
+            </div>
+            <div class="right"></div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

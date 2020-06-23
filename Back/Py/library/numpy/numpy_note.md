@@ -1,0 +1,1 @@
+# numpy note (Numeric Python)

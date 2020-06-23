@@ -1,0 +1,82 @@
+属性3
+constructor 	返回创建数组对象的原型函数。
+length 			设置或返回数组元素的个数。
+prototype 		允许你向数组对象添加属性或方法。
+方法25
+
+array.toString() 												                    把数组转换为字符串，并返回结果。
+array.valueOf() 													                返回数组对象的原始值。
+
+
+//增删
+array.pop()														                    删除并返回数组的尾元素。
+array.push(item1, item2, ..., itemX) 							                    向数组的末尾添加一个或更多元素，并返回新的长度。
+array.shift() 													                    删除并返回数组的首元素。
+array.unshift(item1,item2, ..., itemX) 							                    向数组的开头添加一个或更多元素，并返回新的长度。
+array.splice(start,delnum,item1,.....,itemX) 						                从数组中添加或删除元素。
+
+//改
+array.copyWithin(target, start, end) 							                    从数组的指定位置拷贝元素到数组的另一个指定位置中。
+array.fill(value, *start, *end) 									                使用一个固定值来填充数组。
+array.reverse() 													                反转数组的元素顺序。
+array.sort(sortfunction) 										                    对数组的元素进行排序。
+array1.concat(array2,array3,...,arrayX)							                    连接两个或更多的数组，并返回结果。								不会改变现有数组
+array.slice(start, end) 											                选取数组的的一部分，并返回一个新数组。
+
+//查找
+array.indexOf(item,start) 										                    搜索数组中的元素，并返回它所在的位置。
+array.lastIndexOf(item,start) 									                    返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。
+array.find(function(currentValue, index, arr),thisValue) 			                返回符合传入测试（函数）条件的数组元素。
+array.findIndex(function(currentValue, index, arr), thisValue) 	                    返回符合传入测试（函数）条件的数组元素索引。
+
+//检测判断
+array.every(function(currentValue,index,arr), thisValue) 			                检测数值元素的每个元素是否都符合条件。bool
+array.filter(function(currentValue,index,arr), thisValue) 		                    检测数值元素，并返回符合条件所有元素的数组。array
+array.some(function(currentValue,index,arr),thisValue) 			                    检测数组元素中是否有元素符合指定条件。
+array.includes(searchElement, fromIndex) 						                    判断一个数组是否包含一个指定的值。
+
+array.forEach(function(currentValue, index, arr), thisValue) 		                数组每个元素都执行一次回调函数。
+array.map(function(currentValue,index,arr), thisValue) 			                    通过指定函数处理数组的每个元素，并返回处理后的数组。				不改变原始数组
+array.join(*separator) 											                    把数组的所有元素放入一个字符串。分隔符默认为","					不改变原始数组
+array.reduce(function(total, currentValue, currentIndex, arr), initialValue) 		将数组元素计算为一个值（从左到右）。
+array.reduceRight(function(total, currentValue, currentIndex, arr), initialValue) 	将数组元素计算为一个值（从右到左）。
+
+
+
+
+
+
+
+//Array自定义方法:
+//去重
+Array.prototype.unique = function(){
+ 	var res = [];
+ 	var json = {};
+ 	for(var i = 0; i < this.length; i++){
+  		if(!json[this[i]]){//json不包含该键(数组元素) 则该键压入数组
+   			res.push(this[i]);
+   			json[this[i]] = 1;
+  		}
+  		console.log(json[this[i]]);
+	}
+	return res;
+}
+
+
+
+
+
+Array.prototype.unique = function () {
+	var res = [];
+	var json = {};
+	for(var i = 0;i < this.lengh;i++){
+		if(!json[this[i]]){
+			res[i] = this[i];
+			json[this[i]] = 1;
+		}
+	}
+	return res;
+}
+
+
+

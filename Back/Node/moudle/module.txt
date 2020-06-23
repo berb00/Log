@@ -1,0 +1,40 @@
+
+module (模块)
+    访问主模块
+    附录：包管理器的技巧
+    总结
+    缓存
+        模块缓存的注意事项
+    核心模块
+    循环
+    文件模块
+    目录作为模块
+    从 node_modules 目录加载
+    从全局目录加载
+    模块包装器
+
+
+
+    The module scope
+        __dirname
+        __filename
+        exports
+        module
+        require()
+            require.cache
+            require.extensions
+            require.main
+            require.resolve(request[, options])
+            require.resolve.paths(request)
+    module 对象
+        module.children
+        module.exports
+            exports 快捷方式
+        module.filename
+        module.id
+        module.loaded
+        module.parent
+        module.paths
+        module.require(id)
+    The Module Object
+        module.builtinModules

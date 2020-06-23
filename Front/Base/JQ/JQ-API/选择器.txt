@@ -1,0 +1,91 @@
+基本
+    #id
+    element
+    .class
+    *
+    selector1,selector2,selectorN
+
+层级
+    ancestor descendant
+    parent > child
+    prev + next
+    prev ~ siblings
+    
+基本筛选器
+    :first
+    :not(selector)  			去除所有与给定选择器匹配的元素
+    :even					匹配所有索引值(表现为奇数的)为偶数的元素，从 0 开始计数
+    :odd						匹配所有索引值(表现为偶数的)为奇数的元素，从 0 开始计数
+    :eq(index)   			匹配一个给定索引值的元素
+    :gt(index)				匹配所有大于给定索引值的元素    	great than
+    :lang(language)1.9+		选择指定语言的所有元素。
+    :last					获取最后个元素
+    :lt(index)				匹配所有小于给定索引值的元素   	last than
+    :header
+    :animated
+    :focus
+    :root1.9+
+    :target1.9+
+
+内容
+    :contains(text)			匹配包含给定文本的元素
+    :empty
+    :has(selector)			匹配含有选择器所匹配的元素的元素
+    :parent					匹配含有子元素或者文本的元素
+
+可见性
+    :hidden					匹配所有不可见元素，或者type为hidden的元素
+    :visible					匹配所有的可见元素
+
+属性
+    [attribute]
+    [attribute=value]
+    [attribute!=value]
+    [attribute^=value]
+    [attribute$=value]
+    [attribute*=value]
+    [attribute|="value"]
+	[attribute~="value"]
+    [attrSel1][attrSel2][attrSelN]
+
+子元素
+    :first-child				匹配所给选择器( :之前的选择器)的第一个子元素  类似的:first匹配第一个元素，但是:first-child选择器可以匹配多个：即为每个父级元素匹配第一个子元素。这相当于:nth-child(1)
+    :first-of-type1.9+
+    :last-child
+    :last-of-type1.9+
+    :nth-child				匹配其父元素下的第N个子或奇偶元素  从1开始
+    :nth-last-child()1.9+
+    :nth-last-of-type()1.9+
+    :nth-of-type(n|even|odd|formula)1.9+ 匹配若干父元素下 第n/odd/even个标签
+    :only-child				如果某个元素是父元素中唯一的子元素，那将会被匹配；如果父元素中含有其他元素，那将不会被匹配。（注：这里的其他元素并不包含文本节点，
+    :only-of-type1.9+		选择所有没有兄弟元素，且具有相同的元素名称的元素。
+							如果父元素有相同的元素名称的其他子元素，那么没有元素会被匹配。
+
+表单:以下选择器为input的type属性
+    :input					匹配所有 input, textarea, select 和 button 元素
+    :text					匹配所有的单行文本框
+    :password				匹配所有密码框
+    :radio					匹配所有单选按钮
+    :checkbox				匹配所有复选框
+    :image					匹配所有图像域
+    :reset					匹配所有重置按钮
+    :button					匹配所有按钮
+    :file					匹配所有文件域
+    :submit					匹配所有提交按钮，
+    							理论上只匹配 type="submit" 的input或者button，
+    							但是现在的很多浏览器，button元素默认的type即为submit，
+    							所以很多情况下，不设置type的button也会成为筛选结果。
+    							为了防止歧义或者误操作，建议所有的button在使用时都添加type属性。    						    	
+    :button
+    :focus
+    :reset
+
+
+表单对象属性
+    :enabled					匹配所有可用元素
+    :disabled				匹配所有不可用元素
+    :checked					匹配所有选中的被选中元素(复选框、单选框等，select中的option)，对于select元素来说，获取选中推荐使用 :selected
+    :selected				匹配所有选中的option元素
+
+混淆选择器
+    $.escapeSelector(selector)

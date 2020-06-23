@@ -1,0 +1,55 @@
+install:
+
+https://docs.anaconda.com/anaconda/user-guide/getting-started/
+
+
+
+conmmond:
+
+conda --version // 查看conda版本
+conda -V
+
+conda -h
+conda command -h
+
+conda info -e (--envs)      //所有环境
+conda info -a (--all)       //所有信息
+
+更新，卸载安装包：
+    conda update conda
+    conda uninstall xxx     //卸载xxx文件包
+    conda update xxx        //更新xxx文件包
+    conda update -n base conda      //update最新版本的conda
+    conda install -n customenv beautifulsoup4 (没有在当前环境的情况)
+    conda install beautifulsoup4
+查看
+conda list //查看已经安装的文件包
+conda list -n envname //指定查看xxx虚拟环境下安装的package
+
+虚拟环境
+    conda create -n xxxx python=3.5 //创建python3.5的xxxx虚拟环境
+    conda activate xxxx             //开启xxxx环境
+    conda deactivate                //关闭环境
+    conda env list                  //显示所有的虚拟环境
+    conda info --envs               //显示所有的虚拟环境
+    conda create --name newname --clone oldname //克隆环境
+    conda remove --name oldname --all //彻底删除旧环境
+
+清理（conda瘦身）
+    conda clean -p //删除没有用的包
+    conda clean -t //tar打包
+    conda clean -y -all //删除所有的安装包及cache
+
+重命名env
+    Conda是没有重命名环境的功能的!!! 
+    要实现这个基本需求, 只能通过愚蠢的克隆-删除的过程。
+    切记不要直接mv移动环境的文件夹来重命名, 会导致一系列无法想象的错误的发生!
+
+查找包
+    conda search packageName
+    conda search -f(--full-name) packageName (Only search for full name)
+
+移除特定环境的包
+    conda remove packageName(当前环境下)
+    conda remove -n envName packageName(特定环境下某个包)
+    conda remove -n envName --all (删除环境 移除所有的包)

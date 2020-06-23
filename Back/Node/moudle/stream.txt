@@ -1,0 +1,92 @@
+stream (流)
+    本文档的组织
+    流的类型
+        Node.js 中有四种基本的流类型：
+            Readable - 可读的流 (例如 fs.createReadStream()、客户端的请求req).     每次读取的时候回发布相应的事件(data,end) 监听这些事件可以拿到可读流
+            Writable - 可写的流 (例如 fs.createWriteStream()、服务端的响应res).    可以通过end或write方法写入
+            Duplex   - 可读写的流 (例如 net.Socket).
+            Transform - 在读写过程中可以修改和变换数据的 Duplex 流 (例如 zlib.createDeflate()).
+
+        对象模式
+        缓冲
+    流消费者的 API
+        可写流:可读流（Readable streams）是对提供数据的 源头 （source）的抽象。所有的 Readable 都实现了 stream.Readable 类定义的接口。
+            stream.Writable 类
+                'close' 事件
+                'drain' 事件
+                'error' 事件
+                'finish' 事件
+                'pipe' 事件
+                'unpipe' 事件
+                writable.cork()
+                writable.destroy([error])
+                writable.end([chunk][, encoding][, callback])
+                writable.setDefaultEncoding(encoding)
+                writable.uncork()
+                writable.writableHighWaterMark
+                writable.writableLength
+                writable.write(chunk[, encoding][, callback])
+        可读流
+            两种模式
+                flowing模式，  可读流自动从系统底层读取数据，并通过 EventEmitter 接口的事件尽快将数据提供给应用。
+                paused模式，   必须显式调用 stream.read() 方法来从流中读取数据片段。
+            三种状态
+            选择一种
+            stream.Readable 类
+                'close' 事件
+                'data' 事件
+                'end' 事件
+                'error' 事件
+                'readable' 事件
+                readable.destroy([error])
+                readable.isPaused()
+                readable.pause()
+                readable.pipe(destination[, options])
+                readable.read([size])
+                readable.readableHighWaterMark
+                readable.readableLength
+                readable.resume()
+                readable.setEncoding(encoding)
+                readable.unpipe([destination])
+                readable.unshift(chunk)
+                readable.wrap(stream)
+                readable[Symbol.asyncIterator]()
+        Duplex 流与 Transform 流
+            stream.Duplex 类
+            stream.Transform 类
+                transform.destroy([error])
+        stream.finished(stream, callback)
+        stream.pipeline(...streams[, callback])
+    API for Stream Implementers
+        Simplified Construction
+        Implementing a Writable Stream
+            Constructor: new stream.Writable([options])
+            writable._write(chunk, encoding, callback)
+            writable._writev(chunks, callback)
+            writable._destroy(err, callback)
+            writable._final(callback)
+            Errors While Writing
+            一个可写流的例子
+            Decoding buffers in a Writable Stream
+        Implementing a Readable Stream
+            new stream.Readable([options])
+            readable._read(size)
+            readable._destroy(err, callback)
+            readable.push(chunk[, encoding])
+            Errors While Reading
+            一个数流的例子
+        Implementing a Duplex Stream
+            new stream.Duplex(options)
+            An Example Duplex Stream
+            Object Mode Duplex Streams
+        Implementing a Transform Stream
+            new stream.Transform([options])
+            Events: 'finish' and 'end'
+            transform._flush(callback)
+            transform._transform(chunk, encoding, callback)
+            Class: stream.PassThrough
+    Additional Notes
+        Compatibility with Older Node.js Versions
+        readable.read(0)
+        readable.push('')
+        highWaterMark discrepancy after calling readable.setEncoding()

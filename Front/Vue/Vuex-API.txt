@@ -1,0 +1,60 @@
+==========================================================================================
+Vuex.Store
+
+
+
+
+==========================================================================================
+Vuex.Store 构造器选项
+    state
+    mutations
+    actions
+    getters
+    modules
+    plugins
+    strict
+
+==========================================================================================
+Vuex.Store 实例属性
+    state
+    getters
+
+
+==========================================================================================
+Vuex.Store 实例方法
+    commit
+    dispatch
+    replaceState
+    watch
+    subscribe
+    subscribeAction
+    registerModule
+    unregisterModule
+    hotUpdate
+
+
+==========================================================================================
+组件绑定的辅助函数
+    mapState
+    mapGetters
+    mapActions
+    mapMutations
+    createNamespacedHelpers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+* 理解java的加载与执行
+* 搭建Java开发环境
+* 编写HelloWorld，编译运行
+* 掌握环境变量path的原理及配置
+* 掌握环境变量原理及配置
+* public class 与 class 的区别
+
+
+
+
+
+
+
+
+
+
+
+
+#java学校路径:
+    html-css-js-jq-javase-数据库-jsp-servlet-Struts2-hibernate-mybatis-spring4-springmvc-ssh-ssm
+
+
+#java工具
+    apache-tomcat-8.5.24.tar.gz
+    jdk-8u151-linux-x64.gz
+    kafka_2.12-0.10.2.0.tgz
+    mongodb-linux-x86_64-rhel70-3.6.2.tgz
+    mysql-5.7.21-linux-glibc2.12-x86_64.tar.gz
+    nginx-1.12.2.tar.gz
+    redis-3.2.11.tar.gz
+    redis-4.0.1.tar.gz
+    zookeeper-3.4.10.tar.gz
+
+    redis-desktop-manager-0.8.8.384.exe
+    SecureCRT.rar
+    WinSCP-5.11.3-Setup.exe
+    navicat120_premium_cs_x64.exe
+    EdrawSoft Edraw Max.rar
+    BCompare_4.rar

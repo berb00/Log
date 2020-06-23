@@ -1,0 +1,114 @@
+elements:
+	形状：
+		<rect> 					定义一个矩形 
+		<circle> 				定义一个圆	
+		<ellipse> 				定义一个椭圆
+		<line>
+		<polygon> 				定义一个包含至少三边图形 	
+		<polyline> 				定义只有直线组成的任意形状
+		<path>
+		<image> 				定义图像 	
+		<cursor> 				定义一个独立于平台的自定义光标
+	替换：
+		<altGlyph> 				允许对象性文字进行控制，来呈现特殊的字符数据 	
+		<altGlyphDef> 			定义一系列象性符号的替换 	
+		<altGlyphItem> 			定义一系列候选的象性符号的替换 
+	动画：
+		<animate> 				随时间动态改变属性 	
+		<animateColor> 			定义随着时间的推移颜色转换 	
+		<animateMotion> 		使元素沿着动作路径移动 	
+		<animateTransform> 		动画上一个目标元素变换属性，从而使动画控制平移，缩放，旋转或倾斜 
+	文本：
+		<text> 					定义一个文本 	
+		<tref> 					引用任何SVG文档中的<text>元素和重用 	相同的<TEXT>元素
+		<tspan> 				元素等同于<text>，但可以在内部嵌套文本标记以及内部本身
+	容器：
+		<defs> 					引用的元素容器 	 
+		<desc> 					对 SVG 中的元素的纯文本描述 - 并不作为图形的一部分来显示。
+		<g> 					用于把相关元素进行组合的容器元素 	
+	滤镜：
+		<filterr>
+		<feGaussianBlur /> 		模糊效果
+		<feOffset /> 			偏移阴影
+		<feBlend /> 			使用不同的混合模式把两个对象合成在一起 	
+	渐变：
+		<linearGradient> 		定义线性渐变。通过使用矢量线性渐变填充对象，并可以定义为水平，垂直或角渐变。 
+		<radialGradient> 		定义放射性渐变。放射性渐变创建一个圆圈 	
+		<stop> 					渐变停止
+	其他：
+		<marker> 				标记可以放在直线，折线，多边形和路径的顶点。
+		<pattern> 				定义坐标，你想要的视图显示和视图的大小。然后添加到您的模式形状。该模式命中时重复视图框的边缘（可视范围） 	
+		<clipPath> 				用于隐藏位于剪切路径以外的对象部分。定义绘制什么和什么不绘制的模具被称为剪切路径 	
+		<color-profile> 		指定颜色配置文件的说明（使用CSS样式文件时） 
+		<a> 					创建一个SVG元素周围链接 	
+		
+##########################################
+    矩形 <rect>
+    	x, y, rx, ry, width, height,
+    	style= fill, fill-opacity, stroke, stroke-width, stroke-opacity, opacity, fill-rule:nonzero | evenodd
+    	filter=url(#)
+    圆形 <circle>
+    	cx, cy, r, 
+    椭圆 <ellipse>
+    	cx, cy, rx, ry
+    线 <line>
+    	x1, y1, x2, y2
+    折线 <polyline>
+    	points= 'x1,y1 x2,y2...'
+    多边形 <polygon>
+    	points
+    路径 <path>
+    	d=
+		    M = moveto
+		    L = lineto
+		    H = horizontal lineto
+		    V = vertical lineto
+		    C = curveto							曲线
+		    S = smooth curveto 					平滑曲线
+		    Q = quadratic Bézier curve 			二次贝塞尔曲线
+		    T = smooth quadratic Bézier curveto 平滑二次贝塞尔曲线
+		    A = elliptical Arc 					椭圆弧
+		    Z = closepath
+		    大写：绝对定位 小写：相对定位
+
+	<text>
+		x, y
+	<defs>
+	<filterr>
+		id, x, y
+	<feGaussianBlur />
+		in= SourceGraphic
+		stdDeviation= num 	//模糊量 
+
+
+
+
+stroke:	
+    stroke 				color
+    stroke-width    	num
+    stroke-linecap 		butt/round/square
+    stroke-dasharray 	num
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

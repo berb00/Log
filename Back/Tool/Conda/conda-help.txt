@@ -1,0 +1,359 @@
+##########################################################
+ conda -h
+    config       Modify configuration values in .condarc. This is modeled
+                 after the git config command. Writes to the user .condarc
+                 file (/root/.condarc) by default.
+    help         Displays a list of available conda commands and their help  strings.
+
+    search       Search for packages and display associated information. The
+                 input is a MatchSpec, a query language for conda packages.
+                 See examples below.
+    info         Display information about current conda install.
+    list         List linked packages in a conda environment.
+
+    create       Create a new conda environment from a list of specified packages.
+    install      Installs a list of packages into a specified conda environment.
+    remove       Remove a list of packages from a specified conda environment.
+    uninstall    Alias for conda remove.
+
+    package      Low-level conda package utility. (EXPERIMENTAL)
+    update       Updates conda packages to the latest compatible version.
+    upgrade      Alias for conda update.
+    init         Initialize conda for shell interaction. Experimental
+    run          Run an executable in a conda environment. Experimental
+    clean        Remove unused packages and caches.
+
+
+
+#######################################################
+config 
+    -h, --help
+    Output, Prompt, and Flow Control Options:
+      --json 
+      -v, --verbose 
+      -q, --quiet 
+    Config File Location Selection: 
+      --system 
+      --env 
+      --file FILE 
+    Config Subcommands:
+      --show [SHOW [SHOW ...]] 
+      --show-sources 
+      --validate 
+      --describe [DESCRIBE [DESCRIBE ...]] 
+      --write-default 
+    Config Modifiers:
+      --get [KEY [KEY ...]] 
+      --append KEY VALUE 
+      --prepend KEY VALUE, --add KEY VALUE 
+      --set KEY VALUE  
+      --remove KEY VALUE 
+      --remove-key KEY 
+      --stdin 
+help        
+      -h, --help
+search
+    -h, --help 
+    --envs 
+    -i, --info 
+    --subdir SUBDIR, --platform SUBDIR 
+
+    Channel Customization:
+    -c CHANNEL, --channel CHANNEL 
+    --use-local 
+    --override-channels 
+    --repodata-fn REPODATA_FNS 
+
+    Networking Options:
+        -C, --use-index-cache 
+        -k, --insecure 
+        --offline 
+
+    Output, Prompt, and Flow Control Options:
+        --json 
+        -v, --verbose 
+        -q, --quiet 
+info
+    -h, --help 
+    -a, --all 
+    --base 
+    -e, --envs 
+    -s, --system 
+    --unsafe-channels 
+
+    Output, Prompt, and Flow Control Options:
+    --json 
+    -v, --verbose 
+    -q, --quiet 
+list
+    -h 
+    -n --name
+    -p --prefix
+    --json 
+    -v --verbose
+    -q --quiet
+    --show-channel-urls 
+    -c --canonical
+    -f --full-name
+    --explicit 
+    --md5 
+    -e --export  
+    -r --revisions
+    --no-pip
+    regex
+create
+    -h --help
+    --clone 
+    -n --name envname
+    -p --prefix PATH 
+    -c --channel CHANNEL
+    --dev
+    --copy 
+    --json
+    -C --use-index-cache
+    -k --insecure
+    --offline 
+    -d --dry-run
+    -q --quiet
+    -v --verbose
+    -y --yes
+    --use-local 
+    --override-channels
+    --strict-channel-priority 
+    --no-channel-priority
+    --no-deps
+    --only-deps 
+    --no-pin 
+    --download-only
+    --show-channel-urls 
+    --file FILE
+    --no-default-packages 
+
+install
+    optional arguments:
+      -h, --help
+      --revision REVISION
+      --file FILE
+      --dev
+    Target Environment Specification:
+      -n ENVIRONMENT, --name ENVIRONMENT
+      -p PATH, --prefix PATH
+
+    Channel Customization:
+      -c CHANNEL, --channel CHANNEL
+      --use-local
+      --override-channels
+      --repodata-fn REPODATA_FNS
+    Solver Mode Modifiers:
+      --strict-channel-priority
+      --no-channel-priority
+      --no-deps
+      --only-deps
+      --no-pin
+      --force-reinstall
+      --freeze-installed, --no-update-deps
+      --update-deps
+      -S, --satisfied-skip-solve
+      --update-all, --all
+      --update-specs
+
+    Package Linking and Install-time Options:
+      --copy
+      -m, --mkdir
+      --clobber
+    Networking Options:
+      -C, --use-index-cache
+      -k, --insecure
+      --offline
+
+    Output, Prompt, and Flow Control Options:
+      -d, --dry-run
+      --json
+      -q, --quiet
+      -v, --verbose
+      -y, --yes
+      --download-only
+      --show-channel-urls
+remove
+    -h, --help
+    --dev
+    Target Environment Specification:
+      -n ENVIRONMENT, --name
+      -p PATH, --prefix PATH
+    Channel Customization:
+      -c CHANNEL, --channel CHANNEL
+      --use-local
+      --override-channels
+      --repodata-fn REPODATA_FNS
+
+    Solver Mode Modifiers:
+      --all
+      --features
+      --force-remove, --force
+      --no-pin
+
+    Networking Options:
+      -C, --use-index-cache
+      -k, --insecure
+      --offline
+
+    Output, Prompt, and Flow Control Options:
+      -d, --dry-run
+      --json
+      -q, --quiet
+      -v, --verbose
+      -y, --yes
+uninstall
+    -h, --help
+    --dev
+    Target Environment Specification:
+      -n ENVIRONMENT, --name
+      -p PATH, --prefix
+    Channel Customization:
+      -c CHANNEL, --channel CHANNEL
+      --use-local
+      --override-channels
+      --repodata-fn REPODATA_FNS
+
+    Solver Mode Modifiers:
+      --all
+      --features
+      --force-remove, --force
+      --no-pin
+
+    Networking Options:
+      -C, --use-index-cache
+      -k, --insecure
+      --offline
+
+    Output, Prompt, and Flow Control Options:
+      -d, --dry-run
+      --json
+      -q, --quiet
+      -v, --verbose
+      -y, --yes
+package
+    -h, --help
+    -w PATH [PATH ...]
+    --which PATH [PATH ...]
+    -r, --reset
+    -u, --untracked
+    --pkg-name PKG_NAME
+    --pkg-version PKG_VERSION
+    --pkg-build PKG_BUILD
+  Target Environment Specification:
+    -n ENVIRONMENT, --name
+    -p PATH, --prefix PATH
+update
+    -h, --help 
+    --file FILE 
+    Target Environment Specification:
+      -n ENVIRONMENT, --name ENVIRONMENT 
+      -p PATH, --prefix PATH 
+    Channel Customization:
+      -c CHANNEL, --channel CHANNEL 
+      --use-local 
+      --override-channels  
+      --repodata-fn REPODATA_FNS 
+
+    Solver Mode Modifiers:
+      --strict-channel-priority 
+      --no-channel-priority 
+      --no-deps 
+      --only-deps 
+      --no-pin 
+      --force-reinstall 
+      --freeze-installed, --no-update-deps 
+      --update-deps 
+      -S, --satisfied-skip-solve 
+      --update-all, --all
+      --update-specs
+
+    Package Linking and Install-time Options:
+      --copy
+      --clobber
+    Networking Options:
+      -C, --use-index-cache
+      -k, --insecure
+      --offline
+    Output, Prompt, and Flow Control Options:
+      -d, --dry-run
+      --json
+      -q, --quiet
+      -v, --verbose
+      -y, --yes
+      --download-only
+      --show-channel-urls
+upgrade
+    -h, --help 
+    --file FILE 
+    Target Environment Specification:
+      -n ENVIRONMENT, --name ENVIRONMENT 
+      -p PATH, --prefix PATH 
+    Channel Customization:
+      -c CHANNEL, --channel CHANNEL 
+      --use-local 
+      --override-channels 
+      --repodata-fn REPODATA_FNS 
+    Solver Mode Modifiers:
+      --strict-channel-priority 
+      --no-channel-priority 
+      --no-deps 
+      --only-deps 
+      --no-pin 
+      --force-reinstall 
+      --freeze-installed, --no-update-deps 
+      --update-deps  
+      -S, --satisfied-skip-solve 
+      --update-all, --all 
+      --update-specs 
+
+    Package Linking and Install-time Options:
+      --copy 
+      --clobber 
+    Networking Options:
+      -C, --use-index-cache 
+      -k, --insecure 
+      --offline 
+    Output, Prompt, and Flow Control Options:
+      -d, --dry-run 
+      --json 
+      -q, --quiet 
+      -v, --verbose 
+      -y, --yes  
+      --download-only 
+      --show-channel-urls
+init
+    -h, --help
+    --all 
+    -d, --dry-run 
+    setup type:
+      --reverse 
+    Output, Prompt, and Flow Control Options:
+      --json 
+      -v, --verbose 
+      -q, --quiet 
+run
+    -h, --help 
+    -v, --verbose 
+    --dev  
+    --debug-wrapper-scripts 
+    --cwd CWD 
+    Target Environment Specification:
+      -n ENVIRONMENT, --name 
+      -p PATH, --prefix PATH
+clean
+    -h, --help 
+    Removal Targets:
+      -a, --all 
+      -i, --index-cache 
+      -l, --lock 
+      -p, --packages 
+      -f, --force-pkgs-dirs 
+      -c TEMPFILES [TEMPFILES ...], --tempfiles TEMPFILES [TEMPFILES ...]
+    Output, Prompt, and Flow Control Options:
+      -d, --dry-run 
+      --json 
+      -q, --quiet 
+      -v, --verbose 
+      -y, --yes 

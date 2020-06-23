@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  div {
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border: 1px solid;
+  }
+  .left {
+      width: 100px;
+      background-color: blue;
+  }
+  .right {
+      width: 100px;
+      background-color: green;
+  }
+  .middle {
+      background-color: red;
+      flex: 1;
+  }
+
+  #wrap {
+    /* display: grid;
+    width: 100%;
+    grid-template-columns: 100px auto 100px; */
+    display: flex;
+  }
+
+.aaa {
+  width: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.d4{
+ margin-left: 110px;
+ float: left;
+ width: 0; 
+ height: 0;
+ border-width: 10px;
+ border-style: solid;
+ border-color: transparent #0099CC transparent transparent;
+}
+
+#textarea {
+  min-height: 136px;
+  max-height: 300px;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px;
+  outline: none;
+  border: 1px solid #a0b3d6;
+  font-size: 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  _overflow-y: visible;
+
+/* 只是编辑text文本，只能解决webkit内核里面问题，手机端适用 */
+  -webkit-user-modify: read-write-plaintext-only; 
+  /*-webkit-user-select: text; /* 解决IOS部分手机不支持contenteditable=true属性问题*/
+}
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div class="left">left</div>
+    <div class="middle">middle</div>
+    <div class="right">right</div>
+  </div>
+
+  <div class="aaa">
+    是生生世世生生世世
+  </div>
+
+
+  <div class="d4"></div>
+
+
+
+<div id="textarea" contenteditable="true"></div>
+<a href="#aaa">sss</a>
+
+<script>
+var wrap = document.getElementById("wrap");
+wrap.addEventListener('click', function () {
+  console.log(wrap.getBoundingClientRect())
+})
+
+
+</script>
+
+</body>
+</html>

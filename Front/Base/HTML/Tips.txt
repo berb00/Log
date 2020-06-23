@@ -1,0 +1,2 @@
+icon图标处理:
+<link rel="icon" href="2.ico" mce_href="2.ico" type="image/icon" sizes="30x30"/>//head标签内 script标签会阻塞之

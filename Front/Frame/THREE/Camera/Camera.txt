@@ -1,0 +1,53 @@
+Camera()
+
+属性
+# .isCamera : Boolean
+# .layers : Layers
+# .matrixWorldInverse : Matrix4
+# .projectionMatrix : Matrix4
+# .projectionMatrixInverse : Matrix4
+
+方法
+# .clone ( ) : Camera
+# .copy ( source : Camera, recursive : Boolean ) : Camera
+# .getWorldDirection ( target : Vector3 ) : Vector3
+
+
+
+############################
+ArrayCamera( array : Array )
+
+############################
+############################
+############################
+OrthographicCamera( left : Number, right : Number, top : Number, bottom : Number, near : Number, far : Number )
+
+属性
+# .left : Float
+# .right : Float
+# .top : Float
+# .bottom : Float
+# .near : Float
+# .far : Float
+# .isOrthographicCamera : Boolean
+# .view : Object
+# .zoom : number
+
+方法
+# .setViewOffset ( fullWidth : Float, fullHeight : Float, x : Float, y : Float, width : Float, height : Float ) : null
+# .clearViewOffset () : null
+# .updateProjectionMatrix () : null
+更新摄像机投影矩阵。在任何参数被改变以后必须被调用。
+
+# .toJSON () : JSON
+使用JSON格式来返回摄像机数据。
+
+############################
+CubeCamera( near : Number, far : Number, cubeResolution : Number )
+
+属性
+# .renderTarget : WebGLRenderTargetCube
+
+方法
+# .update ( renderer : WebGLRenderer, scene : Scene ) : null
+# .clear ( renderer : WebGLRenderer, color : Boolean, depth : Boolean, stencil : Boolean ) : null

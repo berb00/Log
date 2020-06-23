@@ -1,0 +1,9 @@
+Layers()
+属性
+# .mask : Integer
+方法
+# .disable ( layer : Integer ) : null
+# .enable ( layer : Integer ) : null
+# .set ( layer : Integer ) : null
+# .test ( layers : Layers ) : Boolean
+# .toggle ( layer : Integer ) : null

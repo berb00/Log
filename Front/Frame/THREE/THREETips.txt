@@ -1,0 +1,135 @@
+创建一个WebGL程序
+    1.初始化WebGL绘图上下文
+    2.初始化着色器程序
+    3.建立模型和数据缓存
+    4.完成绘制和动画
+
+使用面向对象的方式构建程序
+
+
+各种控制器:
+	轨迹球控件TrackballControls(最常用的控件,用鼠标控制相机移动和转动)；
+	飞行控件FlyControls(飞行模拟器控件,用键盘和鼠标控制相机移动和旋转)；
+	翻滚控件RollControls(翻滚控件是飞行控件的简化版,控制相机绕Z轴旋转)；
+	第一人称控件FirstPersonControls(类似于第一人称视角的相机控件)；
+	轨道空间OrbitControls(类似于轨道中的卫星,控制鼠标和键盘在场景中游走)；
+	路径控件PathControls(控制相机在预定义的轨道上移动和旋转)；
+
+
+
+
+Browser
+
+renderer
+
+camera
+
+scene
+
+mesh 	light
+
+geometry material
+
+
+// 旋转
+几何体旋转
+纹理旋转
+
+// 删除group中的对象
+var line = that.scene.getObjectByName(object.name)
+Group.remove(line)
+line.geometry.dispose()
+line.material.map.dispose()
+line.material.dispose()
+line = null
+
+// UV坐标转换
+this.assignUVs = function (geometry) {
+	geometry.computeBoundingBox();
+	var max = geometry.boundingBox.max,
+		min = geometry.boundingBox.min;
+	var offset = new THREE.Vector2(0 - min.x, 0 - min.y);
+	var range = new THREE.Vector2(max.x - min.x, max.y - min.y);
+	var faces = geometry.faces;
+	geometry.faceVertexUvs[0] = [];
+	for (var i = 0; i < faces.length ; i++) { 
+		var v1 = geometry.vertices[faces[i].a],
+			v2 = geometry.vertices[faces[i].b],
+			v3 = geometry.vertices[faces[i].c];
+		geometry.faceVertexUvs[0].push([
+			new THREE.Vector2((v1.x + offset.x) / range.x, (v1.y + offset.y) / range.y),
+			new THREE.Vector2((v2.x + offset.x) / range.x, (v2.y + offset.y) / range.y),
+			new THREE.Vector2((v3.x + offset.x) / range.x, (v3.y + offset.y) / range.y)
+		]);
+	}
+	geometry.uvsNeedUpdate = true;
+	return geometry
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

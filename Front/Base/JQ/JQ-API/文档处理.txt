@@ -1,0 +1,38 @@
+http://jquery.cuishifeng.cn/index.html
+文档处理
+
+    内部插入 层级父子关系
+        append(content|fn)
+        appendTo(content)
+        prepend(content|fn)
+        prependTo(content)
+        A.append(B)					在元素A内尾部添加元素B		内尾部
+		A.appendTo(B)				将元素A添加到元素B内尾部		内尾部
+		A.prepend(B)					在元素A内首部添加元素B		内首部
+		A.prependTo(B)				将元素A添加到元素B内首部		内首部
+    外部插入 同级兄弟关系
+        after(content|fn)			在每个匹配的元素之前插入内容
+        before(content|fn)			在每个匹配的元素之后插入内容。
+        insertAfter(content)
+        insertBefore(content)
+        A.after(B)					在元素A外部前面插入B  AafterB  A在B后
+        A.before(B)					在元素A外部后面插入B  AbeforeB A在B前
+    包裹
+        wrap(html|ele|fn)
+        
+        wrapAll(html|ele)
+        wrapInner(html|ele|fn)
+    替换
+        replaceWith(content|fn)		A.replaceWith(B)					用B替换A				A replaceWith B	
+        replaceAll(selector)			A.replaceAll(selector):删除A		用A替换所有匹配元素	A replaceAll selector
+        
+        
+        
+    删除
+        empty()						删除匹配的元素集合中所有的子节点。
+        remove([expr])
+        detach([expr])
+        unwrap()
+    复制
+        clone([Even[,deepEven]])
+

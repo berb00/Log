@@ -1,0 +1,7 @@
+transform:转变
+transform: none|transform-functions;
+transition:过渡
+transition-property:none|all|property 	指定CSS属性的name，transition效果
+transition-duration:time 				transition效果需要指定多少秒或毫秒才能完成
+transition-timing-function:linear|ease| 	指定transition效果的转速曲线
+transition-delay:time		 			定义transition效果开始的时候

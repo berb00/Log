@@ -1,0 +1,296 @@
+地图
+    生命周期
+        地图的创建
+        地图加载完成事件
+        地图的销毁
+        异步加载地图
+    地图属性
+        中、英文地图
+        获取地图中心点/级别
+        设置地图中心点/级别
+        获取地图当前行政区
+        设置地图当前行政区
+        设置/获取地图显示范围
+        限制地图显示范围
+        地图的平移
+        交互控制
+        获取鼠标点击经纬度 
+        地图的热点
+        设置鼠标样式
+    覆盖物与图层管理
+            /map-componets/map-overlays                 覆盖物的添加与移除
+            /map-componets/map-layers                   图层的添加与移除
+            /map-componets/map-with-function-control    地图控件
+    自定义地图样式
+            /personalized-map/custom_style              自定义地图
+            /personalized-map/building-style            设定楼块样式
+            /personalized-map/set-theme-style           标准样式主题
+            /personalized-map/set-map-cotent            地图显示要素
+            /personalized-map/map-showlabel             隐藏文字标注
+    三维地图 
+            /3d/map3d  3D地图
+            /3d/fixed-view  固定视角
+            /3d/mask  区域掩模
+            /3d/3d-model  三维模型
+            /3d/indoor3d  3D室内地图
+
+坐标变换  
+    坐标系转换
+            /axis/transformate-between-coordinates-of-lnglat-and-map-container  经纬度 &lt;-&gt; 地图容器像素坐标
+            /axis/transformate-between-coordinates-of-lnglat-and-geographical-pixels  经纬度 &lt;-&gt; 平面像素坐标
+            /axis/lnglatto3d  经纬度 &lt;-&gt; 三维坐标
+    其他坐标转高德坐标 
+            /other-gaode/othertoamap  其他坐标 -&gt; 高德坐标
+            /other-gaode/othertoamap-more  其他坐标 -&gt; 高德坐标 （批量）
+
+事件系统  
+    地图事件
+            /event/map-loading-complete-event  地图加载完成事件
+            /event/event-indoormap  室内加载完成
+            /event/event-state  地图移动相关事件
+            /event/event-map-zoom  地图缩放相关事件
+            /event/map-click-event  地图点击和鼠标事件
+            /event/event-map-drag  地图拖拽相关事件
+    覆盖物事件 
+            /event-overlay/overlayer-event  覆盖物点击和鼠标事件
+            /event-overlay/event-overlay-drag  覆盖物拖拽相关事件
+            /event-overlay/infowindow-event  信息窗体打开关闭事件
+    其他事件
+            /event-other/dom-event  DOM事件
+            /event-other/custom-event  自定义事件
+            /event-other/event-emit  事件模拟触发
+
+图层  
+    图层通用接口
+            /layer-common/layergroup  批量修改图层
+            /layer-common/layer-add-rm  图层添加与移除
+            /layer-common/layer-zindex  层级设定
+            /layer-common/layer-opacity  图层透明度
+    高德官方图层
+            /layers/default  默认标准图层
+            /layers/trafffic  实时路况图层
+            /layers/satellite  卫星图
+            /layers/roadnet  卫星和路网
+            /layers/buildings  楼块图层
+    简易行政区图 
+            /district/district-labels  简易行政区图+标注
+            /district/district-world  简易行政区图-世界
+            /district/district-chn  简易行政区图-中国
+            /district/district-country  简易行政区图-外国
+            /district/district-pro  简易行政区图-省区
+            /district/layer-switch  图层切换
+            /district/district-pick  行政区拾取+修改样式
+    三方标准图层
+            /thirdlayer/terrain-mask  卫星图+掩模
+            /thirdlayer/wmts  WMTS
+            /thirdlayer/custom-grid-map  XYZ栅格图层
+            /thirdlayer/functile  函数加载栅格图
+    自有数据图层
+            /selflayer/imagelayer  图片图层
+            /selflayer/videolayer  视频图层
+            /selflayer/canvaslayer  Canvas图层
+            /selflayer/heatmap  热力图
+            /selflayer/heatmap-3d  3D 热力图
+            /selflayer/cus-svg  自定义图层-SVG
+            /selflayer/custom-layer  自定义图层-Canvas
+            /selflayer/flex-canvas  Canvas作为切片
+            /selflayer/flex-img  img作为切片
+    室内地图
+            /indoormap/add-indoormap  叠加室内地图
+            /indoormap/indoormap  默认室内图层
+
+覆盖物  
+    通用
+            /common/setfitview  根据覆盖物调整地图范围
+            /common/add-several-overlay  添加一个或多个覆盖物
+            /common/remove-overlay  移除一个或多个覆盖物
+            /common/overlay-clear  清除所有覆盖物
+            /common/get-all-overlays  获取某类覆盖物
+            /common/ext-data  获取某个覆盖物
+            /common/cross-date-line-overlays  跨日期线绘制
+    点标记
+            /marker/marker-content  点标记
+            /marker/marker-anchor  点标记锚点
+            /marker/text  文本标记
+            /marker/custom-icon  自定义图标
+            /marker/circlemarker  圆点标记
+            /marker/custom-icon-content  自定义点标记内容
+            /marker/set-marker-text-label  设置点标注的文本标签
+            /marker/adaptive-show-multiple-markers  自适应显示多个点标记
+            /marker/delete-multiple-markers  删除多个点标记
+            /marker/delet-specified-marker-from-multiple-markers  从多个点中删除指定点
+            /marker/markerclusterer  点聚合
+            /marker/set-marker-draggable  设置点的拖拽效果
+            /marker/set-marker-bouncing  设置点的弹跳效果
+            /marker/replaying-historical-running-data  轨迹回放
+            /marker/massmarks  加载海量点
+            /marker/elastic-marker  灵活的点标记
+            /marker/labelsmarker  标注和标注图层
+            /marker/labelsmarker-text  标注和标注图层-文字标注
+            /marker/labelsmarker-mass  标注和标注图层-海量点
+    覆盖物群组
+            /overlaygroup/overlaygroup-add-remove  添加/移除
+            /overlaygroup/change-ovelaygroup  批量修改属性
+    地图控件 
+            /mapbar/mapcontrol-control-add-remove  地图控件的添加和移除
+            /mapbar/toolbar-litestyle  简易缩放按钮
+            /mapbar/controlbar  3D 控制罗盘
+    信息窗体
+            /infowindow/default-style-infowindow  默认样式信息窗体
+            /infowindow/infowindow-anchor  信息窗体锚点
+            /infowindow/custom-style-infowindow  自定义样式信息窗体
+            /infowindow/infowindow-event  信息窗体内的事件交互
+            /infowindow/infowindow-has-search-function  带检索功能的信息窗体
+            /infowindow/add-infowindows-to-multiple-markers  给多个点添加信息窗体
+    右键菜单  
+            /contextmenu/default-contextmenu  默认右键菜单
+            /contextmenu/custom-contextmenu  自定义右键菜单
+            /contextmenu/add-contextmenu-to-overlayer  覆盖物添加右键菜单
+    矢量图形
+            /overlayers/polyline-draw-and-edit  折线的绘制和编辑
+            /overlayers/beziercurve-draw-and-edit  弧线的绘制和编辑
+            /overlayers/polygon-draw-and-edit  多边形的绘制和编辑
+            /overlayers/rectangle-draw-and-edit  矩形的绘制和编辑
+            /overlayers/circle-draw-and-edit  圆的绘制和编辑
+            /overlayers/ellipse-draw-and-edit  椭圆的绘制和编辑
+            /overlayers/overlay-draw  绘制矢量图形
+            /overlayers/cross-date-line  跨日期线绘制
+            /overlayers/draw-ground-line  绘制大地线
+            /overlayers/draw-polygon-with-holes  带洞多边形
+            /overlayers/cover  遮罩
+            /overlayers/geojson  GeoJSON
+            /overlayers/overlaygroup  OverlayGroup批处理矢量图形
+            /overlayers/linedir  自定义折线方向箭头
+
+Object3D 图形  
+    通用接口
+          /object3d-base/add-remove">Object3D 的添加/移除  
+          /object3d-base/3d-radar">模型变换  
+          /object3d-base/event">Object3D 的拾取  
+                                                        
+    立体 Mesh
+          /mesh/mesh">基础 Mesh  
+          /mesh/mesh-accept-lights">接受光照的 Mesh  
+          /mesh/mesh-texture">给 Mesh 添加纹理  
+          /mesh/prism">不规则棱柱体  
+          /mesh/3d-gltf">glTF 模型  
+          /mesh/obj3d-wall">垂面 Wall  
+                                                    
+    线 Line 
+            /line/line3d  基础 Line
+            /line/meshline  MeshLine
+            /line/obj3d-thinline  细线 ThinLine
+    点 Points
+            /points/points  带高度的点
+            /points/points-z0  无高度的点
+            /points/roundpoints  圆点 RoundPoints
+            /points/balloon  气球
+            /points/point_texture  带纹理的点
+
+搜索服务  
+    输入提示
+            /input/get-input-data  获取输入提示数据
+            /input/input-prompt  输入提示
+
+    POI搜索
+            /poi-search/get-search-data  获取搜索数据
+            /poi-search/keywords-search  关键字搜索
+            /poi-search/multi-keywords-search  多关键字检索
+            /poi-search/around-search  周边搜索
+            /poi-search/polygon-search  多边形搜索
+            /poi-search/details-search  详情查询
+            /poi-search/search-after-enter-prompt  输入提示后查询
+            /poi-search/keywords-search-and-self-presentation  根据搜索结果添加 marker
+    我的数据
+
+            /my-data/add-clouddatalayer  叠加云数据图层
+            /my-data/around-search  周边检索
+            /my-data/polygon-search  多边形检索
+            /my-data/search-according-to-data-id  根据数据ID检索
+            /my-data/search-in-district  行政区划检索
+            /my-data/self-presentation-by-using-data  周边检索自我展示
+
+路线规划服务  
+    驾车路线规划
+            /driving-route/plan-route-according-to-lnglat  位置经纬度 + 驾车规划路线
+            /driving-route/plan-route-according-to-name  地点关键字 + 驾车路线规划
+            /driving-route/driving-data  位置经纬度 + 获取驾车规划数据
+            /driving-route/driving-custom  规划结果 + 驾车路线绘制
+            /driving-route/self-presentation-by-using-data  规划结果 + 驾车路线展示
+            /driving-route/route-can-be-dragged  可拖拽驾车路线规划
+            /driving-route/waypoint  途经点
+    货车路线规划
+            /truck/truck-lnglats  位置经纬度 + 货车路线规划
+            /truck/truck-keywords  地点关键字 + 货车路线规划
+            /truck/truckdriving-data  位置经纬度 + 获取货车规划数据
+            /truck/truckdriving-custom  规划结果 + 货车路线绘制
+    步行路线规划
+            /walking-route/plan-route-according-to-lnglat  位置经纬度 + 步行路线规划
+            /walking-route/plan-route-according-to-name  地点关键字 + 步行路线规划
+            /walking-route/self-presentation-by-using-data  规划结果 + 步行路线展示
+            /walking-route/walk-custom  规划结果 + 步行路线绘制
+            /walking-route/walk-data  位置经纬度 + 获取步行规划数据
+    骑行路径规划
+            /riding-route/plan-route-according-to-lnglat  位置经纬度 + 骑行路线规划
+            /riding-route/plan-route-according-to-name  地点关键字 + 骑行路线规划
+            /riding-route/riding-data  位置经纬度 + 获取骑行规划数据
+            /riding-route/riding-custom  规划结果 + 骑行路线绘制
+    公交路线规划
+            /bus-search/plan-route-according-to-lnglat  位置经纬度 + 公交路线规划
+            /bus-search/plan-route-according-to-name  地点关键字 + 公交路线规划
+            /bus-search/bus-data  位置经纬度 + 获取公交规划数据
+            /bus-search/self-presentation-by-using-data  规划结果 + 公交路线展示
+            /bus-search/bus-custom  规划结果 + 公交路线绘制
+
+其他LBS服务  
+    地理编码
+            /geocoder/geocoding  地理编码（地址 -&gt; 坐标）
+            /geocoder/multi-geo  批量地理编码
+            /geocoder/regeocoding  逆地理编码（坐标 -&gt; 地址）
+            /geocoder/multi-regeo  批量逆地理编码
+    行政区划查询 
+            /district-search/draw-district-boundaries  行政区边界查询
+            /district-search/city-drop-down-list  下属行政区查询
+    公交信息查询
+            /bus-info/search-bus-station  公交站点查询
+            /bus-info/search-bus-route  公交线路查询
+            /bus-info/arrival-range  公交到达圈
+    轨迹纠偏
+            /grasp/grasp-driving  驾车轨迹纠偏
+    定位
+            /location/get-city-name-by-ip-location  IP城市定位
+            /location/map-is-initially-loaded-into-the-current-city  地图初始IP城市定位
+            /location/browser-location  浏览器精确定位
+            /location/custom-location-icon  浏览器精确定位-定位点自定义
+    天气预报
+            /weather-forecast/weather-forecast  天气预报
+
+辅助接口   
+            /mouse-operate-map/mouse-draw-overlayers  鼠标工具-绘制覆盖物
+            /mouse-operate-map/pull-box-enlarged-map  鼠标工具-拉框缩放
+            /mouse-operate-map/measure-area  鼠标工具-距离面积测量
+            /mouse-operate-map/measure-distance  测距工具
+    辅助库
+            /utils/browser  浏览器环境
+            /utils/util-color  颜色转换
+    调起高德地图
+            /callapp/markonapp  点标记
+            /callapp/poisearch  POI 详情
+            /callapp/drivingonapp  驾车路径规划
+            /callapp/transferonapp  公交路径规划
+            /callapp/walkingonapp  步行路线规划
+
+几何计算  
+    距离/面积计算
+          /calcutation/calculate-distance-between-two-markers">两点间距离  
+          /calcutation/calcute-distance-from-marker-to-line">点到线的距离  
+          /calcutation/path-length">路径长度  
+          /calcutation/ring-area">区域面积  
+    关系判断 
+          /relationship-judgment/is-point-on-segment">点是否在线上  
+          /relationship-judgment/point-surface-relation">点是否在多边形内  
+          /relationship-judgment/ringring">面与面的几何关系  
+    其他
+        /calculation-other/triangulate-shape  三角拆分
+        /calculation-other/is-clockwise  路径是否顺时针
+

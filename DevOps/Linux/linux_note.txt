@@ -1,0 +1,537 @@
+
+# ls -l
+drwxr-xr-x 6 root root 4096 3月  21 19:41 test
+
+#linux识别的7种文件类型：
+    -:文件 
+    d:目录			    directory file			
+    l:软连接文件 		link file
+    b:块设备文件		block device driver	
+    c:字符设备文件		character device file
+    s:套接字文件		socket file
+    p:管道文件			pipe file
+
+#权限位
+    rwx --- ---
+    rwx 所有者user
+    --- 所属组group
+    ---	其他other
+    0   ---     无权限
+    1   --x     执行
+    2   -w-     写
+    3   -wx     写、执行
+    4   r--     读
+    5   r-x     读、执行
+    6   rw-     读、写
+    7   rwx     读、写、执行
+
+
+#、用户
+    用户:   UID     /etc/password       用户数据库文件
+    组:     GID     /etc/group
+    影子口令:       /etc/shadow         用户密码
+                    /etc/gshadow        组密码
+    
+    用户类别:
+        管理员              UID:0
+        普通用户            UID:1~65535
+            系统用户        UID:1~499   不能登陆系统 无家目录
+            一般用户        UID:500~60000
+
+    组类别1:
+        管理员组
+        普通组:
+            系统组
+            一般组
+        
+    组类别2:
+        私有组:创建用户时，若未为该用户指定所属组，系统会自动为其创建一个与用户名相同的组
+        基本组:用户的默认组
+        附加组:默认组外的其他组
+    # cat /etc/passwd
+        root:x:0:0:root:/root:/bin/bash     // :分隔的七个参数
+        account:登录名
+        password:密码
+        UID                       -u
+        GID: 基本组ID              -g
+        comment: 注释              -c finger命令查出来的内容
+        HOME DIR: 用户家目录        -d
+        Shell: 用户默认shell        -s
+    # cat /etc/shells   // 合法shell
+    # cat /etc/shadow
+        berb00:$6$e5zGI5JM$k.Bhef0CnKIYSN8Lf/GlO8mMUJwkRvAQMYcnTCUM0qNZoxnga6sEiWxfQt.KSHoJt2sEPPDUY2GtCD8R48x5O.:18132:0:99999:7:::        // :分隔的9个参数
+        
+        berb00: 用户名
+        $6$e5zGI5JM$k.Bhef0CnKIYSN8Lf/GlO8mMUJwkRvAQMYcnTCUM0qNZoxnga6sEiWxfQt.KSHoJt2sEPPDUY2GtCD8R48x5O.: 加密密码
+        18132:      1970年至密码上次修改的天数
+        0:          密码最短使用天数 0:无最短使用期限
+        99999:      密码最长使用天数
+        7:          密码在过期之前多少天向用户警告
+        :           密码过期之后的宽限期天数
+        :           从1970年起过多少天被禁用
+                    保留字段
+
+        $6                  // 加密方式 1:hash
+        $e5zGI5JM           // salt 杂质    密码加密掺杂
+        $k.Bhef0CnKIYSN8Lf/GlO8mMUJwkRvAQMYcnTCUM0qNZoxnga6sEiWxfQt.KSHoJt2sEPPDUY2GtCD8R48x5O.:
+
+    # ls -l $(which useradd)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6:文件硬连接的次数
+root:文件属主(ower)
+root:文件属组(group)
+4096:文件大小(size) 单位为字节
+3月 21 19:41 :时间戳(最后一次被修改的时间)
+    每个文件有三种时间戳:
+        访问access
+        修改modify(改变文件内容)
+        改变change(改变文件属性,metadata 元数据)
+test:文件名
+
+
+    
+
+#自定义命令：
+    vim ~/.bashrc
+    alias pycharm="bash path"
+    alias ll='ls -la'
+    source ~/.bashrc
+
+
+#git公钥
+    git 生成公钥：
+    ssh-keygen -t rsa -C "your email"
+    查看生成公钥:
+    cat ~/.ssh/id_rsa.pub
+
+
+#设置环境变量
+    mac 一般使用bash作为默认shell
+
+    Mac系统的环境变量，加载顺序为：
+        /etc/profile            系统级-系统启动就会加载
+        /etc/paths              系统级-系统启动就会加载
+        ~/.bashrc               用户级-bash shell打开的时候载入
+        ~/.bash_profile         用户级
+        ~/.bash_login           用户级
+        ~/.profile              用户级
+    后面3个按照从前往后的顺序读取，如果~/.bash_profile文件存在，则后面的几个文件就会被忽略不读了，如果~/.bash_profile文件不存在，才会以此类推读取后面的文件。
+
+    如果没特殊说明,设置PATH的语法都为：
+        export PATH=$PATH:<PATH 1>:<PATH 2>:<PATH 3>:------:<PATH N>
+
+    （一）全局设置
+        修改时需要root权限
+
+        1）/etc/paths （全局建议修改这个文件 ）
+        编辑 paths，将环境变量添加到 paths文件中 ，一行一个路径
+        Hint：输入环境变量时，不用一个一个地输入，只要拖动文件夹到 Terminal 里就可以了。
+
+        2）/etc/profile （建议不修改这个文件 ）
+        全局（公有）配置，不管是哪个用户，登录时都会读取该文件。
+
+        3）/etc/bashrc （一般在这个文件中添加系统级环境变量）
+        全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件。
+
+        4）
+        1.创建一个文件：
+        sudo touch /etc/paths.d/mysql
+        2.用 vim 打开这个文件（如果是以 open -t 的方式打开，则不允许编辑）：
+        sudo vim /etc/paths.d/mysql
+        3.编辑该文件，键入路径并保存（关闭该 Terminal 窗口并重新打开一个，就能使用 mysql 命令了）
+        /usr/local/mysql/bin
+        据说，这样可以自己生成新的文件，不用把变量全都放到 paths 一个文件里，方便管理。
+
+    （二）单个用户设置
+        1）~/.bash_profile （任意一个文件中添加用户级环境变量） （注：Linux 里面是 .bashrc 而 Mac 是 .bash_profile）
+        若bash shell是以login方式执行时，才会读取此文件。该文件仅仅执行一次!默认情况下,他设置一些环境变量
+        设置命令别名alias ll=’ls -la’
+        设置环境变量：
+        1 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+        2）~/.bashrc 同上
+        如果想立刻生效，则可执行下面的语句：
+        $ source 相应的文件
+        一般环境变量更改后，重启后生效。
+
+
+#目录
+    /:
+    /bin:
+    /sbin:
+    /sys:
+    /tmp:
+    /usr:
+    /var:
+    /var/log/btmp
+    /dev:
+    /etc:
+        /etc/syslog.conf:	syslog配置文件 日志信息(数据报协议UDP)
+        /etc/login.defs     添加用户的默认配置文件
+        /etc/passwd
+        /etc/shadow
+        /etc/gshadow
+        /etc/group
+
+
+    /home:
+    /lib:
+
+    /boot:*
+    /cdrom:*
+    /lost+found:*
+    /mnt:**
+    /media:*
+    /opt:*
+    /proc:*
+    /root:*
+    /selinux:*
+    /srv:*
+
+
+    bin sbin dev	 etc home Library System	
+    tmp usr var
+
+    Applications					
+    Network				installer.failurerequests
+                net
+    Users				private
+    Volumes									
+    cores				
+
+    /：根目录，所有的目录、文件、设备都在/之下，/就是Linux文件系统的组织者，也是最上级的领导者。 　　
+
+    /bin:   可执行命令文件  binary
+            存放用户命令　　
+    /sbin:  可执行命令文件  system binary
+            存放管理命令
+        大多是涉及系统管理的命令的存放，是超级权限用户root的可执行命令存放地，普通用户无权限执行这个目录下的命令，
+        这个目录和/usr/sbin; /usr/X11R6/sbin或/usr/local/sbin目录是相似的，凡是目录sbin中包含的都是root权限才能执行的。 
+
+    /boot：Linux的内核及引导系统程序所需要的文件目录，比如 vmlinuz initrd.img 文件都位于这个目录中。在一般情况下，GRUB或LILO系统引导管理器也位于这个目录。 　　
+
+    /cdrom：这个目录在刚刚安装系统的时候是空的。可以将光驱文件系统挂在这个目录下。例如：mount /dev/cdrom /cdrom 　　
+
+    /dev:   
+        设备文件
+            块设备:     随机访问    数据块
+            字符设备:   线性访问    (按字符逐个访问)(鼠标、显示器、键盘)
+            设备号:     主设备号major   次设备号minor
+        包含了所有linux系统中使用的外部设备。
+        但是这里并。
+        是一个访问这些外部设备的端口儿 =4不是放的外部设备的驱动程序。
+        和访问一个文件，一个目录没有任何区别。 　　
+
+    /etc:   配置文件
+        存放了系统管理时要用到的各种配置文件和子目录。
+        包含网络配置文件、文件系统、x系统配置文件，设备配置信息，设置用户信息等
+
+    /home:  家目录  /home/usename 　　
+    /root：Linux超级权限用户root的家目录。 
+    　　
+    /lib：  库文件library   几乎所有的应用程序都会用到这个目录下的共享库 库文件没有执行入口故不能单独执行只能被调用执行
+            动态库  .dll、.so(shaerd object)
+            静态库  .a
+
+    /lost+found：在ext2或ext3文件系统中，当系统意外崩溃或机器意外关机，而产生一些文件碎片放在这里。
+    当系统启动的过程中fsck工具会检查这里，并修复已经损坏的文件系统。有时系统发生问题，有很多的文件被移到这个目录中，可能会用手工的方式来修复，或移到文件到原来的位置上。 　　
+
+    /mnt:挂载点目录(常用于额外临时设备的挂载)
+        这个目录一般是用于存放挂载储存设备的挂载目录的，比如有cdrom等目录。可以参看/etc/fstab的定义。 　　
+
+    /media: 挂载点目录(常用于挂载移动设备的挂载)    移动硬盘、CD/DVD驱动器等
+
+    /opt:   可选目录 optional 早期安装第三方软件　　
+
+    /proc:  伪文件系统(表现为文件形态) 内核的映射文件   (关机后为空文件)
+        可以在这个目录下获取系统信息。这些信息是在内存中，由系统自己产生的。 　　
+
+    /sys:   伪文件系统  跟硬件设备相关的属性映射文件    (关机后为空文件)
+        Linux 内核中设计较新的一种虚拟的基于内存的文件系统，它的作用与 proc 有些类似，
+        但除了与 proc 相同的具有查看和设定内核参数功能之外，还有为 Linux 统一设备模型作为管理之用。 　
+        磁盘IO调度队列　
+
+    /tmp:   临时文件目录    temporary
+        所有用户都可在此创建文件，但只能删自己的文件无法删别人的文件
+        用来存放不同程序执行时产生的临时文件。有时用户运行程序的时候，会产生临时文件。/tmp就用来存放临时文件的。/var/tmp目录和这个目录相似。 　　
+
+
+　　
+
+    /selinux ：对SElinux的一些配置文件目录，SElinux可以让linux更加安全。 　　
+
+    /srv 服务启动后，所需访问的数据目录，举个例子来说，www服务启动读取的网页数据就可以放在/srv/www中 　　
+
+
+
+    /usr: (Unix System Resource)(shared,read-only)
+        全局共享只读文件
+        是linux系统中占用硬盘空间最大的目录。
+        可以找到那些不适合放在/bin或/etc目录下的额外的工具 　　
+    /usr/bin
+    /usr/sbin
+    /usr/bin
+    /usr/lib
+
+    /usr/local:这里主要存放那些手动安装的软件，即不是通过“新立得”或apt-get安装的软件。它和/usr目录具有相类似的目录结构。让软件包管理器来管理/usr目录，而把自定义的脚本放到/usr/local目录下面。 　　
+    /usr/local/bin
+    /usr/local/sbin
+    /usr/local/bin
+    /usr/local/lib
+
+    /usr/share ：系统共用的东西存放地，比如 
+    /usr/share/fonts 是字体目录，
+    /usr/share/doc和/usr/share/man帮助文件。 　　
+
+    /var:   可变的文件  Variable
+    /var/run 存放进程id     .pid
+    /var/log 存放系统日志
+    /var/www目录是定义Apache服务器站点存放目录；
+    /var/lib 用来存放一些库文件，比如MySQL的，以及MySQL数据库的的存放地。[30]
+
+# 命令分类
+    目录管理
+    文件管理
+    运行程序
+    设备管理
+    软件管理
+    进程管理
+    网络管理
+
+
+# 控制终端显示语言
+    export LANG=en_US.UTF-8         # 使用英文
+    export LANG=zh_CN.UTF-8         # 使用中文
+
+#keyword
+    FHS:(Filesystem Hierarchy Standard)文件系统层次标准
+    grep:Global search Regular Expression(RE) and Print out the line
+
+
+#常用指令
+    df -hl 查看磁盘剩余空间
+
+    yum install lrzsz -y
+    rz -y           // 上传文件到服务器
+    sz filename     // 下载服务器文件到本地
+
+#命令所处目录
+    /bin
+    /sbin
+    /usr/bin
+    /usr/sbin
+
+
+# 定时执行脚本
+    安装:
+    yum install  vixie-cron     // vixie-cron软件包是cron的主程序
+    yum install  crontabs       // crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序
+
+    修改配置文件
+        vim /etc/crontab
+    service crond start //启动服务 
+    service crond stop //关闭服务 
+    service crond restart //重启服务 
+    service crond reload //重新载入配置
+    service crond status // 查看crontab服务状态
+
+
+    ntsysv // 查看crontab服务是否已设置为开机启动
+
+    chkconfig –level 35 crond on        // 开机自动启动
+    chkconfig crond on      // 设置开机自动启动crond服务
+    chkconfig crond off     // 取消开机自动启动crond服务
+    chkconfig –list crond   // 查看各个开机级别的crond服务运行情况 
+                                crond 0:关闭 1:关闭 2:启用 3:启用 4:启用 5:启用 6:关闭 
+    tailf /var/log/cron     // 查看：cron的log日志文件
+    crontab -l              // 查看定时任务
+    1、crontab –e : 修改 crontab 文件. 如果文件不存在会自动创建。 
+        SHELL=/bin/sh
+        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+        0 0,12 * * * . /etc/profile; /bin/sh /mnt/berb00/gitHub00/github00.sh    ( . /etc/profile;” ，这句用于将环境变量include进当前脚本的执行环境)
+
+    2、crontab –l : 显示 crontab 文件。 
+
+    3、crontab -r : 删除 crontab 文件。
+
+    4、crontab -ir : 删除 crontab 文件前提醒用户。
+    6，cron文件语法:
+
+        分     小时    日       月    星期     命令
+        0-59   0-23   1-31   1-12    0-6   command     (取值范围,0表示周日 一般一行对应一个任务)
+
+        “*”代表取值范围内的数字,
+        “/”代表”每”,
+        “-”代表从某个数字到某个数字,
+        “,”分开几个离散的数字
+    demo:
+        1.每天 02:00 执行任务
+    　　    0 2 * * * /bin/sh backup.sh
+        2.每天 5:00和17:00执行任务
+        　　0 5,17 * * * /scripts/script.sh
+        3.每分钟执行一次任务
+        　　* * * * * /scripts/script.sh
+        4.每周日 17:00 执行任务
+        　　0 17 * * sun /scripts/script.sh
+        5.每 10min 执行一次任务
+        　　*/10 * * * * /scripts/monitor.sh
+        6.在特定的某几个月执行任务
+        　　* * * jan,may,aug * /script/script.sh
+        7.在特定的某几天执行任务
+        　　0 17 * * sun,fri /script/scripy.sh
+        　　在每周五、周日的17点执行任务
+        8.在某个月的第一个周日执行任务
+        　　0 2 * * sun [ $(date +%d) -le 07 ] && /script/script.sh
+        9.每四个小时执行一个任务
+        　　0 */4 * * * /scripts/script.sh
+        10.每周一、周日执行任务
+        　　0 4,17 * * sun,mon /scripts/script.sh
+        11.每个30秒执行一次任务
+        　　我们没有办法直接通过上诉类似的例子去执行，因为最小的是1min。但是我们可以通过如下的方法。
+            * * * * * /scripts/script.sh 
+            * * * * * sleep 30; /scripts/script.sh 
+        12.多个任务在一条命令中配置
+        　　* * * * * /scripts/script.sh; /scripts/scrit2.sh
+        13.每年执行一次任务
+        　　@yearly /scripts/script.sh
+        　　@yearly 类似于“0 0 1 1 *”。它会在每年的第一分钟内执行，通常我们可以用这个发送新年的问候。
+        14.系统重启时执行
+        　　@reboot /scripts/script.sh
+
+
+
+
+
+# 使用命令本身而不是命令的别名: 命令前加\
+    \rm
+
+
+
+
+
+# Linux思想
+    1、一切皆文件
+    2、尽量避免捕获用户接口
+    3、文件默认没有执行权限
+    4、组合小命令完成复杂任务(管道)
+
+# 手动创建一个用户  (权限及权限管理) 50min
+
+# I/O重定向
+    >               覆盖输出
+    >>              追加输出
+        # set -C // 禁止对已存在文件使用覆盖重定向，强制覆盖输出使用 >!
+        # set +C // 关闭上述功能
+    2>              错误输出重定向
+    2>>             错误输出追加重定向
+    &>              重定向覆盖标准输出或错误输出
+
+    <               输入重定向
+    # tr 'a-Z' 'A-Z' < /etc/fstab           将fstab文件内容小写转大写
+    <<              here document在此处生成文档
+    # cat << EOF    // 生成文件 以EOF结尾
+    # cat >> file << EOF
+
+    标准输出        STDOUT  1
+    标准输入        STDIN   0
+    标准错误输出     STDERR  2
+
+    运算器:
+    控制器
+    存储器
+
+    地址总线:内存寻址
+    数据总线:传输数据
+    控制总线:控制指令
+
+    寄存器:CPU内的暂时存储器
+
+#、管道 前一个命令的输出作为后一个命令的输入(组合小命令完成复杂任务)
+    command1 | command2 | command3...
+    # echo "hello world!" | tr 'a-z' 'A-Z'  
+    # echo "redhat" | passwd --stain user1
+    # cat -d: -f1 /etc/passwd | sort        // 输出passed中的用户名 并排序
+    # cat -d: -f3 /etc/passwd | sort        // 输出passed中的UID 并排序
+    # wc -l /etc/passwd | cut -d' ' -f1     // 获取文件的行数 (用cut截取文件行数)
+    # ls -l /usr/bin |wc -l
+
+#、集群
+    1、LB:  Load Balancing          负载均衡集群(为了提高并发处理能力)
+    2、HA:  High Availability       高可用集群(为了提高服务可用性) 可用性=正常在线时间/(正常在线时间+故障处理时间)
+    3、HP(HPC): High Performance    高性能集群(处理高计算量问题 如模拟核爆炸)
+        向量机
+        并行处理集群
+            分布式文件系统
+            将大任务分割为小任务，分别进行处理的机制
+
+    health check：健康检查  (前端主机检查后端主机运行状态)
+
+    Scale On 向上扩展:提升服务器内存、cpu数量  只能在一定范围内使用 成本高昂
+    Scale Out 向外扩展:增加服务器数量
+
+    Round Robin:轮询
+    WRR:加权轮询
+    
+    DNS: Direct Attached Storage        直接附加存储
+    NAS: Network Attached Storage       网络附加存储
+
+    fencing: 隔离
+        节点级别: STONITH(Shoot The Other Node in The Head)
+        资源级别: 
+    为了避免集群分裂，最少有3个节点(奇数个节点)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

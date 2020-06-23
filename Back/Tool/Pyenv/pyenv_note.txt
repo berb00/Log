@@ -1,0 +1,105 @@
+安装pyenv:
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+    安装依赖环境：
+        export PATH=~/.pyenv/bin:$PATH
+        export PYENV_ROOT=~/.pyenv
+        eval "$(pyenv init -)"
+        source ~/.bash_profile 
+
+# 安装pyenv-virtualenv
+    git clone https://github.com/pyenv/pyenv-virtualenv.git $.pyenv/plugins/pyenv-virtualenv
+    $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+
+解决pyenv: no such command 'virtualenv'
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
+
+
+pyenv help                              // help
+pyenv update                            // 更新pyenv
+rm -fr ~/.pyenv                         // 删除pyenv
+pyenv install -l|--list                 // 列出所有可安装的Python版本
+pyenv install <version>                 // 安装某个Python
+pyenv uninstall [-f|--force] <version>  // 卸载某个python
+pyenv versions                          // 列出所有已安装的Python，当前使用的Python会用星号标出
+pyenv global 2.7.6                      // 通过写~/.pyenv/version文件的方式设置全局Python
+pyenv local 2.7.6                       // 通过在当前目录写.python-version文件的方式设置当前目录下的Python
+pyenv shell pypy-2.2.1                  // 指定当前shell使用的Python
+pyenv shell --unset                     // 当不再需要的时候，用--unset来清除
+pyenv rehash
+
+
+pyenv virtualenv 版本号 虚拟环境名称       // 创建虚拟环境
+pyenv uninstall 虚拟环境名称              // 删除虚拟环境
+pyenv virtualenvs                       // 虚拟列表列表
+pyenv activate venv                     // 激活虚拟环境
+pyenv deactivate                        // 退出虚拟环境
+
+
+yum install libffi-devel -y // python3的依赖库
+yum -y installgcc zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mac中python多版本切换
+
+1. $ sudo vi ~/.bashrc
+
+2. shell中输入
+
+    alias python2='/Library/Frameworks/Python.framework/Versions/2.x/bin/python2.x'
+    alias python3='/Library/Frameworks/Python.framework/Versions/3.x/bin/python3.
+
+3. 重启终端
+
+   或 $ source ~/.bashrc
+
+4、验证。
+
+   在终端输入python2即代表是Python2.x版本，输入python3即代表是Python3.x版本。
+
+
+Mac设置默认python版本
+
+1，首先打开终端
+
+    open ~/.bash_profile
+
+   打开配置文件
+
+ 2. 写入python的外部环境变量
+
+ export PATH=${PATH}:/Library/Frameworks/Python.framework/Versions/3.6/bin
+
+3.重命名python
+
+alias python="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6"
+
+（这步很重要，直接关系到默认启动的python版本是否修改）
+
+4.关闭文件
+
+5. $ source ~/.bash_profile
+
+5.$ python，查看是否修改成功
+
+
+注意：如果从python3想反回python2，则需将路径修改为对应的python2路径。

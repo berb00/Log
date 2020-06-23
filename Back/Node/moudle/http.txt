@@ -1,0 +1,259 @@
+http
+    http.Agent              类
+    http.ClientRequest      类
+    http.ServerResponse     类
+    http.Server             类
+    http.IncomingMessage    类
+
+
+    http.globalAgent                                              //Agent 的全局实例，作为所有 HTTP 客户端请求的默认 Agent。
+----------------------------------------------------------------------------------------------
+    http.Agent 类
+        new Agent([options])
+        agent.freeSockets
+        agent.maxFreeSockets
+        agent.maxSockets
+        agent.requests
+        agent.sockets
+        agent.createConnection(options[, callback])
+        agent.keepSocketAlive(socket)
+        agent.reuseSocket(socket, request)
+        agent.destroy()
+        agent.getName(options)
+    http.gloablAgent:
+        Agent {
+          domain: null,
+          _events: { free: [Function] },
+          _eventsCount: 1,
+          _maxListeners: undefined,
+          defaultPort: 80,
+          protocol: 'http:',
+          options: { path: null },
+          requests: {},
+          sockets: {},
+          freeSockets: {},
+          keepAliveMsecs: 1000,
+          keepAlive: false,
+          maxSockets: Infinity,
+          maxFreeSockets: 256
+        }
+
+----------------------------------------------------------------------------------------------
+    http.get(options[, callback])                                //返回: <http.ClientRequest>实例   同http.request(),但请求方式为get且自动调用 req.end()
+    http.request(options[, callback])                            //返回: <http.ClientRequest>实例
+    http.ClientRequest 类                                        //表示着一个正在处理的请求，其请求头已进入队列
+        'abort'             事件                                 //当请求已被客户端终止时触发。 该事件仅在首次调用 abort() 时触发。
+        'connect'           事件                                 //当服务器响应 CONNECT 请求时触发。 如果该事件未被监听，则接收到 CONNECT 方法的客户端会关闭连接。
+        'continue'          事件                                 //当服务器发送了一个 100 Continue 的 HTTP 响应时触发，通常是因为请求包含 Expect: 100-continue。 这是客户端将要发送请求主体的指令。
+        'response'          事件
+        'socket'            事件
+        'upgrade'           事件
+        Event: 'information'
+        Event: 'timeout'
+        request.aborted
+        request.connection
+        request.maxHeadersCount
+        request.socket
+        request.abort()
+        request.end([data[, encoding]][, callback])
+        request.flushHeaders()
+        request.getHeader(name)
+        request.removeHeader(name)
+        request.setHeader(name, value)                          //与 response.writeHead() 设置的响应头合并，且 response.writeHead() 的优先。
+        request.setNoDelay([noDelay])
+        request.setSocketKeepAlive([enable][, initialDelay])
+        request.setTimeout(timeout[, callback])
+        request.write(chunk[, encoding][, callback])
+
+        req.url
+        req.protocol
+        req.slashes
+        req.auth
+        req.host
+        req.port
+        req.hostname
+        req.hash
+        req.search
+        req.query
+        req.pathname
+        req.path
+        req.href
+
+
+
+----------------------------------------------------------------------------------------------
+
+    http.ServerResponse 类
+        'close'             事件
+        'finish'            事件
+        response.connection
+        response.finished
+        response.headersSent
+        response.sendDate
+        response.socket
+        response.statusCode
+        response.statusMessage
+        response.writeHead(statusCode[, statusMessage][, headers])      //设置响应头
+        response.write(chunk[, encoding][, callback])                   //响应一个字符串
+        response.end([data][, encoding][, callback])                    //结束并返回一个字符串
+        response.addTrailers(headers)
+        response.getHeader(name)
+        response.getHeaderNames()
+        response.getHeaders()
+        response.hasHeader(name)
+        response.removeHeader(name)
+        response.setHeader(name, value)
+        response.setTimeout(msecs[, callback])
+        response.writeContinue()
+        response.writeProcessing()
+
+
+
+        res.json        //响应json数据
+        res.sendStatus  //设置状态码
+        res.render()    //渲染模板文件
+        res.send();     //结束并返回多种类型数据
+        res.sendFile()  //响应文件类型数据(参数:绝对路径)
+----------------------------------------------------------------------------------------------
+
+    http.createServer([options][, requestListener])             //返回一个http.Server实例
+    http.Server 类
+        'checkContinue'     事件
+        'checkExpectation'  事件
+        'clientError'       事件
+        'close'             事件
+        'connect'           事件
+        'connection'        事件
+        'request'           事件
+        'upgrade'           事件
+        server.listening
+        server.maxHeadersCount
+        server.timeout
+        server.keepAliveTimeout
+        server.close([callback])
+        server.listen()
+        server.setTimeout([msecs][, callback])
+----------------------------------------------------------------------------------------------
+
+    http.IncomingMessage 类
+        'aborted'           事件                                  //当请求已被终止且网络 socket 已关闭时触发
+        'close'             事件                                  //当底层连接被关闭时触发。 同 'end' 事件一样，该事件每个响应只触发一次。
+        message.aborted
+        message.headers                                          //请求头或响应头的对象。头信息的名称与值的键值对。 头信息的名称为小写。
+        message.httpVersion
+        message.method                                            //返回一个字符串，表示请求的方法(只读),仅在 http.Server 返回的请求中有效。
+        message.rawHeaders                                        //接收到的原始的请求头或响应头列表。
+        message.rawTrailers                                       //接收到的原始的 Trailer 请求头或响应头的的键和值。 只在 'end' 事件时被赋值。
+        message.socket                                            //返回与连接关联的 net.Socket 对象。
+        message.statusCode                                        //返回一个三位数的 HTTP 响应状态码。仅在 http.ClientRequest 返回的响应中有效。
+        message.statusMessage                                     //返回 HTTP 响应状态消息（原因描述）。仅在 http.ClientRequest 返回的响应中有效。
+        message.trailers                                          //返回 Trailer 请求头或响应头对象。 只在 'end' 事件时被赋值。
+        message.url                                               //返回请求的 URL 字符串。 仅包含实际 HTTP 请求中的 URL。仅在 http.Server 返回的请求中有效。
+        message.destroy([error])
+        message.setTimeout(msecs, callback)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    http.METHODS                                                  //返回解析器支持的 HTTP 方法的列表。
+    http.STATUS_CODES                                             //返回标准的 HTTP 响应状态码的集合，以及各自的简短描述。
+
+    http.METHODS
+        [
+          'GET',
+          'PUT',
+          'ACL',
+          'BIND',
+          'CHECKOUT',
+          'CONNECT',
+          'COPY',
+          'DELETE',
+          'HEAD',
+          'LINK',
+          'LOCK',
+          'M-SEARCH',
+          'MERGE',
+          'MKACTIVITY',
+          'MKCALENDAR',
+          'MKCOL',
+          'MOVE',
+          'NOTIFY',
+          'OPTIONS',
+          'PATCH',
+          'POST',
+          'PROPFIND',
+          'PROPPATCH',
+          'PURGE',
+          'REBIND',
+          'REPORT',
+          'SEARCH',
+          'SUBSCRIBE',
+          'TRACE',
+          'UNBIND',
+          'UNLINK',
+          'UNLOCK',
+          'UNSUBSCRIBE' ]
+
+
+    http.STATUS_CODES
+        { '100': 'Continue',
+          '101': 'Switching Protocols',
+          '102': 'Processing',
+          '200': 'OK',
+          '201': 'Created',
+          '202': 'Accepted',
+          '203': 'Non-Authoritative Information',
+          '204': 'No Content',
+          '205': 'Reset Content',
+          '206': 'Partial Content',
+          '207': 'Multi-Status',
+          '208': 'Already Reported',
+          '226': 'IM Used',
+          '300': 'Multiple Choices',
+          '301': 'Moved Permanently',
+          '302': 'Found',
+          '303': 'See Other',
+          '304': 'Not Modified',
+          '305': 'Use Proxy',
+          '307': 'Temporary Redirect',
+          '308': 'Permanent Redirect',
+          '400': 'Bad Request',
+          '401': 'Unauthorized',
+          '402': 'Payment Required',
+          '403': 'Forbidden',
+          '404': 'Not Found',
+          '405': 'Method Not Allowed',
+          '406': 'Not Acceptable',
+          '407': 'Proxy Authentication Required',
+          '408': 'Request Timeout',
+          '409': 'Conflict',
+          '410': 'Gone',
+          '411': 'Length Required',
+          '412': 'Precondition Failed',
+          '413': 'Payload Too Large',
+          '414': 'URI Too Long',
+          '415': 'Unsupported Media Type',
+          '416': 'Range Not Satisfiable',
+          '417': 'Expectation Failed',
+          '418': 'I\'m a teapot',
+          '421': 'Misdirected Request',
+          '422': 'Unprocessable Entity',
+          '423': 'Locked',
+          '424': 'Failed Dependency',
+          '425': 'Unordered Collection',
+          '426': 'Upgrade Required',
+          '428': 'Precondition Required',
+          '429': 'Too Many Requests',
+          '431': 'Request Header Fields Too Large',
+          '451': 'Unavailable For Legal Reasons',
+          '500': 'Internal Server Error',
+          '501': 'Not Implemented',
+          '502': 'Bad Gateway',
+          '503': 'Service Unavailable',
+          '504': 'Gateway Timeout',
+          '505': 'HTTP Version Not Supported',
+          '506': 'Variant Also Negotiates',
+          '507': 'Insufficient Storage',
+          '508': 'Loop Detected',
+          '509': 'Bandwidth Limit Exceeded',
+          '510': 'Not Extended',
+          '511': 'Network Authentication Required' }

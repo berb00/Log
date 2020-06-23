@@ -1,0 +1,155 @@
+assert              断言
+Buffer              缓冲器
+child_process       子进程
+cluster             集群
+console             控制台
+crypto              加密
+dgram               数据报
+dns                 域名服务器
+Error               异常
+events              事件
+fs                  文件系统
+global              全局变量
+http                HTTP
+https               HTTPS
+module              模块
+net                 网络
+os                  操作系统
+path                路径
+process             进程
+querystring         查询字符串
+readline            逐行读取
+repl                交互式解释器
+stream              流
+string_decoder      字符串解码器
+timer               定时器
+tls                 安全传输层
+tty                 终端
+url                 网址
+util                实用工具
+v8                  V8引擎
+vm                  虚拟机
+zlib                压缩
+
+-----------------------------------------------------------
+
+http
+    作用:
+        处理客户端的网络请求
+    代码步骤:
+        1.导入 HTTP 核心模块
+        2.监听客户端的请求
+        3.处理客户端的请求
+        4.开启服务器
+fs
+    前提:以后的所有静态资源(html,css,js,图片等)都是放在服务端的,如果浏览器需要这些html,css,js,图片等资源,则需要先将其读取到node.exe的内容中,然后再返回给浏览器
+    作用:
+        在服务端来操作文件,可能是需要将浏览器上传的图片保存到服务器,也可能是需要将服务器的资源读取之后返回给浏览器
+    代码步骤:
+        1.导入 fs 核心模块
+        2.使用相应的方法来写入文件、读取文件等操作
+    注意点:
+        目录 需要手工创建
+        文件 调用writeFile与appendFile方法会自动创建
+
+stream
+
+url
+    作用:
+        处理客户端请求过来的URL
+
+    代码步骤:
+        1.导入 URL 核心模块
+        2.导入 HTTP 核心模块
+        3.监听客户端的请求在这中间处理客户端请求过来的URL
+        4.处理客户端的请求
+        5.开启服务器
+
+querystring
+    作用:处理客户端通过`get/post`请求传递过来的参数
+
+        使用关键点:
+            1.需要导入 'querystring' 这个核心模块
+            2.`get`请求时 querystring 一般是配合 url 核心模块一起使用的
+            3.`get/post`请求最终都需要调用 querystring.parse方法,
+            将请求传递过来的键值对字符串转成js对象,方便操作
+
+        注意:
+            get/post的请求方式是不一样的,客户端传递过来时,参数放在
+            的地方是不一样的,所以服务器端处理方式也不太一样
+path
+    作用:操作文件的路径,为文件操作服务
+
+        常用的几个函数:
+            path.join(第一个路径,第二个路径) : 拼接路径
+global
+    作用:全局共享的,不需要导入模块即可以使用
+
+        常用的属性:
+            __dirname : 文件所在的文件夹路径
+            __filename : 文件所在的路径
+            require() : 导入需要的模块
+            module : 自定义模块时用到
+            exports : 自定义模块时用到
+
+
+
+
+assert
+Buffer
+child_process
+cluster
+console
+crypto
+dgram
+dns
+Error
+events
+https
+module
+net
+os
+process
+readline
+repl
+string_decoder
+timer
+tls
+tty
+util
+v8
+vm
+zlib
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

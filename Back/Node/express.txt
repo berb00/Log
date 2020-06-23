@@ -1,0 +1,94 @@
+express()                           入口函数
+    Methods
+        express.static(root, [options])            Express 内置的唯一一个中间件
+Application
+    Properties
+        app.locals
+        app.mountpath
+        Events
+            app.on('mount', callback(parent))
+        mount
+    Methods
+        app.all(path, callback [, callback ...])
+        app.delete(path, callback [, callback ...])
+        app.disable(name)
+        app.disabled(name)
+        app.enable(name)
+        app.enabled(name)
+        app.engine(ext, callback)
+        app.get(name)
+        app.get(path, callback [, callback ...])
+        app.listen(port, [hostname], [backlog], [callback])
+        app.METHOD(path, callback [, callback ...])
+        app.param([name], callback)
+        app.path()
+        app.post(path, callback [, callback ...])
+        app.put(path, callback [, callback ...])
+        app.render(view, [locals], callback)
+        app.route(path)
+        app.set(name, value)
+        app.use([path,] function [, function...])
+Request
+    Properties
+        req.app
+        req.baseUrl
+        req.body
+        req.cookies
+        req.fresh
+        req.hostname
+        req.ip
+        req.ips
+        req.originalUrl
+        req.params
+        req.path
+        req.protocol
+        req.query
+        req.route
+        req.secure
+        req.signedCookies
+        req.stale
+        req.subdomains
+        req.xhr
+    Methods
+        req.accepts()
+        req.acceptsCharsets()
+        req.acceptsEncodings()
+        req.acceptsLanguages()
+        req.get()
+        req.is()
+        req.param()
+Response
+    Properties
+        res.app
+        res.headersSent
+        res.locals
+    Methods
+        res.append()
+        res.attachment()
+        res.cookie()
+        res.clearCookie()
+        res.download()
+        res.end()
+        res.format()
+        res.get()
+        res.json()
+        res.jsonp()
+        res.links()
+        res.location()
+        res.redirect()
+        res.render(view [, locals] [, callback])                呈现视图并将呈现的HTML字符串发送到客户端
+        res.send()                                              发送HTTP响应    参数可以是缓冲对象、字符串、对象或数组
+        res.sendFile(path [, options] [, fn])                   在给定路径传输文件() path需为绝对路径
+        res.sendStatus(statusCode)                              将响应HTTP状态代码设置为StaseCu码，并将其字符串表示形式作为响应体发送。
+        res.set(field [, value])                                将响应的HTTP头字段设置为值。若要同时设置多个字段以对象形式作为参数
+        res.status(code)
+        res.type()
+        res.vary()
+Router
+    Router()
+    Methods
+        router.all()
+        router.METHOD()
+        router.param()
+        router.route()
+        router.use()

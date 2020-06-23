@@ -1,0 +1,81 @@
+font 				在一个声明中设置所有字体属性 	1
+font-family 			规定文本的字体系列 	1
+font-size 			规定文本的字体尺寸 	1
+font-style 			规定文本的字体样式 	1
+font-variant 		规定文本的字体样式 	1
+font-weight 			规定字体的粗细 		1
+font-size-adjust 	为元素规定 aspect 值 	3					仅FF支持
+font-stretch 		收缩或拉伸当前的字体系列 	3				不支持
+@font-face 			一个规则，允许网站下载并使用其他超过"Web- safe"字体的字体 	3
+
+
+object.style.font="font-style font-variant font-weight font-size/line-height font-family"
+caption 					定义被标题控件（比如按钮、下拉列表等）使用的字体。
+icon 					定义被图标标记使用的字体。
+menu 					定义被下拉列表使用的字体。
+message-box 				定义被对话框使用的字体。
+small-caption 			caption 字体的小型版本。
+status-bar 				定义被窗口状态栏使用的字体。
+
+
+
+
+font-style
+normal 	默认值。浏览器显示一个标准的字体样式。
+italic 	浏览器会显示一个斜体的字体样式。
+oblique 	浏览器会显示一个倾斜的字体样式。
+ 				
+font-variant 	
+normal 		默认值。浏览器会显示一个标准的字体。
+small-caps 	浏览器会显示小型大写字母的字体。    //把所有小写字母转化为小号的大写字母
+			所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小
+			
+font-weight 	
+normal	默认值。定义标准的字符。		400
+bold 	定义粗体字符。				700
+bolder 	定义更粗的字符。	
+lighter 	定义更细的字符。
+Number
+
+font-family 		"times"、"courier"、"arial"。	
+		
+font-size/line-height 	xx-small 	x-small		small 	medium 默认 		large 		x-large    xx-large
+smaller 	把 font-size 设置为比父元素更小的尺寸。
+larger 	把 font-size 设置为比父元素更大的尺寸。
+length 	把 font-size 设置为一个固定的值。
+% 	把 font-size 设置为基于父元素的一个百分比值。
+
+	
+
+
+指定名为"myFirstFont"的字体，并指定在哪里可以找到它的URL：
+@font-face{//命名并指定路径
+	font-family: myFirstFont;
+	src: url('Sansation_Light.ttf')
+		,url('Sansation_Light.eot'); /* IE9 */
+}
+div{//使用字体
+	font-family:myFirstFont;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

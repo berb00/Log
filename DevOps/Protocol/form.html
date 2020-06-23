@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form test</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+        <!-- 
+            attributes:
+                accept：服务器接收到的文件的类型（html5版本也不支持）；
+                accept-charset：服务器可处理的表单数据字符集；
+                action：当提交表单时向何处发送表单数据；
+                autocomplete：是否启用表单的自动完成功能，值可以是：on、off，html5新增；
+                enctype：在向服务器发送表单数据之前如何对其进行编码，method="post"时可以使用，值可以是：
+                    application/x-www-form-urlencoded：在发送前编码所有字符（默认）
+                    text/plain：空格转换为“+”加号，但不对特殊字符编码
+                    multipart/form-data：使用包含文件上传控件（多媒体，音频视频等）的表单时，必须使用该值
+                method：
+                    get   数据以key=value形式拼接到url的query上
+                    post 
+                name：规定表单的名称，在xhtml中也废弃，使用id来代替；
+                novalidate：提交表单时不进行验证，值为：novalidate，html5新增；
+                target：在何处打开action属性中的地址，值可以是：_blank、_self、_parent、_top； 
+        -->
+        
+
+    <form name="form" id="form"  action="http://www.baidu.com" method="get" enctype="application/x-www-form-urlencoded" novalidate
+            onsubmit="return check1(this)"
+            target="_blank"
+    >
+        <div class="item">
+            用户名：<input type="text" required  name="username" placeholder="请填写用户名"/>
+        </div>
+        <div class="item">
+            密码：<input type="password" name="password" size='20'/>
+        </div>
+        <div class="item">
+                电子邮箱：<input type="text" name="emil" placeholder="请输入："/>
+            </div>
+        <div class="item">
+            <input type="file" name="file"/>
+        </div>
+        <div class="item">
+            性别：<label for="women">女</label><input id="women" type="radio" name="gender" value="0"/>
+            <label for="man">男</label><input id="man" type="radio" name="gender" value="1">
+        </div>
+        <div class="item">
+            爱好：<label for="basketball">篮球</label><input id="basketball" type="radio" name="hobby" value="0"/>
+            <label for="football">足球</label><input id="football" type="radio" name="hobby" value="1">
+        </div>
+        <div class="item">
+            <select name="city">
+                <option value="0">广州</option>
+                <option value="1" selected>深圳</option>
+                <option value="2">佛山</option>
+            </select>
+        </div>
+        <div class="item">
+            <textarea name="introduction"  cols="30" rows="10">滴滴……</textarea>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="name" value="agree"/>同意<a href="#">服务条款</a>
+        </div>
+        <div class="item">
+            <input type="submit" value="提交"/>
+            <input type="reset" value="重置"/>
+            <input type="button" value="button"/>
+        </div>
+    </form>
+
+    <script>
+        function check1 (el) {
+            console.log('check1', el);
+            console.log('form', document.getElementById('form'));
+        }
+    </script>
+</body>
+</html>

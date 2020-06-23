@@ -1,0 +1,5 @@
+
+
+
+5.箭头函数
+    fn = parameters => {code}

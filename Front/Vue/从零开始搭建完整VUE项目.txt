@@ -1,0 +1,511 @@
+===================================================================================================
+从零开始搭建VUE项目
+
+前言：
+
+此样板面向大型，严肃的项目，并假定您对Webpack和vue-loader有些熟悉。 请务必阅读vue-loader的常见工作流配方的文档。
+
+如果您只想尝试vue-loader或者鞭打一个快速原型，请改用webpack-simple模板。
+
+快速开始：
+
+    要使用这个模板，可以用vue-cli来支持一个项目。 建议使用npm 3+更高效的依赖关系树：
+
+$ npm install -g vue-cli
+$ vue init webpack my-project
+$ cd my-project
+$ npm install
+$ npm run dev
+
+项目结构：
+复制代码
+
+.
+├── build/                      # webpack配置文件
+│   └── ...
+├── config/
+│   ├── index.js                # 主要项目配置
+│   └── ...
+├── src/
+│   ├── main.js                 # 应用入口文件
+│   ├── App.vue                 # 主应用程序组件
+│   ├── components/             # ui组件
+│   │   └── ...
+│   └── assets/                 # 模块资源（由webpack处理）
+│       └── ...
+├── static/                     # 纯静态资源（直接复制）
+├── test/
+│   └── unit/                   # 单元测试
+│   │   ├── specs/              # 测试spec文件
+│   │   ├── index.js            # 测试构建条目文件
+│   │   └── karma.conf.js       # 测试跑步者配置文件
+│   └── e2e/                    # e2e测试
+│   │   ├── specs/              # 测试spec文件
+│   │   ├── custom-assertions/  # e2e测试的自定义断言
+│   │   ├── runner.js           # 测试跑步脚本
+│   │   └── nightwatch.conf.js  # 测试跑步者配置文件
+├── .babelrc                    # babel 配置
+├── .postcssrc.js               # postcss 配置
+├── .eslintrc.js                # eslint 配置
+├── .editorconfig               # editor 配置
+├── index.html                  # index.html模板
+└── package.json                # 构建脚本和依赖关系
+
+复制代码
+
+下面详细讲解下这个项目解构：
+
+   build/
+
+        此目录包含开发服务器和生产webpack构建的实际配置。 通常，您不需要触摸这些文件，除非您要自定义Webpack加载器，在这种情况下，您应该看看build / webpack.base.conf.js。
+
+   config/index.js
+
+        这是显示构建设置的一些最常见配置选项的主配置文件。 有关详细信息，请参阅开发期间的API代理和后端框架集成。
+
+    src/
+
+        这是你的大部分应用程序代码所在的位置。如何构建此目录中的所有内容，主要取决于您; 如果您使用Vuex，您可以查阅Vuex应用程序的建议。
+
+    static/
+
+        此目录是您不想使用Webpack进行处理的静态资源的一个逃生舱口。 它们将直接复制到生成webpack建立资产的同一个目录中。
+
+有关详细信息，请参阅处理静态资产。
+
+    test/unit
+
+        包含单元测试相关文件。 有关详细信息，请参阅单元测试
+
+    test/e2e
+
+         包含e2e测试相关文件。 有关详细信息，请参阅端到端测试。
+
+ index.html
+
+         这是我们的单页应用程序的模板index.html。 在开发和构建期间，Webpack将生成资产，并将生成的资产的URL自动注入到此模板中以呈现最终的HTML。
+
+    package.json
+
+        包含所有构建依赖项和构建命令的NPM软件包元文件。
+
+  构建命令:
+
+
+
+npm run dev
+
+    启动Node.js本地开发服务器。 有关详细信息，请参阅开发期间的API代理。
+
+        .用于单个文件Vue组件的Webpack + vue-loader。
+        .状态保存热重载
+        .状态保存编译错误覆盖
+        .使用ESLint保存
+        .源地图
+
+npm run build
+
+    建立资源进行生产。 有关详细信息，请参阅与后端框架集成。
+
+        .用UglifyJS缩小了JavaScript。
+
+        .HTML用html-minifier缩小。
+        .将所有组件的CSS提取到单个文件中，并用cssnano进行缩小。
+        .使用版本散列编辑的所有静态资源都可以进行高效的长期缓存，并且生成index.html是自动生成的，具有适当的URL到这些生成的资产。
+
+npm run unit
+
+    使用Karma在PhantomJS中进行单元测试。 有关详细信息，请参阅单元测试
+
+         .在测试文件中支持ES2015 +。
+
+        .支持所有webpack加载器。
+        .轻松模拟注射。
+
+npm run e2e
+
+    使用Nightwatch进行端到端测试。 有关详细信息，请参阅端到端测试
+
+        .在多个浏览器中并行运行测试。
+
+        .开箱即用的一个命令：
+        .硒和chromedriver依赖关系自动处理。
+        .自动生成Selenium服务器。
+
+  Linter配置：
+
+    此样板使用ESLint作为linter，并使用标准预设与一些小的定制。如果您对默认的linting规则不满意，您可以选择几种：
+
+        1.覆盖.eslintrc.js中的各个规则。 例如，您可以添加以下规则来强制执行分号，而不是省略它们：
+
+// .eslintrc.js
+"semi": [2, "always"]
+
+        2.在生成项目时选择不同的ESLint预设，例如eslint-config-airbnb。
+
+        3.在生成项目并定义自己的规则时，为ESLint预设选择“无”。 有关详细信息，请参阅ESLint文档。
+
+  预处理器:
+
+    此样板为大多数流行的CSS预处理器（包括LESS，SASS，Stylus和PostCSS）预先配置了CSS提取。 要使用预处理器，您需要做的就是为其安装适当的webpack加载器。 例如，要使用SASS：
+
+npm install sass-loader node-sass --save-dev
+
+    请注意，您还需要安装node-sass，因为sass-loader将其视为对等依赖关系。
+
+  在组件内部使用预处理器:
+
+    安装完成后，您可以使用* .vue组件中的预处理器，使用<style>标签上的lang属性：
+
+<style lang="scss">
+/* write SASS! */
+</style>
+
+  关于SASS语法的注释:
+
+    lang =“scss”对应于CSS-superset语法（带大括号和分号）。
+
+    lang =“sass”对应于基于缩进的语法。
+
+  PostCSS:
+
+    默认情况下，* .vue文件中的样式通过PostCSS管道传输，因此您不需要使用特定的加载器。 您可以在vue块下简单添加要在build / webpack.base.conf.js中使用的PostCSS插件：
+复制代码
+
+// build/webpack.base.conf.js
+module.exports = {
+  // ...
+  vue: {
+    postcss: [/* your plugins */]
+  }
+}
+
+复制代码
+
+    有关详细信息，请参阅vue-loader's的相关文档。
+
+  Standalone CSS Files:
+
+    为了确保一致的提取和处理，建议从您的根App.vue组件导入全局独立样式文件，例如：
+
+<!-- App.vue -->
+<style src="./styles/global.less" lang="less"></style>
+
+    请注意，您应该仅为自己为您的应用程序编写的样式。 对于现有的图书馆 引导或语义UI，您可以将它们放在/静态中，并直接在index.html中引用它们。 这避免了额外的构建时间，也更适合浏览器缓存。 （见 Static Asset Handling）
+
+ 处理静态资产(Static Assets):
+
+    您将在项目结构中注意到，静态资产有两个目录：src / assets和static /。 他们有什么区别？
+
+Webpacked资产:
+
+    为了回答这个问题，我们首先需要了解Webpack如何处理静态资产。 在* .vue组件中，所有的模板和CSS都由vue-html-loader和css-loader解析来查找资源URL。 例如，在<img src =“./ logo.png”>和background：url（./ logo.png）中，“./logo.png”是相对的资产路径，将由Webpack解析为模块依赖关系。
+
+因为logo.png不是JavaScript，当被视为模块依赖关系时，我们需要使用url-loader和file-loader来处理它。 此样板已经为您配置了这些加载程序，因此您可以免费获得文件名指纹和条件base64内联等功能，同时可以使用相对/模块路径，而不必担心部署。
+
+由于这些资源可能在构建过程中被内联/复制/重命名，所以它们基本上是您的源代码的一部分。 这就是为什么建议将Webpack处理的静态资产放在/ src中，沿着其他源文件。 实际上，您甚至不必将它们全部放在/ src / assets中：您可以根据使用它们的模块/组件进行组织。 例如，您可以将每个组件放在自己的目录中，其静态资产就在它的旁边。
+
+资产解决规则:
+
+    .相对网址，例如 ./assets/logo.png将被解释为模块依赖关系。 它们将被基于Webpack输出配置的自动生成的URL替换。
+
+    .非前缀网址，例如 assets / logo.png将被视为与相对URL相同，并被翻译成./assets/logo.png。
+
+    .前缀为〜的URL被视为模块请求，类似于require（'some-module / image.png'）。 如果要使用Webpack的模块解析配置，则需要使用此前缀。 例如，如果您有资产的解决别名，则需要使用<img src =“〜assets / logo.png”>来确保别名符合要求。
+
+    .根相对URL，例如 /assets/logo.png根本没有被处理。
+
+  在JavaScript中获取资源路径:
+
+    为了使Webpack返回正确的资源路径，您需要使用require（'./ relative / path / to / file.jpg'），这将由文件加载程序处理，并返回已解析的URL。 例如：
+
+computed: {
+  background () {
+    return require('./bgs/' + this.id + '.jpg')
+  }
+}
+
+    注意上面的例子将包括最终构建中的./bgs/下的每个图像。 这是因为Webpack无法猜测它们在运行时将被使用，所以它包括它们。
+
+  “真实”静态资产:
+
+      相比之下，静态的文件根本不被Webpack处理：它们直接以相同的文件名复制到最终目的地。 您必须使用绝对路径引用这些文件，这是通过在config.js中加入build.assetsPublicPath和build.assetsSubDirectory来确定的。
+
+    例如，使用以下默认值：
+复制代码
+
+// config/index.js
+module.exports = {
+  // ...
+  build: {
+    assetsPublicPath: '/',
+    assetsSubDirectory: 'static'
+  }
+}
+
+复制代码
+
+    使用绝对URL / static / [filename]引用静态/中的任何文件。 如果将assetSubDirectory更改为资产，则这些URL将需要更改为/ assets / [filename]。
+
+    我们将在后端集成部分中详细了解配置文件。
+
+  环境变量:
+
+     有时根据应用程序运行的环境具有不同的配置值是很实用的。
+
+  举个例子：
+复制代码
+
+// config/prod.env.js
+module.exports = {
+  NODE_ENV: '"production"',
+  DEBUG_MODE: false,
+  API_KEY: '"..."' // this is shared between all environments
+}
+
+// config/dev.env.js
+module.exports = merge(prodEnv, {
+  NODE_ENV: '"development"',
+  DEBUG_MODE: true // this overrides the DEBUG_MODE value of prod.env
+})
+
+// config/test.env.js
+module.exports = merge(devEnv, {
+  NODE_ENV: '"testing"'
+})
+
+复制代码
+
+
+
+    注意：字符串变量需要被包装成单引号和双引号'“...”'
+
+    所以环境变量是：
+
+
+
+    Production
+        NODE_ENV = 'production',
+        DEBUG_MODE = false,
+        API_KEY = '...'
+    Development
+        NODE_ENV = 'development',
+        DEBUG_MODE = true,
+        API_KEY = '...'
+    Testing
+        NODE_ENV = 'testing',
+        DEBUG_MODE = true,
+        API_KEY = '...'
+
+     我们可以看到，test.env继承了dev.env，dev.env继承了prod.env。
+
+  用法：
+
+    在代码中使用环境变量很简单。 例如：
+
+Vue.config.productionTip = process.env.NODE_ENV === 'production'
+
+  与后端框架集成：
+
+    如果您正在构建纯静态应用程序（与后端API分开部署的应用程序），则可能甚至不需要编辑config / index.js。 但是，如果要将此模板与现有的后端框架集成，例如 Rails / Django / Laravel拥有自己的项目结构，您可以编辑config / index.js，将前端资源直接生成到后台项目中。
+
+    我们来看看默认的config / index.js：
+复制代码
+
+// config/index.js
+var path = require('path')
+
+module.exports = {
+  build: {
+    index: path.resolve(__dirname, 'dist/index.html'),
+    assetsRoot: path.resolve(__dirname, 'dist'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+    productionSourceMap: true
+  },
+  dev: {
+    port: 8080,
+    proxyTable: {}
+  }
+}
+
+复制代码
+
+    在构建部分中，我们有以下选项：
+
+        build.index
+
+    必须是本地文件系统上的绝对路径。
+
+如果您使用带有后端框架的此模板，则可以相应地编辑index.html，并将此路径指向由您的后端应用程序呈现的视图文件，例如。 Rails应用的app / views / layouts / application.html.erb或Laravel应用程序的resources / views / index.blade.php。
+
+        build.assetsRoot
+
+    必须是本地文件系统上的绝对路径。
+
+这应该指向包含应用程序的所有静态资源的根目录。 例如，公开/为Rails / Laravel。
+
+      build.assetsSubDirectory
+
+    在build.assetsRoot中的此目录下嵌入webpack生成的资源，以便它们与build.assetsRoot中可能具有的其他文件不混合。 例如，如果build.assetsRoot是/ path / to / dist，并且build.assetsSubDirectory是静态的，则所有Webpack资源都将以path / to / dist / static生成。
+
+  此目录将在每次构建之前进行清理，因此只应包含生成生成的资源。
+
+静态中的文件将在构建期间按原样复制到该目录中。 这意味着如果您更改此前缀，则所有绝对URL引用static /中的文件也将需要更改。 有关详细信息，请参阅 Handling Static Assets。
+
+     build.assetsPublicPath
+
+    这应该是您的build.assetsRoot将通过HTTP提供的URL路径。 在大多数情况下，这将是根（/）。 只有当您的后端框架提供具有路径前缀的静态资产时，才能更改此选项。 在内部，这是作为output.publicPath传递给Webpack。
+
+     build.productionSourceMap
+
+    是否生成源地图进行生产构建。
+
+    dev.port
+
+    指定要监听的服务器的端口。
+
+    dev.proxyTable
+
+    定义开发人员服务器的代理规则。 有关详细信息，请参阅 API Proxying During Development。
+
+  开发期间的API代理：
+
+    当将此样板与现有后端集成时，通常需要在使用dev服务器时访问后端API。 为了实现这一点，我们可以并行（或远程）运行dev服务器和API后端，并让dev服务器将所有API请求代理到实际的后端。
+
+    要配置代理规则，请在config / index.js中编辑dev.proxyTable选项。 dev服务器正在使用http代理中间件进行代理，因此您应参考其文档以获取详细的用法。 但这是一个简单的例子：
+复制代码
+
+// config/index.js
+module.exports = {
+  // ...
+  dev: {
+    proxyTable: {
+      // proxy all requests starting with /api to jsonplaceholder
+      '/api': {
+        target: 'http://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  }
+}
+
+复制代码
+
+    以上示例将代理请求/ api / posts / 1 到 http://jsonplaceholder.typicode.com/posts/1.
+
+  网址匹配：
+
+    除了静态网址之外，您还可以使用glob模式来匹配网址，例如/ API/ **。 有关详细信息，请参阅上下文匹配。 此外，您可以提供一个过滤器选项，该选项可以是自定义函数，用于确定请求是否应被代理：
+复制代码
+
+proxyTable: {
+  '**': {
+    target: 'http://jsonplaceholder.typicode.com',
+    filter: function (pathname, req) {
+      return pathname.match('^/api') && req.method === 'GET'
+    }
+  }
+}
+
+复制代码
+
+    单元测试：
+
+    本样板用于单元测试的工具概述：
+
+       .Karma：启动浏览器的测试运行器，运行测试并将结果报告给我们。
+
+      .karma-webpack：使用Webpack捆绑我们的测试的Karma插件。
+
+      .摩卡：我们编写测试规范的测试框架。
+      .Chai：提供更好的断言语法的测试断言库。
+      .Sinon：提供间谍，存根和模拟的测试实用程序库。
+
+    Chai和Sinon是使用karma-sinon-chai进行集成的，所以所有Chai接口（应该是，期望，断言）和sinon都可以在测试文件中全球使用。
+
+  和文件：
+
+      index.js
+
+    这是由karma-webpack用于捆绑所有测试代码和源代码（为了覆盖目的））的条目文件。 你可以忽略它大部分。
+
+      specs/
+
+    该目录是您编写实际测试的地方。 您可以在测试中使用完整的ES2015 +和所有受支持的Webpack加载器。
+
+      karma.conf.js
+
+    这是Karma配置文件。 有关详细信息，请参阅Karma docs 。
+
+      在更多浏览器中运行测试
+
+    您可以在多个真正的浏览器中运行测试，方法是在test / unit / karma.conf.js中安装更多的业务发射器并调整浏览器字段。
+
+      模拟依赖
+
+    默认情况下，此样板安装了注入装载机。 有关* .vue组件的使用，请参阅vue-loader文档进行测试。
+
+  端到端测试：
+
+    此样板使用Nightwatch.js进行e2e测试。 Nightwatch.js是一个高度集成的e2e测试赛跑者，构建在硒上。 这个样板附带了Selenium服务器和Chromedriver二进制文件，为您预配置，所以你不必搞砸自己。
+
+    我们来看看test / e2e目录中的文件：
+
+        runner.js
+
+    启动开发服务器的Node.js脚本，然后启动Nightwatch以对其执行测试。 这是运行npm运行e2e时运行的脚本。
+
+        nightwatch.conf.js
+
+    夜视配置文件。 有关详细信息，请参阅Nightwatch的配置文档。
+
+        custom-assertions/
+
+    可以在夜视测试中使用的自定义断言。 有关详细信息，请参阅Nightwatch的文档编写自定义声明。
+
+        specs/
+
+    你的实际测试！ 有关详细信息，请参阅Nightwatch的文档测试和API参考。
+
+      在更多浏览器中运行测试
+
+    要配置哪些浏览器运行测试，请在test / e2e / nightwatch.conf.js中的“test_settings”下添加一个条目，以及test / e2e / runner.js中的--env标志。 如果您希望在诸如SauceLabs之类的服务上配置远程测试，您可以根据环境变量使Nightwatch配置有条件，或者完全使用单独的配置文件。 有关更多详细信息，请参阅Nightwatch在Selenium上的文档。
+
+  预售SEO
+
+    如果您希望预先投放一旦推送到生产时不会显着更改的路线，请使用此Webpack插件：prerender-spa-plugin，它已经过Vue测试。 对于频繁更改的页面，Prerender.io和Netlify都提供定期重新预览您的搜索引擎内容的计划。
+
+        使用prerender-spa-plugin
+
+    将其安装为开发人员依赖关系：
+
+npm install --save-dev prerender-spa-plugin
+
+    需要在build / webpack.prod.conf.js中：
+
+// 该行应该位于其他“进口”生活的文件的顶部
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
+
+    在plugins数组中（也在build / webpack.prod.conf.js中）进行配置：
+
+new PrerenderSpaPlugin(
+  // Path to compiled app
+  path.join(__dirname, '../dist'),
+  // List of endpoints you wish to prerender
+  [ '/' ]
+)
+
+    如果您还想预先投射/关于和/接触，那么该数组将是['/'，'/ about'，'/ contact']。
+
+    启用vue-router的历史记录模式：
+
+const router = new VueRouter({
+mode: 'history',
+routes: [...]
+})
+
+

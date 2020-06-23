@@ -1,0 +1,80 @@
+常用命令
+// 查看vue历史版本
+npm view vue-cli versions --json        // 1.x 2.x
+npm view @vue/cli versions --json       // 3.x 4.x
+
+// 卸载vue
+npm uninstall vue-cli -g
+npm uninstall @vue/cli -g
+
+// 安装
+npm install -g vue-cli@2.9.6
+npm install -g @vue/cli@3.9.1
+
+// 创建工程
+vue init webpack projectname
+vue create projectname
+
+// help
+vue create --help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+href="https://vuejs.org"
+Core Docs
+
+href="https://forum.vuejs.org"
+Forum
+
+href="https://chat.vuejs.org"
+Community Chat
+
+href="https://twitter.com/vuejs"
+Twitter
+
+href="http://vuejs-templates.github.io/webpack/"
+Docs for This Template
+
+href="http://router.vuejs.org/"
+vue-router
+
+href="http://vuex.vuejs.org/"
+vuex
+
+href="http://vue-loader.vuejs.org/"
+vue-loader
+
+https://github.com/vuejs/awesome-vue"
+awesome-vue
+
+
+
+修改 vue.config.js 不会触发热加载，也就是修改之后你需要重新 run 一下你的项目，它才能生效。
+
+vue中引入高德地图的方法:
+    1、在 public 文件夹下的 index.html 中加入 
+        <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=你申请的key"></script> 
+    2、在 vue.config.js 文件中配置 externals
+        configureWebpack: {
+            externals: {
+            'AMap': 'AMap' // 高德地图配置
+            }
+        }
+    3、在Vue文件中引用amap
+        import AMap from 'AMap' // 引入高德地图

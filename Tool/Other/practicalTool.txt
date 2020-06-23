@@ -1,0 +1,19 @@
+u盘引导盘制作工具:	rufus
+
+
+version control
+    tortoisehg
+
+
+
+
+
+工具表
+    Navicat Premium  数据库管理工具
+
+
+
+
+
+
+
