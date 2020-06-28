@@ -1,0 +1,6 @@
+
+脚手架
+go get github.com/beego/bee
+
+beego安装
+go get github.com/astaxie/beego
