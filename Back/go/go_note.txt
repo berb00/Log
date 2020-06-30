@@ -176,7 +176,7 @@
     git pull origin master --allow-unrelated-histories
 
 
-
+后台运行go nohup ./main &
 
 
 
