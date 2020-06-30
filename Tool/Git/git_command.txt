@@ -1,52 +1,151 @@
 #、Main Porcelain Commands
 #############################################################################################
-    #、init                 Create an empty Git repository or reinitialize an existing one
-    #、clone                Clone a repository into a new directory
+    #、init  
+        git init                            // 创建版本库 (生成例：/.git/目录)         
+    #、clone          
+        git clone <adderss>                 // 克隆一个已有的远程仓库。address是远程库地址
+        git clone <adderss>  --depth==1     // 只clone最后一次commit的内容
 
-    #、add                  Add file contents to the index
-    #、mv                   Move or rename a file, a directory, or a symlink
-    #、restore              Restore working tree files
-    #、rm                   Remove files from the working tree and from the index
-    #、sparse-checkout      Initialize and modify the sparse-checkout
 
-    #、bisect               Use binary search to find the commit that introduced a bug
-    #、diff                 Show changes between commits, commit and working tree, etc
-    #、grep                 Print lines matching a pattern
-    #、log                  Show commit logs
-    #、shortlog             Summarize 'git log' output    
-    #、show                 Show various types of objects
-    #、status               Show the working tree status
+    #、add  
+        git add <file>                      // 用于把文件添加到git（暂存区），准备提交
+        git add -A  或者 git add -all       // 把工作区的所有修改添加到暂存区
+        git add .                           // 提交所有文件到暂存区
+        git add -i  (--interactive)         // 交互式终端模式          
+    #、mv             
+    #、restore        
+    #、rm
+        git rm --cached <file>              // 从暂存区撤回commit内容:(会删除文件已commit文件)
+        git rm <file>                       // 删除文件。删除之后还需要提交（git commit）
+        
+    #、sparse-checkout
 
-    #、branch               List, create, or delete branches
-    #、commit               Record changes to the repository
-    #、merge                Join two or more development histories together
-    #、rebase               Reapply commits on top of another base tip
-    #、reset                Reset current HEAD to the specified state
-    #、switch               Switch branches
-    #、tag                  Create, list, delete or verify a tag object signed with GPG
 
-    #、fetch                Download objects and refs from another repository
-    #、pull                 Fetch from and integrate with another repository or a local branch
-    #、push                 Update remote refs along with associated objects
 
-    #、checkout             Switch branches or restore working tree files
-    #、revert               Revert some existing commits
-    #、stash                Stash the changes in a dirty working directory away
-    #、clean                Remove untracked files from the working tree
-    #、notes                Add or inspect object notes
-    #、am                   Apply a series of patches from a mailbox
-    #、archive              Create an archive of files from a named tree
-    #、bundle               Move objects and refs by archive
-    #、cherry-pick          Apply the changes introduced by some existing commits     
-    #、citool               Graphical alternative to git-commit
-    #、describe             Give an object a human readable name based on an available ref
-    #、format-patch         Prepare patches for e-mail submission
-    #、gc                   Cleanup unnecessary files and optimize the local repository
-    #、gitk                 The Git repository browser
-    #、gui                  A portable graphical interface to Git
-    #、range-diff           Compare two commit ranges (e.g. two versions of a branch)
-    #、submodule            Initialize, update or inspect submodules
-    #、worktree             Manage multiple working trees
+    #、bisect         
+    #、diff           
+    #、grep           
+    #、log 
+        git log                                               // 由近及远返回commit历史记录(提交日志)
+        git log --pretty=online(单行显示---长hash)             // 查看版本历史记录-简化输出日志
+        git log --online(单行显示---短hash)                    // 查看版本历史记录  
+        git log --graph                                       // 显示分支合并图
+        git log -p -2			                                    // -p:显示每次提交的内容差异。-2:仅显示最近两次提交：
+           
+    #、shortlog       
+    #、show 
+        git log [<选项>] [<版本范围>] [[--] <路径>...]
+        git show [<选项>] <对象>...
+            -q, --quiet           不显示差异输出
+            --source              显示源
+            --use-mailmap         使用邮件映射文件
+            --decorate-refs <模式> 只修饰与 <模式> 匹配的引用
+            --decorate-refs-exclude <模式> 不修饰和 <模式> 匹配的引用
+            --decorate[=...]      修饰选项
+            -L <n,m:file>         处理文件中第 n 到 m 之间的行，从 1 开始
+          
+    #、status         
+        git status			检查当前文件状态
+        git status -s
+        git status --short 	状态简览
+
+
+
+    #、branch    
+        git branch                                            // 查看本地分支
+        git branch -r                                         // 查看远程分支
+        git branch -a                                         // 查看所有分支
+        git branch branchname                                 // 新建分支
+        git branch -d branchname                              // 删除分支
+        git branch -D branchname                              // 强制删除  
+        git branch -d -r branchname                           // 删除远程分支并推送
+        git push origin:branchname                            // 删除分支后推送
+        git branch -m oldbranchname newbranchname             // 重命名本地分支
+
+        git branch [<选项>] [-r | -a] [--merged | --no-merged]
+        git branch [<选项>] [-l] [-f] <分支名> [<起始点>]
+        git branch [<选项>] [-r] (-d | -D) <分支名>...
+        git branch [<选项>] (-m | -M) [<旧分支>] <新分支>
+        git branch [<选项>] (-c | -C) [<老分支>] <新分支>
+        git branch [<选项>] [-r | -a] [--points-at]
+        git branch [<选项>] [-r | -a] [--format]     
+    #、commit  
+        git commit -m 'comment'             //把暂存区的所有内容提交到当前分支 只有添加文件之后才能使用，用于提交内容到主分支（默认是master）       
+    #、merge      
+        git merge branchname                // 合并branchname分支到当前分支
+        git merge --no-ff <branch>          // 关闭Fast-forward 合并（快速模式），强制禁用快速合并模式进行合并指定分支到当前分支
+        git merge --no-ff branchname        // 合并分支
+        #合并分支
+            1.在master分支操作一个文件1.txt(例如加入一段信息)    add commit      master分支上的操作
+            2.创建并切换至另一分支a,操作该文件(再加入一段信息)    add commit      a分支上的操作
+            3.切换至master分支 查看1.txt(无法显示a分支下的操作)
+            3.git merge a//把a分支的工作成果合并到master分支上   Fast-forward:“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。
+            4.查看1.txt(可显示a分支下的操作)
+    
+    #、rebase         
+    #、reset    
+        git reset HEAD <file>               // 把暂存区的修改回退到工作区（把暂存区的修改撤销掉清除 （unstage），重新放回工作区）
+        git reset --hard HEAD^              // 把当前版本回退到上一个版本
+        git reset --hard commitId           // HEAD指针指向commitId版本    
+        git reset --hard <commit_id>        //把工作区内容恢复到指定版本
+        前进回退版本号:
+            1.使用索引值
+            git reset --hard 局部索引值
+            2.使用^符号(只能后退)
+            git reset --hard HEAD^ // 回退一步
+            git reset --hard HEAD^^ // 回退二步
+            git reset --hard HEAD^ // 回退三步
+            3.使用~符号(只能后退)
+            git reset --hard HEAD~n // 回退n步
+            --soft    //在本地库移动HEAD指针
+            --mixed   //在本地库移动HEAD指针/重置暂存区
+            --hard    //在本地库移动HEAD指针/重置暂存区/重置工作区
+      
+    #、switch         
+    #、tag            
+
+
+
+    #、fetch 
+        git fetch remotealias   // 拉取远程仓库到本地仓库 (默认master分支)
+        git fetch remotealias branchname   // 拉取远程指定分支到本地仓库 (成功后返回一个FETCH_HEAD) // git log -p FETCH_HEAD         
+    #、pull  
+        git push -u origin branchname             // 第一次把本地库的所有内容推送到远程库上 (远程库的名字就是origin，这是Git默认的叫法)
+        git push origin branchname                // 之后的提交
+        git pull remotealias // 不确定是否拉取所有分支
+        git pull remotealias remotebranch // 拉取远程分支并与本地分支合并(默认当前分支)
+        git pull remotealias remotebranch:localbranch   //  相当于：
+            1.git fetch remotealias remotebranch
+            2.git merge localbranch         
+    #、push           
+
+
+
+    #、checkout   
+        git checkout <branch>                                 // 切换到指定分支
+        git checkout -b <newbranch>                           // 创建一个新的分支并切换到这个新的分支。-b参数表示创建新分支 newbranch 新的分支名
+        git checkout branchname                               // 切换到某分支
+        git checkout -- <file>                                // 丢弃工作区的修改
+        git checkout -- <file>                                // 放弃在工作区的更改     //就是让这个文件回到最近一次git commit或git add时的状态 撤销文件的修改到最近一次git commit或者git add 注意：--非常重要 
+        add前形成的修改(未再add):                             // 撤销修改就回到和版本库一模一样的状态
+        add后形成的修改(未再add):                             // 撤销修改就回到添加到暂存区后的状态。    
+    #、revert         
+    #、stash          
+    #、clean          
+    #、notes          
+    #、am             
+    #、archive        
+    #、bundle         
+    #、cherry-pick    
+    #、citool         
+    #、describe       
+    #、format-patch   
+    #、gc             
+    #、gitk           
+    #、gui            
+    #、range-diff     
+    #、submodule      
+    #、worktree       
 
 
 
