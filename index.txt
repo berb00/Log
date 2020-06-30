@@ -1,78 +1,26 @@
+beforeRouterEnter(to, from, next)
+beforeRouterUpdate(to, from, next)
+beforeRouterLeave(to, from, next )
 
+事件修饰符
 
+v-on:click.stop
+v-on:click.capture
+v-on:click.prevent
+v-on:click.passive
+v-on:click.self
+v-on:click.once
 
 
+stop
+capture
+prevent
+self
+passive
+once
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#############################################################################################
-
-
-
-
-#############################################################################################
-
-#、解决index.sh脚本sed报错问题
-
-#、在阿里云centos上基于docker、gogs搭建自有Git仓库
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+事件修饰符
 
 
 
