@@ -2,9 +2,8 @@
 <router-link>
     将激活 class 应用在外层元素
 
-
-==========================================================================================
 <router-link> Props
+==========================================================================================
     to
     replace
     append
@@ -20,8 +19,8 @@
 <router-view> Props
     name
 
-==========================================================================================
 Router 构建选项
+==========================================================================================
     routes
     mode
     base
@@ -31,21 +30,47 @@ Router 构建选项
     parseQuery / stringifyQuery
     fallback
 
-==========================================================================================
+
 Router 实例属性
-    router.app
-    router.mode
-    router.currentRoute
+==========================================================================================
+    afterHooks: []
+    resolveHooks: []
+    beforeHooks: []
+
+    app: Vue {_uid: 3, _isVue: true, $options: {…}, _renderProxy: Proxy, _self: Vue, …}
+    apps: [Vue]
+
+    fallback: false
+    history: HTML5History {router: VueRouter, base: "", current: {…}, pending: null, ready: true, …}
+    matcher: {match: ƒ, addRoutes: ƒ}
+    mode: "history"
+    options: {
+        base: "/"
+        mode: "history"
+        routes:        
+    }
+
+    currentRoute: {
+        fullPath: "/"
+        hash: ""
+        matched: [{…}]
+        meta: {}
+        name: "home"
+        params: {}
+        path: "/"
+        query: {}
+    }
+
 
 ==========================================================================================
 Router 实例方法
     router.onReady
     router.onError
 
-    router.beforeEach
-    router.afterEach
+    router.beforeEach           // 全局前置守卫
+    router.afterEach            // 全局后置钩子
 
-    router.beforeResolve
+    router.beforeResolve        // 全局解析守卫
     router.resolve
 
     router.push
@@ -57,6 +82,14 @@ Router 实例方法
     router.addRoutes
     router.getMatchedComponents
     
+    // 组件内的守卫
+    beforeRouteEnter
+    beforeRouteUpdate
+    beforeRouteLeave    // 离开守卫 通常用来禁止用户在还未保存修改前突然离开
+
+    router.beforeEach((to, from, next) => {
+        // ...
+    })
 
 ==========================================================================================
 路由对象
@@ -68,8 +101,30 @@ Router 实例方法
     注入的属性
     增加的组件配置选项
 
-
-
+this.$routes
+==========================================================================================
+fullPath: "/"
+hash: ""
+matched: [
+    {
+        beforeEnter: undefined
+        components: {default: {…}}
+        instances: {default: VueComponent}
+        matchAs: undefined
+        meta: {}
+        name: "home"
+        parent: undefined
+        path: ""
+        props: {}
+        redirect: undefined
+        regex: /^(?:\/(?=$))?$/i
+    }
+]
+meta: {}
+name: "home"
+params: {}
+path: "/"
+query: {}
 
 
 
