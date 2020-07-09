@@ -1,3 +1,12 @@
+106.14.34.26
+
+106.14.34.26
+
+
+106.14.34.26
+
+
+
 
 
 
@@ -65,6 +74,74 @@
 
 
 
+state
+mutations
+actions
+getters
+
+modules
+plugins
+strict
+
+
+
+commit 
+dispatch
+replaceState
+watch
+
+
+
+mapState
+mapActions
+mapGetters
+mapMutations
+createNamespacedHelpers
+
+
+
+state:{
+
+}
+
+
+vuex.Store()
+
+state
+mutations
+actions
+
+
+
+new Vue.Store({
+    state: {
+        count: 1
+    },
+    getters: {
+        count: function (state) {
+            return state.count
+        }
+    },
+    mutations: {
+        add: function (state, payload) {
+            state.count++
+        }
+    },
+    actions: {
+        sub: function (context, payload) {}
+    },
+    modules: {
+        A: {
+            state: function () {},
+            getters: function () {},
+            mutions: function () {},
+            actions: function () {}
+
+        }
+    }
+})
+
+this.$store.getters.count
 
 
 
@@ -72,4 +149,21 @@
 
 
 
+state
+rootState
+getters
+rootGetters
+commit
+dispatch
 
+mapState
+mapGetters
+mapActions
+mapMutations
+createNamespaceHelpers
+
+
+
+
+commit
+dispatch
