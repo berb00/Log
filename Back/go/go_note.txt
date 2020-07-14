@@ -169,7 +169,8 @@
         go get -u -v github.com/kardianos/govendor
 
 
-
+#、格式化所有go文件代码格式
+    find ./ -name "*.go" | xargs gofmt -w
 
 
 解决Git :fatal: refusing to merge unrelated histories(两个分支是两个不同的版本，具有不同的提交历史)
@@ -177,6 +178,7 @@
 
 
 后台运行go nohup ./main &
+
 
 
 

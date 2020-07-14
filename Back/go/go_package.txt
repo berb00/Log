@@ -1,5 +1,147 @@
+archive/tar             //                                         
+archive/zip             //                                         
+bufio                   //                                     
+builtin                 //                                     
+bytes                   // 实现了操作[]byte的常用函数。本包的函数和strings包的函数相当类似。                                                        
+compress/bzip2          // bzip2包实现bzip2的解压缩。                                            
+compress/flate          // flate包实现了deflate压缩数据格式，参见RFC 1951。gzip包和zlib包实现了对基于deflate的文件格式的访问。                                            
+compress/gzip           // gzip包实现了gzip格式压缩文件的读写                                            
+compress/lzw            // lzw包实现了用于GIF、TIFF、PDF文件的lzw压缩格式，这是一种最长达到12位的变长码，头两个非字面码为clear和EOF码。                                            
+compress/zlib           // zlib包实现了对zlib格式压缩数据的读写,提供了在读取时解压和写入时压缩的滤镜                                            
+container/heap          // heap包提供了对任意类型（实现了heap.Interface接口）的堆操作。（最小）堆是具有“每个节点都是以其为根的子树中最小值”属性的树。树的最小元素为其根元素，索引0的位置。                                            
+container/list          // list包实现了双向链表。                                            
+container/ring          // ring实现了环形链表的操作。                                            
+context                 //                                     
+crypto                  // crypto包搜集了常用的密码（算法）常量。                                    
+crypto/aes              // aes包实现了AES加密算法                                        
+crypto/cipher           // cipher包实现了多个标准的用于包装底层块加密算法的加密算法实现                                            
+crypto/des              // des包实现了DES标准和TDEA算法，                                        
+crypto/dsa              // dsa包实现FIPS 186-3定义的数字签名算法（Digital Signature Algorithm），即DSA算法。                                        
+crypto/ecdsa            // ecdsa包实现了椭圆曲线数字签名算法                                            
+crypto/elliptic         // elliptic包实现了几条覆盖素数有限域的标准椭圆曲线。                                            
+crypto/hmac             // hmac包实现了HMAC（加密哈希信息认证码）。HMAC是使用key标记信息的加密hash。接收者使用相同的key逆运算来认证hash。                                        
+crypto/md5              // md5包实现了MD5哈希算法                                        
+crypto/rand             // rand包实现了用于加解密的更安全的随机数生成器。                                        
+crypto/rc4              // rc4包实现了RC4加密算法，                                        
+crypto/rsa              // rsa包实现了PKCS#1规定的RSA加密算法。                                        
+crypto/sha1             // sha1包实现了SHA1哈希算法                                        
+crypto/sha256           // sha256包实现了SHA224和SHA256哈希算法                                            
+crypto/sha512           // sha512包实现了SHA384和SHA512哈希算法                                            
+crypto/subtle           //                                             
+crypto/tls              // tls包实现了TLS 1.2                                        
+crypto/x509             // x509包解析X.509编码的证书和密钥。                                        
+crypto/x509/pkix        // pkix包提供了共享的、低层次的结构体，用于ASN.1解析和X.509证书、CRL、OCSP的序列化。                                                
+database/sql            // sql包提供了保证SQL或类SQL数据库的泛用接口。使用sql包时必须注入（至少）一个数据库驱动                                            
+database/sql/driver     // driver包定义了应被数据库驱动实现的接口，这些接口会被sql包使用。绝大多数代码应使用sql包。                                                
+debug/dwarf             //                                         
+debug/elf               //                                         
+debug/gosym             //                                         
+debug/macho             //                                         
+debug/pe                //                                         
+debug/plan9obj          //                                             
+encoding                // encoding包定义了供其它包使用的可以将数据在字节水平和文本表示之间转换的接口。encoding/gob、encoding/json、encoding/xml三个包都会检查使用这些接口。                                        
+encoding/ascii85        // ascii85包实现了ascii85数据编码（5个ascii字符表示4个字节），该编码用于btoa工具和Adobe的PostScript语言和PDF文档格式。                                                
+encoding/asn1           // asn1包实现了DER编码的ASN.1数据结构的解析                                            
+encoding/base32         // base32包实现了RFC 4648规定的base32编码。                                            
+encoding/base64         // base64实现了RFC 4648规定的base64编码。                                            
+encoding/binary         // binary包实现了简单的数字与字节序列的转换以及变长值的编解码。                                            
+encoding/csv            // csv读写逗号分隔值（csv）的文件。                                            
+encoding/gob            // gob包管理gob流——在编码器（发送器）和解码器（接受器）之间交换的binary值。一般用于传递远端程序调用（RPC）的参数和结果，如net/rpc包就有提供。                                            
+encoding/hex            // hex包实现了16进制字符表示的编解码。                                            
+encoding/json           // json包实现了json对象的编解码                                            
+encoding/pem            // pem包实现了PEM数据编码（源自保密增强邮件协议）。目前PEM编码主要用于TLS密钥和证书。                                            
+encoding/xml            //                                             
+errors                  // errors包实现了创建错误值的函数。                                    
+expvar                  // expvar包提供了公共变量的标准接口，如服务的操作计数器。本包通过HTTP在/debug/vars位置以JSON格式导出了这些变量。                                    
+flag                    // flag包实现了命令行参数的解析。                                    
+fmt                     // fmt包实现了类似C语言printf和scanf的格式化I/O。格式化动作（'verb'）源自C语言但更简单。                                
+go/ast                  //                                     
+go/build                //                                         
+go/constant             //                                         
+go/doc                  // doc包从Go的AST提取源码文档。                                    
+go/format               //                                         
+go/importer             //                                         
+go/parser               //                                         
+go/printer              //                                         
+go/scanner              //                                         
+go/token                //                                         
+go/types                //                                         
+hash                    // hash包提供hash函数的接口。                                    
+hash/adler32            // adler32包实现了Adler-32校验和算法                                            
+hash/crc32              // crc32包实现了32位循环冗余校验（CRC-32）的校验和算法                                        
+hash/crc64              //                                         
+hash/fnv                // fnv包实现了FNV-1和FNV-1a（非加密hash函数）                                        
+html                    // html包提供了用于转义和解转义HTML文本的函数。                                    
+html/template           // template包（html/template）实现了数据驱动的模板，用于生成可对抗代码注入的安全HTML输出。本包提供了和text/template包相同的接口，无论何时当输出是HTML的时候都应使用本包。                                            
+image                   // image实现了基本的2D图片库。基本接口叫作Image。图片的色彩定义在image/color包。                                    
+image/color             // color包实现了基本色彩库。                                        
+image/color/palette     // palette包提供了标准的调色板。                                                
+image/draw              // draw包提供了图像合成函数。                                        
+image/gif               // gif包实现了gif文件的编码器和解码器。                                        
+image/jpeg              // jpeg包实现了jpeg格式图像的编解码  JPEG格式参见: http://www.w3.org/Graphics/JPEG/itu-t81.pdf                                        
+image/png               // png包实现了PNG图像的编解码。PNG格式参见：http://www.w3.org/TR/PNG/                                        
+index/suffixarray       // suffixarrayb包通过使用内存中的后缀树实现了对数级时间消耗的子字符串搜索。                                                
+io                      // io包提供了对I/O原语的基本接口。本包的基本任务是包装这些原语已有的实现（如os包里的原语），使之成为共享的公共接口，这些公共接口抽象出了泛用的函数并附加了一些相关的原语的操作。                                
+io/ioutil               // ioutil包实现了一些I/O实用程序函数。                                        
+log                     // log包实现了简单的日志服务。本包定义了Logger类型，该类型提供了一些格式化输出的方法。                                
+log/syslog              // syslog 包提供一个简单的系统日志服务的接口。                                        
+math                    // math包提供了基本的数学常数和数学函数。                                    
+math/big                // big包实现了大数字的多精度计算。                                        
+math/cmplx              // cmplx包提供了复数的常用常数和常用函数。                                        
+math/rand               // rand包实现了伪随机数生成器。                                        
+mime                    // mime实现了MIME的部分规定。                                    
+mime/multipart          // multipart实现了MIME的multipart解析，该实现适用于HTTP（RFC 2388）和常见浏览器生成的multipart主体。                                            
+mime/quotedprintable    //                                                     
+net                     // net包提供了可移植的网络I/O接口，包括TCP/IP、UDP、域名解析和Unix域socket。                                
+net/http                // http包提供了HTTP客户端和服务端的实现。                                        
+net/http/cgi            // cgi包实现了CGI（Common Gateway Interface，公共网关协议）                                            
+net/http/cookiejar      // cookiejar包实现了保管在内存中的符合RFC 6265标准的http.CookieJar接口。                                                
+net/http/fcgi           // fcgi包实现了FastCGI协议。目前只支持响应器的角色。                                            
+net/http/httptest       // httptest包提供了HTTP测试的常用函数。                                                
+net/http/httptrace      // httptrace包提供了跟踪HTTP客户端请求中事件的机制。                                                
+net/http/httputil       // httputil包提供了HTTP公用函数，是对net/http包的更常见函数的补充。                                                
+net/http/pprof          // pprof包通过它的HTTP服务端提供pprof可视化工具期望格式的运行时剖面文件数据服务。                                            
+net/mail                // mail包实现了邮件的解析。                                        
+net/rpc                 // rpc包提供了通过网络或其他I/O连接对一个对象的导出方法的访问。                                    
+net/rpc/jsonrpc         // jsonrpc包实现了JSON-RPC的ClientCodec和ServerCodec接口，可用于rpc包。                                            
+net/smtp                // smtp包实现了简单邮件传输协议（SMTP）                                        
+net/textproto           // textproto实现了对基于文本的请求/回复协议的一般性支持，包括HTTP、NNTP和SMTP。                                            
+net/url                 // url包解析URL并实现了查询的逸码                                    
+os                      // os包提供了操作系统函数的不依赖平台的接口。设计为Unix风格的，虽然错误处理是go风格的；失败的调用会返回错误值而非错误码。通常错误值里包含更多信息。                                
+os/exec                 // exec包执行外部命令。它包装了os.StartProcess函数以便更容易的修正输入和输出，使用管道连接I/O，以及作其它的一些调整。                                    
+os/signal               // signal包实现了对输入信号的访问。                                        
+os/user                 // user包允许通过名称或ID查询用户帐户。                                    
+path                    // path实现了对斜杠分隔的路径的实用操作函数。                                    
+path/filepath           // filepath包实现了兼容各操作系统的文件路径的实用操作函数。                                            
+plugin                  // plugin包实现Go插件的加载和符号解析。                                    
+reflect                 // reflect包实现了运行时反射，允许程序操作任意类型的对象。典型用法是用静态类型interface{}保存一个值，通过调用TypeOf获取其动态类型信息，该函数返回一个Type类型值。                                    
+regexp                  // regexp包实现了正则表达式搜索。正则表达式采用RE2语法（除了\c、\C），和Perl、Python等语言的正则基本一致。                                    
+regexp/syntax           //                                             
+runtime                 // runtime包提供和go运行时环境的互操作，如控制go程的函数。它也包括用于reflect包的低层次类型信息；参见reflect报的文档获取运行时类型系统的可编程接口。                                    
+runtime/cgo             // cgo 包含有 cgo 工具生成的代码的运行时支持。 使用cgo来查看关于cgo命令的详情。                                        
+runtime/debug           // debug包包含程序在运行时自行调试的功能。                                            
+runtime/pprof           // pprof包以pprof可视化工具期望的格式书写运行时剖面数据。                                            
+runtime/race            // race包实现了数据竞争检测逻辑。没有提供公共接口。                                            
+runtime/trace           //                                             
+sort                    // sort包提供了排序切片和用户自定义数据集的函数。                                    
+strconv                 // strconv包实现了基本数据类型和其字符串表示的相互转换。                                    
+strings                 // strings包实现了用于操作字符的简单函数。                                    
+sync                    // sync包提供了基本的同步基元，如互斥锁。除了Once和WaitGroup类型，大部分都是适用于低水平程序线程，高水平的同步使用channel通信更好一些。                                    
+sync/atomic             // atomic包提供了底层的原子级内存操作，对于同步算法的实现很有用。                                        
+syscall                 //                                     
+testing                 // testing 提供对 Go 包的自动化测试的支持。                                    
+testing/iotest          // iotest包实现了主要用于测试的读取器和编写器。                                            
+testing/quick           // quick包实现实用程序功能，以帮助进行黑盒测试。                                            
+text/scanner            // scanner包提供对utf-8文本的token扫描服务。它会从一个io.Reader获取utf-8文本，通过对Scan方法的重复调用获取一个个token。                                            
+text/tabwriter          // tabwriter包实现了写入过滤器（tabwriter.Writer），可以将输入的缩进修正为正确的对齐文本。                                            
+text/template           // template包实现了数据驱动的用于生成文本输出的模板。                                            
+text/template/parse     // parse包为由text/template和html/template定义的模板构建解析树。                                                
+time                    // time包提供了时间的显示和测量用的函数。日历的计算采用的是公历。                                    
+unicode                 // unicode包提供数据和函数来测试unicode代码点的某些属性。                                    
+unicode/utf16           // utf16包实现了UTF-16序列的编解码。                                            
+unicode/utf8            // utf8包实现了对utf-8文本的常用函数和常数的支持，包括rune和utf-8编码byte序列之间互相翻译的函数。                                            
+unsafe                  // unsafe包提供了一些跳过go语言类型安全限制的操作。                                    
 
 
 
 
-github.com/tidwall/gjson

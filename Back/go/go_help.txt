@@ -5,28 +5,29 @@ Usage:
         go <command> [arguments]
 
 The commands are:
-
         run         compile and run Go program
         build       compile packages and dependencies
-        clean       remove object files and cached files
-        fmt         gofmt (reformat) package sources
 
         get         add dependencies to current module and install them
-        install     compile and install packages and dependencies      
+        install     compile and install packages and dependencies
+        fix         update packages to use new APIs
+
+        clean       remove object files and cached files
+        fmt         gofmt (reformat) package sources
         list        list packages or modules
         mod         module maintenance
 
-        bug         start a bug report
         doc         show documentation for package or symbol
         env         print Go environment information
-        fix         update packages to use new APIs
+        version     print Go version
 
-        version     print Go version      
-        generate    generate Go files by processing source
         test        test packages
-
-        tool        run specified go tool
+        bug         start a bug report
         vet         report likely mistakes in packages
+
+        generate    generate Go files by processing source
+        tool        run specified go tool
+
 
 Use "go help <command>" for more information about a command.
 
