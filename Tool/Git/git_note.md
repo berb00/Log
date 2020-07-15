@@ -200,7 +200,7 @@
     FETCH_HEAD  
     HEAD    
     index        
-    ORIG_HEAD  
+    ORIG_HEAD
     packed-refs  
 
 
@@ -209,7 +209,8 @@ Git pull 强制覆盖本地文件
     git fetch --all  
     git reset --hard origin/master 
     git pull
-
+#、删除远程分支
+git push origin master --delete
 
 
 

@@ -11,11 +11,11 @@ The commands are:
         get         add dependencies to current module and install them
         install     compile and install packages and dependencies
         fix         update packages to use new APIs
+        list        list packages or modules
+        mod         module maintenance
 
         clean       remove object files and cached files
         fmt         gofmt (reformat) package sources
-        list        list packages or modules
-        mod         module maintenance
 
         doc         show documentation for package or symbol
         env         print Go environment information

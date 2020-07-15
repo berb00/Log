@@ -1,25 +1,37 @@
+shanghaiwuye_renew_web
+上海物业 App 企业版
+http://git.omniview.pro/housing/shanghaiwuye_renew/shanghaiwuye_renew_web.git
 
 
-#############################################################################################
-#、站点定位功能
-#、站点访问日志查询
+shanghaiwuye_mp
+微信公众号
+http://git.omniview.pro/housing/shanghaiwuye_renew/shanghaiwuye_mp.git
 
-
-
-#############################################################################################
-
-#、解决index.sh脚本sed报错问题
-
-#、在阿里云centos上基于docker、gogs搭建自有Git仓库
-
-
+shanghaiwuyezhengwu_web
+上海物业政务 App Web 版
+http://git.omniview.pro/housing/shanghaiwuyezhengwu/shanghaiwuyezhengwu_web.git
 
 
 
+18019207737
+111111a
+Zh9999
 
 
+数据存储不能使用cookie 需调用原生方法
 
+common.js
+    测试/生产切换
+        var ROOT_URL
+        var NEW_IMAGE_ROOT_URL
+        var NEW_PDF_ROOT_URL
+        var NEW_PDF_URL
+    
+    getTokenComplete
 
+actionHandler.js
+    newPage()       // 页面跳转
+    
 
-
-
+下拉刷新插件
+    minirefresh.min.js
