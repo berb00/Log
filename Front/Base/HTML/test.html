@@ -102,6 +102,2140 @@ wrap.addEventListener('click', function () {
 })
 
 
+
+
+function newPage(value, params,flag1) {
+ //忘记密码
+var routes = {
+    "forget_psw_verify.html": {
+      "url": "forget_psw/forget_psw_verify.html" + params,
+      "title": "忘记密码"
+    },
+    "forget.html": {
+      "url": "forget_psw/forget.html?"+params,
+      "title": "忘记密码",
+      "action":"finish"   //关闭前一个页面
+    }
+
+}
+var path = value
+var route = routes[path]
+if(route){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", route,
+    "");
+  } else {
+    window.location.href = route.url;
+  }
+}
+
+
+
+if(value=="forget.html"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "forget_psw/forget.html?"+params,
+        "title": "忘记密码",
+        "action":"finish"   //关闭前一个页面
+      },
+      "");
+    } else {
+      window.location.href = "forget.html?"+params;
+
+    }
+    return;
+  }
+
+
+  if(value == 'register'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "register/register_verify.html",
+        "title": "注册业主"
+      },
+      "");
+    } else {
+      window.location.href = "register/register_verify.html";
+    }
+    return;
+  }else if(value == 'register_psw'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "register/register.html?"+params,
+        "title": "注册业主",
+        "action":"finish"   //关闭前一个页面
+      },
+      "");
+    } else {
+      window.location.href = "register.html?"+params;
+    }
+    return;
+  }
+
+  if(value=="register/protocol.html"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "register/protocol.html",
+        "title": "《上海物业用户协议》"
+      },
+      "");
+    } else {
+      window.location.href = "protocol.html";
+    }
+    return;
+  }
+
+ /* if(value == 'login_sendcode.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "login/login_sendcode.html?"+params,
+        "title": "登录发送验证码"
+      },
+      "");
+    } else {
+      window.location.href = "login_sendcode.html?"+params;
+    }
+    return;
+  }*/
+//无token
+  //console.log(USER_TOKEN)
+  if(!flag1){
+    if(!USER_TOKEN){
+      showLogin();
+      return;
+    }
+  }else{
+
+  }
+  /* if(!USER_TOKEN){
+      showLogin();
+      return;
+  } */
+
+  if(value == 'register/codeAndSubmit.html'){
+     if (window.BKBridge) {
+          window.BKBridge.Call("new_page", {
+            "url": "register/codeAndSubmit.html?"+params,
+            "title": "注册业主"
+          },
+          "");
+      } else {
+        window.location.href = "codeAndSubmit.html?"+params;
+      }
+  }else if(value == 'baoxiushouli'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "maintail-feedback/list.html?type=new",
+        "title": "报修受理"
+      },
+      "");
+    } else {
+      window.location.href = "maintail-feedback/list.html?type=new";
+    }
+  }else if(value == 'maintail-feedback/detail.html'){
+      // 这里 可能需要变换 title
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "maintail-feedback/detail.html?"+params,
+        "title": "报修详情"  //报修受理-详情
+      },
+      "");
+    } else {
+      window.location.href = "detail.html?"+params;
+    }
+  }else if(value == 'tousushouli'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "complain-feedback/list.html",
+        "title": "物业投诉"  // 投诉受理
+      },
+      "");
+    } else {
+      window.location.href = "complain-feedback/list.html";
+    }
+  }else if(value == 'complain-feedback/detail.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "complain-feedback/detail.html?"+params,
+        "title": "投诉详情" //投诉受理-详情
+      },
+      "");
+    } else {
+      window.location.href = "detail.html?"+params;
+    }
+  }else if(value == 'wuyeweixiu'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-maintail/list.html?type=new",
+        "title": "物业维修"
+      },
+      "");
+    } else {
+      window.location.href = "property-maintail/list.html?type=new";
+    }
+  }else if(value == 'property-maintail/detail.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-maintail/detail.html?"+params,
+        "title": "物业维修详情"
+      },
+      "");
+    } else {
+      window.location.href = "detail.html?"+params;
+    }
+  }else if(value == 'property-maintail/add.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-maintail/add.html",
+        "title": "新增物业维修"
+      },
+      "");
+    } else {
+      window.location.href = "add.html";
+    }
+  }else if(value =='property-maintail/address.html'){
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "property-complain/address.html?"+params,
+        //  "url": "property-maintail/address.html?"+params,  //共用一个地址
+         "title": "选择报修地址"  //物业维修-新增-选择房屋
+       },
+       "");
+     } else {
+       window.location.href = "address.html?"+params;
+     }
+  }else if(value =='property-maintail/phone.html'){
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "property-maintail/phone.html?",
+         "title": "输入手机号码"
+       },
+       "");
+     } else {
+       window.location.href = "phone.html?";
+     }
+  }else if(value =='property-maintail/part.html'){
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "property-maintail/part.html?"+params,
+         "title": "选择报修部位"  //物业维修-选择部位
+       },
+       "");
+     } else {
+       window.location.href = "part.html?"+params;
+     }
+  }else if(value == 'wuyetousu'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-complain/list.html?type=new",
+        "title": "物业投诉"
+      },
+      "");
+    } else {
+      window.location.href = "property-complain/list.html?type=new";
+    }
+  }else if(value =='property-complain/add.html'){
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "property-complain/add.html?"+params,
+         "title": "投诉详情"  //物业投诉-新增
+       },
+       "");
+     } else {
+       window.location.href = "add.html?"+params;
+     }
+  }else if(value =='property-complain/address.html'){
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "property-complain/address.html?"+params,
+         "title": "选择投诉地址"  //物业投诉-新增-选择房屋
+       },
+       "");
+     } else {
+       window.location.href = "address.html?"+params;
+     }
+  }else if(value =='property-complain/phone.html'){
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "property-complain/phone.html?",
+         "title": "输入手机号码" //物业投诉-新增-改手机号
+       },
+       "");
+     } else {
+       window.location.href = "phone.html?";
+     }
+  }else if(value =='property-complain/detail.html'){
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "property-complain/detail.html?"+params,
+         "title": "投诉详情"   //物业投诉-详情
+       },
+       "");
+     } else {
+       window.location.href = "detail.html?"+params;
+     }
+  }else if(value == 'wuyejiaofei'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "pay_fee/search.html",
+        "title": "物业交费"
+      },
+      "");
+    } else {
+      window.location.href = "pay_fee/search.html";
+    }
+  }
+  // 白蚁防治上报
+  else if (value == 'baiyishangbao') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/add.html?"+params,
+        "title": "白蚁上报"
+      },
+        "");
+    } else {
+      window.location.href = "terminate-report/add.html?"+params;
+    }
+  }else if (value == 'terminate-report/add.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/add.html?"+params,
+        "title": "白蚁上报"
+      },
+        "");
+    } else {
+      window.location.href = "add.html?"+params;
+    }
+  }else if (value == 'terminate-report/list.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/list.html?type=new",
+        "title": "白蚁上报列表",
+        "action":"finish"
+      },
+        "");
+    } else {
+      window.location.href = "list.html?type=new";
+    }
+  }else if (value == 'terminate-report/edit.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/edit.html?"+params,
+        "title": "白蚁上报"
+      },
+        "");
+    } else {
+      window.location.href = "edit.html?"+params;
+    }
+  }else if (value == 'terminate-report/detail.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/detail.html?"+params,
+        "title": "白蚁上报单"
+      },
+        "");
+    } else {
+      window.location.href = "detail.html?"+params;
+    }
+  }
+  /* else if (value == 'terminate-report/add-house.html') {//白蚁上报地址选择页
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/add-house.html?"+params,
+        "title": "上报地址"
+      },
+        "");
+    } else {
+      window.location.href = "add-house.html?"+params;
+    }
+  } */else if (value == 'terminate-report/sect-list.html') {//行政区
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/sect-list.html?"+params,
+        "title": "行政区"
+      },
+        "");
+    } else {
+      window.location.href = "sect-list.html?"+params;
+    }
+  }else if (value == 'terminate-report/unit-list.html') {//镇(街道)
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/unit-list.html?"+params,
+        "title": "镇(街道)"
+      },
+        "");
+    } else {
+      window.location.href = "unit-list.html?"+params;
+    }
+  }else if (value == 'terminate-report/street-list.html') {//路(新村)
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/street-list.html?"+params,
+        "title": "路(新村)"
+      },
+        "");
+    } else {
+      window.location.href = "street-list.html?"+params;
+    }
+  }else if (value == 'terminate-report/alley-list.html') {//弄(支弄)
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/alley-list.html?"+params,
+        "title": "弄(支弄)"
+      },
+        "");
+    } else {
+      window.location.href = "alley-list.html?"+params;
+    }
+  }else if (value == 'terminate-report/number-list.html') {//号
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "terminate-report/number-list.html?"+params,
+        "title": "号"
+      },
+        "");
+    } else {
+      window.location.href = "number-list.html?"+params;
+    }
+  }
+
+  else if(value =='property_report/add-house.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property_report/add-house.html?"+params,
+        "title": "选择房屋"
+      },
+      "");
+    } else {
+      window.location.href = "add-house.html?"+params;
+    }
+ }else if (value == 'property-report/list.html') {
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "property-report/list.html?"+params,
+      "title": "上报记录",
+      "action":"finish"
+    },
+      "");
+  } else {
+    window.location.href = "list.html?"+params;
+  }
+}else if (value == 'property-report/detail.html') {
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "property-report/detail.html?"+params,
+      "title": "违建报送详情"
+    },
+      "");
+  } else {
+    window.location.href = "detail.html?"+params;
+  }
+}
+  else if (value == 'property-report/add-illegal.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/add-illegal.html?"+params,
+        "title": "违建报送"
+      },
+        "");
+    } else {
+      window.location.href = "add-illegal.html?"+params;
+    }
+  }else if (value == 'weijianbaosong') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/add-illegal.html?"+params,
+        "title": "违建上报"
+      },
+        "");
+    } else {
+      window.location.href = "property-report/add-illegal.html?"+params;
+    }
+  }else if (value == 'property-report/add-house.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/add-house.html?"+params,
+        "title": "选择房屋"
+      },
+        "");
+    } else {
+      window.location.href = "add-house.html?"+params;
+    }
+  }else if(value == 'property-report/sect-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/sect-list.html",
+        "title": "选择小区"
+      },
+      "");
+    } else {
+      window.location.href = "sect-list.html";
+    }
+  }else if(value == 'property-report/unit-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/unit-list.html?"+params,
+        "title": "选择门牌号码"
+      },
+      "");
+    } else {
+      window.location.href = "unit-list.html?"+params;
+    }
+  }else if(value == 'property-report/door-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/door-list.html?"+params,
+        "title": "选择楼层室号"
+      },
+      "");
+    } else {
+      window.location.href = "door-list.html?"+params;
+    }
+  }else if (value == 'backWJBS') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/add-illegal.html?"+params,
+        "title": "违建报送"
+      },
+        "");
+    } else {
+      window.location.href = "add-illegal.html?"+params;
+    }
+  }else if (value == 'property-report/selc-item.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/selc-item.html?"+params,
+        "title": "选择报送事项"
+      },
+        "");
+    } else {
+      window.location.href = "selc-item.html?"+params;
+    }
+  }else if (value == 'property-report/name.html') {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "property-report/name.html",
+        "title": "输入业主姓名"
+      },
+        "");
+    } else {
+      window.location.href = "name.html";
+    }
+  }else if(value =='role-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "role_list.html",
+        "title": "选择身份"  //选择角色
+      },
+      "");
+    } else {
+      window.location.href = "role_list.html";
+    }
+  }else if(value =='setting.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "setting.html",
+        "title": "设置"
+      },
+      "");
+    } else {
+      window.location.href = "setting.html";
+    }
+  }
+
+  if(value == 'my-house/myHouse-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "my-house/myHouse-list.html",
+        "title": "我的房屋"
+      },
+      "");
+    } else {
+      window.location.href = "my-house/myHouse-list.html";
+    }
+  }else if(value == "myHouse-list"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "my-house/myHouse-list.html",
+        "title": "我的房屋"
+      },
+      "");
+    } else {
+      window.location.href = "myHouse-list.html";
+    }
+  }else if(value == 'back-myHouse-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "my-house/myHouse-list.html?"+params,
+        "title": "我的房屋",
+        "action":"finish",
+      },
+      "");
+    } else {
+      window.location.href = "myHouse-list.html?"+params;
+    }
+  }else if(value == 'my-house/add-house.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "my-house/add-house.html?"+params,
+        "title": "新增房屋"
+      },
+      "");
+    } else {
+      window.location.href = "add-house.html?"+params;
+    }
+  }else if(value == 'my-house/sect-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "my-house/sect-list.html",
+        "title": "选择小区"
+      },
+      "");
+    } else {
+      window.location.href = "sect-list.html";
+    }
+  }else if(value == 'my-house/unit-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "my-house/unit-list.html?"+params,
+        "title": "选择门牌号码"
+      },
+      "");
+    } else {
+      window.location.href = "unit-list.html?"+params;
+    }
+  }else if(value == 'my-house/door-list.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "my-house/door-list.html?"+params,
+        "title": "选择楼层室号"
+      },
+      "");
+    } else {
+      window.location.href = "door-list.html?"+params;
+    }
+  }else if(value == 'person'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "person.html",
+        "title": "个人中心"
+      },
+      "");
+    } else {
+      window.location.href = "person.html";
+    }
+  }else if(value == 'info.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "info.html?"+params,
+        "title": "个人信息"
+
+      },
+      "");
+    } else {
+      window.location.href = "info.html?"+params;
+    }
+  }else if(value == 'info-change.html'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "info-change.html?"+params,
+        "title": "修改个人信息"
+      },
+      "");
+    } else {
+      window.location.href = "info-change.html?"+params;
+    }
+  }
+  else if(value == 'xinxibaosong'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "information-report/theme_list.html?type=new",
+        "title": "信息报送"  //-主题列表
+      },
+      "");
+    } else {
+      window.location.href = "information-report/theme_list.html?type=new";
+    }
+  }else if(value == 'information-report/communitys_list.html'){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "information-report/communitys_list.html?"+params,
+        "title": "上报小区" //信息报送-小区列表
+      },
+      "");
+    } else {
+      window.location.href = "communitys_list.html?"+params;
+    }
+  }else if(value == 'information-report/index_list.html'){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "information-report/index_list.html?"+params,
+        "title": "信息上报"  //信息报送-指标详情
+      },
+      "");
+    } else {
+      window.location.href = "index_list.html?"+params;
+    }
+  }else if(value == 'xiaoqugonggao'){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community_bulletin/search.html",
+        "title": "小区公告"
+      },
+      "");
+    } else {
+      window.location.href = "community_bulletin/search.html";
+    }
+  }else if(value == 'bulletin_list.html'){
+    if (window.BKBridge) {
+        var sary = params.split("=");
+        var temptitle = sary[sary.length-1];
+        window.BKBridge.Call("new_page", {
+            "url": "community_bulletin/bulletin_list.html?"+params,
+            "title": temptitle
+      },
+      "");
+    } else {
+      window.location.href = "bulletin_list.html?"+params;
+    }
+  }else if(value == 'bulletin_detail.html'){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community_bulletin/bulletin_detail.html?"+params,
+        "title": "小区公告"
+      },
+      "");
+    } else {
+      window.location.href = "bulletin_detail.html?"+params;
+    }
+  }else if(value == 'wuqixinxi'){
+    // 物企信息
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+            "url": "property/search.html",
+            "title": "物企信息"
+        },
+        "");
+    } else {
+      window.location.href = "property/search.html";
+    }
+  }else if(value=="property-detail.html"){
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "property/detail.html?"+params,
+                "title": "物业企业详情"
+            },
+            "");
+    } else {
+        window.location.href = "detail.html?"+params;
+    }
+}else if(value == 'zhaoBiaoXinXi'){
+    // 招标信息
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "bidding_information/list.html?"+params,
+                "title": "招标信息"
+            },
+            "");
+    } else {
+        window.location.href = "bidding_information/list.html?"+params;
+    }
+  }else if(value=="zhengcefagui"){
+    ////todo 政策法规 type=0
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "notice/list.html?type=0",
+                "title": "政策法规"
+            },
+            "");
+    } else {
+        window.location.href = "notice/list.html?type=0";
+    }
+}else if(value=="notice-detail.html"){ // 法规详情
+    var sary = params.split("=");
+    var temptitle = sary[sary.length-1];
+    //console.log("temptitle:"+temptitle);
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "notice/detail.html?"+params,
+                "title": temptitle
+            },
+            "");
+    } else {
+        window.location.href = "detail.html?"+params;
+    }
+}else if(value=="wenjiantongzhi"){
+    ////todo 文件通知  type=1
+    //addModelTime(1)
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "notice/list.html?type=1",
+                "title": "文件通知"
+            },
+            "");
+    } else {
+        window.location.href = "notice/list.html?type=1";
+    }
+}else if(value=="gongzuotongzhi"){
+    //todo 工作通知  type=3
+    //addModelTime(2)
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "notice/list.html?type=3",
+                "title": "工作通知"
+            },
+            "");
+    } else {
+        window.location.href = "notice/list.html?type=3";
+    }
+}else if(value=="dianxinganli"){
+    ////todo 典型案例
+    //addModelTime(3)
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "study/list.html?type=1",
+                "title": "典型案例"
+            },
+            "");
+    } else {
+        window.location.href = "study/list.html?type=1";
+    }
+}else if(value=="study-detail.html"){
+    var sary = params.split("=");
+    var ptype = sary[sary.length - 1];
+    if(ptype.length>10){
+        ptype=ptype.substring(0,10);
+    }
+
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "study/detail.html?"+params,
+                "title": ptype
+            },
+            "");
+    } else {
+        window.location.href = "detail.html?"+params;
+    }
+}else if(value == "gonggongfuwu"){
+    // 公共服务
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "public_service/list_info.html",
+        "title": "公共服务"
+      },
+      "");
+    } else {
+      window.location.href = "public_service/list_info.html";
+    }
+}else if(value=="ggfwxq"){
+    ////todo 公共服务详情页面
+    if (window.BKBridge) {
+        var sary = params.split("=");
+        var temptitle = sary[sary.length-1];
+        window.BKBridge.Call("new_page", {
+          "url": "public_service/detail_info.html?"+params,
+          "title": temptitle
+        },
+        "");
+    } else {
+    window.location.href = "detail_info.html?"+params;
+    }
+}else if(value=="ggfw-gas"){
+    ////todo 公共服务 燃气服务内容页面
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "public_service/public_gas.html",
+          "title": '燃气行业服务内容'
+        },
+        "");
+    } else {
+    window.location.href = "public_gas.html";
+    }
+}else if(value=="gas-content"){
+    ////todo 具体燃气内容详情页面
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "public_service/gas_content.html?"+params,
+          "title": '燃气行业服务内容'
+        },
+        "");
+    } else {
+    window.location.href = "gas_content.html?"+params;
+    }
+}else if(value=="weixiuqiye"){
+    ////维修企业
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "maintenance_firm/firm_list.html",
+          "title": '维修企业'
+        },
+        "");
+    } else {
+    window.location.href = "maintenance_firm/firm_list.html";
+    }
+}else if(value=="baiyifangzhi"){
+    ////白蚁防治
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "termite_prevent/prevent_list.html",
+          "title": '白蚁防治'
+        },
+        "");
+    } else {
+    window.location.href = "termite_prevent/prevent_list.html";
+    }
+}else if(value=="wuyezhishi"){
+    ////物业知识
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "property_know/knowledge_list.html",
+          "title": '物业知识'
+        },
+        "");
+    } else {
+    window.location.href = "property_know/knowledge_list.html";
+    }
+}else if(value=="property_know/knowledge_list.html"){
+    ////物业知识 - 文章标题列表页面
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "property_know/title_list.html?"+params,
+          "title": '物业知识'
+        },
+        "");
+    } else {
+    window.location.href = "title_list.html?"+params;
+    }
+}else if(value=="property_know/article_detail.html"){
+    ////物业知识 - 文章详情页面
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "property_know/article_detail.html?"+params,
+          "title": '物业知识'
+        },
+        "");
+    } else {
+    window.location.href = "article_detail.html?"+params;
+    }
+// }else if(value=="credit_file/credit_index.html"){
+}else if(value=="xinyongdangan"){
+    ////信用档案 首页
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "credit_file/credit_index.html?"+params,
+          "title": '信用档案'
+        },
+        "");
+    } else {
+    window.location.href = "credit_file/credit_index.html?"+params;
+    }
+}else if(value=="shangbaoxinxi"){
+  ////上报信息 主题列表
+  if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "report_information/theme_list.html?"+params,
+        "title": '上报信息'
+      },
+      "");
+  } else {
+  window.location.href = "report_information/theme_list.html?"+params;
+  }
+}else if(value == 'report_information/communitys_list.html'){
+
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "report_information/communitys_list.html?"+params,
+      "title": "上报小区" //信息报送-小区列表
+    },
+    "");
+  } else {
+    window.location.href = "communitys_list.html?"+params;
+  }
+}else if(value == 'report_information/index_list.html'){
+
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "report_information/index_list.html?"+params,
+      "title": "上报信息详情"  //信息报送-指标详情
+    },
+    "");
+  } else {
+    window.location.href = "index_list.html?"+params;
+  }
+}else if(value == "duchaxinxi"){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/menu.html?type=new",
+      "title": "督查信息"
+    },
+    "");
+  } else {
+    window.location.href = "inspector_info/menu.html?type=new";
+  }
+}else if(value == "inspector_info/self_search.html"){
+  // 小区自查 列表页
+  if (window.BKBridge) {
+    var sary = params.split("=");
+    var temptitle = sary[sary.length-1];
+    var title1 = '';
+    switch(temptitle){
+      case '86':title1 = '小区自查';break;
+      case '85':title1 = '物业双周查';break;
+      case '93':title1 = '房办月查';break;
+    }
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/self/self_search.html?"+params,
+      "title": title1
+    },
+    "");
+  } else {
+    window.location.href = "self/self_search.html?"+params;
+  }
+}else if(value == "backSelfSearch"){
+  // 小区自查 列表页
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/self/self_search.html?"+params,
+      "title": "小区自查"
+    },
+    "");
+  } else {
+    window.location.href = "self_search.html?"+params;
+  }
+}else if(value == "inspector_info/self_search_community"){
+  // 小区自查 小区列表页 检查单小区
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/self/self_search_community.html",
+      "title": "小区列表"
+    },
+    "");
+  } else {
+    window.location.href = "self_search_community.html";
+  }
+}else if(value == "inspector_info/self_search_community2"){
+    // 小区自查 小区列表页  整改单小区
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "inspector_info/self/self_search_community2.html",
+        "title": "小区列表"
+      },
+      "");
+    } else {
+      window.location.href = "self_search_community.html";
+    }
+  }else if(value == "inspector_info_self-check_detail.html"){
+
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/self/inspector_info_self-check_detail.html?"+params,
+      "title": "检查单"   //自查整改-检查页面
+    },
+    "");
+  } else {
+    window.location.href = "inspector_info_self-check_detail.html?"+params;
+  }
+}else if(value == "inspector_info_self-check_detail_rec.html"){
+
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/self/inspector_info_self-check_detail.html?"+params,
+      "title": "整改单"   //自查整改-整改页面
+    },
+    "");
+  } else {
+    window.location.href = "inspector_info_self-check_detail.html?"+params;
+  }
+}else if(value == "inspector_info/main"){ // 日常专项重点
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/main/self_search.html?"+params,
+      "title": '日常、专项和重点督查'
+    },
+    "");
+  } else {
+    window.location.href = "main/self_search.html?"+params;
+  }
+}else if(value == "inspector_info_main_detail.html"){
+
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/main/inspector_info_self-check_detail.html?"+params,
+      "title": "检查单"   //日常专项-检查页面
+    },
+    "");
+  } else {
+    window.location.href = "inspector_info_self-check_detail.html?"+params;
+  }
+}else if(value == "inspector_info_main_detail_rec.html"){
+
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/main/inspector_info_self-check_detail.html?"+params,
+      "title": "整改单"   //日常专项-整改页面
+    },
+    "");
+  } else {
+    window.location.href = "inspector_info_self-check_detail.html?"+params;
+  }
+}else if(value == "inspector_info/main_search_community"){
+  // richang 小区列表页 检查单小区
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/main/self_search_community.html",
+      "title": "小区列表"
+    },
+    "");
+  } else {
+    window.location.href = "self_search_community.html";
+  }
+}else if(value == "backMainSearch"){
+  // 小区自查 列表页
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "inspector_info/main/self_search.html?"+params,
+      "title": "日常、专项和重点督查"
+    },
+    "");
+  } else {
+    window.location.href = "self_search.html?"+params;
+  }
+}
+// yulan
+else if(value=="property_inspector-preview.html"){
+    if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+                "url": "inspector_info/self/preview.html",
+                "title": "整改单预览"
+            },
+            "");
+    } else {
+        window.location.href = "preview.html";
+    }
+}  //property_inspector-preview_main.html
+else if(value=="property_inspector-preview_main.html"){
+  if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+              "url": "inspector_info/main/preview.html",
+              "title": "整改单预览"
+          },
+          "");
+  } else {
+      window.location.href = "preview.html";
+  }
+} else if(value=="zaixianxuexi"){
+  ////在线学习 列表页
+  if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "study_online/list.html?"+params,
+        "title": '在线学习'
+      },
+      "");
+  } else {
+  window.location.href = "study_online/list.html?"+params;
+  }
+}else if(value=="study_online-detail.html"){
+  if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+              "url": "study_online/detail.html?"+params,
+              "title": "在线学习"
+          },
+          "");
+  } else {
+      window.location.href = "detail.html?"+params;
+  }
+}
+/* else if(value=="community_info.html"){//小区查询-小区总数-小区信息入口
+    if (window.BKBridge) {
+      var sary = params.split("=");
+      var temptitle = sary[sary.length-1];
+      window.BKBridge.Call("new_page", {
+        "url": "community/community_info.html?"+params,
+        "title": temptitle
+      },
+      "");
+    } else {
+      window.location.href = "community_info.html?"+params;
+    }
+  } */
+else if(value == "wuyeszc"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "double_week_inspect/community_list.html",
+        "title": "物业双周查"
+      },
+      "");
+    } else {
+      window.location.href = "double_week_inspect/community_list.html";
+    }
+  }else if(value == "double_week_inspect/inputDetail.html"){
+      if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "double_week_inspect/inputDetail.html?"+params,
+          "title": "双周查情况录入"
+        },
+        "");
+      } else {
+        window.location.href = "inputDetail.html?"+params;
+      }
+  }else if(value == "shuangzhouchazgsh"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "double_week_inspect_check/community_by_manager_id.html",
+        "title": "双周查整改审核"
+      },
+      "");
+    } else {
+      window.location.href = "double_week_inspect_check/community_by_manager_id.html";
+    }
+  }else if(value == "double_week_inspect_check/rectification_list.html"){
+
+      if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "double_week_inspect_check/rectification_list.html?"+params,
+          "title": "双周查整改审核"
+        },
+        "");
+      } else {
+        window.location.href = "rectification_list.html?"+params;
+      }
+  }else if(value == "double_week_inspect_check/rectification_detail.html"){
+
+      if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "double_week_inspect_check/rectification_detail.html?"+params,
+          "title": "双周查整改单详情"
+        },
+        "");
+      } else {
+        window.location.href = "rectification_detail.html?"+params;
+      }
+  }else if(value == 'double_week_inspect_check/rectification_index_detail.html'){
+
+      if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "double_week_inspect_check/rectification_index_detail.html?"+params,
+          "title": "双周查整改审核-指标详情"
+        },
+        "");
+      } else {
+        window.location.href = "rectification_index_detail.html?"+params;
+      }
+  }
+  
+  else if(value == "wuqiduchazgsh"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification_inspect_check/community_by_manager_id.html?type=new",
+        "title": "督查整改审核"
+      },
+      "");
+    } else {
+      window.location.href = "rectification_inspect_check/community_by_manager_id.html?type=new";
+    }
+  }else if(value == "rectification_inspect_check/rectification_list.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification_inspect_check/rectification_list.html?"+params,
+        "title": "督查整改审核"
+      },
+      "");
+    } else {
+      window.location.href = "rectification_list.html?"+params;
+    }
+}else if(value == "rectification_inspect_check/rectification_detail.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification_inspect_check/rectification_detail.html?"+params,
+        "title": "督查整改单详情"
+      },
+      "");
+    } else {
+      window.location.href = "rectification_detail.html?"+params;
+    }
+}else if(value == 'rectification_inspect_check/rectification_index_detail.html'){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification_inspect_check/rectification_index_detail.html?"+params,
+        "title": "督查整改单详情"
+      },
+      "");
+    } else {
+      window.location.href = "rectification_index_detail.html?"+params;
+    }
+}
+  
+  
+  
+  else if(value == "self/community_by_manager_id.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/self/community_by_manager_id.html",
+        "title": "自查整改"
+      },
+      "");
+    } else {
+      window.location.href = "self/community_by_manager_id.html";
+    }
+  }else if(value == "rectification/self/rectification_list.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/self/rectification_list.html?"+params,
+        "title": "自查整改"   //自查整改-小区列表
+      },
+      "");
+    } else {
+      window.location.href = "rectification_list.html?"+params;
+    }
+  }else if(value == "rectification/self/inputDetail.html"){
+
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "rectification/self/inputDetail.html?"+params,
+         "title": "整改详情" //自查整改-整改详情
+       },
+       "");
+     } else {
+       window.location.href = "inputDetail.html?"+params;
+     }
+  }else if(value == "double_week/community_by_manager_id.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/double_week/community_by_manager_id.html",
+        "title": "双周查整改"
+      },
+      "");
+    } else {
+      window.location.href = "double_week/community_by_manager_id.html";
+    }
+  }else if(value == "rectification/double_week/rectification_list.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/double_week/rectification_list.html?"+params,
+        "title": "双周查整改"  //整改管理列表
+      },
+      "");
+    } else {
+      window.location.href = "rectification_list.html?"+params;
+    }
+  }else if(value == "rectification/double_week/inputDetail.html"){
+
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "rectification/double_week/inputDetail.html?"+params,
+         "title": "整改详情"   //双周查整改
+       },
+       "");
+     } else {
+       window.location.href = "inputDetail.html?"+params;
+     }
+  }else if(value == "month/community_by_manager_id.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/month/community_by_manager_id.html",
+        "title": "月查整改"
+      },
+      "");
+    } else {
+      window.location.href = "month/community_by_manager_id.html";
+    }
+  }else if(value == "rectification/month/rectification_list.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/month/rectification_list.html?"+params,
+        "title": "月查整改"  //-小区列表
+      },
+      "");
+    } else {
+      window.location.href = "rectification_list.html?"+params;
+    }
+  }else if(value == "rectification/month/inputDetail.html"){
+
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "rectification/month/inputDetail.html?"+params,
+         "title": "整改详情"  //月查整改
+       },
+       "");
+     } else {
+       window.location.href = "inputDetail.html?"+params;
+     }
+  }else if(value == "main/community_by_manager_id.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/main/community_list.html?type=new",
+        "title": "日常、专项、重点督查整改"
+      },
+      "");
+    } else {
+      window.location.href = "main/community_list.html?type=new";
+    }
+  }else if(value == "rectification/main/rectification_list.html"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/main/rectification_list.html?"+params,
+        "title": "日常、专项、重点督查整改"  //-小区列表
+      },
+      "");
+    } else {
+      window.location.href = "rectification_list.html?"+params;
+    }
+  }else if(value == "rectification/main/inputDetail.html"){
+
+     if (window.BKBridge) {
+       window.BKBridge.Call("new_page", {
+         "url": "rectification/main/inputDetail.html?"+params,
+         "title": "整改详情"  //日常、专项、重点督查整改
+       },
+       "");
+     } else {
+       window.location.href = "inputDetail.html?"+params;
+     }
+  }else if(value == "duchazhengai"){
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "rectification/menu.html?type=new",
+        "title": "督查整改"
+      },
+      "");
+    } else {
+      window.location.href = "rectification/menu.html?type=new";
+    }
+  }else if(value == "xiaoquzicha") {
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "self_inspection/community_list.html",
+        "title": "小区自查"
+      },
+      "");
+    } else {
+      window.location.href = "self_inspection/community_list.html";
+    }
+   }else if(value == "self_inspection/inputDetail.html"){
+
+      if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "self_inspection/inputDetail.html?"+params,
+          "title":"自查详情"
+        },
+        "");
+      } else {
+        window.location.href = "inputDetail.html?"+params;
+      }
+   }else if(value == "gongGongShouYi") {
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "public_benefits/search.html",
+        "title": "公共收益"
+      },
+      "");
+    } else {
+      window.location.href = "public_benefits/search.html";
+    }
+  }else if(value == "weiXiuZijin") {
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "maintenance_funds/search.html",
+        "title": "维修资金",
+      },
+      "");
+    } else {
+      window.location.href = "maintenance_funds/search.html";
+    }
+  }else if(value == 'maintenance_info.html'){//维修资金-小区维修资金账目信息
+    if (window.BKBridge) {
+      var sary = params.split("=");
+      var temptitle = sary[sary.length-1];
+      window.BKBridge.Call("new_page", {
+        "url": "maintenance_funds/maintenance_info.html?"+params,
+        // "title": "小区维修资金账目信息"
+        "title": temptitle
+      },
+      "");
+    } else {
+      window.location.href = "maintenance_info.html?"+params;
+    }
+
+  }else if(value == 'add_return.html'){//维修资金-小区增值回报
+    if (window.BKBridge) {
+      var sary = params.split("=");
+      window.BKBridge.Call("new_page", {
+        "url": "maintenance_funds/add_return.html?"+params,
+        "title": '小区增值回报'
+      },
+      "");
+    } else {
+      window.location.href = "add_return.html?"+params;
+    }
+  }else if(value == 'maintenance_funds/verifyArea.html'){//验证房屋面积
+      if (window.BKBridge) {
+        window.BKBridge.Call("new_page", {
+          "url": "maintenance_funds/verifyArea.html?"+params,
+          "title": "验证房屋面积"
+        },
+        "");
+    } else {
+        window.location.href = "verifyArea.html?"+params;
+    }
+  }
+  else if(value =='areaToMyfunds'){//从验证面积跳转到我的维修资金详情,多传action:finish
+    if (window.BKBridge) {
+        var sary = params.split("=");
+        var temptitle = sary[sary.length-1];
+        window.BKBridge.Call("new_page", {
+          "url": "maintenance_funds/my_funds.html?"+params,
+          "title": "我的维修资金",
+          "action":"finish",
+        },
+        "");
+    } else {
+        window.location.href = "my_funds.html?"+params;
+    }
+  }else if(value == 'maintenance_funds/my_funds.html'){
+    if (window.BKBridge) {
+        var sary = params.split("=");
+        var temptitle = sary[sary.length-1];
+        window.BKBridge.Call("new_page", {
+          "url": "maintenance_funds/my_funds.html?"+params,
+          "title": "我的维修资金"
+        },
+        "");
+    } else {
+        window.location.href = "my_funds.html?"+params;
+    }
+  }else if(value == 'maintenance_funds/my_funds_detail.html'){
+    if (window.BKBridge) {
+        var sary = params.split("=");
+        var temptitle = sary[sary.length-1];
+        window.BKBridge.Call("new_page", {
+          "url": "maintenance_funds/my_funds_detail.html?"+params,
+          "title": "本次支取具体情况"
+        },
+        "");
+    } else {
+        window.location.href = "my_funds_detail.html?"+params;
+    }
+  }else if(value=="xiaoquchaxun"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/search.html",
+        "title": "小区信息"
+      },
+      "");
+    } else {
+      window.location.href = "community/search.html";
+    }
+  }else if(value=="community_info.html"){//小区查询-小区总数-小区信息入口
+    if (window.BKBridge) {
+      var sary = params.split("=");
+      var temptitle = sary[sary.length-1];
+      window.BKBridge.Call("new_page", {
+        "url": "community/community_info.html?"+params,
+        "title": temptitle
+      },
+      "");
+    } else {
+      window.location.href = "community_info.html?"+params;
+    }
+  }else if(value=="community-list.html"){//小区查询
+
+    var sary = params.split("=");
+    var tempNumber = sary[sary.length-1];
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/list.html?"+params,
+        "title": "小区名单("+tempNumber+")"
+      },
+      "");
+    } else {
+      window.location.href = "list.html?"+params;
+    }
+  }else if(value=="community-community_info.html"){//小区查询
+
+    var sary = params.split("=");
+    var ptype = sary[sary.length - 1];
+    if(ptype.length>10){
+      ptype=ptype.substring(0,10);
+    }
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/community_info.html?"+params,
+        "title": ptype
+      },
+      "");
+    } else {
+      window.location.href = "community_info.html?"+params;
+    }
+  }else if(value=="community_basic_info.html"){//小区查询
+
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/community_basic_info.html?"+params,
+        "title": "小区基本信息"
+      },
+      "");
+    } else {
+      window.location.href = "community_basic_info.html?"+params;
+    }
+  }else if(value=="property_info.html"){//小区查询
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/property_info.html?"+params,
+        "title": "物业服务企业信息"
+      },
+      "");
+    } else {
+      window.location.href = "property_info.html?"+params;
+    }
+  }else if(value=="management_office.html"){//小区查询
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/management_office.html?"+params,
+        "title": "小区管理处信息"
+      },
+      "");
+    } else {
+      window.location.href = "management_office.html?"+params;
+    }
+  }else if(value=="owners_congress.html"){//小区查询
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/owners_congress.html?"+params,
+        "title": "业主大会及业委会信息"
+      },
+      "");
+    } else {
+      window.location.href = "owners_congress.html?"+params;
+    }
+  }else if(value=="maintenance_funds.html"){//小区查询
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "maintenance_funds/maintenance_funds.html?"+params,
+        "title": "小区维修资金"
+        // "title": "小区维修资金账目信息"
+      },
+      "");
+    } else {
+      window.location.href = "maintenance_funds.html?"+params;
+    }
+  }else if(value=="public_benefits.html"){//小区查询
+    if (window.BKBridge) {
+      var sary = params.split("=");
+      var temptitle = sary[sary.length-1];
+      window.BKBridge.Call("new_page", {
+        "url": "public_benefits/public_benefits.html?"+params,
+        // "title": "小区公共收益"
+        "title": temptitle
+      },
+      "");
+    } else {
+      window.location.href = "public_benefits.html?"+params;
+    }
+  }else if(value=="dianZiJieCunDan"){//电子结存单
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "electronic_certificate/search.html?"+params,
+        "title": "我的房屋"
+      },
+      "");
+    } else {
+      window.location.href = "electronic_certificate/search.html?"+params;
+    }
+  }else if(value=="electronic_certificate/verifyArea"){//电子结存单
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "electronic_certificate/verifyArea.html?"+params,
+        "title": "房屋面积验证",
+        "action":"finish" 
+      },
+      "");
+    } else {
+      window.location.href = "verifyArea.html?"+params;
+    }
+  }else if(value=="date_list.html"){//电子结存单--时间
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "electronic_certificate/date_list.html?"+params,
+        "title": "时间列表"
+      },
+      "");
+    } else {
+      window.location.href = "date_list.html?"+params;
+    }
+  }else if(value=="show_pdf.html"){//电子结存单--详情
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "electronic_certificate/show_pdf.html?"+params,
+        "title": "电子结存单"
+      },
+      "");
+    } else {
+      window.location.href = "show_pdf.html?"+params;
+    }
+  }else if(value=="ec_detail.html"){//电子结存单--详情
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "electronic_certificate/ec_detail.html?"+params,
+        "title": "电子结存单"
+      },
+      "");
+    } else {
+      window.location.href = "ec_detail.html?"+params;
+    }
+  }
+  
+  else if(value=="user-change_pw.html"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "change_pw.html",
+        "title": "重置密码"
+      },
+      "");
+    } else {
+      window.location.href = "change_pw.html";
+    }
+  }else if(value=="user-about.html"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "about.html",
+        "title": "关于我们"
+      },
+      "");
+    } else {
+      window.location.href = "about.html";
+    }
+  }else if(value=="user-qr.html"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "qr.html",
+        "title": "APP二维码"
+      },
+      "");
+    } else {
+      window.location.href = "qr.html";
+    }
+  }
+
+
+  //11个合同的部分
+  if(value=="concat/funds_mng_old.html"){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/concat/funds_mng_old.html?"+params,
+        "title": "专项维修资金管理规约"
+      },"");
+    } else {
+      window.location.href = "concat/funds_mng_old.html?"+params;
+    }
+  }else if(value == "concat/funds_mng_new.html"){
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/funds_mng_new.html?"+params,
+        "title": "专项维修资金管理规约"
+      },"")
+    } else {
+      window.location.href = "concat/funds_mng_new.html?"+params;
+    }
+  }else if(value == "concat/mng_old.html"){ //业主临时管理规约  旧版（临时+管理） 102  02
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/mng_old.html?"+params,
+        "title": "业主管理规约"
+      },"")
+    } else {
+      window.location.href = "concat/mng_old.html?"+params;
+    }
+  }else if(value == "concat/temp_mng_new.html"){ //业主管理规约  临时新版 101
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/temp_mng_new.html?"+params,
+        "title": "业主临时管理规约"
+      },"")
+    } else {
+      window.location.href = "concat/temp_mng_new.html?"+params;
+    }
+  }else if(value == "concat/mng_new.html"){ //业主管理规约 新版 01
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/mng_new.html?"+params,
+        "title": "业主管理规约"
+      },"")
+    } else {
+      window.location.href = "concat/mng_new.html?"+params;
+    }
+  }else if (value == "concat/service_previous.html") { //物业服务合同  前期 新版 02
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "community/concat/service_previous.html?" + params,
+        "title": "物业服务合同"
+      }, "")
+    } else {
+      window.location.href = "concat/service_previous.html?" + params;
+    }
+  }else if(value == "concat/service_new.html"){ //物业服务合同  物业 新版 01
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/service_new.html?"+params,
+        "title": "物业服务合同"
+      },"")
+    } else {
+      window.location.href = "concat/service_new.html?"+params;
+    }
+  }else if(value == "concat/service_entrust.html"){ //物业服务合同 旧版-委托协议 03
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/service_entrust.html?"+params,
+        "title": "物业服务合同"
+      },"")
+    } else {
+      window.location.href = "concat/service_entrust.html?"+params;
+    }
+  }else if(value =="concat/discuss_new.html"){
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/discuss_new.html?"+params,
+        "title": "业主大会议事规则" //新版
+      },"")
+    } else {
+      window.location.href = "concat/discuss_new.html?"+params;
+    }
+  }else if(value == 'concat/discuss_old.html'){
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"community/concat/discuss_old.html?"+params,
+        "title": "业主大会议事规则" //旧版
+      },"")
+    } else {
+      window.location.href = "concat/discuss_old.html?"+params;
+    }
+  }else if(value == 'gaozhuishangbao'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "highfall-report/add_report.html?"+params,
+        "title": "高坠上报"  //高坠上报-新增
+      },
+      "");
+    } else {
+      window.location.href = "highfall-report/add_report.html?"+params;
+    }
+   /*  if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"highfall-report/index_list.html?type=new",
+        "title": "高坠上报"
+      },"")
+    } else {
+      window.location.href = "highfall-report/index_list.html?type=new";
+    } */
+  // }else if(value =='highfall-report/add_report.html'){
+  }else if(value =='highfall-report/index_list.html'){
+    if(window.BKBridge){
+      window.BKBridge.Call("new_page",{
+        "url":"highfall-report/index_list.html?type=new",
+        "title": "上报记录"
+      },"")
+    } else {
+      window.location.href = "index_list.html?type=new";
+    }
+    /* if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "highfall-report/add_report.html?"+params,
+        "title": "高坠上报"  //高坠上报-新增
+      },
+      "");
+    } else {
+      window.location.href = "add_report.html?"+params;
+    }  */
+ }else if(value == 'gaozhuishangbao-detail'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "highfall-report/add_report.html?"+params,
+      "title": "高坠上报"  //高坠上报-新增
+    },
+    "");
+  } else {
+    window.location.href = "add_report.html?"+params;
+  }
+}else if (value == 'highfall-report/add-house.html') {
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "highfall-report/add-house.html?"+params,
+      "title": "选择房屋"
+    },
+      "");
+  } else {
+    window.location.href = "add-house.html?"+params;
+  }
+}else if (value == 'backGZSB') {
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "highfall-report/add_report.html?"+params,
+      "title": "高坠上报"
+    },
+      "");
+  } else {
+    window.location.href = "add_report.html?"+params;
+  }
+}
+/*  else if(value =='highfall-report/selectCommunity.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "highfall-report/selectCommunity.html",
+      "title": "小区列表"  //高坠上报-小区列表
+    },
+    "");
+  } else {
+    window.location.href = "selectCommunity.html";
+  }
+} */else if(value =='highfall-report/threatType.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "highfall-report/threatType.html?"+params,
+      "title": "选择隐患类型"
+    },
+    "");
+  } else {
+    window.location.href = "threatType.html?"+params;
+  }
+} else if(value == 'diantikunren'){
+  if(window.BKBridge){
+    window.BKBridge.Call("new_page",{
+      "url":"elevator_tiring/list.html?type=new",
+      "title": "电梯困人"
+    },"")
+  } else {
+    window.location.href = "elevator_tiring/list.html?type=new";
+  }
+} else if(value == 'zhifaliandong'){
+    if (window.BKBridge) {
+      window.BKBridge.Call("new_page", {
+        "url": "enforce_law/enforce_handle.html?type=new&"+params,
+        "title": "执法联动"  //执法联动-
+      },
+      "");
+    } else {
+      window.location.href = "enforce_law/enforce_handle.html?type=new&"+params;
+    }
+}else if(value == 'kaijuzhenggaidan'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/rectification_add.html?"+params,
+      "title": "开具整改单"  //开具整改单-
+    },
+    "");
+  } else {
+    window.location.href = "rectification_add.html?"+params;
+  }
+}else if(value == 'enforce_law/rectification_list.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/rectification_list.html?type=new&"+params,
+      "title": "整改单记录",  //整改单记录
+      "action":"finish"
+    },
+    "");
+  } else {
+    window.location.href = "rectification_list.html?type=new&"+params;
+  }
+}else if(value == 'enforce_law/rectification_edit.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/rectification_edit.html?"+params,
+      "title": "开具整改单"  //开具整改单-
+    },
+    "");
+  } else {
+    window.location.href = "rectification_edit.html?"+params;
+  }
+}else if(value == 'enforce_law/rectification_detail.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/rectification_detail.html?"+params,
+      "title": "开具整改单"
+    },
+    "");
+  } else {
+    window.location.href = "rectification_detail.html?"+params;
+  }
+}else if (value == 'enforce_law/sect-list.html') {
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/sect-list.html?"+params,
+      "title": "选择小区"
+    },
+      "");
+  } else {
+    window.location.href = "sect-list.html?"+params;
+  }
+}else if (value == 'enforce_law/unit-list.html') {
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/unit-list.html?"+params,
+      "title": "选择门牌号码"
+    },
+      "");
+  } else {
+    window.location.href = "unit-list.html?"+params;
+  }
+}else if (value == 'enforce_law/door-list.html') {
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/door-list.html?"+params,
+      "title": "选择楼层室号"
+    },
+      "");
+  } else {
+    window.location.href = "door-list.html?"+params;
+  }
+}
+else if(value == 'violate-recfication-report.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report/violate-recfication-report.html?"+params,
+      "title": "整改单预览"  //-
+    },
+    "");
+  } else {
+    window.location.href = "report/violate-recfication-report.html?"+params;
+  }
+}else if(value == 'report/illegal-report.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report/illegal-report.html?"+params,
+      "title": "报告单预览" 
+    },
+    "");
+  } else {
+    window.location.href = "report/illegal-report.html?"+params;
+  }
+}else if(value == 'report/damage-report.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report/damage-report.html?"+params,
+      "title": "报告单预览" 
+    },
+    "");
+  } else {
+    window.location.href = "report/damage-report.html?"+params;
+  }
+}else if(value == 'report/destroy-report.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report/destroy-report.html?"+params,
+      "title": "报告单预览" 
+    },
+    "");
+  } else {
+    window.location.href = "report/destroy-report.html?"+params;
+  }
+}else if(value == 'report/private-report.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report/private-report.html?"+params,
+      "title": "报告单预览" 
+    },
+    "");
+  } else {
+    window.location.href = "report/private-report.html?"+params;
+  }
+}else if(value == 'report/violate-report.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report/violate-report.html?"+params,
+      "title": "报告单预览" 
+    },
+    "");
+  } else {
+    window.location.href = "report/violate-report.html?"+params;
+  }
+}else if(value == 'enforce_law-report/illegal_report_list.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/illegal_report_list.html?type=new&"+params,
+      "title": "违规事项报告单"  //违规事项报告单
+    },
+    "");
+  } else {
+    window.location.href = "illegal_report_list.html?type=new&"+params;
+  }
+}
+else if(value == 'enforce_law/illegal_report_add.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/illegal_report_add.html?"+params,
+      "title": "违规事项报告单"  //违规事项报告单
+    },
+    "");
+  } else {
+    window.location.href = "illegal_report_add.html?"+params;
+  }
+}else if(value == 'enforce_law-report/supplement_list.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/supplement_list.html?type=new&"+params,
+      "title": "补充要件"  //补充要件
+    },
+    "");
+  } else {
+    window.location.href = "supplement_list.html?type=new&"+params;
+  }
+}else if(value == 'enforce_law/supplement_add.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/supplement_add.html?"+params,
+      "title": "补充要件报告单"  //补充要件报告单
+    },
+    "");
+  } else {
+    window.location.href = "supplement_add.html?"+params;
+  }
+}else if(value == 'enforce_law-report/report_record_list.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report_record_list.html?type=new&"+params,
+      "title": "上报记录"  //上报记录列表
+    },
+    "");
+  } else {
+    window.location.href = "report_record_list.html?type=new&"+params;
+  }
+}else if(value == 'enforce_law/report_record_detail.html'){
+  if (window.BKBridge) {
+    window.BKBridge.Call("new_page", {
+      "url": "enforce_law/report_record_detail.html?type=new&"+params,
+      "title": "违规事项报告单"  //违规事项报告单
+    },
+    "");
+  } else {
+    window.location.href = "report_record_detail.html?type=new&"+params;
+  }
+}
+
+}
+
+
 </script>
 
 </body>

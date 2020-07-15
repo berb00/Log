@@ -28,10 +28,12 @@ common.js
         var NEW_PDF_URL
     
     getTokenComplete
-
+    getUserToken()  // 从原生缓存获取用户token
 actionHandler.js
     newPage()       // 页面跳转
-    
-
+    set_shared_data()   // 设置原生缓存数据
+    get_shared_dataO()  // 获取原生缓存数据
 下拉刷新插件
     minirefresh.min.js
+    自己封装downPull.js
+spin.min.js         // loading 插件
