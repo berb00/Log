@@ -24,6 +24,9 @@
         https://github.com/30-seconds/30-seconds-of-code.git
         https://github.com/dashnowords/blogs.git
 
+    #TypeScript
+        https://github.com/zhongsp/TypeScript.git
+
     #Vue
         https://github.com/bailicangdu/vue2-elm.git
         https://github.com/canfoo/self-vue.git
