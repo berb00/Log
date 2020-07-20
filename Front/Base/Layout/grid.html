@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .wrapper {
+		display: grid;
+		grid-template-columns: [col1-start] 100px  [col2-start] 100px  [col3-start] 100px [col3-end];
+		grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
+  	    grid-gap: 10px;
+		color: #fff;
+	}
+    .a {
+		grid-column: col1-start / col3-start;
+		grid-row: row1-start ;
+    	background:orchid;
+	}
+	.b {
+		grid-column: col3-start ;
+		grid-row: row1-start / row2-end;
+    	background:orange;
+	}
+	.c {
+		grid-column: col1-start;
+		grid-row: row2-start ;
+   		background:blue;
+	}
+	.d {
+		grid-column: col2-start ;
+		grid-row: row2-start ;
+   		background:lightcoral;
+	}
+	.box {
+		border-radius: 5px;
+		padding: 60px;
+		font-size: 24px;
+	}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+        <div class="box d">D</div>
+      </div>
+</body>
+</html>

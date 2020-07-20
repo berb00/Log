@@ -63,7 +63,7 @@
         git branch branchname                                 // 新建分支
         git branch -d branchname                              // 删除分支
         git branch -D branchname                              // 强制删除  
-        git branch -d -r branchname                           // 删除远程分支并推送
+        git branch -d -r origin/branchname                    // 删除远程分支并推送
         git push origin:branchname                            // 删除分支后推送
         git branch -m oldbranchname newbranchname             // 重命名本地分支
 
