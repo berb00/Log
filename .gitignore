@@ -10,8 +10,8 @@ node_modules
 
 # 忽略当前路径下的logs目录，包含logs下的所有子目录和文件
 logs/
-# 忽略根目录下的test.txt文件  无法忽略index.txt文件
-/test.txt
+# 忽略根目录下的index.txt文件
+/index.txt
 # 忽略tmp目录下的.txt文件
 tmp/*.txt
 
