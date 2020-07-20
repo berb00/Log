@@ -36,6 +36,14 @@
         https://github.com/webpack-china/awesome-webpack-cn.git
         https://github.com/christianalfoni/webpack-express-boilerplate.git
 
+    #UI
+        https://github.com/PanJiaChen/vue-element-admin.git
+        https://github.com/PanJiaChen/vue-admin-template.git        // Base template
+        https://github.com/PanJiaChen/electron-vue-admin.git        // Desktop
+        https://github.com/Armour/vue-typescript-admin-template.git // Typescript
+
+        https://github.com/iview/iview-admin.git
+
     #other
         https://github.com/dt-fe/weekly.git
         https://github.com/mrdoob/three.js.git
