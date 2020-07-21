@@ -42,7 +42,8 @@
         https://github.com/PanJiaChen/electron-vue-admin.git        // Desktop
         https://github.com/Armour/vue-typescript-admin-template.git // Typescript
 
-        https://github.com/iview/iview-admin.git
+        https://github.com/vueComponent/ant-design-vue.git
+        https://github.com/ant-design/ant-design.git
 
     #other
         https://github.com/dt-fe/weekly.git
