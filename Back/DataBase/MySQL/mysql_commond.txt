@@ -116,7 +116,7 @@ DQL:
 #############################################################################################
     #、SELECT完整语句:
         SELECT  执行第三步
-            id,sex,age,                              // 查询的字段列表 *:查询所有字段
+            id,sex,age,                                     // 查询的字段列表 *:查询所有字段
             GROUP_COUNT(username),              
             COUNT(*) AS totalUser,                          // AS alias_name    为查询的字段起别名
             MAX(age) AS max_age,                            // 字段值不加引号
@@ -128,10 +128,10 @@ DQL:
             ORDER BY age DESC                               // 对二次筛选结果按照某字段进行排序
             LIMIT 0,2;                                      // 进行分页限制每页出现记录条数
         FROM    执行第一步
-            tablename                                   // 查询的表名           
+            tablename                                       // 查询的表名           
         WHERE   执行第二步   
             筛选条件            
-            id>1                                        // 条件-第一次筛选
+            id>1                                            // 条件-第一次筛选
 
     #、基础查询
         查询常量、表达式、函数
