@@ -10,19 +10,19 @@ DDL:
 #############################################################################################
     DATABASE
         #、查看当前服务器下的数据库列表 
-            SHOW {DATABASES|SCHEMAS}
+            SHOW {DATABASES|SCHEMAS};
         #、查看指定数据库的定义方式
-            SHOW CREATE {DATABASE|SCHEMA} db_name
-
+            SHOW CREATE {DATABASE|SCHEMA} db_name;
         #、创建数据库
-            CREATE {DATABASE|SCHEMA}[IF NOT EXISTS] db_name [[DEFAULT] CHARACTER SET [=] charset_name]
+            CREATE {DATABASE|SCHEMA}[IF NOT EXISTS] db_name [[DEFAULT] CHARACTER SET [=] charset_name];
         #、删除指定数据库
             DROP {DATABASE|SCHEMA} [IF EXISTS] db_name;
-
         #、修改指定数据库的编码方式
-            ALTER {DATABASE|SCHEMA} dn_name [DEFAULT] CHARACTER SET [=] charset_name
+            ALTER {DATABASE|SCHEMA} dn_name [DEFAULT] CHARACTER SET [=] charset_name;
         #、打开指定数据库
-            USE db_name
+            USE db_name;
+        #、查看当前打开的数据库
+            SELECT DATABASE();
 
     TABLE
         #、查看数据表及表结构
@@ -77,7 +77,10 @@ DDL:
             ALTER TABLE tbl_name ENGINE=存储引擎名
         #、设置自增长步长
             ALTER TABLE tbl_name AUTO_INREMENT=值
-
+        #、查看表结构
+            DESC tablename;
+            DESCRIBE tablename;
+            SHOW COLUMNS FROM tablename;
 
 
 DML:
@@ -507,42 +510,44 @@ DCL:
 Other
 #############################################################################################
     SELECT VERSION(), CURRENT_DATE;                                 显示版本号和当前日期
-    SELECT NOW();
-    SELECT USER();
     SELECT VERSION();                                               显示当前版本
     SELECT NOW();                                                   显示当前日期时间
     SELECT USER();                                                  显示当前用户
     SELECT DATABASE();                                              显示当前打开的数据库名称
+    SELECT version(),current_date;                                  显示当前mysql版本和当前日期
+    SELECT * from <tablename>;                                      显示表中的记录
 
     SHOW WARNINGS;                                                  查看上一步操作产生的警告
-    show databases;                                                 显示数据库
-    show tables;                                                    当前数据库包含的表信息
+    SHOW databases;                                                 显示数据库
+    SHOW tables;                                                    当前数据库包含的表信息
+    SHOW columns from <tablename>;                                  获取表结构
+    SHOW global variables like 'port';                              查看mysql服务端口
+    SHOW variables like 'port';                                     查看mysql服务端口
+    SHOW variables like 'have%';                                    查看支持的存储引擎信息
+    SHOW variables like 'storage_engine';                           查看默认的存储引擎
+    SHOW variables like 'skip_networking';                          查看skip-networking参数
+    SHOW ENGINES;                                                   查看各类引擎 表格显示
+    SHOW ENGINES\G;                                                 查看各类引擎 行显示
 
-    create database name;                                           创建数据库
-    create table <tablename>;                                       创建数据表
-    drop database <databasename>;                                   删除数据库
-    drop table <tablename>;                                         删除数据表
-    use databasename;                                               选择数据库
-    drop database name;                                             直接删除数据库，不提醒
+    CREATE database name;                                           创建数据库
+    CREATE table <tablename>;                                       创建数据表
+
+    DROP database <databasename>;                                   删除数据库
+    DROP table <tablename>;                                         删除数据表
+    DROP database name;                                             直接删除数据库，不提醒
+
     mysqladmin drop databasename;                                   删除数据库前，有提示
-    describe <tablename>;                                           显示具体的表结构(表的列信息)
-    show columns from <tablename>;                                  获取表结构
-    select version(),current_date;                                  显示当前mysql版本和当前日期
+    DESCRIBE <tablename>;                                           显示具体的表结构(表的列信息)
+    USE databasename;                                               选择数据库
     flush privileges;                                               刷新数据库
 
-    delete from <tablename>;                                        将表中记录清空：
-    select * from <tablename>;                                      显示表中的记录：
-
-    show global variables like 'port';                              查看mysql服务端口
-    show variables like 'port';                                     查看mysql服务端口
-    show variables like 'skip_networking';                          查看skip-networking参数
+    DELETE from <tablename>;                                        将表中记录清空：
     systemctl restart mysqld;                                       重启mysql
     service mysqld restart;                                         重启mysql
     flush privileges;                                               刷新MySQL的系统权限相关表
-
-    show global variables like 'port';                              查看mysql端口
     mysqld --verbose --help |grep -A 1 'Default options';           查看mysql配置文件路径
-
+    HELP keyword                                                    查看帮助文档
+    ? keyword                                                       查看帮助文档
 
 
 

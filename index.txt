@@ -1,16 +1,24 @@
-run 
-build
-get
-install
-list
-mod
-fix
-fmt
-clean
-doc
-env
-version
-generate
-tool
-bug
-vet
+
+
+（1）计算机与网络知识，考试时间为150分钟，笔试，选择题；
+
+（2）网络系统设计与管理，考试时间为150分钟，笔试，问答题。
+
+
+
+
+# 创建用户表user
+CREATE TABLE IF NOT EXISTS user (
+    id SMALLINT UNSIGNED,
+    name VARCHAR(20),
+    age TINYINT UNSIGNED,
+    sex ENUM('男','女','保密'),
+    tel INT UNSIGNED,
+    email VARCHAR(50),
+    address VARCHAR(200),
+    birth YEAR,
+    salary FLOAT(8,6),
+    married TINYINT(1) COMMENT '0: 未结婚, 非0: 已结婚'
+)ENGINE=InnoDB CHARSET=UTF8;
+
+#

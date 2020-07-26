@@ -41,10 +41,11 @@ tar -ztvf log.tar.gz                            # 查看gzip压缩包内的文�
 EOF
 
 gzip *                                          # 将当前目录下的文件(非子目录)压缩为.gz文件
-gzip -r *                                       # 将当前目录下的文件递归压缩为.gz文件
 gzip -dv *                                      # 解压当前目录下的.gz文件
-gzip -rv dir/                                   # 递归的压缩目录内的文件 不生成.gz文件 只压缩文件夹内的文件
 
+gzip -r dir/                                    # 将dir目录下的每一个文件递归压缩为.gz文件
+gzip -r *                                       # 将当前目录下的每一个文件递归压缩为.gz文件
+gzip -dr *                                      # 将当前目录下的每一个.gz文件递归解压缩
 
 
 

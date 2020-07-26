@@ -66,5 +66,47 @@ DELETE FROM department WHERE depName='运营部';        -- 删除运营部
 -- 由于外键约束,不能向一个不存在的部门插入员工
 INSERT employee (username,depId) VALUE ('丽丽',12);
 
+-- 创建用户表 user
+CREATE TABLE IF NOT EXISTS `user` (
+    id SMALLINT UNSIGNED,
+    name VARCHAR(20),
+    age TINYINT UNSIGNED,
+    sex ENUM('男','女','保密'),
+    tel INT UNSIGNED,
+    address VARCHAR(200),
+    email VARCHAR(50),
+    birth YEAR,
+    salary FLOAT(8,6),
+    married TINYINT(1) COMMENT '0: 未结婚, 非0: 已结婚'
+)ENGINE=INNODB CHARSET=UTF8;
+
+
+-- 创建课程表 course
+CREATE TABLE IF NOT EXITS `course` (
+    id TINYINT UNSIGNED,
+    name VARCHAR(50),
+    desc VARCHAR(200)
+)ENGINE=INNODB CHARSET=UTF8;
+
+--创建新闻分类表 newkind
+CREATE TABLE IF NOT EXISTS `newkind` (
+    id TINYINT UNSIGNED,
+    name VARCHAR(50),
+    desc VARCHAR(200)
+)ENGINE=INNODB CHARSET=UTF8;
+
+--创建新闻表 news
+CREATE TABLE IF NOT EXISTS `news` (
+    id BIGINT UNSIGNED,
+    title VARCHAR(200),
+    content LONGTEXT,
+    publishtime INT,
+    clicknum BIGINT UNSIGNED,
+    istop TINYINT(1) COMMENT '0: 未置顶, 1: 置顶'
+    kind VARCHAR(50),
+    kindId TINYINT UNSINGED,
+    publisher VARCHAR(50)
+)ENGINE=INNODB CHARSET=UTF8;
+
 
 

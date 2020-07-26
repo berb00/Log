@@ -74,11 +74,13 @@ Regular Expression
 
 !
 
-grep 'root' /etc/passwd                     # 在该文件中搜索root字符并显示该字符所在的行
+grep 'root' /etc/passwd                     # 在该文件中搜索root字符
+grep -v 'root' /etc/passwd                  # 在该文件中搜索没有被root字符匹配到的行
+
+grep -n 'root' /etc/passwd                  # 在该文件中搜索root字符并显示该字符所在的行
 grep -o 'root' /etc/passwd                  # 在该文件中搜索root字符并显示该字符
 grep -i 'root' /etc/passwd                  # 在该文件中忽略大小写搜索root字符
 grep --color=auto 'root' /etc/passwd        # 在该文件中搜索root字符并添加高亮
-grep -v 'root' /etc/passwd                  # 在该文件中搜索没有被root字符匹配到的行
 grep 'r.*t' /etc/passwd                     # 在该文件中搜索以r开头t结尾中间包含任意字符的字符
 grep '[[:digit:]]$' /etc/passwd             # 在该文件中搜索以数字结尾的行
 grep 'root\>' /etc/passwd                   # 在该文件中搜索以root结尾的词

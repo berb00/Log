@@ -64,31 +64,21 @@
 
 #、导入导出数据库/数据表
 #############################################################################################
-    1.导出整个数据库
-        mysqldump -u 用户名 -p –default-character-set=latin1 数据库名 > 导出的文件名(数据库默认编码是latin1)
-        mysqldump -u wcnc -p smgp_apps_wcnc > wcnc.sql
+    1.导出数据库
+        mysqldump -u username -p databasename > exportname
+            –default-character-set=latin1   // 数据库默认编码是latin1
+            -d                              // 只导出结构 不导出数据
+            --add-drop-table                // 在每个create语句之前增加一个drop table
+            --all-databases                 // 备份MySQL服务器上的所有数据库
+
     2.导出一个表
-        mysqldump -u 用户名 -p 数据库名 表名> 导出的文件名
-        mysqldump -u wcnc -p smgp_apps_wcnc users> wcnc_users.sql
-    3.导出一个数据库结构
-        mysqldump -u wcnc -p -d -add-drop-table smgp_apps_wcnc >d:wcnc_db.sql
-        -d 没有数据 -add-drop-table 在每个create语句之前增加一个drop table
-    4.导入数据库
-        A:常用source 命令
-        进入mysql数据库控制台，
-        如mysql -u root -p
-        mysql>use 数据库
-        然后使用source命令，后面参数为脚本文件(如这里用到的.sql)
-        mysql>source wcnc_db.sql
-        B:使用mysqldump命令
-        mysqldump -u username -p dbname < filename.sql
-        C:使用mysql命令
-        mysql -u username -p -D dbname < filename.sql
+        mysqldump -u username -p databasename tablename> exportname
 
-    方法一: source filepath                         // window路径: E:/test/mysql/test.sql
-    方法一: mysql -uroot –p123456 < filepath
+    4.导入表至数据库
+        A: mysql>source sqlfilepath                         // 选中数据库状态下
+        B: mysql -u username -p -D dbname < filename.sql
 
-    当导入的sql文件很大时(>200M): my.ini文件，设置max_allowed_packet的值1024M
+        当导入的sql文件很大时(>200M): my.ini文件，设置max_allowed_packet的值1024M
 
 
 
@@ -196,39 +186,67 @@
     可将查询存储在一个文件中并告诉mysql从文件中读取查询而不是等待键盘输入。可利用外壳程序键入重定向实用程序来完成这项工作。
 
 
-数据类型:
+#、数据类型:
 #############################################################################################
     1.INT
-        TINYINT			(-2^7~2^7-1)(0~2^8-1)		TINYINT UNSIGNED-无符号
-        SMALLINT			(-2^15~2^15-1)(0~2^16-1)
-        MEDIUMINT		(-2^23~2^13-1)(0~2^24)
-        INT				(-2^51~2^51-1)(0~2^52-1)
-        BIGINT			(-2^63~2^63)(0~2^64-1)
-        BOOL,BOOLEAN  	等价于TINYINT(1),0为false 其余为true
+        TINYINT			1byte   (-2^7~2^7-1)(0~2^8-1)		TINYINT UNSIGNED-无符号
+        SMALLINT		2byte   (-2^15~2^15-1)(0~2^16-1)
+        MEDIUMINT		3byte   (-2^23~2^13-1)(0~2^24)
+        INT				4byte   (-2^51~2^51-1)(0~2^52-1)
+        BIGINT			8byte   (-2^63~2^63)(0~2^64-1)
+        TINYINT(1)  	1byte   ,0为false 非0为true          // 等价于BOOL(MySQL中无bool类型)
         零填充:
         TINYINT ZEROFILL -默认无符号自动加上UNSIGNED   达不到显示长度左侧补满0
 
     2.FLOAT
-        FLOAT[(M,D)]			M-数字总位数 D-小数点后的位数
-        DOUBLE[(M,D)]
-        DECIMAL[(M,D)]		内部以字符串形式存储
+        FLOAT[(M,D)]	4byte		M-数字总位数 D-小数点后的位数
+        DOUBLE[(M,D)]   8byte
+        DECIMAL[(M,D)]  M+2byte		内部以字符串形式存储 不会四舍五入
 
     3.String
-        CHAR(M)						(0~255)B		定长字符串
-        VARCHAR(M)					(0~65535)B	变长字符串
-        TINYTEXT						(0~2^8)B		
+        CHAR(M)			M+1byte			(0~255)B		定长字符串  M个字符
+        VARCHAR(M)					    (0~65535)B	    变长字符串
+        TINYTEXT						(0~2^8)B
         TEXT							(0~2^16)B
-        MEDIUMTEXT					(0~2^24)B
+        MEDIUMTEXT					    (0~2^24)B
         LONGTEXT						(0~2^32)B
-        ENUM('value1','value2',...)	1或2B 枚举值个数最多65535个		枚举-只可选一个值
-        SET('value1','value2',...)	1、2、3、4、8B SET成员数目最多64 	集合-可选多个值
+        ENUM('value1','value2',...)	    1或2B 枚举值个数最多65535个		    枚举-只可选一个值
+        SET('value1','value2',...)	    1、2、3、4、8B SET成员数目最多64 	集合-可选多个值
+
     4.Date
-        TIME
-        DATE
-        DATETIME
-        TIMESTAMP								正型保持时间戳
-        YEAR				1901~2155
+        TIME                3B
+        DATE                3B
+        DATETIME            8B
+        TIMESTAMP			4B					整型保存时间戳
+        YEAR				1B                  1901~2155
+
     5.二进制类型
+
+#、数据引擎
+#############################################################################################
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| ARCHIVE            | YES     | Archive storage engine                                         | NO           | NO   | NO         |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables                          | NO           | NO   | NO         |
+| FEDERATED          | NO      | Federated MySQL storage engine                                 | NULL         | NULL | NULL       |
+| MyISAM             | YES     | MyISAM storage engine                                          | NO           | NO   | NO         |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                             | NO           | NO   | NO         |
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| CSV                | YES     | CSV storage engine                                             | NO           | NO   | NO         |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+      Engine: ARCHIVE                   // 引擎名
+     Support: YES                       // MySQL是否支持
+     Comment: Archive storage engine    // 注释
+Transactions: NO                        // 是否支持事物处理
+          XA: NO                        // 是否是分布式交易处理XA规范 
+  Savepoints: NO                        // 是否支持保存点(可以回滚到保存点)
+
+    InnoDB                              // 仅该引擎支持外键约束 支持事物处理 具有崩溃修复能力、并发控制  表结构存储在.frm文件 读写效率低 占用数据空间大  数据存储在innodb  索引
+    MyISAM                              // 支持三种存储格式: 静态型(default)、动态型、压缩型。 占用空间小 处理速度快。 不支持事物，没有事物的完整性、安全性、并发性
+    MEMORY                              // 存储在内存中 提高表的处理效率    默认hash索引 用的少  生命周期短 表不能过大
 
 杂
 	1.INT[(M)] 型： 正常大小整数类型
