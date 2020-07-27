@@ -61,7 +61,7 @@ DDL:
             ALTER TABLE tbl_name MODIFY 字段名 字段类型 [完整性约束条件] [FIRST|AFTER]
         #、修改字段名
             ALTER TABLE tbl_name CHANGE 旧字段名 新字段名 字段类型 [完整性约束条件] [FIRST|AFTER 字段名]
-        #、添加默认值
+        #、添加/修改默认值
             ALTER TABLE tbl_name ALTER 字段名 SET DEFAULT 默认值;
         #、删除默认值
             ALTER TABLE tbl_name ALTER 字段名 DROP DEFAULT;

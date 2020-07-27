@@ -73,11 +73,10 @@
 
     2.导出一个表
         mysqldump -u username -p databasename tablename> exportname
-
-    4.导入表至数据库
-        A: mysql>source sqlfilepath                         // 选中数据库状态下
-        B: mysql -u username -p -D dbname < filename.sql
-
+    3.导入表至数据库
+        mysql -u username -p -D dbname < filename.sql
+    4.从sql文件导入数据库及数据表
+        mysql>source sqlfilepath                         // 选中数据库状态下
         当导入的sql文件很大时(>200M): my.ini文件，设置max_allowed_packet的值1024M
 
 
@@ -185,6 +184,7 @@
     每个表会生成两个文件，一个为.sql文件，包含建表执行。另一个为.txt文件，只包含数据，且没有sql指令。
     可将查询存储在一个文件中并告诉mysql从文件中读取查询而不是等待键盘输入。可利用外壳程序键入重定向实用程序来完成这项工作。
 
+    'change'不能作为字段 会报错
 
 #、数据类型:
 #############################################################################################
