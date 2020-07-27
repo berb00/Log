@@ -13,27 +13,34 @@
 
 
 基本数据类型
-    int	                整数类型
-    long	            长整数类型
-    boolean	            声明布尔类型的关键字
     byte	            字节类型
     short	            短整数类型
-    char	            字符类型
+    int	                整数类型
+    long	            长整数类型
+
     float	            单精度浮点数类型
     double	            双精度浮点数类型
-    enum	            枚举
-程序控制
-    break	            提前跳出一个块
-    case	            用在switch语句之中，表示其中的一个分支
-    continue	        回到一个块的开始处
-    default	            默认，例如，用在switch语句中，表明一个默认的分支。Java8 中也作用于声明接口函数的默认实现
-    do	                用在do-while循环结构中
-    else	            用在条件语句中，表明当条件不成立时的分支
-    for	                一种循环结构的引导词
-    if	                条件语句的引导词
-    while	            用在循环结构中
-    switch	            分支语句结构的引导词
 
+    boolean	            声明布尔类型的关键字
+    char	            字符类型
+
+    enum	            枚举
+
+程序控制
+    if	                条件语句的引导词
+    else	            用在条件语句中，表明当条件不成立时的分支
+
+    while	            用在循环结构中
+    do	                用在do-while循环结构中
+
+    switch	            分支语句结构的引导词
+    case	            用在switch语句之中，表示其中的一个分支
+    default	            默认，例如，用在switch语句中，表明一个默认的分支。Java8 中也作用于声明接口函数的默认实现
+
+    for	                一种循环结构的引导词
+
+    break	            提前跳出一个块
+    continue	        回到一个块的开始处
 
 类
     class	            声明一个类
@@ -61,7 +68,6 @@
     package	            包
     import	            表明要访问指定的类或包
 
-
 异常
     catch	            用在异常处理中，用来捕捉异常
     finally	            用于处理异常情况，用来声明一个基本肯定会被执行到的语句块
@@ -75,7 +81,6 @@
     void	            声明当前成员方法没有返回值
 
 接口
-
     interface	        接口
 
 保留字
@@ -83,85 +88,6 @@
     goto	            保留关键字，没有具体含义
     assert	            断言，用来进行程序调试
     return	            从成员方法中返回数据
-
-
-
-
-基本数据类型
-    int	   
-    long
-    boolean
-    byte
-    short
-    char
-    float
-    double
-    enum
-
-
-程序控制:
-    if
-    switch
-    else
-    continue
-    for
-    do
-    break
-    while
-    case
-    default
-
-类,方法:
-    new
-    instanceof
-    extends
-    class
-
-访问修饰符:
-    private
-    protected
-    public
-    
-
-非访问修饰符:
-    static
-    final
-    volatile
-    abstract
-    synchronized
-    transient
-    strictfp
-    native
-
-包:
-    import
-    package
-
-异常:
-    throws
-    throw
-    try
-    catch
-    finally
-
-变量引用:
-    void
-    this
-    super
-
-接口:
-    interface 	
-    implements 	 
-
-保留字:
-    const*
-    goto*	
-    assert 	 	 	 	
-    return 	
- 	
- 	
- 	 	
-
 
 
 
