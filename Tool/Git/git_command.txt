@@ -140,7 +140,8 @@
             2.git merge localbranch         
 
     #、push
-
+        git push -u origin master                                       // 关联远程仓库第一次提交的时候添加上-u参数，用于把本地以前的commit_log推送到远程库
+        git push origin master                                          // 以后的推送就不需要-u参数
     #、checkout
         git checkout <branch>                                 // 切换到指定分支
         git checkout -b <newbranch>                           // 创建一个新的分支并切换到这个新的分支。-b参数表示创建新分支 newbranch 新的分支名
@@ -250,15 +251,14 @@
     #、config
         git config user.name                                            // 查看用户名
         git config user.email                                           // 查看用户邮箱
-        分全局设置、项目设置
-        git config --global user.name "github`s Name"
-        git config --global user.email "github@xx.com"
-        git config --list
-        git config --global http.postBuffer 524288000       // 调大git上传拉取大小
-        git config --global credential.helper store         // 解决git每次提交推送都要输入密码
-        git config --global alias.co checkout               // git 别名
+        git config --global user.name "github`s Name"                   // 配置全局username
+        git config --global user.email "github@xx.com"                  // 配置全局useremail
+        git config --list                                               // 查看全局配置
+        git config --global http.postBuffer 524288000                   // 调大git上传拉取大小
+        git config --global credential.helper store                     // 解决git每次提交推送都要输入密码
+        git config --global alias.co checkout                           // git 别名
         git config --global alias.br branch
-        git config --global alias.unstage 'reset HEAD --'   
+        git config --global alias.unstage 'reset HEAD --'
         git config --global alias.last 'log -1 HEAD'
 
     #、fast-export
@@ -282,10 +282,10 @@
         git remote add aliasorigin "ssh格式地址"                         // 添加远程库
         git remote rm aliasorigin                                       // 删除远程地址
         git remote show <remote>                                        // 查看某一个远程仓库的更多信息
-        git push -u origin master                                       // 关联远程仓库第一次提交的时候添加上-u参数，用于把本地以前的commit_log推送到远程库
-        git push origin master                                          // 以后的推送就不需要-u参数
         git remote rename <old> <new>
         git remote remove <name>
+        git remote update origin --prune                                // 更新远程分支列表
+        git remote update origin -p
 
         git remote add [-t <branch>] [-m <master>] [-f] [--[no-]tags] [--mirror=<fetch|push>] <name> <url>
         git remote set-head <name> (-a | --auto | -d | --delete | <branch>)

@@ -9,111 +9,107 @@ DCL(Data Control Language)          数据控制语言            控制用户�
 DDL:
 #############################################################################################
     DATABASE
-        #、查看当前服务器下的数据库列表 
-            SHOW {DATABASES|SCHEMAS};
-        #、查看指定数据库的定义方式
-            SHOW CREATE {DATABASE|SCHEMA} db_name;
-        #、创建数据库
-            CREATE {DATABASE|SCHEMA}[IF NOT EXISTS] db_name [[DEFAULT] CHARACTER SET [=] charset_name];
-        #、删除指定数据库
-            DROP {DATABASE|SCHEMA} [IF EXISTS] db_name;
-        #、修改指定数据库的编码方式
-            ALTER {DATABASE|SCHEMA} dn_name [DEFAULT] CHARACTER SET [=] charset_name;
-        #、打开指定数据库
-            USE db_name;
-        #、查看当前打开的数据库
-            SELECT DATABASE();
+        SHOW {DATABASES|SCHEMAS};                                                                   // 查看当前服务器下的数据库列表 
+        SHOW CREATE {DATABASE|SCHEMA} db_name;                                                      // 查看指定数据库的定义方式
+        CREATE {DATABASE|SCHEMA}[IF NOT EXISTS] db_name [[DEFAULT] CHARACTER SET [=] charset_name]; // 创建数据库
+        DROP {DATABASE|SCHEMA} [IF EXISTS] db_name;                                                 // 删除指定数据库
+        ALTER {DATABASE|SCHEMA} dn_name [DEFAULT] CHARACTER SET [=] charset_name;                   // 修改指定数据库的编码方式
+        USE db_name;                                                                                // 打开指定数据库
+        SELECT DATABASE();                                                                          // 查看当前打开的数据库
 
     TABLE
         #、查看数据表及表结构
-            查看数据库下的数据表:
-            SHOW TABLES
-            查看指定表的表结构:
-            1.DESC tablename;
-            2.DESCRIBE tablename;
-            3.SHOW COLUMNS FROM tablename;
+            SHOW TABLES;                    // 查看数据库下的数据表
+            DESC tablename;                 // 查看指定表的表结构
+            DESCRIBE tablename;             // 查看指定表的表结构
+            SHOW COLUMNS FROM tablename;    // 查看指定表的表结构
 
         #、创建数据表
-        CREATE TABLE [IF NOT EXISTS] tbl_name(
+        CREATE TABLE [IF NOT EXISTS] tb_name(
         字段名 字段类型 [完整性约束条件] [COMMENT 注释内容],
         字段名 字段类型 [UNDIGNED|ZEROFILL] [NOT NULL] [[PRIMARY] KEY] [UNIQUE [KEY]] [AUTO_INCREMENT] [DEFAULT 默认值] [COMMENT 注释内容]
         )ENGINE=引擎名称 CHARSET=编码方式 AUTO_INREMENT=10;//自增长步长
 
         完整性约束条件:
-        PRIMARY KEY        主键 
-        FOREIGN KEY        外键
-        UNIQUE KEY        唯一        使用时该条件时 该字段的记录值不能重复   NULL值不算重复
-        AUTO_INCREMENT    自增长
-        NOT NULL             非空        使用时该条件时 插入记录值时不能为空    不使用默认值为NULL
-        DEFAULT            默认值
-        
-        #、删除数据表
-            DROP TABLE [IF EXISTS] tbl_name [,tbl_name,...]
+            PRIMARY KEY        主键 
+            FOREIGN KEY        外键
+            UNIQUE KEY         唯一        使用时该条件时 该字段的记录值不能重复   NULL值不算重复
+            AUTO_INCREMENT     自增长
+            NOT NULL           非空        使用时该条件时 插入记录值时不能为空    不使用默认值为NULL
+            DEFAULT            默认值
 
+        1、完整性
+            实体完整性
+            参照完整性
+            用户定义的完整性
+        2、五个约束
+            not null    (非空)约束
+            unique      (惟一)约束
+            primary key (主键属)约束
+            foreign key (外键)约束
+            check       (校验)约束
+
+        #、删除数据表
+            DROP TABLE [IF EXISTS] tb_name [,tb_name,...]
         #、修改表名:
-            ALTER TABLE tbl_name RENAME [TO|AS] new_name
-            RENAME TABLE tbl_name TO new_name               //
+            ALTER TABLE tb_name RENAME [TO|AS] new_name;
+            RENAME TABLE tb_name TO new_name;
         #、添加字段
-            ALTER TABLE tbl_name ADD 字段名 字段类型 [完整性约束条件] [FIRST|AFTER 字段名]
+            ALTER TABLE tb_name ADD filedname filedtype [完整性约束条件] [FIRST|AFTER filedname];
         #、删除字段
-            ALTER TABLE tbl_name DROP 字段名
+            ALTER TABLE tb_name DROP filedname;
         #、修改字段
-            ALTER TABLE tbl_name MODIFY 字段名 字段类型 [完整性约束条件] [FIRST|AFTER]
+            ALTER TABLE tb_name MODIFY filedname filedtype [完整性约束条件] [FIRST|AFTER];
         #、修改字段名
-            ALTER TABLE tbl_name CHANGE 旧字段名 新字段名 字段类型 [完整性约束条件] [FIRST|AFTER 字段名]
+            ALTER TABLE tb_name CHANGE oldfiledname newfiledname filedtype [完整性约束条件] [FIRST|AFTER filedname];
         #、添加/修改默认值
-            ALTER TABLE tbl_name ALTER 字段名 SET DEFAULT 默认值;
+            ALTER TABLE tb_name ALTER filedname SET DEFAULT 默认值;
         #、删除默认值
-            ALTER TABLE tbl_name ALTER 字段名 DROP DEFAULT;
+            ALTER TABLE tb_name ALTER filedname DROP DEFAULT;
         #、添加主键
-            ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] PRIMARY KEY [index_type] (字段名,...)
+            ALTER TABLE tb_name ADD [CONSTRAINT [symbol]] PRIMARY KEY [index_type] (filedname,...);
         #、删除主键
-            ALTER TABLE tbl_name DROP PRIMARY KEY
+            ALTER TABLE tb_name DROP PRIMARY KEY;
         #、添加唯一
-            ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] UNIQUE [INDEX|KEY] [索引名] (字段名,...)
+            ALTER TABLE tb_name ADD [CONSTRAINT [symbol]] UNIQUE [INDEX|KEY] [索引名] (filedname,...);
         #、删除唯一
-            ALTER TABLE tbl_name DROP {INDEX|KEY} index_name
+            ALTER TABLE tb_name DROP {INDEX|KEY} index_name;
         #、修改表的存储引擎
-            ALTER TABLE tbl_name ENGINE=存储引擎名
+            ALTER TABLE tb_name ENGINE=INNODB;
         #、设置自增长步长
-            ALTER TABLE tbl_name AUTO_INREMENT=值
+            ALTER TABLE tb_name AUTO_INREMENT=value;
         #、查看表结构
             DESC tablename;
             DESCRIBE tablename;
             SHOW COLUMNS FROM tablename;
 
 
+
 DML:
 #############################################################################################
     #、插入数据
-        #、不指定具体字段名
-        INSERT [INTO] tbl_name VALUES|VALUE (记录值)
-        #、指定字段名
-        INSERT [INTO] tbl_name (字段名...) VALUES|VALUE (记录值...)
-        #、同时插入多条记录
-        INSERT [INTO] tbl_name [(字段名...)] VALUES (值...),(值...)...
-        #、通过SET形式插入记录
-        INSERT [INTO] tbl_name [(字段名...)] SET 字段名=值,...
-        #、将查询结果插入到列表
-        INSERT [INTO] tbl_name [(字段名...)] SELECT 字段名 FROM tbl_name [WHERE 条件]
-
-        insert into <表名> [( <字段名1>[,..<字段名n > ])] values ( 值1 )[,( 值n )];
-        insert into MyClass values(1,’Tom’,96.45),(2,’Joan’,82.99),(2,’Wang’, 96.59);               往表 MyClass中插入二条记录, 这二条记录表示：编号为1的名为Tom的成绩为96.45, 编号为2 的名为Joan 的成绩为82.99，编号为3 的名为Wang 的成绩为96.5.
+        INSERT [INTO] tb_name VALUES|VALUE (datas...);                                                // 不指定具体字段名
+        INSERT [INTO] tb_name (fieldname...) VALUES|VALUE (datas...);                                 // 指定字段名
+        INSERT [INTO] tb_name [(fieldname...)] VALUES (datas...),(datas...)...;                       // 同时插入多条记录
+        INSERT [INTO] tb_name [(fieldname...)] SET key=value,...;                                     // 通过SET形式插入记录
+        INSERT [INTO] tb_name [(fieldname...)] SELECT fieldname FROM tb_name [WHERE 条件];             // 将查询结果插入到列表
+        INSERT [INTO] tb_name [( <fieldname1>[,..<fieldnamen > ])] VALUES ( value1 )[,( valuen )];
+        INSERT [INTO] tb_name VAKUES(1,’Tom’,96.45),(2,’Joan’,82.99),(2,’Wang’, 96.59);               // 往表tb_name中插入二条记录, 这二条记录表示：编号为1的名为Tom的成绩为96.45, 编号为2 的名为Joan 的成绩为82.99，编号为3 的名为Wang 的成绩为96.5.
 
     #、更新数据
-        UPDATE tbl_name SET 字段名=值,... [WHERE 条件] [ORDER BY 字段名] [LIMIT 限制条数]
-        update 表名 set 字段=新值,… where 条件
-        update MyClass set name=’Mary’ where id=1;
-        update 表名 set 字段名 = 新内容;
-        update 表名 set 字段名 = replace(字段名,’旧内容’,’新内容’);
-        update article set content=concat(‘’,content);                                              文章前面加入4个空格
+        UPDATE tb_name SET fieldname=value,... [WHERE 条件] [ORDER BY 字段名] [LIMIT 限制条数];
+        UPDATE tb_name SET fieldname=value,… WHERE 条件;
+        UPDATE tb_name SET fieldname=newvalue WHERE 条件;
+        UPDATE tb_name SET fieldname=replace(fieldname,oldvalue,newvalue);
+        UPDATE tb_name SET content=concat('',content);                                               // 文章前面加入4个空格
 
     #、删除数据
-        DELETE FROM tbl_name [WHERE 条件] [ORDER BY 字段名] [LIMIT 限制条数]
-        清空数据表
-        TRUNCATE [TABLE] tbl_name
-        delete from <tablename> where 表达式
-        delete from <tablename> where id=1;                                                         删除表 MyClass中编号为1 的记录
+        DELETE FROM tb_name [WHERE 条件] [ORDER BY fieldname] [LIMIT 限制条数];
+        TRUNCATE [TABLE] tb_name;                                                                    // 清空数据表
+        DELETE from tb_name;                                                                         // 清空数据表
+        DELETE FROM tb_name where 表达式;                                                             // 删除匹配的数据
+
+
 
 DQL:
 #############################################################################################
@@ -249,10 +245,10 @@ DQL:
 
 
     #、查询表中的数据
-        select <字段1，字段2，…> from < 表名 > where < 表达式 >
-        select * from <tablename>;                                                                  查看表中所有行数据
-        select * from <tablename> order by id limit 0,2;                                            查看表中前二行数据
-        select * from <tablename> limit 0,2;                                                        查看表中前二行数据
+        SELECT <字段1，字段2，…> from < 表名 > where < 表达式 >
+        SELECT * from <tablename>;                                                                  查看表中所有行数据
+        SELECT * from <tablename> order by id limit 0,2;                                            查看表中前二行数据
+        SELECT * from <tablename> limit 0,2;                                                        查看表中前二行数据
 
     #、查询记录
         SELECT select_expr [,select_sxpr,...]
@@ -355,13 +351,11 @@ DQL:
         ORDER BY age DESC,id ASC;                   按年龄降序,id升序排序
 
     #、ORDER BY排序(商品排序)            对查询结果排序
-                                
         SELECT * FROM t1 ORDER BY id ASC;                       按照id升序排序ASC    
         SELECT * FROM t1 ORDER BY 2 ASC;                        按照第二个字段升序排序ASC    
         SELECT * FROM t1 ORDER BY id DESC;                      按照id降序排列DESC 默认ASC        
         SELECT * FROM t1 ORDER BY age ASC,id DESC;              按照年龄升序,id降序排列 (多个字段排序以逗号分隔)
         SELECT * FROM t1 ORDER BY RAND();                       记录随机排序
-        
         
     #、LIMIT限制查询结果显示条数(实现分页)
     #、LIMIT 显示条数
@@ -382,10 +376,10 @@ DQL:
 DCL:
 #############################################################################################
     CREATE USER 'berb00'@'host' IDENTIFIED BY 'berb00'; 
-    GRANT privileges ON yiibaidb TO 'berb00'@'host' 
+    GRANT privileges ON yiibaidb TO 'berb00'@'host';
     GRANT privileges ON *.* TO 'berb00'@'host' WITH GRANT OPTION; 
-    grant all on *.* to berb00@%;
-    GRANT ALL ON *.* TO 'berb00'@'%'; 
+    GRANT all on *.* to berb00@%;
+    GRANT ALL ON *.* TO 'berb00'@'%';
 
 
 
@@ -506,7 +500,6 @@ DCL:
 
 
 
-
 Other
 #############################################################################################
     SELECT VERSION(), CURRENT_DATE;                                 显示版本号和当前日期
@@ -539,20 +532,14 @@ Other
     mysqladmin drop databasename;                                   删除数据库前，有提示
     DESCRIBE <tablename>;                                           显示具体的表结构(表的列信息)
     USE databasename;                                               选择数据库
-    flush privileges;                                               刷新数据库
 
-    DELETE from <tablename>;                                        将表中记录清空：
     systemctl restart mysqld;                                       重启mysql
     service mysqld restart;                                         重启mysql
+
     flush privileges;                                               刷新MySQL的系统权限相关表
     mysqld --verbose --help |grep -A 1 'Default options';           查看mysql配置文件路径
+
     HELP keyword                                                    查看帮助文档
     ? keyword                                                       查看帮助文档
-
-
-
-
-
-
 
 
