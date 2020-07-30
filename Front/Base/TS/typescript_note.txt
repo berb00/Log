@@ -1,0 +1,9 @@
+tsc --init  // 生成tsc目录下的配置文件:tsconfig.json
+tsc -w      // 监听ts文件的改变并自动编译
+
+
+{
+    "outDir": "./dist",             // tsc编译生成文件的输出目录
+    "rootDir": "./src",             // ts文件所在根目录的地址
+}
+

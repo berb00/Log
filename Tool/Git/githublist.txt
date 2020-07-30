@@ -80,6 +80,7 @@
         https://github.com/521xueweihan/git-tips
         https://github.com/geeeeeeeeek/git-recipes
         https://github.com/pomber/git-history
+        https://github.com/xirong/my-git.git
 
     #Other
         https://github.com/jaywcjlove/awesome-mac
@@ -93,10 +94,22 @@
     https://github.com/timqian/chinese-independent-blogs.git
 
 #、Interview
+###############################################################
     https://github.com/0voice/interview_internal_reference
     https://github.com/azl397985856/leetcode
     https://github.com/MisterBooo/LeetCodeAnimation
-    https://github.com/mbinary/USTC-CS-Courses-Resource Star 8460
+    https://github.com/mbinary/USTC-CS-Courses-Resource
     https://github.com/CyC2018/CS-Notes
+
+
+
+#、computer
+###############################################################
+    https://github.com/ossu/computer-science.git
+    https://github.com/QSCTech/zju-icicles.git
+    https://github.com/keithnull/TeachYourselfCS-CN.git
+    https://github.com/PKUanonym/REKCARC-TSC-UHT.git
+    https://github.com/SSHeRun/CS-Xmind-Note.git
+
 
 
