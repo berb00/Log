@@ -16,26 +16,101 @@
 
 
 
-#java学习路径:
-    html-css-js-jq-javase-数据库-jsp-servlet-Struts2-hibernate-mybatis-spring4-springmvc-ssh-ssm
+
+#、常用包、接口、类
+常用的类：
+    BufferedReader
+    BufferedWriter
+    FileReader
+    FileWirter
+    String
+    Integer
+    Date
+    Class
+    HashMap
+    Object
+    Runtime
+    file
+    Long
+    Thread
 
 
-#java工具
-    apache-tomcat-8.5.24.tar.gz
-    jdk-8u151-linux-x64.gz
-    kafka_2.12-0.10.2.0.tgz
-    mongodb-linux-x86_64-rhel70-3.6.2.tgz
-    mysql-5.7.21-linux-glibc2.12-x86_64.tar.gz
-    nginx-1.12.2.tar.gz
-    redis-3.2.11.tar.gz
-    redis-4.0.1.tar.gz
-    zookeeper-3.4.10.tar.gz
+常用的包：
+    java.lang
+    java.io
+    java.util
+    java.sql
+    java.swt
+    java.math
+    javax.servlet
+    org.apache.struts.action
+    org.hibernate
 
-    redis-desktop-manager-0.8.8.384.exe
-    SecureCRT.rar
-    WinSCP-5.11.3-Setup.exe
-    navicat120_premium_cs_x64.exe
-    EdrawSoft Edraw Max.rar
-    BCompare_4.rar
+
+常用的接口：
+    List
+    Map
+    Document
+    NodeList
+    Servlet
+    HttpServletResponse
+    Session
+    Transaction
+    HttpSession
+    Iterator
+    Comparable
+    Clone
+    Serializable
+    Runnable
+
+
+
+#、内存空间
+    Stack:
+        存放方法实参、方法中的局部变量
+        作用域:一旦超出作用域，立刻从栈内存中消失
+        方法的运行一定在栈中
+    Heap: 
+        凡是new 出来的东西,都在堆当中
+        堆内存中的数据都有一个十六进制的地址
+        堆内存内的数据都有默认值:
+            int         0
+            float       0.0
+            char        '\u0000'
+            bool        false
+            引用类型     null
+    Method Area(方法区):
+        存储.class相关信息,包含方法的信息
+    Native Method Stack(本地方法栈):
+        与操作系统相关
+    PC Register(寄存器):
+        与CPU相关
+    
+
+
+
+#、java注解
+    @Deprecated         // 已弃用
+    @Override           // 覆写
+
+
+#、frequently word
+    POJO(Plain Ordinary Java Object) 简单的Java对象，实际就是普通JavaBeans
+    POJO 是 DO / DTO / BO / VO 的统称.
+    DO(Data Object)                 此对象与数据库表结构一一对应,通过 DAO 层向上传输数据源对象。
+    DTO(Data Transfer Object)       数据传输对象, Service 或 Manager 向外传输的对象。
+    BO(Business Object)             业务对象,由 Service 层输出的封装业务逻辑的对象。
+    VO(View Object)                 显示层对象,通常是 Web 向模板渲染引擎层传输的对象。
+    AO (Application Object)         应用对象,在 Web 层与 Service 层之间抽象的复用对象模型,极为贴近展示层,复用度不高。
+
+
+#、tips
+    protected:  类成员方法只对继承类公开
+
+
+
+
+
+
 
 

@@ -1,12 +1,14 @@
 #、Back
+###############################################################
     Java
-        https://github.com/Snailclimb/JavaGuide
-        https://github.com/CyC2018/CS-Notes
-        https://github.com/linlinjava/litemall
+        https://github.com/alibaba/p3c.git
+        https://github.com/Snailclimb/JavaGuide.git
+        https://github.com/CyC2018/CS-Notes.git
+        https://github.com/linlinjava/litemall.git
 
     Python
-        https://github.com/jackfrued/Python-100-Days
-        https://github.com/TheAlgorithms/Python
+        https://github.com/jackfrued/Python-100-Days.git
+        https://github.com/TheAlgorithms/Python.git
         https://github.com/otfsenter/vue_flask_configuration.git
 
     Go
@@ -19,9 +21,12 @@
         https://github.com/mmcgrana/gobyexample.git
         https://github.com/adesgautam/Calculator.git
 
+
+
 #、Front
+###############################################################
     #JavaScript
-        https://github.com/lydiahallie/javascript-questions
+        https://github.com/lydiahallie/javascript-questions.git
         https://github.com/30-seconds/30-seconds-of-code.git
         https://github.com/dashnowords/blogs.git
 
@@ -51,14 +56,20 @@
         https://github.com/mrdoob/three.js.git
         https://github.com/fouber/blog.git
 
+
+
 #、DevOps
-    https://github.com/Micropoor/Micro8 Star 8730
-    https://github.com/imthenachoman/How-To-Secure-A-Linux-Server Star 7459
-    https://github.com/trimstray/nginx-quick-reference Star 6952
-    https://github.com/toddmotto/public-apis Star 52052
-    https://github.com/trimstray/the-book-of-secret-knowledge Star 17273
+###############################################################
+    https://github.com/Micropoor/Micro8.git
+    https://github.com/imthenachoman/How-To-Secure-A-Linux-Server.git
+    https://github.com/trimstray/nginx-quick-reference.git
+    https://github.com/toddmotto/public-apis.git
+    https://github.com/trimstray/the-book-of-secret-knowledge.git
+
+
 
 #、Deep
+###############################################################
     https://github.com/tensorflow/tensorflow.git
     https://github.com/aymericdamien/TensorFlow-Examples.git
     https://github.com/jikexueyuanwiki/tensorflow-zh.git
@@ -68,38 +79,37 @@
     https://github.com/nfmcclure/tensorflow_cookbook.git
     https://github.com/chiphuyen/stanford-tensorflow-tutorials.git
     https://github.com/machinelearningmindset/TensorFlow-Course.git
-    https://github.com/scutan90/DeepLearning-500-questions
-    https://github.com/datawhalechina/pumpkin-book
-    https://github.com/apachecn/AiLearning
-    https://github.com/deepfakes/faceswap Star 14417
-    https://github.com/imhuay/Algorithm_Interview_Notes-Chinese Star 16740
+    https://github.com/scutan90/DeepLearning-500-questions.git
+    https://github.com/datawhalechina/pumpkin-book.git
+    https://github.com/apachecn/AiLearning.git
+    https://github.com/deepfakes/faceswap.git
+    https://github.com/imhuay/Algorithm_Interview_Notes-Chinese.git
     https://github.com/ShiqiYu/libfacedetection.git
 
+
+
 #、Tool
+###############################################################
     #Git
-        https://github.com/521xueweihan/git-tips
-        https://github.com/geeeeeeeeek/git-recipes
-        https://github.com/pomber/git-history
+        https://github.com/521xueweihan/git-tips.git
+        https://github.com/geeeeeeeeek/git-recipes.git
+        https://github.com/pomber/git-history.git
         https://github.com/xirong/my-git.git
 
     #Other
-        https://github.com/jaywcjlove/awesome-mac
-        https://github.com/zhaoolee/ChromeAppHeroes
+        https://github.com/jaywcjlove/awesome-mac.git
+        https://github.com/zhaoolee/ChromeAppHeroes.git
 
-    #LaTeX
-        https://github.com/wklchris/Note-by-LaTeX
+    #、Blog
+        https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts.git
+        https://github.com/timqian/chinese-independent-blogs.git
 
-#、Blog
-    https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts.git
-    https://github.com/timqian/chinese-independent-blogs.git
+
 
 #、Interview
 ###############################################################
-    https://github.com/0voice/interview_internal_reference
-    https://github.com/azl397985856/leetcode
-    https://github.com/MisterBooo/LeetCodeAnimation
-    https://github.com/mbinary/USTC-CS-Courses-Resource
-    https://github.com/CyC2018/CS-Notes
+    https://github.com/0voice/interview_internal_reference.git
+    https://github.com/CyC2018/CS-Notes.git
 
 
 
@@ -110,6 +120,28 @@
     https://github.com/keithnull/TeachYourselfCS-CN.git
     https://github.com/PKUanonym/REKCARC-TSC-UHT.git
     https://github.com/SSHeRun/CS-Xmind-Note.git
+
+
+
+#、algorithm
+###############################################################
+    https://github.com/labuladong/fucking-algorithm.git
+    https://github.com/azl397985856/leetcode.git
+    https://github.com/MisterBooo/LeetCodeAnimation.git
+
+
+
+#、catalogue
+###############################################################
+    https://github.com/justjavac/free-programming-books-zh_CN.git
+    https://github.com/EbookFoundation/free-programming-books.git
+    https://github.com/sindresorhus/awesome.git
+
+
+
+#、university courses
+###############################################################
+    https://github.com/USTC-Resource/USTC-Course.git
 
 
 
