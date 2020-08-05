@@ -30,7 +30,10 @@ Change: 2020-03-29 17:24:53.351466150 +0800         // 最后一次改变时间
 Birth: -
 
 !
-stat filename
+stat filename                               # 显示文件的状态信息
+stat -L filename                            # 显示文件的状态信息 支持符号连接
+stat -f filename                            # 显示文件系统状态而非文件状态
+stat -t filename                            # 以简洁方式输出信息
 
 
 # chown change owner 改变文件属主(仅管理员才可使用)

@@ -47,10 +47,6 @@
     logrotate			对系统日志进行轮转、压缩和删除
     logwatch			可定制和可插入式的日志监视系统
 
-    last				列出目前与过去登入系统的用户相关信
-    lastb				列出登入系统失败的用户相关信息
-    lastlog				显示系统中所有用户最近一次登录信息
-
     sudo				以其他身份来执行命令					superuser / substitue user do 在ubuntu下更倾向于superuser，因为它代表了root权限
     chroot				把根目录换成指定的目的目录			change root
     openssl				强大的安全套接字层密码库			SSL		Secure Sockets Layer
@@ -58,7 +54,6 @@
 
 进程和作业管理
     systemctl			系统服务管理器指令
-    w					显示目前登入系统的用户信息
 
     pidof				查找指定名称的进程的进程号ID号
     pgrep				设置用户的认证信息，包括用户密码、密码过期时间等
@@ -99,7 +94,6 @@
     logname				用来显示用户名称
     chsh				用来更换登录系统时使用的shell					Change shell
 
-
     pwck				用来验证系统认证文件内容和格式的完整性
     grpck				用于验证组文件的完整性
 
@@ -124,6 +118,16 @@
     passwd				用于让用户可以更改自己的密码		password
     chpasswd			批量更新用户口令的工具
     gpasswd				Linux下工作组文件的管理工具
+
+    w					显示目前登入系统的用户信息
+    whoami 				打印当前有效的用户名称
+    users 				显示当前登录系统的所有用户
+    who 				显示目前登录系统的用户信息
+
+    last				列出目前与过去登入系统的用户相关信
+    lastb				列出登入系统失败的用户相关信息
+    lastlog				显示系统中所有用户最近一次登录信息
+
 --------------------------------------------------------
 
 X-Windows
@@ -335,10 +339,6 @@ SELinux
 常用工具命令
     date 				显示或设置系统时间与日期
     cal 				显示当前日历或指定日期的日历						calender 日历
-
-    whoami 				打印当前有效的用户名称
-    users 				显示当前登录系统的所有用户
-    who 				显示目前登录系统的用户信息
     
     yes 				重复打印指定字符串
     clear 				清除当前屏幕终端上的任何信息

@@ -1,8 +1,7 @@
 #!/bin/bash
 
 :<<!
-user
-    chage				修改帐号和密码的有效期限 改变用户各种外围属性
+    chage				修改帐号和密码的有效期限
     id					显示用户的ID以及所属群组的ID
     nologin				拒绝用户登录系统
     newusers			用于批处理的方式一次创建多个命令
@@ -20,24 +19,44 @@ user
     chfn				用来改变finger命令显示的信息
     finger				用于查找并显示用户信息
 
-    pwunconv			用来关闭用户的投影密码
-    pwconv				用来开启用户的投影密码
-
-    passwd				用于让用户可以更改自己的密码		password
-    chpasswd			批量更新用户口令的工具
-
-
-group
-
     groupadd			用于创建一个新的工作组
     groupdel			用于删除指定的工作组
     groups				用来打印指定用户所属的工作组
     groupmod			更改群组识别码或名称
-    gpasswd				给组加密码
+
     grpconv				用来开启群组的投影密码
     grpunconv			用来关闭群组的投影密码
+    pwunconv			用来关闭用户的投影密码
+    pwconv				用来开启用户的投影密码
+
+    passwd				用于让用户可以更改自己的密码
+    chpasswd			批量更新用户口令的工具
+    gpasswd				Linux下工作组文件(/etc/group、/etc/gshadow)的管理工具
+
+    w					显示目前登入系统的用户信息
+    who 				显示目前登录系统的用户信息
+    whoami 				打印当前有效的用户名称
+    users 				显示当前登录系统的所有用户
+
+    last				列出目前与过去登入系统的用户相关信
+    lastb				列出登入系统失败的用户相关信息
+    lastlog				显示系统中所有用户最近一次登录信息
+
 !
 
+
+
+# chage 修改帐号和密码的有效期限 改变用户各种外围属性
+
+# id 显示用户的ID以及所属群组的ID
+id                                  # 查看当前用户的uid gid groups
+id username                         # 查看username用户的uid gid groups
+id -u username                      # 查看username用户的uid
+id -g username                      # 查看username用户的gid
+id -G username                      # 查看username用户的groups
+id -un username                     # 查看username用户的用户名
+id -gn username                     # 查看username用户的组名
+id -Gn username                     # 查看username用户的groups名称
 
 
 # useradd
@@ -62,15 +81,19 @@ userdel username                    # 删除该用户但不删除家目录
 userdel -r username                 # 删除该用户同时删除家目录
 
 
-# id
-id                                  # 查看当前用户的uid gid groups
-id username                         # 查看username用户的uid gid groups
-id -u username                      # 查看username用户的uid
-id -g username                      # 查看username用户的gid
-id -G username                      # 查看username用户的groups
-id -un username                     # 查看username用户的用户名
-id -gn username                     # 查看username用户的组名
-id -Gn username                     # 查看username用户的groups名称
+# usermod   user modify
+usermod -u  uid                     # 修改用户的uid
+usermod -g  gid                     # 修改用户的gid基本组
+usermod -G  gid                     # 修改用户的附加组(会覆盖之前的附加组)
+usermod -aG  gid                    # 修改用户的附加组(追加附加组)
+usermod -c  comment                 # 修改用户的注释信息
+usermod -d  path                    # 修改用户的家目录
+usermod -dm  path                   # 修改用户的家目录(并将之前家目录的内容移动到新的目录)
+usermod -l  newname                 # 修改用户名称
+usermod -L                          # --lock 锁定用户
+usermod -U                          # --unlock 解锁用户
+
+
 
 # finger
 :<<!
@@ -83,17 +106,6 @@ No Plan.    //执行任务
 finger username                     # 查看用户账号信息
 
 
-# usermod   user modify
-usermod -u  uid                     # 修改用户的uid
-usermod -g  gid                     # 修改用户的gid基本组
-usermod -G  gid                     # 修改用户的附加组(会覆盖之前的附加组)
-usermod -aG  gid                    # 修改用户的附加组(追加附加组)
-usermod -c  comment                 # 修改用户的注释信息
-usermod -d  path                    # 修改用户的家目录
-usermod -dm  path                   # 修改用户的家目录(并将之前家目录的内容移动到新的目录)
-usermod -l  newname                 # 修改用户名称
-usermod -L                          # --lock 锁定用户
-usermod -U                          # --unlock 解锁用户
 
 # chsh
 chsh username                       # 修改用户的默认shell
@@ -117,6 +129,14 @@ chage  -I                           # 非活动时间
 chage  -m                           # 最短使用期限
 chage  -M                           # 最长使用期限
 chage  -W                           # 警告时间
+
+
+
+cut -d : -f 1 /etc/passwd                   # 查看所有用户
+cat /etc/passwd |awk -F \: '{print $1}'     # 查看所有用户
+
+
+
 
 
 ###################Group##########################

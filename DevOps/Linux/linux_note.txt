@@ -495,7 +495,8 @@ test:文件名
 
 
 
-
+#、ssh远程登陆
+    ssh username@IP
 
 
 
