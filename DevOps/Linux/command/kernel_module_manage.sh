@@ -25,3 +25,29 @@ lsmod 				显示已载入系统的模块					List module 列表模块
 kexec 				从当前正在运行的内核引导到一个新内核
 
 EOF
+
+
+# dmesg 显示Linux系统启动信息				diagnostic message
+
+
+# uname 显示Linux系统信息					Unix name  系统名称
+
+uname -a,--all                                      # 显示全部的信息
+uname -m,--machine                                  # 显示电脑类型
+uname -n,-nodename                                  # 显示在网络上的主机名称
+uname -r,--release                                  # 显示操作系统的发行编号
+uname -s,--sysname                                  # 显示操作系统名称
+uname -v                                            # 显示操作系统的版本
+uname -p,--processor                                # 输出处理器类型或"unknown"
+uname -i,--hardware-platform                        # 输出硬件平台或"unknown"
+uname -o,--operating-system                         # 输出操作系统名称
+
+
+
+
+
+
+
+
+
+
