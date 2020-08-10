@@ -20,9 +20,6 @@ DDL:
     TABLE
         #、查看数据表及表结构
             SHOW TABLES;                    // 查看数据库下的数据表
-            DESC tablename;                 // 查看指定表的表结构
-            DESCRIBE tablename;             // 查看指定表的表结构
-            SHOW COLUMNS FROM tablename;    // 查看指定表的表结构
 
         #、创建数据表
         CREATE TABLE [IF NOT EXISTS] tb_name(
@@ -43,15 +40,15 @@ DDL:
             参照完整性
             用户定义的完整性
         2、五个约束
-            not null    (非空)约束
-            unique      (惟一)约束
-            primary key (主键属)约束
-            foreign key (外键)约束
-            check       (校验)约束
+            NOT NULL    (非空)约束
+            UNIQUE      (惟一)约束
+            PRIMARY KEY (主键属)约束
+            FOREIGN KEY (外键)约束
+            CHECK       (校验)约束
 
         #、删除数据表
             DROP TABLE [IF EXISTS] tb_name [,tb_name,...]
-        #、修改表名:
+        #、修改表名
             ALTER TABLE tb_name RENAME [TO|AS] new_name;
             RENAME TABLE tb_name TO new_name;
         #、添加字段
@@ -79,9 +76,9 @@ DDL:
         #、设置自增长步长
             ALTER TABLE tb_name AUTO_INREMENT=value;
         #、查看表结构
-            DESC tablename;
-            DESCRIBE tablename;
-            SHOW COLUMNS FROM tablename;
+            DESC tablename;                 // 查看指定表的表结构
+            DESCRIBE tablename;             // 查看指定表的表结构
+            SHOW COLUMNS FROM tablename;    // 查看指定表的表结构
 
 
 
@@ -94,7 +91,7 @@ DML:
         INSERT [INTO] tb_name [(fieldname...)] SET key=value,...;                                     // 通过SET形式插入记录
         INSERT [INTO] tb_name [(fieldname...)] SELECT fieldname FROM tb_name [WHERE 条件];             // 将查询结果插入到列表
         INSERT [INTO] tb_name [( <fieldname1>[,..<fieldnamen > ])] VALUES ( value1 )[,( valuen )];
-        INSERT [INTO] tb_name VAKUES(1,’Tom’,96.45),(2,’Joan’,82.99),(2,’Wang’, 96.59);               // 往表tb_name中插入二条记录, 这二条记录表示：编号为1的名为Tom的成绩为96.45, 编号为2 的名为Joan 的成绩为82.99，编号为3 的名为Wang 的成绩为96.5.
+        INSERT [INTO] tb_name VALUES(1,’Tom’,96.45),(2,’Joan’,82.99),(2,’Wang’, 96.59);               // 往表tb_name中插入二条记录, 这二条记录表示：编号为1的名为Tom的成绩为96.45, 编号为2 的名为Joan 的成绩为82.99，编号为3 的名为Wang 的成绩为96.5.
 
     #、更新数据
         UPDATE tb_name SET fieldname=value,... [WHERE 条件] [ORDER BY 字段名] [LIMIT 限制条数];
