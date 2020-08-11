@@ -11,7 +11,10 @@
         git add <file>                      // 用于把文件添加到git（暂存区），准备提交
         git add -A  或者 git add -all       // 把工作区的所有修改添加到暂存区
         git add .                           // 提交所有文件到暂存区
-        git add -i  (--interactive)         // 交互式终端模式          
+        git add -i  (--interactive)         // 交互式终端模式
+
+    #、commit
+        git commit -m 'comment'             //把暂存区的所有内容提交到当前分支 只有添加文件之后才能使用，用于提交内容到主分支（默认是master）       
 
     #、mv
         git mv <filedir> <newfiledir>       //移动文件到新的路径，如果新的文件名发生改变，则可以理解为重命名
@@ -27,21 +30,20 @@
     #、bisect
 
     #、diff
-        git diff                            //查看修改的内容。注意：已经使用git add之后，不能再查看修改的内容
+        git diff                            // 查看修改的内容。注意：已经使用git add之后，不能再查看修改的内容
 
     #、grep
 
     #、log 
-        git log                                               // 由近及远返回commit历史记录(提交日志)
-        git log --pretty=online(单行显示---长hash)             // 查看版本历史记录-简化输出日志
-        git log --online(单行显示---短hash)                    // 查看版本历史记录  
-        git log --graph                                       // 显示分支合并图
-        git log -p -2			                                    // -p:显示每次提交的内容差异。-2:仅显示最近两次提交：
+        git log                             // 由近及远返回commit历史记录(提交日志)
+        git log --pretty=online             // 查看版本历史记录-简化输出日志   单行显示---长hash
+        git log --online                    // 查看版本历史记录  单行显示---短hash
+        git log --graph                     // 显示分支合并图
+        git log -p -2                       // -p:显示每次提交的内容差异。-2:仅显示最近两次提交：
 
     #、shortlog
 
     #、show
-        git log [<选项>] [<版本范围>] [[--] <路径>...]
         git show [<选项>] <对象>...
             -q, --quiet           不显示差异输出
             --source              显示源
@@ -75,8 +77,6 @@
         git branch [<选项>] [-r | -a] [--points-at]
         git branch [<选项>] [-r | -a] [--format]     
 
-    #、commit
-        git commit -m 'comment'             //把暂存区的所有内容提交到当前分支 只有添加文件之后才能使用，用于提交内容到主分支（默认是master）       
 
     #、merge
         git merge branchname                // 合并branchname分支到当前分支
@@ -117,14 +117,21 @@
     #、tag
         git tag -l                                  // 查看已打的标签
         git tag -l "v1.8.5*"                        // 查看某个系列的标签
+
         git tag <tagname>                           // 打一个轻量标签
         git tag -a <tagname> -m "my version 1.4"    // 打一个附注标签
-        git tag -d <tagname>                        // 删除标签
-        git push origin --delete <tagname>          // 删除远程标签
         git tag -a v1.2 9fceb02                     // 后期打标签
+
+        git tag -d <tagname>                        // 删除本地标签
+        git push origin --delete <tagname>          // 删除远程标签
+        git tag -l | xargs git tag -d               // 删除所有本地标签
+        git tag -l | xargs git push origin --delete // 删除所有远程标签
+
         git push origin <tagname>                   // 推送标签到共享服务器上
         git push origin --tags                      // 把所有不在远程仓库服务器上的标签全部传送到那里
-        git checkout 2.0.0                          // 检出标签(注:会使仓库处于“分离头指针（detacthed HEAD）”的状态-有副作用)
+
+        git checkout v2.0.0                         // 检出标签(注:会使仓库处于“分离头指针（detacthed HEAD）”的状态-有副作用)
+
 
     #、fetch
         git fetch remotealias   // 拉取远程仓库到本地仓库 (默认master分支)
@@ -142,6 +149,9 @@
     #、push
         git push -u origin master                                       // 关联远程仓库第一次提交的时候添加上-u参数，用于把本地以前的commit_log推送到远程库
         git push origin master                                          // 以后的推送就不需要-u参数
+
+        git push origin --delete    branchname                          // 删除远程分支
+
     #、checkout
         git checkout <branch>                                 // 切换到指定分支
         git checkout -b <newbranch>                           // 创建一个新的分支并切换到这个新的分支。-b参数表示创建新分支 newbranch 新的分支名
@@ -178,7 +188,7 @@
 
     #、clean
         git clean --dry-run         // 预览将要删除的未被追踪的文件
-        git clean -n                // 预览将要删除的未被追踪的文件
+        git clean -n                // 预览将要删除的未被追踪的文件(新增 未add过的文件)
         git clean -f                // 删除未被追踪的文件(.gitignore指定的文件除外)
         git clean -f <path>         // 删除指定路径下的没有被track过的文件
         git clean -df               // 删除当前目录下没有被track过的文件和文件夹

@@ -1,6 +1,16 @@
 
 # OXFORD
 
+## A
+
+## B
+
+## C
+
+## D
+
+## E
+
 ## F
 
 english             | -      | type          | chinese
@@ -598,3 +608,41 @@ guy                 | -      | n             | 男子
 gymnasium           | -      | n             | 体育馆、健身房
 gymnastics          | -      | n             | 体操
 gypsy               | -      | n             | 吉普赛人
+
+## H
+
+## I
+
+## J
+
+## K
+
+## L
+
+## M
+
+## N
+
+## O
+
+## P
+
+## Q
+
+## R
+
+## S
+
+## T
+
+## U
+
+## V
+
+## W
+
+## X
+
+## Y
+
+## Z
