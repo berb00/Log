@@ -9,15 +9,15 @@
 
     #、add
         git add <file>                      // 用于把文件添加到git（暂存区），准备提交
-        git add -A  或者 git add -all       // 把工作区的所有修改添加到暂存区
+        git add -A, --all                   // 把工作区的所有修改添加到暂存区
         git add .                           // 提交所有文件到暂存区
         git add -i  (--interactive)         // 交互式终端模式
 
     #、commit
-        git commit -m 'comment'             //把暂存区的所有内容提交到当前分支 只有添加文件之后才能使用，用于提交内容到主分支（默认是master）       
+        git commit -m 'comment'             // 把暂存区的所有内容提交到当前分支 只有添加文件之后才能使用，用于提交内容到主分支（默认是master）       
 
     #、mv
-        git mv <filedir> <newfiledir>       //移动文件到新的路径，如果新的文件名发生改变，则可以理解为重命名
+        git mv <filedir> <newfiledir>       // 移动文件到新的路径，如果新的文件名发生改变，则可以理解为重命名
 
     #、restore
 
