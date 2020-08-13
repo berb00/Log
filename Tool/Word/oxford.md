@@ -3,13 +3,33 @@
 
 ## A
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## B
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## C
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## D
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## E
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## F
 
@@ -890,36 +910,726 @@ hyphen              | -      | n             | 连接号
 
 ## I
 
+
+iceberg             | -      | n             | 冰山
+ice-cream           | -      | n             | 冰激凌
+ice-cube            | -      | n             | (加入饮料中的)小冰块
+iced                | -      | a             | 极冷的、冰冷的;覆有糖霜的
+ice hockey          | -      | n             | 冰球运动
+ice lolly           | -      | n             | 冰棍儿
+ice-rink            | -      | n             | 冰场
+ice-skating         | -      | n             | 滑冰
+icicle              | -      | n             | 冰锥
+icing               | -      | n             | 糖霜
+icy                 | -      | a             | 覆有冰的;冰冷的
+idea                | -      | n             | 主意;印象、想象;意见、信念
+ideal               | -      | a             | 理想的、最好的或最确切的
+identical           | -      | a             | 完全相同的
+identify            | -      | v             | 识别、认出
+identification      | -      | n             | 识别、辨认;身份证明
+identity            | -      | n             | 本身、本体、身份
+identity card       | -      | n             | 身份证
+idiom               | -      | n             | 习语、惯用语、成语
+idiomatic           | -      | a             | 使用习语的
+idiot               | -      | n             | 傻瓜、笨蛋
+idol                | -      | n             | 敬奉如神的事物、神;受人爱戴的名人、偶像
+ie                  | -      | n             | 就是、即
+if                  | -      | con           | 如果、要是、是否
+ignorance           | -      | n             | 不知道、无知
+ignorant            | -      | a             | 不知道的、无知的、一窍不通的
+ignore              | -      | v             | 不理会、忽视
+ill                 | -      | a             | 有病的、不健康的;坏的、不好的
+illegal             | -      | a             | 违法的
+illegally           | -      | ad            | 违法的
+illness             | -      | n             | 疾病
+ill-treat           | -      | v             | 虐待(人或动物)
+illustrate          | -      | v             | 用插图说明某事物
+illustration        | -      | n             | 插图
+image               | -      | n             | 印象、想象;纸上或镜中的图像
+imaginary           | -      | n             | 非真实的、仅在脑海中的、想象中的
+imagination         | -      | n             | 想象力、想象
+imagine             | -      | v             | 想象;料想、设想
+imitate             | -      | v             | 模仿某人某事物、效仿
+imitation           | -      | n             | 仿制的事物、仿造品、仿效
+immediate           | -      | a             | 立即的、即刻的
+immediately         | -      | ad            | 立刻、马上
+immense             | -      | a             | 极大的、巨大的
+immensely           | -      | ad            | 很、非常
+immigrant           | -      | n             | 到外国居住的人、移民
+immigration         | -      | n             | 移民
+immune              | -      | a             | 有免疫力的
+impatience          | -      | n             | 无耐性、不耐烦
+impatient           | -      | a             | 无耐性的、不耐烦的
+impatiently         | -      | ad            | 不耐烦地
+imperative          | -      | n             | 祈使语气的动词形式
+imply               | -      | v             | 暗示、暗指
+import              | -      | v,n           | 进口;进口的货物
+importer            | -      | n             | 从事进口货物的人、企业或国家
+important           | -      | a             | 必须做的、必须有的、重要的;有权利或特殊的、重要的
+importance          | -      | n             | 重要、重要性、有价值
+impossible          | -      | n             | 不可能的、做不到的、不能发生的
+impossibility       | -      | n             | 不可能的事情
+impress             | -      | v             | 给某人留下好印象
+impressive          | -      | a             | 使人有好感的、给人留下深刻印象的
+impression          | -      | n             | 对某人或某事物的感想、印象
+imprison            | -      | v             | 监禁、关押
+imprisonment        | -      | n             | 监禁、关押、坐牢
+improve             | -      | v             | 变得更好、改进、改善
+improvement         | -      | n             | 改良、改进、改善
+impulse             | -      | n             | 突如其来的念头、突然想做某事物的强烈愿望
+in                  | -      | ad            | 向里、进入
+inability           | -      | n             | 不能做某事、无能力
+inaccurate          | -      | a             | 不正确的、不准确的、有错误的
+inadequate          | -      | a             | 不足的、不够的、不够好的
+inch                | -      | n             | 英寸
+incident            | -      | n             | 发生的事
+incidentally        | -      | ad            | 顺便提一下
+inclined            | -      | a             | 很有可能做某事;想要做某事
+include             | -      | v             | 包括某人或某事物;把某人或某事物包括在内
+including           | -      | prep          | 包括、算在内
+income              | -      | n             | 收到的所有钱;收入
+income tax          | -      | n             | 所得税
+incomplete          | -      | a             | 未完成的、不完整的、不完全的
+inconsiderate       | -      | a             | 不替别人着想的、不体贴别人的
+inconsistent        | -      | a             | 并非始终一样、反复无常
+inconvenience       | -      | n             | 不方便、困难
+inconvenient        | -      | a             | 不方便的
+incorrect           | -      | a             | 不正确的、不对的、不真实的
+incorrectly         | -      | ad            | 不对地
+increase            | -      | v,n           | 增大、增加、变大
+incredible          | -      | a             | 不可思议的、非常大的
+incredibly          | -      | ad            | 极端地
+indeed              | -      | ad            | 的确、确实
+indefinite          | -      | a             | 不确切的、不明确的、不肯定的
+indefinitely        | -      | ad            | 长时间地(可能无限期)
+independence        | -      | n             | 自主、独立
+independent         | -      | a             | 不受外物控制的、自主的、独立的;自立的
+index               | -      | n             | 索引
+indicate            | -      | n             | 表明某事物(通常用手指);象征某事物、预示;(汽车的指示灯)显示要转向
+indication          | -      | n             | 指示、显示
+indicator           | -      | n             | (汽车的)转向灯
+indignant           | -      | a             | 愤怒的
+indignantly         | -      | ad            | 愤怒地、愤愤不平的
+indignation         | -      | n             | 愤怒、愤慨
+indirect            | -      | a             | 间接的、迂回的
+indirectly          | -      | ad            | 间接地、迂回地
+individual          | -      | a             | 单独的、个别的;单一而不同的、独特的、特有的
+individually        | -      | n             | 分别地、独自地、个别地
+individual          | -      | n             | 个体、个人
+indoor              | -      | a             | 室内的
+indoors             | -      | ad            | 在建筑物内、进建筑物内
+industrial          | -      | a             | 工业的、产业的;有很多工厂的、工业的
+industry            | -      | n             | 工业;行业
+inefficient         | -      | a             | 效率低的
+inevitable          | -      | a             | 必然发生的、不可避免的
+inevitably          | -      | ad            | 必然发生地
+inexperienced       | -      | a             | 无经验的、缺乏经验的
+infant school       | -      | n             | 幼儿学校
+infect              | -      | v             | 传染、感染
+infected            | -      | a             | 受感染的
+infection           | -      | n             | 传染病
+infectious          | -      | a             | 传染的、感染的
+inferior            | -      | a             | 次的、差的、次要的
+infinite            | -      | a             | 无穷的、无尽的、无数的
+infinitive          | -      | n             | 动词的原型、不定式
+inflate             | -      | v             | 使某物充气膨胀
+inflation           | -      | n             | 通货膨胀
+influence           | -      | v,n           | 影响某人或某事物、支配某人;影响力、影响、影响他人/事物的人或事物
+inform              | -      | v             | 通知、通报
+informal            | -      | a             | 不拘礼节的
+informally          | -      | ad            | 不拘礼节地
+information         | -      | n             | 信息、资料、事实
+ingredient          | -      | n             | (烹调用的)材料、成分
+inhabitant          | -      | n             | 居民;栖息的动物;生活在某个地方的人或动物
+inhabitted          | -      | a             | 有人居住的或有动物栖息的
+inherit             | -      | v             | 继承某物
+inheritance         | -      | n             | 继承之物
+initial             | -      | a             | 最初的、开始的、第一个的
+initially           | -      | ad            | 最初、开头、首先
+initials            | -      | n             | 首字母
+inject              | -      | v             | 给某人注射
+injection           | -      | n             | 注射
+injure              | -      | v             | 伤害某人或某事物
+injured             | -      | a             | 受伤的
+injury              | -      | n             | (指对人或动物身体的)伤害
+injustice           | -      | n             | 不公正、不公平、非正义
+ink                 | -      | n             | 墨水、油墨
+inland              | -      | a,ad          | 内陆的、内地的;在内陆、向内陆
+inn                 | -      | n             | 客栈、小旅馆
+inner               | -      | a             | 内部的、中心的
+innocent            | -      | a             | 无辜的、无罪的、清白的
+innocence           | -      | n             | 无罪
+inquire             | -      | v             | 问、询问
+inquiry             | -      | n             | (询问的)问题
+insane              | -      | a             | 疯狂的
+insect              | -      | n             | 昆虫
+insecure            | -      | a             | 不安全的、不牢固的;担心而无主意的、缺乏安全感的
+insecurity          | -      | n             | 没有安全感
+insert              | -      | v             | 插入某物中或两物之间
+inside              | -      | n,a,ad        | 里面、内部;里面的、内部的;在里面
+insist              | -      | v             | 坚持或坚决要求某事物、坚持说某事属实(尤指有人不相信时)
+inspect             | -      | v             | 检查某事物;视察某处或检查工作
+inspection          | -      | n             | 检查
+inspector           | -      | n             | 监察员、视察员;(警察)巡官
+inspiration         | -      | n             | 灵感
+inspire             | -      | v             | 给某人以灵感;使某人感觉到或联想到某事物
+install             | -      | v             | 安装、设置
+installment         | -      | n             | instalment
+instalment          | -      | n             | (电视或长篇故事的)一集;(分期付款的)一期付款
+instance            | -      | n             | 例子、实例、事例
+instant             | -      | a,n           | 立即的、立刻的、很快就容易做好的;瞬间、片刻
+instanyly           | -      | ad            | 立刻、马上
+instead             | -      | ad            | 代替(某人或某事物)
+instinct            | -      | n             | 本能
+instinctive         | -      | a             | 天生的
+institution         | -      | n             | 机构
+instruct            | -      | v             | 指示或指导某人做某事;教授或教导某人做某事
+instruction         | -      | n             | 说明、指示;教授、传授
+instructor          | -      | n             | 教练、教员、指导员
+instrucment         | -      | n             | 工具、器具、仪器;乐器
+insult              | -      | v,n           | 辱骂、侮辱、辱慢
+insurance           | -      | n             | 保险合同、保险单
+insure              | -      | v             | 投保、买保险
+intelligenec        | -      | n             | 思维、智慧、聪明
+intelligent         | -      | a             | 有智慧的、聪明的
+intend              | -      | v             | 打算、想要
+intense             | -      | a             | 非常大的、非常强的
+intention           | -      | n             | 意图、用意、打算
+intentional         | -      | a             | 有意的、故意的
+intentionally       | -      | ad            | 有意地、故意地
+interest            | -      | v,n           | 使某人感兴趣;关心、好奇心、兴趣、爱好、利息
+interested          | -      | a             | 感兴趣的
+interesting         | -      | a             | 使人感兴趣的
+interfere           | -      | v             | 干预、干涉、干扰;妨碍;(未经允许)改动或触摸某事物
+interference        | -      | n             | 打扰
+interior            | -      | n,a           | 内部、里面;里面的、内部的
+intermediate        | -      | a             | 中间的
+internal            | -      | a             | 内部的、在内部的
+internally          | -      | ad            | 内部、在内部
+international       | -      | a             | 国际的
+interpret           | -      | v             | 口译
+interpreter         | -      | n             | 口译员
+interrupt           | -      | v             | 打断、打扰;暂时中止某事
+interruption        | -      | n             | 干扰
+interval            | -      | n             | 中间休息、幕间休息
+interview           | -      | n,v           | 面试、采访
+interviewer         | -      | n             | 面试或采访的主持人
+into                | -      | preo          | 到某物的中间或内部;除
+introduce           | -      | v             | 介绍;开始采用新事物
+introduction        | -      | n             | 介绍;前言、序言;开始采用新事物
+invade              | -      | v             | 武装侵入他国、入侵
+invader             | -      | n             | 侵略者
+invalid             | -      | n             | 病弱者
+invaluable          | -      | a             | 极其宝贵的、非常有用的
+invariably          | -      | ad            | 几乎总是
+invasion            | -      | n             | 侵略
+invent              | -      | v             | 发明、创造;捏造、虚构
+inventor            | -      | n             | 发明者、创造者
+invention           | -      | n             | 发明或创造的事物;发明、创造
+inverted commas     | -      | n             | 引号
+invest              | -      | v             | 投资
+investment          | -      | n             | 投资、(投资的)资金
+investigate         | -      | v             | 调查、侦查
+investigation       | -      | n             | 调查、侦查
+invisible           | -      | a             | 看不见的
+invitation          | -      | n             | 邀请
+invite              | -      | v             | 邀请
+invoice             | -      | n             | 发票
+involve             | -      | v             | 包含某事物;使很多人参与某活动
+inward              | -      | ad            | 向内、向中心的
+iron                | -      | v,n           | (用电熨斗)熨平衣物;铁、电熨斗
+ironing             | -      | n             | 待熨的衣物
+ironing-board       | -      | n             | 熨衣板
+irregular           | -      | a             | 一次又一次、不定期发生的;(指词)形式不规则的
+irrelevant          | -      | a             | 与某事物无关且不重要
+irritate            | -      | v             | 使某人愤怒;使身体某部不适
+irritation          | -      | n             | 不适
+Islam               | -      | n             | 伊斯兰教、回教
+Islamic             | -      | a             | 伊斯兰教的
+island              | -      | n             | 岛
+Isle                | -      | n             | 岛(常用做岛屿名称)
+isolated            | -      | a             | 远离他人或他事物的、隔离的
+isolation           | -      | n             | 远离他人或他事物、隔离
+issue               | -      | v,n           | 把某物发给大家;(人们议论的)重大问题、(杂志或报纸的)一期
+it                  | -      | pron          | 它
+italics             | -      | n             | 斜体字母
+itch                | -      | v,n           | 痒
+itchy               | -      | a             | 使人发痒的
+item                | -      | n             | 一项、一件、一个;一条消息
+its                 | -      | a             | 它的
+itself              | -      | pron          | 它自己
+ivory               | -      | n             | 象牙物质
+ivy                 | -      | n             | 常春藤
+
 ## J
+
+english             | -      | type          | chinese
+-                   | -      | -             | -
+jack                | -      | n             | (纸牌中的)杰克(J)
+jacket              | -      | n             | 短上衣、夹克
+jacket potato       | -      | n             | 带皮烤熟的土豆
+jagged              | -      | a             | 犬牙交错的、粗糙而有很多尖的
+jaguar              | -      | n             | 美洲豹、美洲虎
+jail                | -      | v,n           | 把某人关进监狱;监狱
+jam                 | -      | v,n           | 把某物挤进或塞进、使某物卡住(不能动);果酱、拥挤、拥塞
+January             | -      | n             | 一月
+jar                 | -      | n             | 玻璃罐、广口瓶
+javelin             | -      | n             | 标枪
+jaw                 | -      | n             | 颌
+jazz                | -      | n             | 爵士乐
+jealous             | -      | n             | (因想要别人有的事物而)嫉妒的、(因怕失去别人的爱而)嫉妒的
+jealousy            | -      | n             | 嫉妒
+jeans               | -      | n             | 牛仔裤
+Jeep                | -      | n             | 吉普车
+jelly               | -      | n             | 果冻
+jellyfish           | -      | n             | 水母、海蜇
+jerk                | -      | n             | 突然的拖拉、猛抻
+jet                 | -      | n             | 喷气式飞机、喷射
+jet lag             | -      | n             | 喷气飞行时差反应
+Jew                 | -      | n             | 犹太教徒
+Jewish              | -      | a             | 犹太的
+jewel               | -      | n             | 宝石
+jeweller            | -      | n             | 出售、制造、修理珠宝和钟表的人
+jewellery           | -      | n             | 首饰
+jeweler/jewelry     | -      | -             | jeweller/jewellery
+jigsaw puzzle       | -      | n             | 拼图玩具
+job                 | -      | n             | 工作、事情
+jockey              | -      | n             | 职业赛马骑师
+jog                 | -      | v,n           | 慢跑、轻推或轻触某事物;慢跑
+jogger              | -      | n             | (为运动)慢跑的人
+jogging             | -      | n             | (作为运动的)慢跑
+join                | -      | v             | 联合、结合;与某人或某事物相聚或汇合;成为某群体的一员
+joint               | -      | n             | 关节、两个物体连接的地方、大块肉;大家共同做的或共同有的
+joke                | -      | n             | 笑话;开玩笑
+jolly               | -      | a,ad          | 愉快而有趣的;非常、很
+jolt                | -      | v,n           | 突然移动的(某物);突然的移动
+jot down            | -      | v             | 迅速的写下
+journal             | -      | n             | 专题杂志
+journalism          | -      | n             | 新闻业
+journalist          | -      | n             | 记者、新闻工作者
+journey             | -      | n             | 行走、路程、旅行
+joy                 | -      | n             | 快乐、愉快、喜悦
+joystick            | -      | n             | 操纵杆
+Judaism             | -      | n             | 犹太教
+judge               | -      | v,n           | 审判、评定、评判、裁判;法官、裁判员
+judgement           | -      | n             | 判决、裁决;想法、看法
+judo                | -      | n             | 柔道
+jug                 | -      | n             | (有柄的)大罐、壶
+juggle              | -      | v             | 玩抛接杂耍
+juggler             | -      | n             | 玩抛接杂耍的人
+juice               | -      | n             | (水果和蔬菜的)汁
+juicy               | -      | a             | 多汁的
+jukebox             | -      | n             | 自动点唱机
+July                | -      | n             | 七月
+jumble              | -      | v,n           | 把东西胡乱混在一起;胡乱混在一起的东西
+jumble sale         | -      | n             | 旧杂物义卖
+jump                | -      | v,n           | 跳、迅速移动、(因吃惊或害怕)跳动;跳
+jumper              | -      | n             | 厚的上衣、(常指)套头毛衣
+jump-rope           | -      | -             | skipping-rope
+junction            | -      | n             | 交叉路口
+June                | -      | n             | 六月
+jungle              | -      | n             | (热带的)丛林
+junior              | -      | a             | 较低的;较小的
+junk                | -      | n             | 旧的或无用的东西
+junk food           | -      | n             | 不利健康的小吃
+just                | -      | a,ad          | 公平公正的;刚刚
+justice             | -      | a             | 公平而正确的、公道、正义
+justify             | -      | n             | 作出合理的解释、提出正当的理由
 
 ## K
 
+english             | -      | type          | chinese
+-                   | -      | -             | -
+kangaroo            | -      | n             | 袋鼠
+karate              | -      | n             | 空手道
+keen                | -      | n             | 热切的、热心的;很好的、很强的
+keep                | -      | n             | 保存、保留;保持不变;在某处存放某物;不停的做某事;养活;保持新鲜
+keeper              | -      | n             | 照看某事物的人
+kennel              | -      | n             | 狗窝
+kerb                | -      | n             | (靠近马路的)便道边缘
+ketchup             | -      | n             | 番茄酱
+kettle              | -      | n             | (坐水的)壶
+key                 | -      | v,n           | 键入;钥匙、键、答案
+keyboard            | -      | n             | 键盘、键盘琴
+keyhole             | -      | n             | 锁孔、钥匙孔
+kick                | -      | v,n           | 踢、蹬、跺脚;踢、蹬、跺脚、兴奋、快感、快乐
+kick-off            | -      | n             | 开球
+kid                 | -      | n             | 小孩儿
+kidnap              | -      | v             | 绑架、诱拐
+kidnappe            | -      | n             | 进行绑架的人、绑匪
+kidney              | -      | n             | 肾
+kill                | -      | v             | 杀死某人或某事物
+killer              | -      | n             | 杀生的人、动物或事物
+kilogram            | -      | n             | 公斤
+kilometer           | -      | n             | kilometre
+kilometre           | -      | n             | 公里
+kilt                | -      | n             | (苏格兰男子有时穿的)短裙
+kind                | -      | a,n           | 亲切的、和蔼的;种类
+kind-hearted        | -      | n             | 好心的、善良的
+kindness            | -      | n             | 友好、亲切、和蔼
+kindly              | -      | a,ad          | 友好的、和蔼的
+king                | -      | n             | 国王
+kingdom             | -      | n             | 王国
+kiosk               | -      | n             | 街边小商店、售货亭
+kiss                | -      | n             | 吻
+kit                 | -      | n             | 全套衣物或其他用具、配套元件
+kitchen             | -      | n             | 厨房
+kite                | -      | n             | 风筝
+kitten              | -      | n             | 幼小的猫
+knee                | -      | n             | 膝盖
+kneel               | -      | v             | 跪下、跪
+knew                | -      | -             | know
+knickers            | -      | n             | (女用)内裤
+knife               | -      | n             | 刀
+knight              | -      | n             | 爵士、(中古时代的)骑士
+knit                | -      | v             | 编结、编织
+knitting            | -      | n             | 用毛线编织衣物、编织物
+knitting-needle     | -      | n             | 织针
+knives              | -      | n             | kinfe
+knob                | -      | n             | (门或抽屉上的)球形拉手、(机器上的)球形按钮
+knock               | -      | v,n           | 敲打、碰撞
+knot                | -      | v,n           | 打结、(绳索等的)结
+know                | -      | n             | 会、知道、认识、熟悉
+knowledge           | -      | n             | 了解、理解
+knuckle             | -      | n             | 指节、指关节
+koala               | -      | n             | 树袋熊
+kph                 | -      | n             | 千米/小时
+
 ## L
+
+english             | -      | type          | chinese
+-                   | -      | -             | -
+lab                 | -      | n             | laboratory
+label               | -      | v,n           | 在某物上加标记;标记、标签
+labor               | -      | n             | labour
+laboratory          | -      | n             | 实验室
+laborer-            | -      | n             | labourer
+labour              | -      | n             | (体力的)劳动
+labourer            | -      | n             | (体力的)劳动者、工人
+lace                | -      | n             | 带有精美图案的薄透空制品、鞋带
+lack                | -      | v             | 没有或缺少某事物
+lad                 | -      | n             | 男孩儿、小伙子
+ladder              | -      | n             | 梯子
+Ladies              | -      | n             | 女厕所
+lady                | -      | n             | 女士、小姐、夫人
+Lady                | -      | n             | 女士、阁下
+lager               | -      | n             | 储藏啤酒
+laid                | -      | n             | lay
+lain                | -      | n             | lie
+lake                | -      | n             | 湖
+lamb                | -      | n             | 幼小的绵羊、羊肉
+lame                | -      | n             | 跛的、瘸的
+lamp                | -      | n             | 灯
+lamppost            | -      | n             | 路灯柱
+lampshade           | -      | n             | 灯罩
+land                | -      | v,n           | 着陆、降落、上岸;陆地、地皮、国土
+landing             | -      | n             | 着陆、降落、楼梯平台
+landlady            | -      | n             | (女)房东、(女)店主
+landlord            | -      | n             | 房东、店主
+landmark            | -      | n             | 大的建筑物或标志物
+landscape           | -      | n             | (陆上的)风景、景色
+lane                | -      | n             | 乡间小路、(宽阔道路上的)单行车道
+language            | -      | n             | 语言
+lap                 | -      | n             | (人坐着时)大腿上方、(跑道的)一圈
+large               | -      | a             | 大的
+largely             | -      | a             | 大体上、主要的
+laser               | -      | n             | 激光器
+laser beam          | -      | n             | 激光
+last                | -      | a,ad          | 最后的、刚过去的、唯一剩下的
+last                | -      | v,n           | 延续、持续、足够维持某段时间;最后一个人或事物
+late                | -      | a             | 晚的、迟的;在末期的、将近的;已故的、去世的
+lately              | -      | ad            | 不久前、近来
+latest              | -      | a             | 最新的
+latter              | -      | n,a           | 后者;最后的
+laugh               | -      | v,n           | 笑、发笑
+laughter            | -      | n             | 笑声
+launch              | -      | v             | 使船下水或航天器升空、开始新的事物
+launderette         | -      | n             | 自助洗衣店
+laundromat          | -      | n             | launderette
+laundry             | -      | n             | 待洗或已洗的衣物、洗衣店
+lava                | -      | n             | 熔岩
+lavatory            | -      | n             | 抽水马桶、y有抽水马桶的厕所
+law                 | -      | n             | (具体的)法律
+lawcourt            | -      | n             | 法庭、法院
+lawn                | -      | n             | 草地、草坪
+lawnmower           | -      | n             | 刈草机
+lawyer              | -      | n             | 律师
+lay                 | -      | -             | lie
+lay                 | -      | v             | 把某物小心的放在另一物上;下蛋、产卵
+layer               | -      | n             | 层
+lazy                | -      | a             | 懒惰
+lazily              | -      | ad            | 缓慢而懒惰地
+laziness            | -      | n             | 懒惰
+lead                | -      | v             | 带领某人到某处、领先、通往某处、领导/带领;
+lead                | -      | n             | 铅、铅笔芯;带领、零头;(牵狗用的)皮带或链子;导线
+leader              | -      | n             | 领导者、领袖;领先的人或群体
+leadership          | -      | n             | (对群体的)领导
+leading             | -      | a             | 最好的或最重要的
+leaf                | -      | n             | 叶子
+leaftlet            | -      | n             | 传单
+league              | -      | n             | 联合会;联盟、同盟
+leak                | -      | v             | 漏液体或气;漏出
+lean                | -      | a,v           | 瘦而强壮的、瘦肉;倾斜、倚着、靠着
+leap                | -      | v,n           | 跳、跳跃
+leap year           | -      | n             | 闰年
+learn               | -      | v             | 学习;听说、获悉
+learner             | -      | n             | 学习的人
+leash               | -      | -             | lead
+least               | -      | a,ad          | 最小的、最少的
+leather             | -      | n             | 皮革、皮子
+leave               | -      | v,n           | 离开某人或某事物、使某人或某事物留在原地或保持原样、不携带某物、使某物留着不使用;假期
+lecture             | -      | v,n           | 演讲、讲课
+lecturer            | -      | n             | 讲师
+ledge               | -      | n             | 长条的窄而平的地方(如窗户下边或山边)
+leek                | -      | n             | 韭葱
+left                | -      | -             | leave 剩下
+left                | -      | ad,n          | 左
+left-hand           | -      | a             | 左边的
+left-handed         | -      | a             | 习惯用左手的
+leg                 | -      | n             | 腿
+legal               | -      | a             | 合法的、法律上的
+legally             | -      | ad            | 法律地
+legend              | -      | n             | 传奇、传说
+leisure             | -      | n             | 空闲、闲暇
+leisure centre      | -      | n             | 业余活动中心
+lemon               | -      | n             | 柠檬
+lemonade            | -      | n             | 汽水、一杯汽水
+lend                | -      | v             | 把某物借给某人
+length              | -      | n             | 长度
+lengthen            | -      | v             | (使某物)变长、加长
+lengthy             | -      | a             | 长的
+lens                | -      | n             | 透镜、镜片
+lent                | -      | -             | lend
+lentil              | -      | n             | 小扁豆
+leopard             | -      | n             | 豹
+less                | -      | a,ad          | 较少
+lesson              | -      | n             | 课
+let                 | -      | v             | 让某人做某事;出租房屋或土地
+letter              | -      | n             | 字母、信件
+letter-box          | -      | n             | 投信口、信箱
+lettuce             | -      | n             | 莴苣、生菜
+level               | -      | a,n           | 平的、平坦的、一样高的、等高的;高度、水平、级别
+level crossing      | -      | n             | 平交道(铁路和公路的交叉处)
+lever               | -      | n             | 杠杆、操作杆
+liable              | -      | a             | (因通常做某事)很可能仍做某事
+liar                | -      | n             | 说谎的人
+liberal             | -      | n             | (对别人的思想行为)宽容的、思想开放度
+liberate            | -      | v             | 解放
+liberty             | -      | n             | 自由
+library             | -      | n             | 图书馆
+librarian           | -      | n             | 图书馆管理员
+licence             | -      | n             | 执照、许可证
+license             | -      | v             | 给某人许可证
+license plate       | -      | n             | number-plate
+lick                | -      | v,n           | 舔某物;舔
+lid                 | -      | n             | 盖子、盖儿
+lie                 | -      | v,n           | 说谎、平躺、以某种姿势躺着、存在或停留在某物上;谎话
+lieutenant          | -      | n             | 陆军中尉、海军上尉
+life                | -      | n             | 生命、一生、终生、生活
+lifebelt            | -      | n             | 救生圈
+lifeboat            | -      | n             | 救生艇
+life-jacket         | -      | n             | 救生衣
+lifestyle           | -      | n             | 生活方式
+lifetime            | -      | n             | 一生、终生
+lift                | -      | v,n           | 把某人或某物抬起或举起;电梯、免费搭便车
+light               | -      | a             | 明亮的、浅色的、轻的、不太多不太强
+light               | -      | v,n           | 点燃某物、照亮某物;光线、阳光、灯
+light-bulb          | -      | n             | 电灯泡
+lighter             | -      | n             | 打火机
+lighthouse          | -      | n             | 灯塔
+lighting            | -      | n             | 照明设备
+lightning           | -      | n             | 闪电
+like                | -      | v             | 喜欢;类似的
+likely              | -      | a             | 可能发生的、有可能的
+likeness            | -      | n             | 相像、相似
+likewise            | -      | ad            | 同样地、照样地
+lily                | -      | n             | 百合、百合花
+limb                | -      | n             | 一条胳膊或腿、肢
+lime                | -      | n             | 酸橙
+limit               | -      | v,n           | 限制、限定;极限、限度
+limp                | -      | v,n           | 跛行、一瘸一拐的走
+line                | -      | v,n           | 站成队、排成排、给某物安衬里;线、站成一排、(字的)一行、绳索、电话线、线路
+linen               | -      | n             | 亚麻布、亚麻布的床单/桌布
+liner               | -      | n             | 班轮、邮轮;衬袋
+linger              | -      | v             | 逗留、徘徊
+lining              | -      | n             | 衬里、里子
+link                | -      | v,n           | 把两人或两事物联系/链接起来;联系、关系、(链条的)一环
+lion                | -      | n             | 狮子
+lip                 | -      | n             | 嘴唇
+lipstick            | -      | n             | 口红、唇膏
+liquid              | -      | n,a           | 液体、液体的
+list                | -      | v,n           | 列出单子、造表;一览表、清单
+listen              | -      | v             | 听、倾听
+lit                 | -      | -             | light
+liter               | -      | n             | litre
+literature          | -      | n             | 文学
+litre               | -      | n             | 升
+litter              | -      | n             | 垃圾、(弃置在地上的)纸张登杂物、(一胎生的)小动物
+litter              | -      | v             | 有纸张等杂物使某处凌乱
+little              | -      | a,ad          | 小的、幼小的少量的;少许
+live                | -      | v             | 活着、生存、居住、(以某种方式)生活;有生命的、现场直播的、带电的
+lively              | -      | a             | 有生气的、活跃的
+liver               | -      | n             | 肝
+lives               | -      | -             | life
+living              | -      | a,n           | 活的、活着的;谋生之道、生活方式
+living-room         | -      | n             | 起居室、客厅
+lizard              | -      | n             | 蜥蜴
+load                | -      | v,n           | 装载、装货、把子弹装进枪里、把胶卷装进相机里;负荷物、载荷物
+loaf                | -      | n             | 大面包
+load                | -      | n             | 借到的钱、借款
+loan                | -      | v             | 借出某物
+lobster             | -      | n             | 龙虾
+local               | -      | n             | 当地的、本地的
+locally             | -      | n             | 本地的
+located             | -      | a             | 在某处
+location            | -      | n             | 地方、位置
+lock                | -      | v,n           | 锁住;锁
+lock away           | -      | n             | 把某物锁好
+locker              | -      | n             | (带锁的)小柜
+lodge               | -      | v             | 在某人家中付费寄宿
+lodger              | -      | n             | 在某人家中付费寄宿的人
+loft                | -      | n             | 阁楼、顶楼
+log                 | -      | n             | 原木
+lollipop            | -      | n             | 孤寂的、寂寞的;偏远的、偏僻的
+loneliness          | -      | n             | 孤寂、寂寞
+long                | -      | a,ad          | 长的;长期地、长久地
+long                | -      | v,n           | 渴望、非常想要某事物;很久、很长时间
+longing             | -      | n             | 渴望、热望
+long-jump           | -      | n             | 跳远运动
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
+-                   | -      | n             | -
 
 ## M
 
+english             | -      | type          | chinese
+-                   | -      | -             | -
+-                   | -      | n             | -
+
 ## N
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## O
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## P
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## Q
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## R
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## S
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## T
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## U
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## V
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## W
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## X
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
 
 ## Y
 
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
+
 ## Z
+
+english    | -      | type          | chinese
+-          | -      | -             | -
+-          | -      | n             | -
