@@ -85,7 +85,7 @@
     https://github.com/deepfakes/faceswap.git
     https://github.com/imhuay/Algorithm_Interview_Notes-Chinese.git
     https://github.com/ShiqiYu/libfacedetection.git
-
+    https://github.com/yuxitong/TensorFlowAndroidDemo.git
 
 
 #、Tool
